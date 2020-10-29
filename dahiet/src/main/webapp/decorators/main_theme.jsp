@@ -61,20 +61,18 @@
 					<li><a href="services.html">기업정보</a></li>
 					<li><a href="portfolio.html">취업토크</a></li>
 					<li><a href="pricing.html">고객센터</a></li>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<div>
-						<input type="text" id="search" name="search">
-						<input type="image" src="images/search.png" alt="제출버튼" height="20" width="20">
-					</div>
-
-
-
+					<li><input type="text" id="search" name="search"><input type="image" src="images/search.png" alt="제출버튼" height="20" width="20"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li><a href="index.html" >이력서 작성</a></li>
+					<li><a href="index.html" >채용 공고 작성</a></li>
+					<li><a href="index.html" class="get-started-btn ml-auto">로그인 / 회원가입</a></li>
 				</ul>
 
 			</nav>
 			<!-- .nav-menu -->
 
-			<a href="index.html" class="get-started-btn ml-auto">로그인 / 회원가입</a>
 			
 
 		</div>
