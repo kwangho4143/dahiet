@@ -66,7 +66,7 @@
 					<li><input type="text" id="search" name="search"><input type="image" src="images/search.png" alt="제출버튼" height="20" width="20"></li>
 					<li><a href="index.html" >개인</a></li>
 					<li><a href="index.html" >기업</a></li>
-					<li><a href="index.html" class="get-started-btn ml-auto" align="center">로그인 <br> 가입</a></li>
+					<li><a href="index.html" class="get-started-btn ml-auto">로그인 / 가입</a></li>
 				</ul>
 
 			</nav>
@@ -76,6 +76,8 @@
 	<!-- End Header -->
 	<section id="about" class="about">
 		<main id="main">
+		<br>
+		<br>
 			<decorator:body />
 		</main>
  	</section>

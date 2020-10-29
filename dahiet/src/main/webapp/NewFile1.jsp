@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1 style="color: white"></h1>
+<h3 style="color: black">
+안녕하세요</h3>
 </body>
 </html>
