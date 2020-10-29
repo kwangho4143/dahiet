@@ -1,10 +1,12 @@
 
 /*--------------------------------------------------------------
-편집
+�렪吏�
 --------------------------------------------------------------*/
 
 
-
+love {
+	text-align: center;
+}
 
 
 
@@ -219,15 +221,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Get Startet Button */
 .get-started-btn {
-  margin-left: 25px;
-  background: #d9232d;
-  color: #fff;
-  border-radius: 4px;
+  margin-left: 25px !important;
+  background: #d9232d !important;
+  color: #fff !important;
+  border-radius: 4px !important;
   padding: 8px 30px 9px 30px;
   white-space: nowrap;
   transition: 0.3s;
-  font-size: 14px;
-  display: inline-block;
+  font-size: 14px !important;
+  display: inline-block !important;
 }
 
 .get-started-btn:hover {
