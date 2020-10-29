@@ -61,27 +61,24 @@
 					<li><a href="services.html">기업정보</a></li>
 					<li><a href="portfolio.html">취업토크</a></li>
 					<li><a href="pricing.html">고객센터</a></li>
+					
+					<li></li>
 					<li><input type="text" id="search" name="search"><input type="image" src="images/search.png" alt="제출버튼" height="20" width="20"></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li><a href="index.html" >이력서 작성</a></li>
-					<li><a href="index.html" >채용 공고 작성</a></li>
-					<li><a href="index.html" class="get-started-btn ml-auto">로그인 / 회원가입</a></li>
+					<li><a href="index.html" >개인</a></li>
+					<li><a href="index.html" >기업</a></li>
+					<li><a href="index.html" class="get-started-btn ml-auto" align="center">로그인 <br> 가입</a></li>
 				</ul>
 
 			</nav>
 			<!-- .nav-menu -->
-
-			
-
 		</div>
 	</header>
 	<!-- End Header -->
-	<main id="main">
-	<decorator:body />
-	</main>
-
+	<section id="about" class="about">
+		<main id="main">
+			<decorator:body />
+		</main>
+ 	</section>
 	<!-- ======= Footer ======= -->
 	<footer id="footer">
 		<div class="footer-top">
@@ -90,14 +87,14 @@
 
 					<div class="col-lg-3 col-md-6">
 						<div class="footer-info">
-							<h3>Sailor</h3>
+							<h3>YEDAM KOREA</h3>
 							<p>
-								A108 Adam Street <br> NY 535022, USA<br>
-								<br> <strong>Phone:</strong> +1 5589 55488 55<br> <strong>Email:</strong>
-								info@example.com<br>
+								대구 광역시 중구 <br> 상서동 22-2<br>
+								<br> <strong>Tel:</strong> 053-421-2460<br> <strong>대표 Email:ask@yedam.ac</strong>
+								<br>
 							</p>
 							<div class="social-links mt-3">
-								<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a
+								<a href="http://www.daeguoracle.com/" class="예담 직업 전문학교"><i class="bx bxl-twitter"></i></a> <a
 									href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a
 									href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
 								<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
@@ -107,20 +104,18 @@
 					</div>
 
 					<div class="col-lg-2 col-md-6 footer-links">
-						<h4>Useful Links</h4>
+						<h4>연관 사이트</h4>
 						<ul>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">codu</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Terms
-									of service</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Privacy
-									policy</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a href="http://www.moel.go.kr/index.do">고용노동부</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a href="https://www.work.go.kr/seekWantedMain.do">워크넷</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a href="https://www.jobkorea.co.kr/">잡코리아</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a href="https://www.saramin.co.kr/zf_user/">사람인</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a href="http://www.hrd.go.kr/hrdp/ma/pmmao/indexNew.do">HRD-Net</a></li>
 						</ul>
 					</div>
 
 					<div class="col-lg-3 col-md-6 footer-links">
-						<h4>Our Services</h4>
+						<h4>사이트 바로가기</h4>
 						<ul>
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Web
 									Design</a></li>
