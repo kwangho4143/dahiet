@@ -6,7 +6,7 @@
 
 
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
 <meta charset="utf-8">
@@ -38,7 +38,7 @@
 	rel="stylesheet">
 
 <link href="assets/css/style.css" rel="stylesheet">
-<decorator:head/>
+<decorator:head />
 </head>
 
 <body>
@@ -56,17 +56,22 @@
 			<nav class="nav-menu d-none d-lg-block">
 
 				<ul>
-					
-					<li><a href="#">채용정보</a>  
-					<li><a href="services.html">기업정보</a></li>
-					<li><a href="portfolio.html">취업토크</a></li>
-					<li><a href="pricing.html">고객센터</a></li>
-					
+
+					<li><a href="#">채용정보</a>
+					<li><a href="#">기업정보</a></li>
+					<li><a href="#">취업토크</a></li>
+					<li><a href="#">고객센터</a></li>
+
 					<li></li>
-					<li><input type="text" id="search" name="search"><input type="image" src="images/search.png" alt="제출버튼" height="20" width="20"></li>
-					<li><a href="index.html" >개인</a></li>
-					<li><a href="index.html" >기업</a></li>
-					<li><a href="index.html" class="get-started-btn ml-auto">로그인 / 가입</a></li>
+					<li><form action="" method="post">
+							<input type="text" id="search" name="search">
+							<button type="button" style="border: 0px; background: none">
+								<img src="images/search.png" height="20" width="20" alt="submit">
+							</button>
+						</form></li>
+					<li><a href="#">개인</a></li>
+					<li><a href="#">기업</a></li>
+					<li><a href="#" class="get-started-btn ml-auto">로그인 / 가입</a></li>
 				</ul>
 
 			</nav>
@@ -76,11 +81,10 @@
 	<!-- End Header -->
 	<section id="about" class="about">
 		<main id="main">
-		<br>
-		<br>
+			<br> <br>
 			<decorator:body />
 		</main>
- 	</section>
+	</section>
 	<!-- ======= Footer ======= -->
 	<footer id="footer">
 		<div class="footer-top">
@@ -91,16 +95,16 @@
 						<div class="footer-info">
 							<h3>YEDAM KOREA</h3>
 							<p>
-								대구 광역시 중구 <br> 상서동 22-2<br>
-								<br> <strong>Tel:</strong> 053-421-2460<br> <strong>대표 Email:ask@yedam.ac</strong>
-								<br>
+								대구 광역시 중구 <br> 상서동 22-2<br> <br> <strong>Tel:</strong>
+								053-421-2460<br> <strong>대표 Email:ask@yedam.ac</strong> <br>
 							</p>
 							<div class="social-links mt-3">
-								<a href="http://www.daeguoracle.com/" class="예담 직업 전문학교"><i class="bx bxl-twitter"></i></a> <a
-									href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a
-									href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-								<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-								<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+								<a href="http://www.daeguoracle.com/" class="예담 직업 전문학교"><i
+									class="bx bxl-twitter"></i></a> <a href="#" class="facebook"><i
+									class="bx bxl-facebook"></i></a> <a href="#" class="instagram"><i
+									class="bx bxl-instagram"></i></a> <a href="#" class="google-plus"><i
+									class="bx bxl-skype"></i></a> <a href="#" class="linkedin"><i
+									class="bx bxl-linkedin"></i></a>
 							</div>
 						</div>
 					</div>
@@ -108,11 +112,16 @@
 					<div class="col-lg-2 col-md-6 footer-links">
 						<h4>연관 사이트</h4>
 						<ul>
-							<li><i class="bx bx-chevron-right"></i> <a href="http://www.moel.go.kr/index.do">고용노동부</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="https://www.work.go.kr/seekWantedMain.do">워크넷</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="https://www.jobkorea.co.kr/">잡코리아</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="https://www.saramin.co.kr/zf_user/">사람인</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="http://www.hrd.go.kr/hrdp/ma/pmmao/indexNew.do">HRD-Net</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a
+								href="http://www.moel.go.kr/index.do">고용노동부</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a
+								href="https://www.work.go.kr/seekWantedMain.do">워크넷</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a
+								href="https://www.jobkorea.co.kr/">잡코리아</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a
+								href="https://www.saramin.co.kr/zf_user/">사람인</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a
+								href="http://www.hrd.go.kr/hrdp/ma/pmmao/indexNew.do">HRD-Net</a></li>
 						</ul>
 					</div>
 
