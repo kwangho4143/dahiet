@@ -48,7 +48,7 @@
 		<div class="container d-flex align-items-center">
 
 			<h1 class="logo">
-				<a href="index.html">YEDAM KOREA</a>
+				<a href="test.html">YEDAM KOREA</a>
 			</h1>
 			<!-- Uncomment below if you prefer to use an image logo -->
 			<!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -71,7 +71,7 @@
 						</form></li>
 					<li><a href="#">개인</a></li>
 					<li><a href="#">기업</a></li>
-					<li><a href="#" class="get-started-btn ml-auto">로그인 / 가입</a></li>
+					<li><button type="button" onclick="location.href='../jsp/user/loginForm.jsp';" class="get-started-btn ml-auto" >로그인 / 가입</button></li>
 				</ul>
 
 			</nav>
