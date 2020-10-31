@@ -94,7 +94,7 @@
 				</form>
 			</div>
 			<div id="tab2" style="display: none">
-				<form id="frm2" name="frm2" action="userInsert.do" method="post"
+				<form id="frm2" name="frm2" action="comInsert.do" method="post"
 					enctype="multipart/form-data">
 					<table border="1">
 						<tr>
@@ -106,16 +106,8 @@
 							<td><input type="text" id="pw" name="pw"></td>
 						</tr>
 						<tr>
-							<th width="150">이 름</th>
-							<td><input type="text" id="name" name="name"></td>
-						</tr>
-						<tr>
-							<th width="150">사 진</th>
-							<td><input type="file" id="name" name="name"></td>
-						</tr>
-						<tr>
-							<th width="150">생 일</th>
-							<td><input type="date" id="birth" name="birth"></td>
+							<th width="150">사업자 번호</th>
+							<td><input type="text" id="no" name="no"></td>
 						</tr>
 						<tr>
 							<th width="150">이메일</th>
