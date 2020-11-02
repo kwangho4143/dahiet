@@ -15,7 +15,7 @@ public class insertRecruit implements Action {
 		RecruitDao dao = new RecruitDao();
 		RecruitVO vo = new RecruitVO();
 
-		vo.setSub_seq(request.getParameter("sub_seq"));
+		vo.setSub_seq(request.getParameter("recruit_seq"));
 		vo.setNo(request.getParameter("no"));
 		vo.setTitle(request.getParameter("email"));
 		vo.setPosition(request.getParameter("position"));

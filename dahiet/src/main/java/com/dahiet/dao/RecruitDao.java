@@ -17,14 +17,13 @@ public class RecruitDao extends DAO {
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(RECRUITINSERT);
-			psmt.setString(1, vo.getSub_seq());
-			psmt.setString(2, vo.getNo());
-			psmt.setString(3, vo.getTitle());
-			psmt.setString(4, vo.getPosition());
-			psmt.setString(5, vo.getEmp_type());
-			psmt.setString(6, vo.getWork());
-			psmt.setString(7, vo.getLoc());
-			psmt.setString(8, vo.getQualify());
+			psmt.setString(1, vo.getNo());
+			psmt.setString(2, vo.getTitle());
+			psmt.setString(3, vo.getPosition());
+			psmt.setString(4, vo.getEmp_type());
+			psmt.setString(5, vo.getWork());
+			psmt.setString(6, vo.getLoc());
+			psmt.setString(7, vo.getQualify());
 		
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
