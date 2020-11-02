@@ -55,8 +55,8 @@
 								</ul></li>
 
 							<li class="drop-down"><a href="#">업종 선택</a>
-								<ul>
-									<li>
+								<ul >
+									<li style="margin: 0.5cm">
 										<div>
 											<label><input type="checkbox" name="item" value="">경영·사무</label>
 											<label><input type="checkbox" name="item">영업·고객상담</label>
