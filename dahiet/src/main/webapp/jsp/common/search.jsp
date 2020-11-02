@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,43 +20,25 @@
 							<li><form action="" method="post">
 									<input type="text" id="search" name="search">
 									<button type="button" style="border: 0px; background: none">
-										<img src="${pageContext.request.contextPath}/images/search.png" height="20" width="20"
-											alt="submit">
+										<img
+											src="${pageContext.request.contextPath}/images/search.png"
+											height="20" width="20" alt="submit">
 									</button>
 								</form></li>
 							<li class="drop-down"><a href="#">지역 선택</a>
 								<ul>
 									<li>
-										<div>
-											<label><input type="checkbox" name="loc" value="seoul">서울</label>
-											<label><input type="checkbox" name="loc" value="incheon">인천</label>
-											<label><input type="checkbox" name="loc" value="daegu">대구</label>
-											<label><input type="checkbox" name="loc" value="">대전</label>
+										<div style="white-space: normal; margin: 0.5cm; width: 500px">
+											<c:forEach var="code" items="${codes}">
+												<label><input type="checkbox" name="item"
+													value="${code.codename }">${code.codevalue}</label>
+											</c:forEach>
 										</div>
-										<div>
-											<label><input type="checkbox" name="loc" value="busan">부산</label>
-											<label><input type="checkbox" name="loc" value="gwangju">광주</label>
-											<label><input type="checkbox" name="loc" value="ulsan">울산</label>
-											<label><input type="checkbox" name="loc" value="jeju">제주</label>
-										</div>
-										<div>
-											<label><input type="checkbox" name="loc" value="gyunggi">경기</label>
-											<label><input type="checkbox" name="loc" value="gangwon">강원</label>
-											<label><input type="checkbox" name="loc" value="gyungbuk">경북</label>
-											<label><input type="checkbox" name="loc" value="gyungnam">경남</label>
-										</div>
-											<div>
-											<label><input type="checkbox" name="loc" value="chungbuk">충북</label>
-											<label><input type="checkbox" name="loc" value="chungnam">충남</label>
-											<label><input type="checkbox" name="loc" value="jeonbuk">전북</label>
-											<label><input type="checkbox" name="loc" value="jeonnam">전남</label>
-										</div>
-											
 									</li>
 								</ul></li>
 
 							<li class="drop-down"><a href="#">업종 선택</a>
-								<ul >
+								<ul>
 									<li style="margin: 0.5cm">
 										<div>
 											<label><input type="checkbox" name="item" value="">경영·사무</label>
@@ -81,8 +64,7 @@
 								<ul>
 									<li><form action="">
 											<div>
-												<label>연봉</label> 
-												<select name="salary" id="salary">
+												<label>연봉</label> <select name="salary" id="salary">
 													<option value="2000">2,000만원 이상</option>
 													<option value="3000">3,000만원 이상</option>
 													<option value="4000">4,000만원 이상</option>
@@ -92,11 +74,11 @@
 													<option value="8000">8,000만원 이상</option>
 													<option value="9000">9,000만원 이상</option>
 													<option value="10000">10,000만원 이상</option>
-												</select>
-												<label>제외 검색어</label> <input type="text">
+												</select> <label>제외 검색어</label> <input type="text">
 												<button type="button" style="border: 0px; background: none">
-													<img src="${pageContext.request.contextPath}/images/search.png" height="20" width="20"
-														alt="submit">
+													<img
+														src="${pageContext.request.contextPath}/images/search.png"
+														height="20" width="20" alt="submit">
 												</button>
 											</div>
 											<hr>
@@ -143,13 +125,14 @@
 				<div class="row portfolio-container">
 					<table border="1" style="width: 100%; height: 2cm">
 						<tr>
-							<td rowspan="2" style="width: 2cm"><img alt="회사로고" src="${pageContext.request.contextPath}/images/comlogo"></td>
-							
-							
+							<td rowspan="2" style="width: 2cm"><img alt="회사로고"
+								src="${pageContext.request.contextPath}/images/comlogo"></td>
+
+
 							<th style="width: 2cm">회사이름</th>
 							<td></td>
-							
-							
+
+
 							<th style="width: 2cm">고용형태</th>
 							<td></td>
 						</tr>

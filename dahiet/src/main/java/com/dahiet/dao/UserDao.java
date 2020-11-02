@@ -16,7 +16,7 @@ public class UserDao extends DAO {
 	private UserVO vo;
 	
 	
-	private final String USERINSERT = "INSERT INTO USERS(ID,PW,NAME,IMAGE,BIRTH,TEL,EMAIL,ADDR,UNIV,MAJOR,SCORE) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+	private final String USERINSERT = "INSERT INTO USERS(ID,PW,NAME,IMAG,BIRTH,TEL,EMAIL,ADDR,UNIV,MAJOR,SCORE) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 	
 	
 	public int insert(UserVO vo) {

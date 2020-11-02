@@ -57,7 +57,7 @@
 
 				<ul>
 
-					<li><a href="#">채용정보</a>
+					<li><a href="${pageContext.request.contextPath}/SearchAction.do">채용정보</a>
 					<li><a href="#">기업정보</a></li>
 					<li><a href="#">취업토크</a></li>
 					<li><a href="#">고객센터</a></li>

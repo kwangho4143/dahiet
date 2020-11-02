@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dahiet.command.SearchAction;
 import com.dahiet.command.comInsert;
 import com.dahiet.command.insertRecruit;
 import com.dahiet.command.userInsert;
@@ -39,7 +40,9 @@ public class FrontController extends HttpServlet {
 		map.put("/userInsert.do",new userInsert()); //userInsert.do 가 들어오면 MainAction()를 실행하는것   index.jsp가 들어오면 사용하는 것 처음페이지 처리시 사용
 		map.put("/comInsert.do",new comInsert()); //기업 회원가입 기능
 		map.put("/insertRecruit.do",new insertRecruit()); //기업 공고 올리기 
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		
+		
+		map.put("/SearchAction.do",new SearchAction()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
