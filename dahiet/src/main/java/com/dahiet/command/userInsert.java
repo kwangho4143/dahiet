@@ -43,7 +43,7 @@ public class userInsert implements Action {
 		System.out.println(appPath);
 		// 여러건
 		try {
-			for (Part part : request.getParts()) {
+			for (Part part : request.getParts()) { //파일 읽을 때
 				String fileName = FileUtil.extractFileName(part);
 				if (!fileName.equals("")) {
 					// 파일 명 중복 체크

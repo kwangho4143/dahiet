@@ -13,7 +13,7 @@ public class ComDao extends DAO {
 	private ComVO vo;
 	
 	
-	private final String USERINSERT = "INSERT INTO USERS(ID,PW,NO,TEL,EMAIL,ADDR) VALUES(?,?,?,?,?,?)";
+	private final String USERINSERT = "INSERT INTO COMPANIES(ID,PW,NO,TEL,EMAIL,ADDR) VALUES(?,?,?,?,?,?)";
 	
 	
 	public int insert(ComVO vo) {

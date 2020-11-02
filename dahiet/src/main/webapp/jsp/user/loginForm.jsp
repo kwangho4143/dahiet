@@ -38,7 +38,7 @@
 					onchange="setDisplay(this.value)">기업회원
 			</form>
 			<div id="tab1">
-				<form id="frm1" name="frm1" action="userInsert.do" method="post"
+				<form id="frm1" name="frm1" action="${pageContext.request.contextPath}/userInsert.do" method="post"
 					enctype="multipart/form-data">
 					<table border="1">
 						<tr>
@@ -94,7 +94,7 @@
 				</form>
 			</div>
 			<div id="tab2" style="display: none">
-				<form id="frm2" name="frm2" action="comInsert.do" method="post"
+				<form id="frm2" name="frm2" action="${pageContext.request.contextPath}/comInsert.do" method="post"
 					enctype="multipart/form-data">
 					<table border="1">
 						<tr>

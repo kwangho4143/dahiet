@@ -61,9 +61,6 @@ public class FrontController extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage); //선택한 페이지로 가는 것 
 		dispatcher.forward(request, response);
 		
-	
-	
-	
 	}
 
 }

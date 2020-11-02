@@ -25,9 +25,9 @@ public class comInsert implements Action {
 		String page;
 
 		if (n != 0) {
-			page = "jsp/user/insertSucess.jsp";
+			page = "jsp/company/insertCompanySucess.jsp";
 		} else {
-			page = "jsp/user/insertFail.jsp";
+			page = "jsp/company/insertCompanyFail.jsp";
 		}
 
 		return page;
