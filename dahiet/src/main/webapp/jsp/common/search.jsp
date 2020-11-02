@@ -136,9 +136,13 @@
 				<div class="row portfolio-container">
 					<table border="1" style="width: 100%; height: 2cm">
 						<tr>
-							<td rowspan="2" style="width: 2cm">회사로고</td>
+							<td rowspan="2" style="width: 2cm"><img alt="회사로고" src="${pageContext.request.contextPath}/images/comlogo"></td>
+							
+							
 							<th style="width: 2cm">회사이름</th>
 							<td></td>
+							
+							
 							<th style="width: 2cm">고용형태</th>
 							<td></td>
 						</tr>
