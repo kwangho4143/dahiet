@@ -55,7 +55,7 @@
 						</tr>
 						<tr>
 							<th width="150">사 진</th>
-							<td><input type="file" id="name" name="name"></td>
+							<td><input type="file" id="image" name="image"></td>
 						</tr>
 						<tr>
 							<th width="150">생 일</th>
@@ -121,6 +121,36 @@
 							<th width="150">주 소</th>
 							<td><input type="text" id="addr" name="addr" size="80"></td>
 						</tr>
+						<tr>
+							<th width="150">로 고</th>
+							<td><input type="file" id="img" name="img" size="80"></td>
+						</tr>
+						<tr>
+							<th width="150">회사링크</th>
+							<td><input type="text" id="link" name="link" size="80"></td>
+						</tr>
+						<tr>
+							<th width="150">기업형태</th>
+							<td><input type="text" id="type" name="type" size="80"></td>
+						</tr>
+						<tr>
+							<th width="150">사원수</th>
+							<td><input type="text" id="emps" name="emps" size="80"></td>
+						</tr>
+						<tr>
+							<th width="150">매출액</th>
+							<td><input type="text" id="profit" name="profit" size="80"></td>
+						</tr>
+						<tr>
+							<th width="150">업종</th>
+							<td><input type="text" id="item" name="item" size="80"></td>
+						</tr>
+						
+						
+						
+						
+						
+						
 						<tr>
 							<td colspan="2" align="center"><input type="submit"
 								value="가입하기"> &nbsp;&nbsp; <input type="reset"

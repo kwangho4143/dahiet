@@ -13,19 +13,26 @@ public class ComDao extends DAO {
 	private ComVO vo;
 	
 	
-	private final String USERINSERT = "INSERT INTO COMPANIES(ID,PW,NO,TEL,EMAIL,ADDR) VALUES(?,?,?,?,?,?)";
+	private final String COMPANYINSERT = "INSERT INTO COMPANIES(ID,PW,NO,TEL,EMAIL,ADDR,ITEM,IMG,EMPS,LINK,PROFIT,TYPE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 	
 	
 	public int insert(ComVO vo) {
 		int n=0;
 		try {
-			psmt = conn.prepareStatement(USERINSERT);
+			psmt = conn.prepareStatement(COMPANYINSERT);
 			psmt.setString(1,vo.getId());
 			psmt.setString(2,vo.getPw());
 			psmt.setString(3,vo.getNo());
 			psmt.setString(4,vo.getTel());
 			psmt.setString(5,vo.getEmail());
 			psmt.setString(6,vo.getAddr());
+			psmt.setString(7,vo.getItem());
+			psmt.setString(8,vo.getImg());
+			psmt.setString(9,vo.getEmps());
+			psmt.setString(10,vo.getLink());
+			psmt.setString(11,vo.getProfit());
+			psmt.setString(12,vo.getType());
+			
 			n= psmt.executeUpdate();
 		}
 		catch(SQLException e) {

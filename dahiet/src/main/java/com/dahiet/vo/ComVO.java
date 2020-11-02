@@ -7,8 +7,51 @@ public class ComVO {
 	private String email;
 	private String addr;
 	private String no;
+	private String img;
+	private String link;
+	private String type;
+	private String emps;
+	private String profit;
+	private String item;
 	
 	
+	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getEmps() {
+		return emps;
+	}
+	public void setEmps(String emps) {
+		this.emps = emps;
+	}
+	public String getProfit() {
+		return profit;
+	}
+	public void setProfit(String profit) {
+		this.profit = profit;
+	}
+	public String getItem() {
+		return item;
+	}
+	public void setItem(String item) {
+		this.item = item;
+	}
 	public String getTel() {
 		return tel;
 	}

@@ -40,6 +40,31 @@
 					<th width="150">주소</th>
 					<td>${param.addr}</td>
 				</tr>
+				<tr>
+					<th width="150">회사링크</th>
+					<td>${param.link}</td>
+				</tr>
+				<tr>
+					<th width="150">기업형태</th>
+					<td>${param.type}</td>
+				</tr>
+				<tr>
+					<th width="150">사원수</th>
+					<td>${param.emps}</td>
+				</tr>
+				<tr>
+					<th width="150">매출액</th>
+					<td>${param.profit}</td>
+				</tr>
+				<tr>
+					<th width="150">업 종</th>
+					<td>${param.item}</td>
+				</tr>
+				<tr>
+					<th width="150">로고</th>
+					<td>${param.img}</td>
+				</tr>
+				
 				
 			</table>
 

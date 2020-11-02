@@ -6,12 +6,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
-<hr>
-	<div align = "center">
-		<h1>회원가입이 실패 했습니다.</h1>
-		<button type="button" onclick="location.href='${pageContext.request.contextPath}/loginForm.jsp';">돌아가기</button>
-	</div>
 <body>
 
 </body>

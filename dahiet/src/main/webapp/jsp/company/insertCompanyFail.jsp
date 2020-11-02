@@ -12,7 +12,7 @@
 	<div align = "center">
 		<h1>회원가입이 실패 했습니다.</h1>
 		<%--= exception.getMessage() --%><br/>
-		<button type="button" onclick="location.href='loginForm.jsp';">돌아가기</button>
+		<button type="button" onclick="${pageContext.request.contextPath}/location.href='loginForm.jsp';">돌아가기</button>
 	</div>
 
 </body>
