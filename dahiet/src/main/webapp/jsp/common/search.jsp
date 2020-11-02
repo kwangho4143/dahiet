@@ -27,23 +27,30 @@
 								<ul>
 									<li>
 										<div>
-											<label><input type="checkbox" name="color">지역</label>
-											<label><input type="checkbox" name="color">지역</label>
-											<label><input type="checkbox" name="color">지역</label>
-											<label><input type="checkbox" name="color">지역</label>
+											<label><input type="checkbox" name="loc" value="seoul">서울</label>
+											<label><input type="checkbox" name="loc" value="incheon">인천</label>
+											<label><input type="checkbox" name="loc" value="daegu">대구</label>
+											<label><input type="checkbox" name="loc" value="">대전</label>
 										</div>
 										<div>
-											<label><input type="checkbox" name="color">지역</label>
-											<label><input type="checkbox" name="color">지역</label>
-											<label><input type="checkbox" name="color">지역</label>
-											<label><input type="checkbox" name="color">지역</label>
+											<label><input type="checkbox" name="loc" value="busan">부산</label>
+											<label><input type="checkbox" name="loc" value="gwangju">광주</label>
+											<label><input type="checkbox" name="loc" value="ulsan">울산</label>
+											<label><input type="checkbox" name="loc" value="jeju">제주</label>
 										</div>
 										<div>
-											<label><input type="checkbox" name="color">지역</label>
-											<label><input type="checkbox" name="color">지역</label>
-											<label><input type="checkbox" name="color">지역</label>
-											<label><input type="checkbox" name="color">지역</label>
+											<label><input type="checkbox" name="loc" value="gyunggi">경기</label>
+											<label><input type="checkbox" name="loc" value="gangwon">강원</label>
+											<label><input type="checkbox" name="loc" value="gyungbuk">경북</label>
+											<label><input type="checkbox" name="loc" value="gyungnam">경남</label>
 										</div>
+											<div>
+											<label><input type="checkbox" name="loc" value="chungbuk">충북</label>
+											<label><input type="checkbox" name="loc" value="chungnam">충남</label>
+											<label><input type="checkbox" name="loc" value="jeonbuk">전북</label>
+											<label><input type="checkbox" name="loc" value="jeonnam">전남</label>
+										</div>
+											
 									</li>
 								</ul></li>
 
@@ -51,22 +58,22 @@
 								<ul>
 									<li>
 										<div>
-											<label><input type="checkbox" name="color">업종</label>
-											<label><input type="checkbox" name="color">업종</label>
-											<label><input type="checkbox" name="color">업종</label>
-											<label><input type="checkbox" name="color">업종</label>
+											<label><input type="checkbox" name="item" value="">경영·사무</label>
+											<label><input type="checkbox" name="item">영업·고객상담</label>
+											<label><input type="checkbox" name="item">it·인터넷</label>
+											<label><input type="checkbox" name="item">디자인</label>
 										</div>
 										<div>
-											<label><input type="checkbox" name="color">업종</label>
-											<label><input type="checkbox" name="color">업종</label>
-											<label><input type="checkbox" name="color">업종</label>
-											<label><input type="checkbox" name="color">업종</label>
+											<label><input type="checkbox" name="item">서비스</label>
+											<label><input type="checkbox" name="item">전문직</label>
+											<label><input type="checkbox" name="item">의료</label>
+											<label><input type="checkbox" name="item">생산·제조</label>
 										</div>
 										<div>
-											<label><input type="checkbox" name="color">업종</label>
-											<label><input type="checkbox" name="color">업종</label>
-											<label><input type="checkbox" name="color">업종</label>
-											<label><input type="checkbox" name="color">업종</label>
+											<label><input type="checkbox" name="item">건설</label>
+											<label><input type="checkbox" name="item">유통·무역</label>
+											<label><input type="checkbox" name="item">교육</label>
+											<label><input type="checkbox" name="item">공공</label>
 										</div>
 									</li>
 								</ul></li>
@@ -75,16 +82,16 @@
 									<li><form action="">
 											<div>
 												<label>연봉</label> 
-												<select>
-													<option>2,000만원 이상</option>
-													<option>3,000만원 이상</option>
-													<option>4,000만원 이상</option>
-													<option>5,000만원 이상</option>
-													<option>6,000만원 이상</option>
-													<option>7,000만원 이상</option>
-													<option>8,000만원 이상</option>
-													<option>9,000만원 이상</option>
-													<option>10,000만원 이상</option>
+												<select name="salary" id="salary">
+													<option value="2000">2,000만원 이상</option>
+													<option value="3000">3,000만원 이상</option>
+													<option value="4000">4,000만원 이상</option>
+													<option value="5000">5,000만원 이상</option>
+													<option value="6000">6,000만원 이상</option>
+													<option value="7000">7,000만원 이상</option>
+													<option value="8000">8,000만원 이상</option>
+													<option value="9000">9,000만원 이상</option>
+													<option value="10000">10,000만원 이상</option>
 												</select>
 												<label>제외 검색어</label> <input type="text">
 												<button type="button" style="border: 0px; background: none">
