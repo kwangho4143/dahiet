@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dahiet.command.RecruitAction;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.comInsert;
 import com.dahiet.command.insertRecruit;
@@ -42,8 +43,8 @@ public class FrontController extends HttpServlet {
 		map.put("/insertRecruit.do",new insertRecruit()); //기업 공고 올리기 
 		
 		
-		map.put("/SearchAction.do",new SearchAction()); //로그인 폼 호출
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		map.put("/SearchAction.do",new SearchAction()); //상세 검색
+		map.put("/RecruitAction.do",new RecruitAction()); //공고 등록 체크박스 값가져오기
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		

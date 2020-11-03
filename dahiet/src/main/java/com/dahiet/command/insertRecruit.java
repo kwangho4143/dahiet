@@ -24,8 +24,6 @@ public class insertRecruit implements Action {
 		vo.setLoc(request.getParameter("loc"));
 		vo.setQualify(request.getParameter("qualify"));
 		
-		
-
 		int n = dao.insert(vo);
 		String page;
 
