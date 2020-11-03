@@ -10,13 +10,14 @@ import com.dahiet.vo.UserVO;
 
 
 
+
 public class UserDao extends DAO {
 	private PreparedStatement psmt; //sql명령어 작성시에 사용
 	private ResultSet rs; //select 후 결과셋 받기
 	private UserVO vo;
 	
-	
 	private final String USERINSERT = "INSERT INTO USERS(ID,PW,NAME,IMAG,BIRTH,TEL,EMAIL,ADDR,UNIV,MAJOR,SCORE) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+	private final String SELECTLOGIN = "SELECT * FROM USERS WHERE ID = ? ";
 	
 	
 	public int insert(UserVO vo) {
@@ -67,6 +68,27 @@ public class UserDao extends DAO {
 		}
 		
 	}
+	public UserVO select(UserVO vo) {  //한행을 검색할때
+		try {
+			psmt = conn.prepareStatement(SELECTLOGIN);
+			psmt.setString(1, vo.getId());
+//			psmt.setString(2, vo.getPassword());
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				vo.setPw(rs.getString("pw"));
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return vo;
+	}
+	
+	
+	
+	
 	
 	
 }
