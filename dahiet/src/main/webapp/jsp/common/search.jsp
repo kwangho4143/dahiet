@@ -39,12 +39,13 @@
 								</ul></li>
 
 							<li class="drop-down"><a href="#">업종 선택</a>
-													<ul>
+								<ul>
 									<li>
 										<div style="white-space: normal; margin: 0.5cm; width: 500px">
 											<c:forEach var="itemcode" items="${itemcodes}">
 												<label><input type="checkbox" name="item"
 													value="${itemcode.itemid }">${itemcode.itemname}</label>
+
 											</c:forEach>
 										</div>
 									</li>
@@ -85,8 +86,9 @@
 												<label>근무 형태</label><label><input type="checkbox"
 													name="color"> 정직원</label> <label><input
 													type="checkbox" name="emp_type" value="cont"> 계약직</label> <label><input
-													type="checkbox" name="emp_type" value="part"> 아르바이트</label> <label><input
-													type="checkbox" name="emp_type" value="inte"> 인턴직</label> <label><input
+													type="checkbox" name="emp_type" value="part"> 아르바이트</label>
+												<label><input type="checkbox" name="emp_type"
+													value="inte"> 인턴직</label> <label><input
 													type="checkbox" name="emp_type" value="disp"> 파견직</label>
 											</div>
 										</form></li>
@@ -101,7 +103,6 @@
 		<!-- ======= Portfolio Section ======= -->
 		<section id="portfolio" class="portfolio">
 			<div class="container">
-
 				<div class="row">
 					<div class="col-lg-12 d-flex justify-content-center">
 						<ul id="portfolio-flters">
@@ -111,28 +112,35 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row portfolio-container">
-					<table border="1" style="width: 100%; height: 2cm">
-						<tr>
-							<td rowspan="2" style="width: 2cm"><img alt="회사로고"
-								src="${pageContext.request.contextPath}/images/comlogo"></td>
 
 
-							<th style="width: 2cm">회사이름</th>
-							<td></td>
+				<c:forEach var="simple" items="${simples}">
+					<div>
+						<table border="1" style="width: 100%; height: 3cm">
+							<tr>
+								<td rowspan="3" style="width: 1cm; height: 2cm" ><img alt="회사로고"
+									src="${pageContext.request.contextPath}/images/"></td>
+
+								<th style="width: 1cm">공고이름</th>
+								<td colspan="3" style="width: 2cm">${simple.title}</td>
+							</tr>
+							<tr>
+								<th style="width: 1cm">회사이름</th>
+								<td style="width: 4cm">${simple.name}</td>
 
 
-							<th style="width: 2cm">고용형태</th>
-							<td></td>
-						</tr>
-						<tr>
-							<th>직무</th>
-							<td></td>
-							<th>급여</th>
-							<td></td>
-						</tr>
-					</table>
-				</div>
+								<th style="width: 1cm">고용형태</th>
+								<td style="width: 4cm">${simple.emp_type}</td>
+							</tr>
+							<tr>
+								<th style="width: 1cm">직무</th>
+								<td>${simple.work}</td>
+								<th style="width: 1cm">급여</th>
+								<td>${simple.salary}</td>
+							</tr>
+						</table>
+					</div>
+				</c:forEach>
 			</div>
 
 		</section>
