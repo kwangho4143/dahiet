@@ -146,8 +146,8 @@
 								<td><input type="text" id="no" name="no"></td>
 							</tr>
 							<tr>
-								<th width="150">이메일</th>
-								<td><input type="text" id="email" name="email"></td>
+								<th width="150">회사이름</th>
+								<td><input type="text" id="name" name="name"></td>
 							</tr>
 							<tr>
 								<th width="150">전화번호</th>

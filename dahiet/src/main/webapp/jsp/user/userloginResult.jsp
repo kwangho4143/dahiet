@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="../user/loginForm.jsp" />
 <hr>
 <div align="center">
 	<c:if test="${vo.name eq null }">
