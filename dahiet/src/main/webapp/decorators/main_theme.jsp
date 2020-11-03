@@ -69,7 +69,7 @@
 								<img src="${pageContext.request.contextPath}/images/search.png" height="20" width="20" alt="submit">
 							</button>
 						</form></li>
-					<li><a href="#">개인</a></li>
+					<li><a href="${pageContext.request.contextPath}/ResumeAction.do">개인</a></li>
 					<li><a href="${pageContext.request.contextPath}/RecruitAction.do">기업</a></li>
 					<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" class="get-started-btn ml-auto" >로그인 / 가입</button></li>
 				</ul>
