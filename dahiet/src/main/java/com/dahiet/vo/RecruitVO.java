@@ -9,6 +9,7 @@ public class RecruitVO {
 	private String loc;
 	private String work;
 	private String qualify;
+	private String salary;
 	
 	public String getNo() {
 		return no;
@@ -58,8 +59,11 @@ public class RecruitVO {
 	public void setQualify(String qualify) {
 		this.qualify = qualify;
 	}
-	
-	
-	
-	
+	public String getSalary() {
+		return salary;
+	}
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
+
 }

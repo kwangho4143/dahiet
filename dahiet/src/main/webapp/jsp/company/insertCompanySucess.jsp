@@ -29,8 +29,8 @@
 					<td>${param.no}</td>
 				</tr>
 				<tr>
-					<th width="150">이메일</th>
-					<td>${param.email}</td>
+					<th width="150">회사이름</th>
+					<td>${param.name}</td>
 				</tr>
 				<tr>
 					<th width="150">전화번호</th>

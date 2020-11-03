@@ -25,7 +25,7 @@ public class comInsert implements Action {
 		vo.setId(request.getParameter("id"));
 		vo.setPw(request.getParameter("pw"));
 		vo.setNo(request.getParameter("no"));
-		vo.setEmail(request.getParameter("email"));
+		vo.setName(request.getParameter("name"));
 		vo.setTel(request.getParameter("tel"));
 		vo.setAddr(request.getParameter("addr"));
 		vo.setImg(request.getParameter("img"));

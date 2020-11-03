@@ -4,7 +4,7 @@ public class ComVO {
 	private String tel;
 	private String id;
 	private String pw;
-	private String email;
+	private String name;
 	private String addr;
 	private String no;
 	private String img;
@@ -71,11 +71,11 @@ public class ComVO {
 		this.pw = pw;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getName() {
+		return name;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getAddr() {
 		return addr;

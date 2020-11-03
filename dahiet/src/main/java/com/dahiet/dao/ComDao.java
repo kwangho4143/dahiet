@@ -13,7 +13,7 @@ public class ComDao extends DAO {
 	private ComVO vo;
 	
 	
-	private final String COMPANYINSERT = "INSERT INTO COMPANIES(ID,PW,NO,TEL,EMAIL,ADDR,ITEM,IMG,EMPS,LINK,PROFIT,TYPE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final String COMPANYINSERT = "INSERT INTO COMPANIES(ID,PW,NO,TEL,NAME,ADDR,ITEM,IMG,EMPS,LINK,PROFIT,TYPE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 	
 	
 	public int insert(ComVO vo) {
@@ -24,7 +24,7 @@ public class ComDao extends DAO {
 			psmt.setString(2,vo.getPw());
 			psmt.setString(3,vo.getNo());
 			psmt.setString(4,vo.getTel());
-			psmt.setString(5,vo.getEmail());
+			psmt.setString(5,vo.getName());
 			psmt.setString(6,vo.getAddr());
 			psmt.setString(7,vo.getItem());
 			psmt.setString(8,vo.getImg());

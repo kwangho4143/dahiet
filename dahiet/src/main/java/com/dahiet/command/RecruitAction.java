@@ -28,6 +28,8 @@ public class RecruitAction implements Action {
 		ItemCodeVO ivo = new ItemCodeVO();
 		ilist = idao.ITEMCODESELECT(ivo);
 		request.setAttribute("itemcodes", ilist);
+		
+
 		return "/jsp/company/insertRecruit.jsp";
 
 	

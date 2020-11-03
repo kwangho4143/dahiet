@@ -42,8 +42,14 @@
 					</td>
 				</tr>
 				<tr>
-					<th width="150">담당업무</th>
-					<td><input type="text" id="work" name="work"></td>
+					<th width="150">담당 업무</th>
+					<td>
+						<c:forEach var="itemcode" items="${itemcodes}">
+							<label>
+								<input type="checkbox" name="work" value="${itemcode.itemid}">${itemcode.itemname}
+							</label>
+						</c:forEach> 
+					</td>
 				</tr>
 				<tr>
 					<th width="150">지원자격</th>
