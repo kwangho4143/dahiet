@@ -23,18 +23,15 @@
 </style>
 
 <script>
-	function showDis() {
+ 	function showDis1() {
 		if($('#career').css('display') == 'none') {
 			$('#career').show();
-		} else if ($('#license').css('display') == 'none') {
-			$('#license').show();
-		
 		}else {
-			$(this).value.hide();
+			$('#career').hide();
 		}
 	}
 	
-/* 	function showDis2() {
+ 	function showDis2() {
 		if($('#license').css('display') == 'none') {
 			$('#license').show();
 		} else {
@@ -64,14 +61,15 @@
 		} else {
 			$('#language').hide();
 		}
-	} */
+	}
+	
+	
 </script>
 
 </head>
 
 
 <body>
-
 	<div align="center">
 	
 		<div>
@@ -85,6 +83,7 @@
 						<table>
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">기 본 정 보</h3></td>
+							</tr>
 							<tr height="50">
 								<th width="150">이력서 이름</th>
 								<td colspan="4"><input type="text" id="name" name="name" size="80"></td>
@@ -112,7 +111,10 @@
 					<div>
 						<table id="career" style="display: none;">
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">경 력 사 항</h3></td>
+								<td height="70" colspan="5"><h3 align="center">경 력 사 항&nbsp;
+								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3>
+								</td>
+							</tr>
 							<tr height="50">
 								<th width="150">회사명</th>
 								<td colspan="4"><input type="text" id="co_name" name="co_name"></td>
@@ -140,7 +142,8 @@
 					<div>
 						<table id="license" style="display: none;">
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">자 격 사 항</h3></td>
+								<td height="70" colspan="5"><h3 align="center">자 격 사 항&nbsp;
+								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3></td>
 							<tr height="50">
 								<th width="150">자격증명</th>
 								<td colspan="4"><input type="text" id="lic_name" name="lic_name"></td>
@@ -161,7 +164,8 @@
 					<div>
 						<table id="activity" style="display: none;">
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">대 외 활 동</h3></td>
+								<td height="70" colspan="5"><h3 align="center">대 외 활 동&nbsp;
+								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3></td>
 							<tr height="50">
 								<th width="150">활동구분(고용형태)</th>
 								<td colspan="4"><input type="text" id="act_type" name="act_type"></td>
@@ -187,7 +191,8 @@
 					<div>
 						<table id="award" style="display: none;">
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">수 상 내 역</h3></td>
+								<td height="70" colspan="5"><h3 align="center">수 상 내 역&nbsp;
+								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3></td>
 							<tr height="50">
 								<th width="150">수상명</th>
 								<td colspan="4"><input type="text" id="awd_name" name="awd_name"></td>
@@ -208,7 +213,8 @@
 					<div>
 						<table id="language" style="display: none;">
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">어 학 능 력</h3></td>
+								<td height="70" colspan="5"><h3 align="center">어 학 능 력&nbsp;
+								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3></td>
 							<tr height="50">
 								<th width="150">어학자격명</th>
 								<td colspan="4"><input type="text" id="lag_name" name="lag_name"></td>
@@ -231,11 +237,11 @@
 						<tr>
 							<th width="150">이력서 항목 추가</th>
 							<td align="center">
-								<input type="checkbox" name="resume" onclick="showDis(this.value)">경력사항 &nbsp;&nbsp;
-								<input type="checkbox" name="resume" onclick="showDis(this.value)">자격사항 &nbsp;&nbsp;
-								<input type="checkbox" name="resume" onclick="showDis(this.value)">대외활동 &nbsp;&nbsp;
-								<input type="checkbox" name="resume" onclick="showDis(this.value)">수상내역 &nbsp;&nbsp;
-								<input type="checkbox" name="resume" onclick="showDis(this.value)">어학능력 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" onclick="showDis1(this.value)"> 경력사항 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" onclick="showDis2(this.value)"> 자격사항 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" onclick="showDis3(this.value)"> 대외활동 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" onclick="showDis4(this.value)"> 수상내역 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" onclick="showDis5(this.value)"> 어학능력 &nbsp;&nbsp;
 							</td>
 						</tr>
 						<tr>
