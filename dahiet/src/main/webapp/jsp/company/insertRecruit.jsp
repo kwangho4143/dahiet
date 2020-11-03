@@ -10,7 +10,7 @@
 
 	<div align="center">
 		<div>
-			<h1>회 원 가 입</h1>
+			<h1>공 고 등 록</h1>
 		</div>
 
 		<form id="frm1" name="frm1"
@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<th width="150">회사위치</th>
-					<td><input type="file" id="loc" name="loc"></td>
+					<td><input type="text" id="loc" name="loc"></td>
 				</tr>			
 				<tr>
 					<th width="150">담당업무</th>

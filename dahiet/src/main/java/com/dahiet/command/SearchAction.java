@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dahiet.common.Action;
 import com.dahiet.dao.CodeDao;
+import com.dahiet.dao.ItemCodeDao;
 import com.dahiet.vo.CodeVO;
+import com.dahiet.vo.ItemCodeVO;
 
 public class SearchAction implements Action {
 
@@ -20,6 +22,12 @@ public class SearchAction implements Action {
 		CodeVO vo = new CodeVO();
 		list = dao.CODESELECT(vo);
 		request.setAttribute("codes", list);
+		
+		ItemCodeDao idao = new ItemCodeDao();
+		List<ItemCodeVO> ilist = new ArrayList<ItemCodeVO>();
+		ItemCodeVO ivo = new ItemCodeVO();
+		ilist = idao.ITEMCODESELECT(ivo);
+		request.setAttribute("itemcodes", ilist);
 		return "/jsp/common/search.jsp";
 		
 	}

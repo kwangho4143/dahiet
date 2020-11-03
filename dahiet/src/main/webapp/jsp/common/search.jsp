@@ -30,33 +30,22 @@
 									<li>
 										<div style="white-space: normal; margin: 0.5cm; width: 500px">
 											<c:forEach var="code" items="${codes}">
-												<label><input type="checkbox" name="item"
+												<label><input type="checkbox" name="loc"
 													value="${code.codename }">${code.codevalue}</label>
 											</c:forEach>
+											${code.codename }
 										</div>
 									</li>
 								</ul></li>
 
 							<li class="drop-down"><a href="#">업종 선택</a>
-								<ul>
-									<li style="margin: 0.5cm">
-										<div>
-											<label><input type="checkbox" name="item" value="">경영·사무</label>
-											<label><input type="checkbox" name="item">영업·고객상담</label>
-											<label><input type="checkbox" name="item">it·인터넷</label>
-											<label><input type="checkbox" name="item">디자인</label>
-										</div>
-										<div>
-											<label><input type="checkbox" name="item">서비스</label>
-											<label><input type="checkbox" name="item">전문직</label>
-											<label><input type="checkbox" name="item">의료</label>
-											<label><input type="checkbox" name="item">생산·제조</label>
-										</div>
-										<div>
-											<label><input type="checkbox" name="item">건설</label>
-											<label><input type="checkbox" name="item">유통·무역</label>
-											<label><input type="checkbox" name="item">교육</label>
-											<label><input type="checkbox" name="item">공공</label>
+													<ul>
+									<li>
+										<div style="white-space: normal; margin: 0.5cm; width: 500px">
+											<c:forEach var="itemcode" items="${itemcodes}">
+												<label><input type="checkbox" name="item"
+													value="${itemcode.itemid }">${itemcode.itemname}</label>
+											</c:forEach>
 										</div>
 									</li>
 								</ul></li>
@@ -85,20 +74,20 @@
 											<div>
 												<label>기업 형태</label> <label><input type="checkbox"
 													name="color"> 대기업</label> <label><input
-													type="checkbox" name="color"> 중견기업</label> <label><input
-													type="checkbox" name="color"> 중소기업</label> <label><input
-													type="checkbox" name="color"> 외국계</label> <label><input
-													type="checkbox" name="color"> 강소기업</label> <label><input
-													type="checkbox" name="color"> 공기업</label>
+													type="checkbox" name="type" value="mihi"> 중견기업</label> <label><input
+													type="checkbox" name="type" value="mi"> 중소기업</label> <label><input
+													type="checkbox" name="type" value="fo"> 외국계</label> <label><input
+													type="checkbox" name="type" value="stsm"> 강소기업</label> <label><input
+													type="checkbox" name="type" value="gove"> 공기업</label>
 											</div>
 											<div>
 												<hr>
 												<label>근무 형태</label><label><input type="checkbox"
 													name="color"> 정직원</label> <label><input
-													type="checkbox" name="color"> 계약직</label> <label><input
-													type="checkbox" name="color"> 아르바이트</label> <label><input
-													type="checkbox" name="color"> 인턴직</label> <label><input
-													type="checkbox" name="color"> 파견직</label>
+													type="checkbox" name="emp_type" value="cont"> 계약직</label> <label><input
+													type="checkbox" name="emp_type" value="part"> 아르바이트</label> <label><input
+													type="checkbox" name="emp_type" value="inte"> 인턴직</label> <label><input
+													type="checkbox" name="emp_type" value="disp"> 파견직</label>
 											</div>
 										</form></li>
 								</ul></li>

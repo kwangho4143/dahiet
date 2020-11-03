@@ -27,8 +27,8 @@ public class UserDao extends DAO {
 			psmt.setString(2,vo.getPw());
 			psmt.setString(3,vo.getName());
 			psmt.setString(4,vo.getImage());
-			psmt.setDate(5,vo.getBirth());
-			psmt.setString(6,vo.getTel());
+			psmt.setDate(5,vo.getBirth());    
+			psmt.setString(6,vo.getTel());  
 			psmt.setString(7,vo.getEmail());
 			psmt.setString(8,vo.getAddr());
 			psmt.setString(9,vo.getUniv());
