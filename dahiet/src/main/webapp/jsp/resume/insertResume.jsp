@@ -16,7 +16,7 @@
 	  padding: 10px;
 	  border: 1px solid #333333;
 	}
-	 th {
+	 th { 
 	  padding: 10px;
 	  border: 1px solid #333333;
 	}
