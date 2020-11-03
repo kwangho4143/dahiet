@@ -27,7 +27,7 @@
 	<div class="row">
 		<div class="col">
 			<div class="login_tistory" align="left">
-				<form method="post" id="authForm" action="login.do">
+				<form method="post" id="authForm" action="${pageContest.request.contextPath}/login.do">
 					<input type="hidden" name="redirectUrl"
 						value="https://blogpack.tistory.com/manage">
 					<fieldset>
