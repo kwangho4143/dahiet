@@ -8,16 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="../user/loginForm.jsp" />
 <hr>
 <div align="center">
-	<c:if test="${vo.name eq null }">
-		<h1>${param.id } 님 로그인 실패 했습니다.</h1>
-		<h1>${msg }</h1>
+	<c:if test="${not empty sessionScope.id  }">
+		<h1>${ sessionScope.id }님 로그인  했습니다.</h1>
 	</c:if>
-	<c:if test="${vo.name ne null }">
-		<h1>${msg }</h1>
-		<h1>${vo.name } 님 안녕하세요?</h1>
+	<c:if test="${sessionScope.id eq null }">
+		<h1>${param.id } 님 로그인 실패 ${msg}</h1>
 	</c:if>	
 </div>
 </body>

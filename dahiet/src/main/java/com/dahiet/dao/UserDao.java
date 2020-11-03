@@ -68,11 +68,11 @@ public class UserDao extends DAO {
 		}
 		
 	}
-	public UserVO select(UserVO vo) {  //한행을 검색할때
+	public UserVO selectLogIn(UserVO vo) {  //한행을 검색할때
 		try {
 			psmt = conn.prepareStatement(SELECTLOGIN);
 			psmt.setString(1, vo.getId());
-//			psmt.setString(2, vo.getPassword());
+
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				vo.setPw(rs.getString("pw"));

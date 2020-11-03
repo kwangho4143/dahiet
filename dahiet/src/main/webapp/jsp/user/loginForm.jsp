@@ -27,7 +27,7 @@
 	<div class="row">
 		<div class="col">
 			<div class="login_tistory" align="left">
-				<form method="post" id="authForm" action="${pageContest.request.contextPath}/login.do">
+				<form method="post" id="authForm" action="${pageContext.request.contextPath}/userLogin.do">
 					<input type="hidden" name="redirectUrl"
 						value="https://blogpack.tistory.com/manage">
 					<fieldset>
@@ -36,11 +36,11 @@
 						<div class="box_login">
 							<div class="inp_text">
 								<label for="loginId" class="screen_out">아이디</label> <input
-									type="text" id="loginId" name="loginId" placeholder="ID">
+									type="text" id="id" name="id" placeholder="ID">
 							</div>
 							<div class="inp_text">
 								<label for="loginPw" class="screen_out">비밀번호</label> <input
-									type="password" id="loginPw" name="password"
+									type="password" id="pw" name="pw"
 									placeholder="Password">
 							</div>
 						</div>
