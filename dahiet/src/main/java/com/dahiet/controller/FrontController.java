@@ -48,7 +48,42 @@ public class FrontController extends HttpServlet {
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
-		
+		//광호
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		//다희
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		//정은
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		//평강
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
 		map.put("/userLogin.do",new userLoginAction()); //로그인 폼 호출
 

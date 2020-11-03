@@ -18,13 +18,13 @@ public class userLoginAction implements Action {
 		vo.setId(request.getParameter("id"));
 //		vo.setPassword(request.getParameter("password"));
 		
-		vo = dao.select(vo);  //MemberDao 를 실행시킨다.
+		vo = dao.selectLogIn(vo);  //MemberDao 를 실행시킨다.
 		
-		if(vo.getPw().equals(request.getParameter("pw"))) {;
+		if(vo.getPw().equals(request.getParameter("pw"))) {
 			session.setAttribute("id", vo.getId());  //session에 id 담음
 			msq = "정상적인 로그인";
 			request.setAttribute("msg", msq);
-			request.setAttribute("vo", vo);	//멤버를 싫어 보냄
+			request.setAttribute("vo", vo);	//멤버를 실어 보냄
 		}
 		else {
 			msq = "패스워드가 틀렸다.";

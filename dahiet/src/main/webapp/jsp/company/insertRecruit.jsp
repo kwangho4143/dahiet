@@ -16,9 +16,13 @@
 		</div>
 
 		<form id="frm1" name="frm1"
-			action="${pageContext.request.contextPath}/userInsert.do"
+			action="${pageContext.request.contextPath}/insertRecruit.do"
 			method="post">
 			<table border="1">
+				<tr>
+					<th width="150">사업자번호</th>
+					<td width="500"><input type="text" id="no" name="no"></td>
+				</tr>
 				<tr>
 					<th width="150">공고 제목</th>
 					<td width="500"><input type="text" id="title" name="title"></td>
@@ -54,6 +58,10 @@
 				<tr>
 					<th width="150">지원자격</th>
 					<td><input type="text" id="qualify" name="qualify"></td>
+				</tr>
+				<tr>
+					<th width="150">급여</th>
+					<td><input type="text" id="salary" name="salary"></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"

@@ -1,7 +1,7 @@
 package com.dahiet.vo;
 
 public class RecruitVO {
-	private String sub_seq;
+	private String recruit_seq;
 	private String no;
 	private String title;
 	private String position;
@@ -17,11 +17,11 @@ public class RecruitVO {
 	public void setNo(String no) {
 		this.no = no;
 	}
-	public String getSub_seq() {
-		return sub_seq;
+	public String getRecruit_seq() {
+		return recruit_seq;
 	}
-	public void setSub_seq(String sub_seq) {
-		this.sub_seq = sub_seq;
+	public void setRecruit_seq(String recruit_seq) {
+		this.recruit_seq = recruit_seq;
 	}
 	public String getTitle() {
 		return title;
