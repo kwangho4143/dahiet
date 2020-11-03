@@ -36,7 +36,7 @@
 					<td>
 						<c:forEach var="code" items="${codes}">
 							<label>
-								<input type="checkbox" name="loc" value="${code.codename }">${code.codevalue}
+								<input type="checkbox" name="loc" value="${code.codename}">${code.codevalue}
 							</label>
 						</c:forEach> 
 					</td>
