@@ -31,7 +31,7 @@ public class userLoginAction implements Action {
 			request.setAttribute("msg", msq);
 		}
 		
-		return "jsp/userloginResult.jsp";
+		return "/jsp/userloginResult.jsp";
 	}
 
 
