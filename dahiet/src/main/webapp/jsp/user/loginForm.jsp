@@ -27,7 +27,7 @@
 	<div class="row">
 		<div class="col">
 			<div class="login_tistory" align="left">
-				<form method="post" id="authForm" action="login.do">
+				<form method="post" id="authForm" action="${pageContest.request.contextPath}/login.do">
 					<input type="hidden" name="redirectUrl"
 						value="https://blogpack.tistory.com/manage">
 					<fieldset>
@@ -146,8 +146,8 @@
 								<td><input type="text" id="no" name="no"></td>
 							</tr>
 							<tr>
-								<th width="150">이메일</th>
-								<td><input type="text" id="email" name="email"></td>
+								<th width="150">회사이름</th>
+								<td><input type="text" id="name" name="name"></td>
 							</tr>
 							<tr>
 								<th width="150">전화번호</th>
