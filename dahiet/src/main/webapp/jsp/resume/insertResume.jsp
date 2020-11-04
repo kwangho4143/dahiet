@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>insertResume.jsp</title>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <style type="text/css">
 	table {
 	  width: 850px;
@@ -23,45 +24,98 @@
 </style>
 
 <script>
- 	function showDis1() {
-		if($('#career').css('display') == 'none') {
-			$('#career').show();
-		}else {
-			$('#career').hide();
-		}
-	}
+$(document).ready(function() {
 	
- 	function showDis2() {
-		if($('#license').css('display') == 'none') {
-			$('#license').show();
+	// 하단 체크박스 체크시 항목 추가
+	// 경력
+	$('#chkCareer').on("click", function() {
+		if ($('#tblCareer').css('display') == 'none') {
+			$('#tblCareer').show();
 		} else {
-			$('#license').hide();
+			$('#tblCareer').hide();
 		}
-	}
+	});	
+	// 자격
+	$('#chkLicense').on("click", function() {
+		if ($('#tblLicense').css('display') == 'none') {
+			$('#tblLicense').show();
+		} else {
+			$('#tblLicense').hide();
+		}
+	});	
+	// 대외
+	$('#chkActivity').on("click", function() {
+		if ($('#tblActivity').css('display') == 'none') {
+			$('#tblActivity').show();
+		} else {
+			$('#tblActivity').hide();
+		}
+	});	
+	// 수상
+	$('#chkAward').on("click", function() {
+		if ($('#tblAward').css('display') == 'none') {
+			$('#tblAward').show();
+		} else {
+			$('#tblAward').hide();
+		}
+	});	
+	// 어학
+	$('#chkLanguage').on("click", function() {
+		if ($('#tblLanguage').css('display') == 'none') {
+			$('#tblLanguage').show();
+		} else {
+			$('#tblLanguage').hide();
+		}
+	});
 	
-	function showDis3() {
-		if($('#activity').css('display') == 'none') {
-			$('#activity').show();
-		} else {
-			$('#activity').hide();
-		}
-	}
+	// 추가 버튼 클릭시 행 추가
+	// 경력
+	$('#rowAddCareer').on("click", function(event) { 
+		event.preventDefault();
+		$('#tbodyCareer').clone().appendTo('#tblCareer');
+	});
+	// 자격
+	$('#rowAddLicense').on("click", function(event) { 
+		event.preventDefault();
+		$('#tbodyLicense').clone().appendTo('#tblLicense');
+	});	
+	// 대외
+	$('#rowAddActivity').on("click", function(event) { 
+		event.preventDefault();
+		$('#tbodyActivity').clone().appendTo('#tblActivity');
+	});	
+	// 수상
+	$('#rowAddAward').on("click", function(event) { 
+		event.preventDefault();
+		$('#tbodyAward').clone().appendTo('#tblAward');
+	});	
+	// 어학
+	$('#rowAddLanguage').on("click", function(event) { 
+		event.preventDefault();
+		$('#tbodyLanguage').clone().appendTo('#tblLanguage');
+	});
 	
-	function showDis4() {
-		if($('#award').css('display') == 'none') {
-			$('#award').show();
+	// 삭제버튼 클릭시 아래에서부터 행 삭제
+	// 경력 (tbody 안의 행이 4개 이상이고, (행개수%4 == 0) 이면 -> 아래에서부터 4줄 삭제 / 아니면 삭제하지 않음)
+	$('#rowDelCareer').on("click", function(event) {
+		event.preventDefault();
+		if (('#tbodyCareer tr').length > 4) {
+    		$('#tblCareer > #tbodyCareer').remove();
 		} else {
-			$('#award').hide();
+			alert("더 이상 삭제할 수 없습니다.");
+			return null;
 		}
-	}
+	});
+	// 자격
 	
-	function showDis5() {
-		if($('#language').css('display') == 'none') {
-			$('#language').show();
-		} else {
-			$('#language').hide();
-		}
-	}
+	// 대외
+
+	// 수상
+
+	// 어학
+	
+})
+
 	
 	
 </script>
@@ -109,12 +163,16 @@
 					</div>
 					
 					<div>
-						<table id="career" style="display: none;">
+						<table id="tblCareer" style="display: none;">
+							<thead>
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">경 력 사 항&nbsp;
-								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3>
+								<button id="rowAddCareer" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelCareer" class="btn btn-dark btn-sm">삭제</button></h3>
 								</td>
 							</tr>
+							</thead>
+							<tbody id="tbodyCareer">
 							<tr height="50">
 								<th width="150">회사명</th>
 								<td colspan="4"><input type="text" id="co_name" name="co_name"></td>
@@ -136,14 +194,21 @@
 								<th width="150">담당업무</th>
 								<td colspan="4"><input type="text" id="ca_worked" name="ca_worked" size="80"></td>
 							</tr>
+							</tbody>
 						</table><br/><br/>
 					</div>
 					
 					<div>
-						<table id="license" style="display: none;">
+						<table id="tblLicense" style="display: none;">
+							<thead>
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">자 격 사 항&nbsp;
-								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3></td>
+								<button id="rowAddLicense" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelLicense" class="btn btn-dark btn-sm">삭제</button>
+								</h3></td>
+							</tr>
+							</thead>
+							<tbody id="tbodyLicense">
 							<tr height="50">
 								<th width="150">자격증명</th>
 								<td colspan="4"><input type="text" id="lic_name" name="lic_name"></td>
@@ -158,14 +223,21 @@
 								<th width="120">취득연월일</th>
 								<td><input type="date" id="lic_getdate" name="lic_getdate"></td>
 							</tr>
+							</tbody>
 						</table><br/><br/>
 					</div>
 					
 					<div>
-						<table id="activity" style="display: none;">
+						<table id="tblActivity" style="display: none;">
+							<thead>
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">대 외 활 동&nbsp;
-								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3></td>
+								<button id="rowAddActivity" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelActivity" class="btn btn-dark btn-sm">삭제</button>
+								</h3></td>
+							</tr>
+							</thead>
+							<tbody id="tbodyActivity">
 							<tr height="50">
 								<th width="150">활동구분(고용형태)</th>
 								<td colspan="4"><input type="text" id="act_type" name="act_type"></td>
@@ -185,14 +257,21 @@
 								<th width="120">종료일</th>
 								<td><input type="date" id="act_enddate" name="act_enddate"></td>
 							</tr>
+							</tbody>
 						</table><br/><br/>
 					</div>
 					
 					<div>
-						<table id="award" style="display: none;">
+						<table id="tblAward" style="display: none;">
+							<thead>
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">수 상 내 역&nbsp;
-								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3></td>
+								<button id="rowAddAward" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelAward" class="btn btn-dark btn-sm">삭제</button>
+								</h3></td>
+							</tr>
+							</thead>
+							<tbody id="tbodyAward">
 							<tr height="50">
 								<th width="150">수상명</th>
 								<td colspan="4"><input type="text" id="awd_name" name="awd_name"></td>
@@ -207,14 +286,21 @@
 								<th width="150">수상내용</th>
 								<td colspan="4"><input type="text" id="awd_content" name="awd_content"></td>
 							</tr>
+							</tbody>
 						</table><br/><br/>
 					</div>
 					
 					<div>
-						<table id="language" style="display: none;">
+						<table id="tblLanguage" style="display: none;">
+							<thead>
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">어 학 능 력&nbsp;
-								<a href="#" id="addCar"><button type="button" class="btn btn-dark btn-sm">추가</button></a></h3></td>
+								<button id="rowAddLanguage" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelLanguage" class="btn btn-dark btn-sm">삭제</button>
+								</h3></td>
+							</tr>
+							</thead>
+							<tbody id="tbodyLanguage">
 							<tr height="50">
 								<th width="150">어학자격명</th>
 								<td colspan="4"><input type="text" id="lag_name" name="lag_name"></td>
@@ -229,6 +315,7 @@
 								<th width="120">인증날짜</th>
 								<td><input type="date" id="lag_date" name="lag_date"></td>
 							</tr>
+							</tbody>
 						</table><br/>
 					</div>
 					
@@ -237,11 +324,11 @@
 						<tr>
 							<th width="150">이력서 항목 추가</th>
 							<td align="center">
-								<input type="checkbox" name="resume" onclick="showDis1(this.value)"> 경력사항 &nbsp;&nbsp;
-								<input type="checkbox" name="resume" onclick="showDis2(this.value)"> 자격사항 &nbsp;&nbsp;
-								<input type="checkbox" name="resume" onclick="showDis3(this.value)"> 대외활동 &nbsp;&nbsp;
-								<input type="checkbox" name="resume" onclick="showDis4(this.value)"> 수상내역 &nbsp;&nbsp;
-								<input type="checkbox" name="resume" onclick="showDis5(this.value)"> 어학능력 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" id="chkCareer"> 경력사항 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" id="chkLicense"> 자격사항 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" id="chkActivity"> 대외활동 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" id="chkAward"> 수상내역 &nbsp;&nbsp;
+								<input type="checkbox" name="resume" id="chkLanguage"> 어학능력 &nbsp;&nbsp;
 							</td>
 						</tr>
 						<tr>
