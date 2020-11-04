@@ -3,17 +3,17 @@ package com.dahiet.vo;
 import java.sql.Date;
 
 public class ReviewVO {
-	private double no;
+	private String no;
 	private String id;
 	private String title;
 	private String content;
 	private Date redate;
 	private String company;
 	private String newbi;
-	public double getNo() {
+	public String getNo() {
 		return no;
 	}
-	public void setNo(double d) {
+	public void setNo(String d) {
 		this.no = d;
 	}
 	public String getId() {
