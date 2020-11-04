@@ -81,8 +81,8 @@ public class FrontController extends HttpServlet {
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 		//평강
-		map.put("/ReviewInsert.do",new ReviewInsert()); //로그인 폼 호출
-		map.put("/ReviewCheck.do",new ReviewCheck()); //로그인 폼 호출
+		map.put("/ReviewInsert.do",new ReviewInsert()); //취업 토크 값 인서트 호출
+		map.put("/ReviewCheck.do",new ReviewCheck()); //취업 토크 인서트 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
