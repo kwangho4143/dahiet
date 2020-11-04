@@ -59,7 +59,7 @@
 
 					<li><a href="${pageContext.request.contextPath}/SearchAction.do">채용정보</a>
 					<li><a href="#">기업정보</a></li>
-					<li><a href="#">취업토크</a></li>
+					<li><a href="${pageContext.request.contextPath}/ReviewAction.do">취업토크</a></li>
 					<li><a href="#">고객센터</a></li>
 
 					<li></li>
@@ -69,8 +69,8 @@
 								<img src="${pageContext.request.contextPath}/images/search.png" height="20" width="20" alt="submit">
 							</button>
 						</form></li>
-					<li><a href="#">개인</a></li>
-					<li><a href="${pageContext.request.contextPath}/recruitCheck.do">기업</a></li>
+					<li><a href="${pageContext.request.contextPath}/ResumeAction.do">개인</a></li>
+					<li><a href="${pageContext.request.contextPath}/RecruitAction.do">기업</a></li>
 					<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" class="get-started-btn ml-auto" >로그인 / 가입</button></li>
 				</ul>
 
