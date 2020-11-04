@@ -27,7 +27,7 @@
 					<table>
 						<tr height="50">
 							<td height="70" colspan="5" align="right">
-								<a href="#" id="insertResume">
+								<a href="${pageContext.request.contextPath}/InsertResume.do" id="insertResume">
 								<button type="button" class="btn btn-danger">새 이력서 등록하기</button>&nbsp;&nbsp;&nbsp;</a>
 							</td>
 						</tr>
