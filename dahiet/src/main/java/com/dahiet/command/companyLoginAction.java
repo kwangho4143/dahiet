@@ -30,7 +30,7 @@ public class companyLoginAction implements Action {
 			msq = "패스워드가 틀렸다.";
 			request.setAttribute("msg", msq);
 		}
-		return "/jsp/comloginResult.jsp";
+		return "/jsp/company/comloginResult.jsp";
 	}
 
 }

@@ -82,7 +82,7 @@
 					<div>
 						<div>
 							<label>아이디</label> <input type="text" id="id" name="id"
-								placeholder="사업자번호">
+								placeholder="ID">
 						</div>
 						<div>
 							<label>비밀번호</label> <input type="password" id="pw" name="pw"
