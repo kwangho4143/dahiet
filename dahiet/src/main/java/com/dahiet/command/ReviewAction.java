@@ -21,7 +21,7 @@ public class ReviewAction implements Action {
 		List<ReviewVO> list = new ArrayList<ReviewVO>();
 		ReviewVO vo = new ReviewVO();
 		list = dao.RE_LI_SELECT(vo);
-		request.setAttribute("relist", list);
+		request.setAttribute("relists", list);
 		
 		return "/jsp/review/reviewList.jsp";
 		
