@@ -15,8 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.dahiet.command.RecruitCheck;
 import com.dahiet.command.ResumeAction;
 import com.dahiet.command.ReviewAction;
+import com.dahiet.command.ReviewCheck;
+import com.dahiet.command.ReviewInsert;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.comInsert;
+import com.dahiet.command.companyLoginAction;
 import com.dahiet.command.insertRecruit;
 import com.dahiet.command.userInsert;
 import com.dahiet.command.userLoginAction;
@@ -69,7 +72,7 @@ public class FrontController extends HttpServlet {
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 		//정은
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		map.put("/companyLogin.do",new companyLoginAction()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
@@ -78,8 +81,8 @@ public class FrontController extends HttpServlet {
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 		//평강
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		map.put("/ReviewInsert.do",new ReviewInsert()); //로그인 폼 호출
+		map.put("/ReviewCheck.do",new ReviewCheck()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
