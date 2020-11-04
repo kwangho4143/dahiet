@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dahiet.command.RecruitAction;
+import com.dahiet.command.ResumeAction;
+import com.dahiet.command.ReviewAction;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.comInsert;
 import com.dahiet.command.insertRecruit;
@@ -45,15 +47,49 @@ public class FrontController extends HttpServlet {
 		
 		map.put("/SearchAction.do",new SearchAction()); //상세 검색
 		map.put("/RecruitAction.do",new RecruitAction()); //공고 등록 체크박스 값가져오기
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		map.put("/ReviewAction.do",new ReviewAction()); //리뷰 리스트 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
-		
+		//광호
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		//다희
+		map.put("/ResumeAction.do",new ResumeAction()); //이력서 현황 호출
+		map.put("/InsertResume.do",new InsertResume()); //이력서 등록 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		//정은
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		//평강
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
 		map.put("/userLogin.do",new userLoginAction()); //로그인 폼 호출
 
-		map.put("/SearchAction.do",new SearchAction()); //상세 검색
-		map.put("/RecruitAction.do",new RecruitAction()); //공고 등록 체크박스 값가져오기
+	
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 

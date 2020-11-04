@@ -16,7 +16,7 @@
 		</div>
 
 		<form id="frm1" name="frm1"
-			action="${pageContext.request.contextPath}/userInsert.do"
+			action="${pageContext.request.contextPath}/insertRecruit.do"
 			method="post">
 			<table border="1">
 				<tr>
@@ -54,6 +54,14 @@
 				<tr>
 					<th width="150">지원자격</th>
 					<td><input type="text" id="qualify" name="qualify"></td>
+				</tr>	
+				<tr>
+					<th width="150">급여</th>
+					<td><input type="text" id="salary" name="salary"></td>
+				</tr>
+				<tr>
+					<th width="150">신입/경력</th>
+					<td><input type="text" id="newbi" name="newbi"></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"
