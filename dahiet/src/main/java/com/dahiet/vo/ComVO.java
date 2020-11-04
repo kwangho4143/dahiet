@@ -15,7 +15,6 @@ public class ComVO {
 	private String item;
 	
 	
-	
 	public String getImg() {
 		return img;
 	}

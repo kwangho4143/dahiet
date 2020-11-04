@@ -64,6 +64,10 @@
 					<td><input type="text" id="salary" name="salary"></td>
 				</tr>
 				<tr>
+					<th width="150">신입 / 경력</th>
+					<td><input type="text" id="newbi" name="newbi"></td>
+				</tr>
+				<tr>
 					<td colspan="2" align="center"><input type="submit"
 						value="공고등록"> &nbsp;&nbsp; <input type="reset" value="취 소"></td>
 				</tr>
