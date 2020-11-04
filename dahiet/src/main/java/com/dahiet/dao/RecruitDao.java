@@ -11,8 +11,8 @@ public class RecruitDao extends DAO {
 	private ResultSet rs; // select 후 결과셋 받기
 	private RecruitVO vo;
 
-	private final String RECRUITINSERT = "INSERT INTO RECRUIT(RECRUIT_SEQ,NO,TITLE,POSITION,EMP_TYPE,WORK,LOC,QUALIFY,SALARY) " 
-			+"VALUES(RECRUIT_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?,?,?)";
+	private final String RECRUITINSERT = "INSERT INTO RECRUIT(RECRUIT_SEQ,NO,TITLE,POSITION,EMP_TYPE,WORK,LOC,QUALIFY,SALARY,NEWBI) " 
+			+"VALUES(RECRUIT_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?,?,?,?)";
 
 	public int insert(RecruitVO vo) {
 		int n = 0;
@@ -26,7 +26,7 @@ public class RecruitDao extends DAO {
 			psmt.setString(6, vo.getLoc());
 			psmt.setString(7, vo.getQualify());
 			psmt.setString(8, vo.getSalary());
-		
+			psmt.setString(9, vo.getNewbi());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
