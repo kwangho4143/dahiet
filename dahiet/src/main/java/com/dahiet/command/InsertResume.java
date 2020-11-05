@@ -1,4 +1,4 @@
-package com.dahiet.controller;
+package com.dahiet.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,7 @@ public class InsertResume implements Action {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return null;
+		return "/jsp/resume/insertResume.jsp";
 	}
 
 }

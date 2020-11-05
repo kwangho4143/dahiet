@@ -10,7 +10,7 @@ public class ResumeAction implements Action {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "/jsp/review/reviewInsert.jsp";
+		return "/jsp/resume/mainResume.jsp";
 	}
 
 }
