@@ -42,7 +42,12 @@
 					<td>
 						<c:forEach var="code" items="${codes}">
 							<label>
-								<input type="radio" name="loc" value="${code.codename}">${code.codevalue}
+								<c:if test="${code.codename eq vo.loc}">
+									<input type="radio" name="loc" value="${code.codename}" checked>${code.codevalue}
+								</c:if>
+								<c:if test="${code.codename ne vo.loc}">
+									<input type="radio" name="loc" value="${code.codename}">${code.codevalue}
+								</c:if>
 							</label>
 						</c:forEach> 
 					</td>
@@ -52,8 +57,11 @@
 					<td>
 						<c:forEach var="itemcode" items="${itemcodes}">
 							<label>
-								<c:if test="${itemcodes eq  } ">
-									<input type="radio" name="work" value="${itemcode.itemid}" >${itemcode.itemname}
+								<c:if test="${itemcode.itemid eq vo.work}">
+									<input type="radio" name="work" value="${itemcode.itemid}" checked>${itemcode.itemname}
+								</c:if>
+								<c:if test="${itemcode.itemid ne vo.work}">
+									<input type="radio" name="work" value="${itemcode.itemid}">${itemcode.itemname}
 								</c:if>
 							</label>
 						</c:forEach> 
