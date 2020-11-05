@@ -12,7 +12,7 @@
 		<section id="breadcrumbs" class="breadcrumbs">
 			<div class="container">
 				<div class="d-flex justify-content-between align-items-center">
-					<h2>취업 토크</h2>
+					<h2>등록한 공고 목록</h2>
 					<button type="button"
 						onclick="location.href='${pageContext.request.contextPath}/recruitCheck.do';"
 						class="get-started-btn ml-auto">공고 등록</button>
@@ -22,10 +22,10 @@
 					<table style="width: 80%;">
 						<tr align="center">
 							<th style="width: 5%; height: 1px">번호</th>
-							<th align="left" colspan="3" style="width: 70%;">공고제목</th>
+							<th align="left" colspan="3" style="width: 50%;">공고제목</th>
 							<th style="width: 15%;">모집부분</th>
 							<th style="width: 10%;">근무형태</th>
-							<th style="width: 10%;">지원자격</th>
+							<th style="width: 30%;">지원자격</th>
 						</tr>
 						<c:forEach var="rlist" items="${rlists}">
 							<tr align="center">
