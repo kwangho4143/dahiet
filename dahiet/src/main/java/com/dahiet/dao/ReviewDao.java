@@ -46,19 +46,16 @@ public class ReviewDao extends DAO{
 	}
 	
 	
-	public ReviewVO RE_UP_UPDATE(ReviewVO vo) {
-		List<ReviewVO> relists = new ArrayList<ReviewVO>();
+	public int RE_UP_UPDATE(ReviewVO vo) {
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(RE_UP_UPDATE);
 			psmt.setString(3, vo.getNo());
 			rs = psmt.executeQuery();
-			if (rs.next()) {
-				psmt = conn.prepareStatement(RE_UP_UPDATE);
-				psmt.setString(1, vo.getTitle());
-				psmt.setString(2, vo.getContent());
-				n = psmt.executeUpdate();
-			}
+			psmt.setString(1, vo.getTitle());
+			psmt.setString(2, vo.getContent());
+			psmt.executeUpdate();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

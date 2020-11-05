@@ -11,12 +11,9 @@ public class ReviewUpdate implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		ReviewDao dao = new ReviewDao();
-		ReviewVO vo = new ReviewVO();
-		vo.setNo(request.getParameter("no"));
-		vo = dao.RE_DE_SELECT(vo);
-		request.setAttribute("vo", vo);
+	
 		return "/jsp/review/reviewUpdate.jsp";
+	
 	}
 
 }
