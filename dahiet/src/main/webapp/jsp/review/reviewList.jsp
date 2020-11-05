@@ -29,7 +29,8 @@
 						<c:forEach var="relist" items="${relists}">
 							<tr align="center">
 								<td>${relist.no }</td>
-								<td colspan="3">${relist.title }</td>
+								<td colspan="3"><a href="${pageContext.request.contextPath}
+								/ReviewDetail.do?no=${relist.no}">${relist.title }</a></td>
 								<td>${relist.id }</td>
 								<td>${relist.redate }</td>
 							</tr>
