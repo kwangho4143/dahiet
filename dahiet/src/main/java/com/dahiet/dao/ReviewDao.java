@@ -20,7 +20,7 @@ public class ReviewDao extends DAO{
 	private final String RE_LI_INSERT = "INSERT INTO REVIEW (NO, ID, TITLE, CONTENT, COMPANY, NEWBI)"
 			+ " VALUES(REVIEW_VALUE_SEQ.NEXTVAL,?,?,?,?,?)";
 	private final String RE_DE_SELECT = "SELECT TITLE, NO, ID, COMPANY, NEWBI, REDATE, CONTENT FROM REVIEW WHERE NO=?";
- 	private final String RE_UP_UPDATE = "UPDATE REVIEW SET TITLE, CONTENT = ?,? WHERE NO=?";
+ 	private final String RE_UP_UPDATE = "UPDATE REVIEW SET TITLE=?, CONTENT =? WHERE NO=?";
 	
  	
  	public List<ReviewVO> RE_LI_SELECT(ReviewVO vo) {
@@ -51,7 +51,6 @@ public class ReviewDao extends DAO{
 		try {
 			psmt = conn.prepareStatement(RE_UP_UPDATE);
 			psmt.setString(3, vo.getNo());
-			rs = psmt.executeQuery();
 			psmt.setString(1, vo.getTitle());
 			psmt.setString(2, vo.getContent());
 			psmt.executeUpdate();

@@ -11,9 +11,22 @@ public class ReviewUpdate implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-	
-		return "/jsp/review/reviewUpdate.jsp";
-	
+		ReviewDao dao = new ReviewDao();
+		ReviewVO vo = new ReviewVO();
+
+		vo.setNo(request.getParameter("no"));
+		vo.setTitle(request.getParameter("title"));
+		vo.setContent(request.getParameter("content"));
+		int n = dao.RE_UP_UPDATE(vo);
+		String page;
+
+		if (n != 0) {
+			page = "jsp/company/recruitSucess.jsp";
+		} else {
+			page = "jsp/company/recruitFail.jsp";
+		}
+
+		return page;
 	}
 
 }
