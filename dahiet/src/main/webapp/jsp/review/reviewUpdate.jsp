@@ -16,12 +16,12 @@
 			<table border="1" style="align-items: center">
 				<tr align="center">
 					<th width="100px" height="30px">제목</th>
-					<td colspan="5"><input style="width: 100%" type="text"
+					<td colspan="5"><input style="width: 100%" type="text" id="title" name="title"
 						value="${vo.title }"></td>
 				</tr>
 				<tr style="display: none" align="center">
-					<th width="100px" height="30px">글번호</th>
-					<td width="80px">${vo.no }</td>
+					<th width="100px" height="30px" >글번호</th>
+					<td width="80px" ><input type="text" name="no" id="no" value="${vo.no}"> </td>
 					<th width="100px" height="30px">아이디</th>
 					<td width="80px"><input type="text" value="${vo.id }"></td>
 

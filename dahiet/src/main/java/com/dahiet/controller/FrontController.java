@@ -94,7 +94,10 @@ public class FrontController extends HttpServlet {
 		map.put("/ReviewDetailUp.do",new ReviewDetailUp()); //로그인 폼 호출
 		map.put("/ReviewUpdate.do",new ReviewUpdate()); //로그인 폼 호출
 		map.put("/ReviewDelete.do",new ReviewDelete()); //로그인 폼 호출
+<<<<<<< HEAD
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+=======
+>>>>>>> branch 'main' of https://github.com/kwangho4143/dahiet.git
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
