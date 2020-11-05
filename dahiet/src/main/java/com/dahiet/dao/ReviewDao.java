@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
+import com.dahiet.vo.CodeVO;
 import com.dahiet.vo.ReviewVO;
 
 public class ReviewDao extends DAO{
@@ -21,6 +22,28 @@ public class ReviewDao extends DAO{
 	private final String RE_DE_SELECT = "SELECT TITLE, NO, ID, COMPANY, NEWBI, REDATE, CONTENT FROM REVIEW WHERE NO=?";
  	private final String RE_UP_UPDATE = "UPDATE REVIEW SET TITLE, CONTENT = ?,? WHERE NO=?";
 	
+ 	
+ 	public List<ReviewVO> RE_LI_SELECT(ReviewVO vo) {
+		List<ReviewVO> list = new ArrayList<ReviewVO>();
+		try {
+			psmt = conn.prepareStatement(RE_LI_SELECT);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				vo = new ReviewVO();
+				vo.setNo(rs.getString("no"));
+				vo.setTitle(rs.getString("title"));
+				vo.setId(rs.getString("id"));
+				vo.setRedate(rs.getDate("redate"));
+				list.add(vo);
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
 	
 	
 	public ReviewVO RE_UP_UPDATE(ReviewVO vo) {
