@@ -19,6 +19,7 @@ import com.dahiet.command.ReviewCheck;
 import com.dahiet.command.ReviewDetail;
 import com.dahiet.command.ReviewInsert;
 import com.dahiet.command.SearchAction;
+import com.dahiet.command.ShowRecruitList;
 import com.dahiet.command.comInsert;
 import com.dahiet.command.companyLoginAction;
 import com.dahiet.command.insertRecruit;
@@ -56,7 +57,7 @@ public class FrontController extends HttpServlet {
 
 		//광호
 		map.put("/recruitCheck.do",new RecruitCheck()); //공고의 체크박스
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		map.put("/showRecruitList.do",new ShowRecruitList()); //회사 공고 리스트 조회
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출

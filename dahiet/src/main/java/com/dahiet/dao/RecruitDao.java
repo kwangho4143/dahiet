@@ -3,7 +3,10 @@ package com.dahiet.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.dahiet.vo.ComVO;
 import com.dahiet.vo.RecruitVO;
 
 public class RecruitDao extends DAO {
@@ -13,7 +16,42 @@ public class RecruitDao extends DAO {
 
 	private final String RECRUITINSERT = "INSERT INTO RECRUIT(RECRUIT_SEQ,NO,TITLE,POSITION,EMP_TYPE,WORK,LOC,QUALIFY,SALARY,NEWBI) "
 			+ "VALUES(RECRUIT_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?,?,?,?)";
+	private final String RECRUITSELECT = "SELECT * FROM RECRUIT";
 
+	
+	
+	
+	public List<RecruitVO> select(RecruitVO vo) {
+		List<RecruitVO> rlists = new ArrayList<RecruitVO>();
+		try {
+			psmt = conn.prepareStatement(RECRUITSELECT);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				vo = new RecruitVO();
+				vo.setRecruit_seq(rs.getString("recruit_seq"));
+				vo.setNo(rs.getString("no"));
+				vo.setTitle(rs.getString("title"));
+				vo.setPosition(rs.getString("position"));
+				vo.setEmp_type(rs.getString("emp_type"));
+				vo.setLoc(rs.getString("loc"));
+				vo.setWork(rs.getString("work"));
+				vo.setQualify(rs.getString("qualify"));
+				vo.setSalary(rs.getString("salary"));
+				vo.setNewbi(rs.getString("newbi"));
+				rlists.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return rlists;
+	}
+	
+	
+	
+	
+	
 	public int insert(RecruitVO vo) {
 		int n = 0;
 		try {
