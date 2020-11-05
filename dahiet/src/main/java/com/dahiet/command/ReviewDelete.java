@@ -19,9 +19,9 @@ public class ReviewDelete implements Action {
 		String page;
 
 		if (n != 0) {
-			page = "jsp/company/recruitSucess.jsp";
+			page = "/ReviewAction.do";
 		} else {
-			page = "jsp/company/recruitFail.jsp";
+			page = "/ReviewAction.do";
 		}
 
 		return page;
