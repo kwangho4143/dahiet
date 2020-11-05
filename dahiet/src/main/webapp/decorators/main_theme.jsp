@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Sailor Bootstrap Template - Index</title>
+<title>JobZone</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -48,7 +48,7 @@
 		<div class="container d-flex align-items-center">
 
 			<h1 class="logo">
-				<a href="${pageContext.request.contextPath}/test.jsp">YEDAM KOREA</a>
+				<a href="${pageContext.request.contextPath}/test.jsp">Job Zone</a>
 			</h1>
 			<!-- Uncomment below if you prefer to use an image logo -->
 			<!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -93,7 +93,7 @@
 
 					<div class="col-lg-3 col-md-6">
 						<div class="footer-info">
-							<h3>YEDAM KOREA</h3>
+							<h3>Job Zone</h3>
 							<p>
 								대구 광역시 중구 <br> 상서동 22-2<br> <br> <strong>Tel:</strong>
 								053-421-2460<br> <strong>대표 Email:ask@yedam.ac</strong> <br>
