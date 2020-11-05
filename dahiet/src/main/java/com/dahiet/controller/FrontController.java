@@ -16,6 +16,7 @@ import com.dahiet.command.RecruitCheck;
 import com.dahiet.command.ResumeAction;
 import com.dahiet.command.ReviewAction;
 import com.dahiet.command.ReviewCheck;
+import com.dahiet.command.ReviewDetail;
 import com.dahiet.command.ReviewInsert;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.comInsert;
@@ -83,7 +84,7 @@ public class FrontController extends HttpServlet {
 		//평강
 		map.put("/ReviewInsert.do",new ReviewInsert()); //취업 토크 값 인서트 호출
 		map.put("/ReviewCheck.do",new ReviewCheck()); //취업 토크 인서트 폼 호출
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		map.put("/ReviewDetail.do",new ReviewDetail()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
@@ -110,8 +111,15 @@ public class FrontController extends HttpServlet {
 		Action command = map.get(path);//키를 /main.do로 하고 MainAction()을 가져오는것
 		String viewPage = command.exec(request,response); //명령어 수행되고 나서 보여줄 페이지 선택  //view페이지를 찾는다
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage); //선택한 페이지로 가는 것 
-		dispatcher.forward(request, response);
+		if (viewPage != null) { // redirect때문에 제약조건 설정
+			if (viewPage.startsWith("redirect")) {
+				response.sendRedirect(viewPage.substring(9));
+			} else {
+				RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage); // 선택한 페이지로 가는 것
+				dispatcher.forward(request, response);
+			}
+
+		}
 		
 	}
 
