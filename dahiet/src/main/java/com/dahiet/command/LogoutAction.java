@@ -12,9 +12,9 @@ public class LogoutAction implements Action {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		String name = (String) session.getAttribute("name");
+		String id = (String) session.getAttribute("id");
 		session.invalidate();
-		request.setAttribute("name", name);
+		request.setAttribute("id", id);
 		return "jsp/user/logout.jsp";
 	}
 

@@ -7,6 +7,36 @@
 <html>
 <head>
 <script>
+	function formCheck1(){
+		var f = document.frm3;
+
+		if(f.id.value==""){
+			alert("사용자 아이디를 입력하세요.");
+			f.id.focus();
+			return false;
+		}
+		if(f.pw.value==""){
+			alert("사용자 password를 입력하세요.");
+			f.pw.focus();
+			return false;
+		}
+	};
+	
+	function formCheck2(){
+		var f = document.frm4;
+
+		if(f.id.value==""){
+			alert("사용자 아이디를 입력하세요.");
+			f.id.focus();
+			return false;
+		}
+		if(f.pw.value==""){
+			alert("사용자 password를 입력하세요.");
+			f.pw.focus();
+			return false;
+		}
+	};
+
 	function setDisplay(value) {
 		if (value == '1') {
 			tab1.style.display = '';
@@ -45,7 +75,7 @@
 					onchange="setDisplay2(this.value)">기업회원
 			</form>
 			<div id="tab3">
-				<form method="post" id="authForm"
+				<form method="post" id="frm3" name="frm3"
 					action="${pageContext.request.contextPath}/userLogin.do">
 
 					<div>
@@ -58,7 +88,7 @@
 								placeholder="Password">
 						</div>
 					</div>
-					<button type="submit">로그인</button>
+					<button type="submit" onclick = "return formCheck1()">로그인</button>
 					<div>
 						<div>
 							<!-- 체크시 checked 추가 -->
@@ -66,7 +96,7 @@
 								for="keepLogin"> <span>로그인 상태 유지</span>
 							</label>
 						</div>
-						<span> <a href="#">아이디</a> / <a
+						<span> <a href="">아이디</a> / <a
 							href="/member/find/password">비밀번호 찾기</a>
 						</span>
 					</div>
@@ -76,7 +106,7 @@
 			
 			<div id="tab4" style="display: none">
 
-				<form method="post" id="authForm"
+				<form method="post" id="frm4" name="frm4"
 					action="${pageContext.request.contextPath}/companyLogin.do">
 
 					<div>
@@ -89,7 +119,7 @@
 								placeholder="Password">
 						</div>
 					</div>
-					<button type="submit">로그인</button>
+					<button type="submit"onclick = "return formCheck2()">로그인</button>
 					<div>
 						<div>
 							<!-- 체크시 checked 추가 -->
