@@ -10,11 +10,11 @@
 <body>
 	<div class="container">
 		<div class="d-flex justify-content-between align-items-center">
-			<h2>취업 토크</h2>
-			<h3 align="center">상세 페이지</h3>
-			<button type="button"
-				onclick="location.href='${pageContext.request.contextPath}/#';"
-				class="get-started-btn ml-auto">토크 수정</button>
+			<h2>취업 토크 상세 페이지</h2>
+			<p><a href="${pageContext.request.contextPath}/ReviewAction.do">토크목록</a>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			<a href="${pageContext.request.contextPath}/ReviewDetailUp.do?no=${vo.no}">토크수정</a>
+				</p>
 		</div>
 		<hr />
 		<form id="reviewDeFrm" name="reviewDeFrm"

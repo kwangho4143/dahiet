@@ -13,11 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dahiet.command.RecruitCheck;
+import com.dahiet.command.RecruitUpdate;
 import com.dahiet.command.ResumeAction;
 import com.dahiet.command.ReviewAction;
 import com.dahiet.command.ReviewCheck;
 import com.dahiet.command.ReviewDetail;
 import com.dahiet.command.ReviewInsert;
+import com.dahiet.command.ReviewUpdate;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.ShowRecruitList;
 import com.dahiet.command.comInsert;
@@ -58,7 +60,7 @@ public class FrontController extends HttpServlet {
 		//광호
 		map.put("/recruitCheck.do",new RecruitCheck()); //공고의 체크박스
 		map.put("/showRecruitList.do",new ShowRecruitList()); //회사 공고 리스트 조회
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		map.put("/Recruitupdate.do",new RecruitUpdate()); //공고리스트에서 상세로 넘어가서 수정
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
@@ -86,8 +88,8 @@ public class FrontController extends HttpServlet {
 		map.put("/ReviewInsert.do",new ReviewInsert()); //취업 토크 값 인서트 호출
 		map.put("/ReviewCheck.do",new ReviewCheck()); //취업 토크 인서트 폼 호출
 		map.put("/ReviewDetail.do",new ReviewDetail()); //로그인 폼 호출
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		map.put("/ReviewDetailUp.do",new ReviewDetailUp()); //로그인 폼 호출
+		map.put("/ReviewUpdate.do",new ReviewUpdate()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출

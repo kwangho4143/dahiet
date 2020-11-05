@@ -19,30 +19,29 @@ public class ReviewDao extends DAO{
 	private final String RE_LI_INSERT = "INSERT INTO REVIEW (NO, ID, TITLE, CONTENT, COMPANY, NEWBI)"
 			+ " VALUES(REVIEW_VALUE_SEQ.NEXTVAL,?,?,?,?,?)";
 	private final String RE_DE_SELECT = "SELECT TITLE, NO, ID, COMPANY, NEWBI, REDATE, CONTENT FROM REVIEW WHERE NO=?";
- 	
+ 	private final String RE_UP_UPDATE = "UPDATE REVIEW SET TITLE, CONTENT = ?,? WHERE NO=?";
 	
 	
 	
-	public List<ReviewVO> RE_LI_SELECT(ReviewVO vo) {
+	public ReviewVO RE_UP_UPDATE(ReviewVO vo) {
 		List<ReviewVO> relists = new ArrayList<ReviewVO>();
+		int n = 0;
 		try {
-			psmt = conn.prepareStatement(RE_LI_SELECT);
+			psmt = conn.prepareStatement(RE_UP_UPDATE);
+			psmt.setString(3, vo.getNo());
 			rs = psmt.executeQuery();
-			while (rs.next()) {
-				vo = new ReviewVO();
-				vo.setNo(rs.getString("no"));
-				vo.setTitle(rs.getString("title"));
-				vo.setId(rs.getString("id"));
-				vo.setRedate(rs.getDate("redate"));
-				relists.add(vo);
-
+			if (rs.next()) {
+				psmt = conn.prepareStatement(RE_UP_UPDATE);
+				psmt.setString(1, vo.getTitle());
+				psmt.setString(2, vo.getContent());
+				n = psmt.executeUpdate();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return relists;
+		return n;
 	}
 
 

@@ -16,7 +16,6 @@
 <meta content="" name="description">
 <meta content="" name="keywords">
 
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link href="${pageContext.request.contextPath}/assets/img/apple-icon.png" rel="icon">
 
 
