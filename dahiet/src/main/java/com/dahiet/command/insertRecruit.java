@@ -17,14 +17,15 @@ public class insertRecruit implements Action {
 
 		
 		vo.setNo(request.getParameter("no"));
-		vo.setTitle(request.getParameter("email"));
+		vo.setTitle(request.getParameter("title"));
 		vo.setPosition(request.getParameter("position"));
 		vo.setWork(request.getParameter("work"));
 		vo.setEmp_type(request.getParameter("emp_type"));
 		vo.setLoc(request.getParameter("loc"));
 		vo.setQualify(request.getParameter("qualify"));
 		vo.setSalary(request.getParameter("salary"));
-		       
+		vo.setNewbi(request.getParameter("newbi"));
+		
 		int n = dao.insert(vo);
 		String page;
 
