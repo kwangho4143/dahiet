@@ -60,7 +60,6 @@ public class userInsert implements Action {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		//
 		
 		int n = dao.insert(vo);

@@ -9,18 +9,26 @@ import javax.servlet.http.HttpServletResponse;
 import com.dahiet.common.Action;
 import com.dahiet.dao.CodeDao;
 import com.dahiet.dao.ItemCodeDao;
+import com.dahiet.dao.RecruitDao;
 import com.dahiet.vo.CodeVO;
 import com.dahiet.vo.ItemCodeVO;
+import com.dahiet.vo.RecruitVO;
 
-public class RecruitAction implements Action {
+public class RecruitUpdate implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// 체크박스 리스트 구현
-		CodeDao dao = new CodeDao();
+		RecruitDao dao = new RecruitDao();
+		RecruitVO vo = new RecruitVO();
+		vo.setRecruit_seq(request.getParameter("recruit_seq"));
+		vo = dao.wantselect(vo);
+		//담기
+		request.setAttribute("vo",vo);
+		
+		CodeDao dao1 = new CodeDao();
 		List<CodeVO> list = new ArrayList<CodeVO>();
-		CodeVO vo = new CodeVO();
-		list = dao.CODESELECT(vo);
+		CodeVO vo1 = new CodeVO();
+		list = dao1.CODESELECT(vo1);
 		request.setAttribute("codes", list);
 
 		ItemCodeDao idao = new ItemCodeDao();
@@ -29,10 +37,8 @@ public class RecruitAction implements Action {
 		ilist = idao.ITEMCODESELECT(ivo);
 		request.setAttribute("itemcodes", ilist);
 		
-
-		return "/jsp/company/insertRecruit.jsp";
-
-	
+		
+		return "/jsp/company/recruitUpdate.jsp";
 	}
 
 }

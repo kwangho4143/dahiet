@@ -10,7 +10,14 @@ public class RecruitVO {
 	private String work;
 	private String qualify;
 	private String salary;
+	private String newbi;
 	
+	public String getNewbi() {
+		return newbi;
+	}
+	public void setNewbi(String newbi) {
+		this.newbi = newbi;
+	}
 	public String getNo() {
 		return no;
 	}

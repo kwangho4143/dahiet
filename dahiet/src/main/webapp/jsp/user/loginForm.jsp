@@ -17,6 +17,17 @@
 
 		}
 	};
+
+	function setDisplay2(value) {
+		if (value == '3') {
+			tab3.style.display = '';
+			tab4.style.display = 'none';
+		} else {
+			tab4.style.display = '';
+			tab3.style.display = 'none';
+
+		}
+	};
 </script>
 
 <meta charset="UTF-8">
@@ -25,42 +36,71 @@
 </head>
 <body>
 	<div class="row">
-		<div class="col">
-			<div class="login_tistory" align="left">
-				<form method="post" id="authForm" action="${pageContext.request.contextPath}/userLogin.do">
-					<input type="hidden" name="redirectUrl"
-						value="https://blogpack.tistory.com/manage">
-					<fieldset>
-						<legend class="screen_out">로그인 정보 입력폼</legend>
-						<h1 align="center">로그인</h1>
-						<div class="box_login">
-							<div class="inp_text">
-								<label for="loginId" class="screen_out">아이디</label> <input
-									type="text" id="id" name="id" placeholder="ID">
-							</div>
-							<div class="inp_text">
-								<label for="loginPw" class="screen_out">비밀번호</label> <input
-									type="password" id="pw" name="pw"
-									placeholder="Password">
-							</div>
-						</div>
-						<button type="submit" class="btn_login">로그인</button>
-						<div class="login_append">
-							<div class="inp_chk">
-								<!-- 체크시 checked 추가 -->
-								<input type="checkbox" id="keepLogin" class="inp_radio"
-									name="keepLogin"> <label for="keepLogin" class="lab_g">
-									<span class="img_top ico_check"></span> <span class="txt_lab">로그인
-										상태 유지</span>
-								</label>
-							</div>
-							<span class="txt_find"> <a href="/member/find/loginId"
-								class="link_find">아이디</a> / <a href="/member/find/password"
-								class="link_find">비밀번호 찾기</a>
-							</span>
-						</div>
+		<div class="col" align="center">
+			<h1>로그인</h1>
+			<form>
+				<input type="radio" id="user" name="login" value="3"
+					onchange="setDisplay2(this.value);" checked>개인회원 <input
+					type="radio" id="company" name="login" value="4"
+					onchange="setDisplay2(this.value)">기업회원
+			</form>
+			<div id="tab3">
+				<form method="post" id="authForm"
+					action="${pageContext.request.contextPath}/userLogin.do">
 
-					</fieldset>
+					<div>
+						<div>
+							<label>아이디</label> <input type="text" id="id" name="id"
+								placeholder="ID">
+						</div>
+						<div class="inp_text">
+							<label>비밀번호</label> <input type="password" id="pw" name="pw"
+								placeholder="Password">
+						</div>
+					</div>
+					<button type="submit">로그인</button>
+					<div>
+						<div>
+							<!-- 체크시 checked 추가 -->
+							<input type="checkbox" id="keepLogin" name="keepLogin"> <label
+								for="keepLogin"> <span>로그인 상태 유지</span>
+							</label>
+						</div>
+						<span> <a href="#">아이디</a> / <a
+							href="/member/find/password">비밀번호 찾기</a>
+						</span>
+					</div>
+				</form>
+			</div>
+			
+			
+			<div id="tab4" style="display: none">
+
+				<form method="post" id="authForm"
+					action="${pageContext.request.contextPath}/companyLogin.do">
+
+					<div>
+						<div>
+							<label>아이디</label> <input type="text" id="id" name="id"
+								placeholder="ID">
+						</div>
+						<div>
+							<label>비밀번호</label> <input type="password" id="pw" name="pw"
+								placeholder="Password">
+						</div>
+					</div>
+					<button type="submit">로그인</button>
+					<div>
+						<div>
+							<!-- 체크시 checked 추가 -->
+							<input type="checkbox" id="keepLogin" name="keepLogin"> <label
+								for="keepLogin"> <span>로그인
+									상태 유지</span>
+							</label>
+						</div>
+						<span> <a href="#">아이디</a> / <a href="#">비밀번호 찾기</a>
+						</span>
+					</div>
 
 				</form>
 			</div>
@@ -71,11 +111,16 @@
 			</div>
 			<div>
 				<form>
-					<input type="radio" id="user" name="login" value="1" onchange="setDisplay(this.value);" checked>개인회원
-					<input type="radio" id="company" name="login" value="2" onchange="setDisplay(this.value)">기업회원
+					<input type="radio" id="user" name="login" value="1"
+						onchange="setDisplay(this.value);" checked>개인회원 <input
+						type="radio" id="company" name="login" value="2"
+						onchange="setDisplay(this.value)">기업회원
 				</form>
 				<div id="tab1">
-					<form id="frm1" name="frm1"	action="${pageContext.request.contextPath}/userInsert.do" method="post" enctype="multipart/form-data">
+
+					<form id="frm1" name="frm1"
+						action="${pageContext.request.contextPath}/userInsert.do"
+						method="post" enctype="multipart/form-data">
 						<table border="1">
 							<tr>
 								<th width="150">아이디</th>
@@ -122,8 +167,9 @@
 								<td><input type="text" id="score" name="score"></td>
 							</tr>
 							<tr>
-								<td colspan="2" align="center"><input type="submit"	value="가입하기"> &nbsp;&nbsp;
-								<input type="reset"	value="취 소"></td>
+								<td colspan="2" align="center"><input type="submit"
+									value="가입하기"> &nbsp;&nbsp; <input type="reset"
+									value="취 소"></td>
 							</tr>
 						</table>
 					</form>

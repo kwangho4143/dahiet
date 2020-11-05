@@ -5,18 +5,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.dahiet.common.Action;
-import com.dahiet.dao.UserDao;
-import com.dahiet.vo.UserVO;
+import com.dahiet.dao.ComDao;
+import com.dahiet.vo.ComVO;
 
-public class userLoginAction implements Action {
+public class companyLoginAction implements Action {
+
+	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// TODO 로그인 인증과정을 처리한다.
-		UserDao dao = new UserDao();
-		UserVO vo = new UserVO();
+		ComDao dao = new ComDao();
+		ComVO vo = new ComVO();
 		HttpSession session = request.getSession(false);
 		String msq;
 		vo.setId(request.getParameter("id"));
-//		vo.setPassword(request.getParameter("password"));
 		
 		vo = dao.selectLogIn(vo);  //MemberDao 를 실행시킨다.
 		
@@ -30,9 +30,7 @@ public class userLoginAction implements Action {
 			msq = "패스워드가 틀렸다.";
 			request.setAttribute("msg", msq);
 		}
-		
-		return "/jsp/user/userloginResult.jsp";
+		return "/jsp/company/comloginResult.jsp";
 	}
-
 
 }

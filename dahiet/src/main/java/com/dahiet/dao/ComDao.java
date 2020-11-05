@@ -3,7 +3,11 @@ package com.dahiet.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.dahiet.vo.ComVO;
+
 
 
 
@@ -14,6 +18,7 @@ public class ComDao extends DAO {
 	
 	
 	private final String COMPANYINSERT = "INSERT INTO COMPANIES(ID,PW,NO,TEL,NAME,ADDR,ITEM,IMG,EMPS,LINK,PROFIT,TYPE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final String COMSELECTLOGIN = "SELECT * FROM COMPANIES WHERE ID = ? ";
 	
 	
 	public int insert(ComVO vo) {
@@ -66,6 +71,28 @@ public class ComDao extends DAO {
 		}
 		
 	}
+	
+	public ComVO selectLogIn(ComVO vo) {  //한행을 검색할때
+		try {
+			psmt = conn.prepareStatement(COMSELECTLOGIN);
+			psmt.setString(1, vo.getId());
+
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				vo.setPw(rs.getString("pw"));
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return vo;
+	}
+	
+
+	
+	
 	
 	
 }

@@ -16,7 +16,7 @@
 		</div>
 
 		<form id="frm1" name="frm1"
-			action="${pageContext.request.contextPath}/insertRecruit.do"
+			action="${pageContext.request.contextPath}/showRecruitList.do"
 			method="post">
 			<table border="1">
 				<tr>
@@ -40,7 +40,7 @@
 					<td>
 						<c:forEach var="code" items="${codes}">
 							<label>
-								<input type="checkbox" name="loc" value="${code.codename}">${code.codevalue}
+								<input type="radio" name="loc" value="${code.codename}">${code.codevalue}
 							</label>
 						</c:forEach> 
 					</td>
@@ -50,7 +50,7 @@
 					<td>
 						<c:forEach var="itemcode" items="${itemcodes}">
 							<label>
-								<input type="checkbox" name="work" value="${itemcode.itemid}">${itemcode.itemname}
+								<input type="radio" name="work" value="${itemcode.itemid}">${itemcode.itemname}
 							</label>
 						</c:forEach> 
 					</td>
@@ -62,6 +62,10 @@
 				<tr>
 					<th width="150">급여</th>
 					<td><input type="text" id="salary" name="salary"></td>
+				</tr>
+				<tr>
+					<th width="150">신입 / 경력</th>
+					<td><input type="text" id="newbi" name="newbi"></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"

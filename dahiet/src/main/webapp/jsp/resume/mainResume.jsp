@@ -10,6 +10,8 @@
 <style type="text/css">
 	table {
 	  width: 850px;
+
+	  border-bottom: 1px solid lightgrey;
 	}
 </style>
 </head>
@@ -27,22 +29,17 @@
 					<table>
 						<tr height="50">
 							<td height="70" colspan="5" align="right">
-								<a href="#" id="insertResume">
-								<button type="button" class="btn btn-danger">새 이력서 등록하기</button>&nbsp;&nbsp;&nbsp;</a>
+								<button type="button" onclick="location.href='${pageContext.request.contextPath}/jsp/resume/insertResume.jsp';" class="btn btn-danger">새 이력서 등록하기</button>&nbsp;&nbsp;&nbsp;
 							</td>
 						</tr>
 					</table><br/>
 				</div>
 				
 				<div>
-					<table border="1">
+					<table>
 						<tr height="50">
 							<th width="150">이력서 이름</th>
-							<td colspan="4">( 이력서 이름 값 불러오기 )</td>
-						</tr>
-						<tr height="50">
-							<th width="150">작성일</th>
-							<td colspan="2">( 작성일 값 불러오기 )</td>
+							<td width="450">( 이력서 이름 값 불러오기 )</td>
 							<td align="right">
 								<a href="#" id="updateResume">
 								<button type="button" class="btn btn-danger">수정하기</button>&nbsp;&nbsp;&nbsp;</a>
@@ -50,18 +47,14 @@
 								<button type="button" class="btn btn-danger">삭제하기</button>&nbsp;&nbsp;&nbsp;</a>
 							</td>
 						</tr>
-					</table><br/><br/>
+					</table><br/>
 				</div>
-				
+
 				<div>
-					<table border="1">
+					<table>
 						<tr height="50">
 							<th width="150">이력서 이름</th>
-							<td colspan="4">( 이력서 이름 값 불러오기 )</td>
-						</tr>
-						<tr height="50">
-							<th width="150">작성일</th>
-							<td colspan="2">( 작성일 값 불러오기 )</td>
+							<td width="450">( 이력서 이름 값 불러오기 )</td>
 							<td align="right">
 								<a href="#" id="updateResume">
 								<button type="button" class="btn btn-danger">수정하기</button>&nbsp;&nbsp;&nbsp;</a>
@@ -69,18 +62,14 @@
 								<button type="button" class="btn btn-danger">삭제하기</button>&nbsp;&nbsp;&nbsp;</a>
 							</td>
 						</tr>
-					</table><br/><br/>
-				</div>
-				
+					</table><br/>
+				</div>				
+
 				<div>
-					<table border="1">
+					<table>
 						<tr height="50">
 							<th width="150">이력서 이름</th>
-							<td colspan="4">( 이력서 이름 값 불러오기 )</td>
-						</tr>
-						<tr height="50">
-							<th width="150">작성일</th>
-							<td colspan="2">( 작성일 값 불러오기 )</td>
+							<td width="450">( 이력서 이름 값 불러오기 )</td>
 							<td align="right">
 								<a href="#" id="updateResume">
 								<button type="button" class="btn btn-danger">수정하기</button>&nbsp;&nbsp;&nbsp;</a>
@@ -88,18 +77,14 @@
 								<button type="button" class="btn btn-danger">삭제하기</button>&nbsp;&nbsp;&nbsp;</a>
 							</td>
 						</tr>
-					</table><br/><br/>
+					</table><br/>
 				</div>
-				
+
 				<div>
-					<table border="1">
+					<table>
 						<tr height="50">
 							<th width="150">이력서 이름</th>
-							<td colspan="4">( 이력서 이름 값 불러오기 )</td>
-						</tr>
-						<tr height="50">
-							<th width="150">작성일</th>
-							<td colspan="2">( 작성일 값 불러오기 )</td>
+							<td width="450">( 이력서 이름 값 불러오기 )</td>
 							<td align="right">
 								<a href="#" id="updateResume">
 								<button type="button" class="btn btn-danger">수정하기</button>&nbsp;&nbsp;&nbsp;</a>
@@ -107,9 +92,24 @@
 								<button type="button" class="btn btn-danger">삭제하기</button>&nbsp;&nbsp;&nbsp;</a>
 							</td>
 						</tr>
-					</table><br/><br/>
+					</table><br/>
 				</div>
-				
+
+				<div>
+					<table>
+						<tr height="50">
+							<th width="150">이력서 이름</th>
+							<td width="450">( 이력서 이름 값 불러오기 )</td>
+							<td align="right">
+								<a href="#" id="updateResume">
+								<button type="button" class="btn btn-danger">수정하기</button>&nbsp;&nbsp;&nbsp;</a>
+								<a href="#" id="deleteResume">
+								<button type="button" class="btn btn-danger">삭제하기</button>&nbsp;&nbsp;&nbsp;</a>
+							</td>
+						</tr>
+					</table><br/>
+				</div>
+
 			</form>
 		</div>
 

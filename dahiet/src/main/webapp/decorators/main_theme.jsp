@@ -12,13 +12,11 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Sailor Bootstrap Template - Index</title>
+<title>JobZone</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
-
-<link href="${pageContext.request.contextPath}/assets/img/favicon.png" rel="icon">
-<link href="${pageContext.request.contextPath}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="${pageContext.request.contextPath}/assets/img/apple-icon.png" rel="icon">
 
 
 <link
@@ -48,7 +46,7 @@
 		<div class="container d-flex align-items-center">
 
 			<h1 class="logo">
-				<a href="${pageContext.request.contextPath}/test.jsp">YEDAM KOREA</a>
+				<a href="${pageContext.request.contextPath}/test.jsp">Job Zone</a>
 			</h1>
 			<!-- Uncomment below if you prefer to use an image logo -->
 			<!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -69,8 +67,8 @@
 								<img src="${pageContext.request.contextPath}/images/search.png" height="20" width="20" alt="submit">
 							</button>
 						</form></li>
-					<li><a href="#">개인</a></li>
-					<li><a href="${pageContext.request.contextPath}/RecruitAction.do">기업</a></li>
+					<li><a href="${pageContext.request.contextPath}/ResumeAction.do">개인</a></li>
+					<li><a href="${pageContext.request.contextPath}/showRecruitList.do">기업</a></li>
 					<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" class="get-started-btn ml-auto" >로그인 / 가입</button></li>
 				</ul>
 
@@ -93,7 +91,7 @@
 
 					<div class="col-lg-3 col-md-6">
 						<div class="footer-info">
-							<h3>YEDAM KOREA</h3>
+							<h3>Job Zone</h3>
 							<p>
 								대구 광역시 중구 <br> 상서동 22-2<br> <br> <strong>Tel:</strong>
 								053-421-2460<br> <strong>대표 Email:ask@yedam.ac</strong> <br>
