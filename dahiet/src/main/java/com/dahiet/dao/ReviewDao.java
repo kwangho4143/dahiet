@@ -21,6 +21,7 @@ public class ReviewDao extends DAO{
 			+ " VALUES(REVIEW_VALUE_SEQ.NEXTVAL,?,?,?,?,?)";
 	private final String RE_DE_SELECT = "SELECT TITLE, NO, ID, COMPANY, NEWBI, REDATE, CONTENT FROM REVIEW WHERE NO=?";
  	private final String RE_UP_UPDATE = "UPDATE REVIEW SET TITLE=?, CONTENT =? WHERE NO=?";
+ 	private final String RE_UP_DELETE = "DELETE FROM REVIEW WHERE NO=?";
 	
  	
  	public List<ReviewVO> RE_LI_SELECT(ReviewVO vo) {
@@ -62,7 +63,20 @@ public class ReviewDao extends DAO{
 		}
 		return n;
 	}
-
+public int RE_UP_DELETE(ReviewVO vo) {
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(RE_UP_DELETE);
+			psmt.setString(1, vo.getNo());
+			psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
+	}
 
 		public int re_insert(ReviewVO vo) {
 			int n = 0;
