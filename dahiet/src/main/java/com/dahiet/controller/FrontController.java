@@ -88,8 +88,6 @@ public class FrontController extends HttpServlet {
 
 		map.put("/userLogin.do",new userLoginAction()); //로그인 폼 호출
 
-		map.put("/SearchAction.do",new SearchAction()); //상세 검색
-		map.put("/RecruitAction.do",new RecruitAction()); //공고 등록 체크박스 값가져오기
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 

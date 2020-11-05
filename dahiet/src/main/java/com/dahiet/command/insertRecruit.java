@@ -24,7 +24,7 @@ public class insertRecruit implements Action {
 		vo.setLoc(request.getParameter("loc"));
 		vo.setQualify(request.getParameter("qualify"));
 		vo.setSalary(request.getParameter("salary"));
-		
+		       
 		int n = dao.insert(vo);
 		String page;
 
