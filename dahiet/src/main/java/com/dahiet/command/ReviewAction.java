@@ -20,6 +20,7 @@ public class ReviewAction implements Action {
 		ReviewDao dao = new ReviewDao();
 		List<ReviewVO> list = new ArrayList<ReviewVO>();
 		ReviewVO vo = new ReviewVO();
+		
 		list = dao.RE_LI_SELECT(vo);
 		request.setAttribute("relists", list);
 		

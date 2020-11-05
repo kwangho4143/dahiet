@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 import com.dahiet.vo.ReviewVO;
 
 public class ReviewDao extends DAO{
@@ -16,7 +18,11 @@ public class ReviewDao extends DAO{
 	private final String RE_LI_SELECT = "SELECT NO, TITLE, ID, REDATE FROM REVIEW";
 	private final String RE_LI_INSERT = "INSERT INTO REVIEW (NO, ID, TITLE, CONTENT, COMPANY, NEWBI)"
 			+ " VALUES(REVIEW_VALUE_SEQ.NEXTVAL,?,?,?,?,?)";
- 
+	private final String RE_DE_SELECT = "SELECT TITLE, NO, ID, COMPANY, NEWBI, REDATE, CONTENT FROM REVIEW WHERE NO=?";
+ 	
+	
+	
+	
 	public List<ReviewVO> RE_LI_SELECT(ReviewVO vo) {
 		List<ReviewVO> relists = new ArrayList<ReviewVO>();
 		try {
@@ -56,6 +62,30 @@ public class ReviewDao extends DAO{
 				close();
 			}
 			return n;
+		}
+		public ReviewVO RE_DE_SELECT(ReviewVO vo) {
+			try {
+				psmt = conn.prepareStatement(RE_DE_SELECT);
+				psmt.setString(1, vo.getNo());
+		
+				rs = psmt.executeQuery();				
+			if (rs.next()) {
+				vo = new ReviewVO();
+				vo.setNo(rs.getString("no"));
+				vo.setTitle(rs.getString("title"));
+				vo.setId(rs.getString("id"));
+				vo.setRedate(rs.getDate("redate"));
+				vo.setNewbi(rs.getString("newbi"));
+				vo.setCompany(rs.getString("company"));
+				vo.setContent(rs.getString("content"));
+			}
+			
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return vo;
 		}
 
 

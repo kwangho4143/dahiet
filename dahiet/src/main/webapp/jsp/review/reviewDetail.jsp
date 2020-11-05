@@ -8,38 +8,42 @@
 </head>
 <body>
 <body>
-	<form id="reviewFrm" name="reviewFrm"
-		action="${pageContext.request.contextPath}/ReviewInsert.do"
-		method="post" enctype="multipart/form-data">
-		<h1 align="center">취업 토크 등록 페이지</h1>
-		<div style="margin: 20%, 10%, 20%, 10%" align="center">
-			<table border="1" style="align-items: center">
-				<tr align="center">
-				<th width="100px" height="30px">아이디</th>
-					<td colspan="1"><input type="text" id="id" name="id"
-						style="border: white" placeholder="아이디를 입력하세요"></td>
-					<th width="100px" height="30px">제목</th>
-					<td colspan="1"><input type="text" id="title" name="title"
-						style="border: white" placeholder="글 제목을 입력하세요"></td>
-				
-					<th>회사</th>
-					<td><input type="text" id="company" name="company"
-						style="border: white" placeholder="회사이름을 입력하세요"></td>
-					<th>경력</th>
-					<td><input type="radio" name="newbi" value="new" checked>신입 &nbsp&nbsp<input
-						type="radio" name="newbi" value="old">경력</td>
-				<tr>
-					<td colspan="8"><textarea id="content" name="content"
-							rows="20" cols="120" placeholder="내용을 입력하세요"></textarea></td>
-				</tr>
-				<tr>
-					<td colspan="8">
-						<button>보내기</button>
-					</td>
-				</tr>
-			</table>
+	<div class="container">
+		<div class="d-flex justify-content-between align-items-center">
+			<h2>취업 토크</h2>
+			<h3 align="center">상세 페이지</h3>
+			<button type="button"
+				onclick="location.href='${pageContext.request.contextPath}/#';"
+				class="get-started-btn ml-auto">토크 수정</button>
 		</div>
-	</form>
+		<hr />
+		<form id="reviewDeFrm" name="reviewDeFrm"
+			enctype="multipart/form-data">
+			<div style="margin: 20%, 10%, 20%, 10%" align="center">
+				<table border="1" style="align-items: center">
+					<tr align="center">
+						<th width="100px" height="30px">제목</th>
+						<td colspan="5" >${vo.title }</td>
+						<th width="100px" height="30px">글번호</th>
+						<td width="80px">${vo.no }</td>
+						</tr>
+						<tr align="center">
+						<th width="100px" height="30px">아이디</th>
+						<td width="80px">${vo.id }</td>
+
+						<th width="100px" height="30px">회사</th>
+						<td width="80px">${vo.company }</td>
+						<th width="100px" height="30px">경력</th>
+						<td width="80px">${vo.newbi }</td>
+						<th width="100px" height="30px">작성일자</th>
+						<td width="100px">${vo.redate }</td>
+					<tr>
+						<td colspan="8">${vo.content}</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
 </body>
 </body>
 </html>

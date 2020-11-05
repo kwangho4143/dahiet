@@ -16,13 +16,11 @@ public class ReviewDetail implements Action {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// 체크박스 리스트 구현
 		ReviewDao dao = new ReviewDao();
-		List<ReviewVO> list = new ArrayList<ReviewVO>();
 		ReviewVO vo = new ReviewVO();
-		list = dao.RE_LI_SELECT(vo);
-		request.setAttribute("relists", list);
-		
-
-				return "/jsp/review/reviewDetail.jsp";
+		vo.setNo(request.getParameter("no"));
+		vo = dao.RE_DE_SELECT(vo);
+		request.setAttribute("vo", vo);
+		return "/jsp/review/reviewDetail.jsp";
 	}
 
 }
