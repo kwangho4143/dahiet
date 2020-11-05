@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<body>
 	<form id="reviewFrm" name="reviewFrm"
 		action="${pageContext.request.contextPath}/ReviewInsert.do"
 		method="post" enctype="multipart/form-data">
@@ -39,5 +40,6 @@
 			</table>
 		</div>
 	</form>
+</body>
 </body>
 </html>

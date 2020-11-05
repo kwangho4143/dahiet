@@ -16,6 +16,7 @@ import com.dahiet.command.RecruitCheck;
 import com.dahiet.command.ResumeAction;
 import com.dahiet.command.ReviewAction;
 import com.dahiet.command.ReviewCheck;
+import com.dahiet.command.ReviewDetail;
 import com.dahiet.command.ReviewInsert;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.comInsert;
@@ -81,9 +82,9 @@ public class FrontController extends HttpServlet {
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 		//평강
-		map.put("/ReviewInsert.do",new ReviewInsert()); //로그인 폼 호출
-		map.put("/ReviewCheck.do",new ReviewCheck()); //로그인 폼 호출
-//		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+		map.put("/ReviewInsert.do",new ReviewInsert()); //취업 토크 값 인서트 호출
+		map.put("/ReviewCheck.do",new ReviewCheck()); //취업 토크 인서트 폼 호출
+		map.put("/ReviewDetail.do",new ReviewDetail()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //		map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
