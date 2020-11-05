@@ -11,15 +11,15 @@
 <style type="text/css">
 	table {
 	  width: 850px;
-	  border: 1px solid #333333;
+	  border: 1px solid lightgrey;
 	}
 	td {
 	  padding: 10px;
-	  border: 1px solid #333333;
+	  border: 1px solid lightgrey;
 	}
 	 th { 
 	  padding: 10px;
-	  border: 1px solid #333333;
+	  border: 1px solid lightgrey;
 	}
 </style>
 
@@ -69,51 +69,100 @@ $(document).ready(function() {
 	});
 	
 	// 추가 버튼 클릭시 행 추가
+	var cnt1 = 0;
+	var cnt2 = 0;
+	var cnt3 = 0;
+	var cnt4 = 0;
+	var cnt5 = 0;
 	// 경력
 	$('#rowAddCareer').on("click", function(event) { 
+		cnt1++;
 		event.preventDefault();
 		$('#tbodyCareer').clone().appendTo('#tblCareer');
 	});
 	// 자격
 	$('#rowAddLicense').on("click", function(event) { 
+		cnt2++;
 		event.preventDefault();
 		$('#tbodyLicense').clone().appendTo('#tblLicense');
 	});	
 	// 대외
 	$('#rowAddActivity').on("click", function(event) { 
+		cnt3++;
 		event.preventDefault();
 		$('#tbodyActivity').clone().appendTo('#tblActivity');
 	});	
 	// 수상
 	$('#rowAddAward').on("click", function(event) { 
+		cnt4++;
 		event.preventDefault();
 		$('#tbodyAward').clone().appendTo('#tblAward');
 	});	
 	// 어학
 	$('#rowAddLanguage').on("click", function(event) { 
+		cnt5++;
 		event.preventDefault();
 		$('#tbodyLanguage').clone().appendTo('#tblLanguage');
 	});
 	
+	
 	// 삭제버튼 클릭시 아래에서부터 행 삭제
-	// 경력 (tbody 안의 행이 4개 이상이고, (행개수%4 == 0) 이면 -> 아래에서부터 4줄 삭제 / 아니면 삭제하지 않음)
-	$('#rowDelCareer').on("click", function(event) {
+	// 경력
+ 	$('#rowDelCareer').on("click", function(event) {
 		event.preventDefault();
-		if (('#tbodyCareer tr').length > 4) {
-    		$('#tblCareer > #tbodyCareer').remove();
+		if (cnt1 > 0) {
+			cnt1--;
+			$('#tbodyCareer').remove();
 		} else {
 			alert("더 이상 삭제할 수 없습니다.");
 			return null;
 		}
-	});
+	}); 
+
 	// 자격
-	
+	$('#rowDelLicense').on("click", function(event) {
+		event.preventDefault();
+		if (cnt2 > 0) {
+			cnt2--;
+			$('#tbodyLicense').remove();
+		} else {
+			alert("더 이상 삭제할 수 없습니다.");
+			return null;
+		}
+	}); 
 	// 대외
-
+ 	$('#rowDelActivity').on("click", function(event) {
+		event.preventDefault();
+		if (cnt3 > 0) {
+			cnt3--;
+			$('#tbodyActivity').remove();
+		} else {
+			alert("더 이상 삭제할 수 없습니다.");
+			return null;
+		}
+	}); 
 	// 수상
-
+ 	$('#rowDelAward').on("click", function(event) {
+		event.preventDefault();
+		if (cnt4 > 0) {
+			cnt4--;
+			$('#tbodyAward').remove();
+		} else {
+			alert("더 이상 삭제할 수 없습니다.");
+			return null;
+		}
+	}); 
 	// 어학
-	
+ 	$('#rowDelLanguage').on("click", function(event) {
+		event.preventDefault();
+		if (cnt5 > 0) {
+			cnt5--;
+			$('#tbodyLanguage').remove();
+		} else {
+			alert("더 이상 삭제할 수 없습니다.");
+			return null;
+		}
+	}); 
 })
 
 	
@@ -143,7 +192,7 @@ $(document).ready(function() {
 								<td colspan="4"><input type="text" id="name" name="name" size="80"></td>
 							</tr>
 							<tr height="50">
-								<td rowspan="4"><img alt="" src="">(사진)</td>
+								<td rowspan="3"><img alt="" src="">(사진)</td>
 								<th width="120">이 름</th>
 								<td><input type="text" id="uname" name="uname"></td>
 								<th width="120">생년월일</th>
@@ -156,8 +205,19 @@ $(document).ready(function() {
 								<td><input type="text" id="tel" name="tel"></td>
 							</tr>
 							<tr height="50">
-								<th colspan="1" width="150">주소</th>
-								<td colspan="4"><input type="text" id="addr" name="addr" size="60"></td>
+								<th width="150">주소</th>
+								<td colspan="3"><input type="text" id="addr" name="addr" size="60"></td>
+							</tr>
+							<tr height="50">
+								<th width="150">최종학력</th>
+								<td colspan="4"><input type="text" id="univ" name="univ"></td>
+
+							</tr>
+							<tr>
+								<th width="120">전공</th>
+								<td colspan="2"><input type="text" id="major" name="major"></td>
+								<th width="120">졸업학점</th>
+								<td><input type="text" id="score" name="score"></td>
 							</tr>
 						</table><br/><br/>
 					</div>
@@ -168,14 +228,15 @@ $(document).ready(function() {
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">경 력 사 항&nbsp;
 								<button id="rowAddCareer" class="btn btn-danger btn-sm">추가</button>
-								<button id="rowDelCareer" class="btn btn-dark btn-sm">삭제</button></h3>
+								<button id="rowDelCareer" class="btn btn-dark btn-sm">삭제</button>
+								</h3>
 								</td>
 							</tr>
 							</thead>
 							<tbody id="tbodyCareer">
 							<tr height="50">
 								<th width="150">회사명</th>
-								<td colspan="4"><input type="text" id="co_name" name="co_name"></td>
+								<td colspan="3"><input type="text" id="co_name" name="co_name"></td>
 							</tr>
 							<tr height="50">
 								<th width="120">근무부서</th>
@@ -239,7 +300,7 @@ $(document).ready(function() {
 							</thead>
 							<tbody id="tbodyActivity">
 							<tr height="50">
-								<th width="150">활동구분(고용형태)</th>
+								<th width="150">구분(고용형태)</th>
 								<td colspan="4"><input type="text" id="act_type" name="act_type"></td>
 							</tr>
 							<tr height="50">
