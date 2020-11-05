@@ -18,6 +18,7 @@ import com.dahiet.command.ResumeAction;
 import com.dahiet.command.ReviewAction;
 import com.dahiet.command.ReviewCheck;
 import com.dahiet.command.ReviewDetail;
+import com.dahiet.command.ReviewDetailUp;
 import com.dahiet.command.ReviewInsert;
 import com.dahiet.command.ReviewUpdate;
 import com.dahiet.command.SearchAction;
