@@ -14,14 +14,18 @@
 
 	<div align="center">
 		<div>
-			<h1>공 고 등 록</h1>
+			<h1>공 고 수 정</h1>
 		</div>
 
 		<form id="frm1" name="frm1"
-			action="${pageContext.request.contextPath}/showRecruitList.do"
+			action="${pageContext.request.contextPath}/RecruitUp.do"
 			method="post">
 			<table border="1">
-				<tr>
+			<tr style="display:none">
+					<th width="150">사업자번호</th>
+					<td width="500"><input type="text" id="recruit_seq" name="recruit_seq" value="${vo.recruit_seq}"></td>
+				</tr>
+				<tr style="display:none">
 					<th width="150">사업자번호</th>
 					<td width="500"><input type="text" id="no" name="no" value="${vo.no}"></td>
 				</tr>
@@ -81,7 +85,8 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="submit"value="공고등록"> &nbsp;&nbsp; 
+						<input type="submit"value="공고수정"> &nbsp;&nbsp; 
+						<button type="button" onclick="location.href='${pageContext.request.contextPath}/RecruitDelete.do?recruit_seq=${vo.recruit_seq}'">삭제</button>
 						<input type="reset" value="취 소">
 					</td>
 				</tr>
