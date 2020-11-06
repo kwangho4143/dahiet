@@ -26,9 +26,19 @@ public class ResumeDao extends DAO {
 			psmt = conn.prepareStatement(LOADINFO);
 			psmt.setString(1, vo.getId());
 			rs = psmt.executeQuery();
-//			if(rs.next()) {
-//				vo.setPw(rs.getString("pw"));
-//			}
+			if(rs.next()) {
+				vo.setTel(rs.getString("id"));
+				vo.setTel(rs.getString("tel"));
+				vo.setTel(rs.getString("pw"));
+				vo.setTel(rs.getString("name"));
+				vo.setTel(rs.getString("birth"));
+				vo.setTel(rs.getString("email"));
+				vo.setTel(rs.getString("addr"));
+				vo.setTel(rs.getString("tel"));
+				vo.setTel(rs.getString("tel"));
+				vo.setTel(rs.getString("tel"));
+				
+			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
