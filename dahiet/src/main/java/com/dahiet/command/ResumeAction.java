@@ -12,19 +12,7 @@ public class ResumeAction implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		ResumeDao dao = new ResumeDao();
-		ResumeVO vo = new ResumeVO();
-		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
-		vo.setId(id);
-		vo = dao.loadInfo(vo);
-		
-		
-		
-		
-		
-		
-		//request.setAttribute("vo", vo);		
+ 
 		return "/jsp/resume/mainResume.jsp";
 	}
 
