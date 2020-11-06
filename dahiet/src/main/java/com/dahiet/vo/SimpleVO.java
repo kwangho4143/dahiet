@@ -1,4 +1,4 @@
-package com.dahiet.vo;
+sspackage com.dahiet.vo;
 
 public class SimpleVO {
 	private String img;
