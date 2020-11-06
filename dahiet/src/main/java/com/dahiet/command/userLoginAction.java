@@ -9,11 +9,13 @@ import com.dahiet.dao.UserDao;
 import com.dahiet.vo.UserVO;
 
 public class userLoginAction implements Action {
+	
+	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// TODO 로그인 인증과정을 처리한다.
 		UserDao dao = new UserDao();
 		UserVO vo = new UserVO();
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession();
 		String msq;
 		vo.setId(request.getParameter("id"));
 //		vo.setPassword(request.getParameter("password"));

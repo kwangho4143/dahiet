@@ -308,6 +308,4 @@ public class ResumeVO {
       this.lag_date = lag_date;
    }
    
-   
-   
 }

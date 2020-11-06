@@ -1,6 +1,6 @@
-sspackage com.dahiet.vo;
+package com.dahiet.vo;
 
-public class SimpleVO {
+public class SimpleVO { //상세검색
 	private String img;
 	private String name;
 	private String title;
