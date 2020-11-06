@@ -16,9 +16,8 @@
 		</div>
 
 		<form id="frm1" name="frm1"
-			action="${pageContext.request.contextPath}/showRecruitList.do"
+			action="${pageContext.request.contextPath}/insertRecruit.do"
 			method="post">
-			<a style="display: none">사업자 번호<input type="text" id="no" name="no" value="no"></a>
 			<table border="1">
 				<tr>
 					<th width="80">공고 제목</th>
@@ -35,11 +34,11 @@
 				<tr>
 				<th width="80">근무형태</th>
 				<td colspan="7">
-						<label><input type="checkbox" name="emp_type" value="full"> 정규직</label> 
-						<label><input type="checkbox" name="emp_type" value="cont"> 계약직</label> 
-						<label><input type="checkbox" name="emp_type" value="part"> 아르바이트</label>
-						<label><input type="checkbox" name="emp_type" value="inte"> 인턴직</label> 
-						<label><input type="checkbox" name="emp_type" value="disp"> 파견직</label>
+						<label><input type="radio" name="emp_type" value="full"> 정규직</label> 
+						<label><input type="radio" name="emp_type" value="cont"> 계약직</label> 
+						<label><input type="radio" name="emp_type" value="part"> 아르바이트</label>
+						<label><input type="radio" name="emp_type" value="inte"> 인턴직</label> 
+						<label><input type="radio" name="emp_type" value="disp"> 파견직</label>
 					</td>
 					</tr>
 				<tr>

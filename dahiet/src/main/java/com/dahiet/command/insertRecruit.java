@@ -2,6 +2,7 @@ package com.dahiet.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.dahiet.common.Action;
 import com.dahiet.dao.RecruitDao;
@@ -15,8 +16,9 @@ public class insertRecruit implements Action {
 		RecruitDao dao = new RecruitDao();
 		RecruitVO vo = new RecruitVO();
 
-		
-		vo.setNo(request.getParameter("no"));
+		HttpSession session = request.getSession();
+		String no = (String)session.getAttribute("no");
+		vo.setNo(no);
 		vo.setTitle(request.getParameter("title"));
 		vo.setPosition(request.getParameter("position"));
 		vo.setWork(request.getParameter("work"));
