@@ -231,6 +231,7 @@ function formCheck2(){
 						</span>
 					</div>
 				</form>
+				${msg }
 			</div>
 			
 			
@@ -263,6 +264,7 @@ function formCheck2(){
 					</div>
 
 				</form>
+				${msg }
 			</div>
 		</div>
 		<div align="center">
