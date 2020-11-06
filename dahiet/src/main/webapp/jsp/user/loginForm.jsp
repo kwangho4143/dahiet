@@ -7,7 +7,137 @@
 <html>
 <head>
 <script>
-	function formCheck1(){
+function formCheck1(){
+	var f = document.frm1;
+
+	if(f.id.value==""){
+		alert("아이디를 입력하세요.");
+		f.id.focus();
+		return false;
+	}
+	if(f.pw.value==""){
+		alert("패스워드를 입력하세요.");
+		f.pw.focus();
+		return false;
+	}
+	if(f.name.value==""){
+		alert("이름을 입력하세요.");
+		f.name.focus();
+		return false;
+	}
+	if(f.image.value==""){
+		alert("이미지를 첨부하세요.");
+		f.image.focus();
+		return false;
+	}
+	if(f.birth.value==""){
+		alert("생일을 입력하세요.");
+		f.birth.focus();
+		return false;
+	}
+	if(f.email.value==""){
+		alert("이메일을 입력하세요.");
+		f.email.focus();
+		return false;
+	}
+	if(f.tel.value==""){
+		alert("전화번호를 입력하세요.");
+		f.tel.focus();
+		return false;
+	}
+	if(f.addr.value==""){
+		alert("주소를 입력하세요.");
+		f.addr.focus();
+		return false;
+	}
+	if(f.univ.value==""){
+		alert("최종학력을 입력하세요.");
+		f.univ.focus();
+		return false;
+	}
+	if(f.major.value==""){
+		alert("전공을 입력하세요.");
+		f.major.focus();
+		return false;
+	}
+	if(f.score.value==""){
+		alert("학점을 입력하세요.");
+		f.score.focus();
+		return false;
+	}
+	
+	
+};
+
+function formCheck2(){
+	var f = document.frm2;
+
+	if(f.id.value==""){
+		alert("아이디를 입력하세요.");
+		f.id.focus();
+		return false;
+	}
+	if(f.pw.value==""){
+		alert("패스워드를 입력하세요.");
+		f.pw.focus();
+		return false;
+	}
+	if(f.no.value==""){
+		alert("사업자번호를 입력하세요.");
+		f.no.focus();
+		return false;
+	}
+	if(f.name.value==""){
+		alert("기업이름을 입력하세요.");
+		f.name.focus();
+		return false;
+	}
+	if(f.tel.value==""){
+		alert("전화번호를 입력하세요.");
+		f.tel.focus();
+		return false;
+	}
+	if(f.addr.value==""){
+		alert("주소를 입력하세요.");
+		f.addr.focus();
+		return false;
+	}
+	if(f.img.value==""){
+		alert("이미지를 첨부하세요.");
+		f.img.focus();
+		return false;
+	}
+	if(f.link.value==""){
+		alert("기업링크를 입력하세요.");
+		f.link.focus();
+		return false;
+	}
+	if(f.type.value==""){
+		alert("기업형태를 입력하세요.");
+		f.type.focus();
+		return false;
+	}
+	if(f.emps.value==""){
+		alert("사원 수를 입력하세요.");
+		f.emps.focus();
+		return false;
+	}
+	if(f.profit.value==""){
+		alert("매출액을 입력하세요.");
+		f.profit.focus();
+		return false;
+	}
+	if(f.item.value==""){
+		alert("업종을 입력하세요.");
+		f.item.focus();
+		return false;
+	}
+	
+};
+
+
+
+	function formCheck3(){
 		var f = document.frm3;
 
 		if(f.id.value==""){
@@ -22,7 +152,7 @@
 		}
 	};
 	
-	function formCheck2(){
+	function formCheck4(){
 		var f = document.frm4;
 
 		if(f.id.value==""){
@@ -88,7 +218,7 @@
 								placeholder="Password">
 						</div>
 					</div>
-					<button type="submit" onclick = "return formCheck1()">로그인</button>
+					<button type="submit" onclick = "return formCheck3()">로그인</button>
 					<div>
 						<div>
 							<!-- 체크시 checked 추가 -->
@@ -119,7 +249,7 @@
 								placeholder="Password">
 						</div>
 					</div>
-					<button type="submit"onclick = "return formCheck2()">로그인</button>
+					<button type="submit" onclick = "return formCheck4()">로그인</button>
 					<div>
 						<div>
 							<!-- 체크시 checked 추가 -->
@@ -197,7 +327,7 @@
 								<td><input type="text" id="score" name="score"></td>
 							</tr>
 							<tr>
-								<td colspan="2" align="center"><input type="submit"
+								<td colspan="2" align="center"><input type="submit" onclick = "return formCheck1()"
 									value="가입하기"> &nbsp;&nbsp; <input type="reset"
 									value="취 소"></td>
 							</tr>
@@ -222,7 +352,7 @@
 								<td><input type="text" id="no" name="no"></td>
 							</tr>
 							<tr>
-								<th width="150">회사이름</th>
+								<th width="150">기업이름</th>
 								<td><input type="text" id="name" name="name"></td>
 							</tr>
 							<tr>
@@ -238,7 +368,7 @@
 								<td><input type="file" id="img" name="img" size="80"></td>
 							</tr>
 							<tr>
-								<th width="150">회사링크</th>
+								<th width="150">기업링크</th>
 								<td><input type="text" id="link" name="link" size="80"></td>
 							</tr>
 							<tr>
@@ -258,7 +388,7 @@
 								<td><input type="text" id="item" name="item" size="80"></td>
 							</tr>
 							<tr>
-								<td colspan="2" align="center"><input type="submit"
+								<td colspan="2" align="center"><input type="submit" onclick = "return formCheck2()"
 									value="가입하기"> &nbsp;&nbsp; <input type="reset"
 									value="취 소"></td>
 							</tr>
