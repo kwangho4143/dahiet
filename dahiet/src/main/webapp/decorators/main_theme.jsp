@@ -37,7 +37,14 @@
 	rel="stylesheet">
 
 <link href="${pageContext.request.contextPath}/assets/css/style.css" rel="stylesheet">
+
 <decorator:head />
+<style>
+#main {
+	min-height: 500px;
+
+}
+</style>
 </head>
 
 <body>
