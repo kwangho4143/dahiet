@@ -192,7 +192,7 @@ $(document).ready(function() {
 								<td colspan="4"><input type="text" id="resume_name" name="resume_name" size="80"></td>
 							</tr>
 							<tr height="50">
-								<td rowspan="3"><img alt="" src="">(사진)</td>
+								<td rowspan="3"><img alt="" src="">${vo.imag}</td>
 								<th width="120">이 름</th>
 								<td>${vo.name}</td>
 								<th width="120">생년월일</th>
