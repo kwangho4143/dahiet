@@ -22,6 +22,8 @@ public class companyLoginAction implements Action {
 		
 		if(vo.getPw().equals(request.getParameter("pw"))) {
 			session.setAttribute("id", vo.getId());  //session에 id 담음
+			session.setAttribute("no", vo.getNo());  //session에 id 담음
+			
 			msq = "정상적인 로그인";
 			request.setAttribute("msg", msq);
 			request.setAttribute("vo", vo);	//멤버를 실어 보냄

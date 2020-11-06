@@ -17,7 +17,7 @@ public class RecruitDao extends DAO {
 
 	private final String RECRUITINSERT = "INSERT INTO RECRUIT(RECRUIT_SEQ,NO,TITLE,POSITION,EMP_TYPE,WORK,LOC,QUALIFY,SALARY,NEWBI) "
 			+ "VALUES(RECRUIT_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?,?,?,?)";
-	private final String RECRUITSELECT = "SELECT * FROM RECRUIT";
+	private final String RECRUITSELECT = "SELECT * FROM RECRUIT WHERE NO = ?";
 	private final String WANT = "SELECT * FROM RECRUIT WHERE RECRUIT_SEQ = ?";
 	private final String RECURUITUPDATE = "UPDATE RECRUIT SET TITLE=?, POSITION=?, EMP_TYPE=?, LOC=?, WORK=?, QUALIFY=?, SALARY=?, NEWBI=? WHERE RECRUIT_SEQ=?";
 	private final String RECURUITDELETE = "DELETE FROM RECRUIT WHERE RECRUIT_SEQ=?";
@@ -102,6 +102,7 @@ public class RecruitDao extends DAO {
 		List<RecruitVO> rlists = new ArrayList<RecruitVO>();
 		try {
 			psmt = conn.prepareStatement(RECRUITSELECT);
+			psmt.setString(1,vo.getNo());
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new RecruitVO();

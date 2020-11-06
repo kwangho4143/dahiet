@@ -83,13 +83,12 @@
 											</div>
 											<div>
 												<hr>
-												<label>근무 형태</label><label><input type="checkbox"
-													name="color"> 정직원</label> <label><input
-													type="checkbox" name="emp_type" value="cont"> 계약직</label> <label><input
-													type="checkbox" name="emp_type" value="part"> 아르바이트</label>
-												<label><input type="checkbox" name="emp_type"
-													value="inte"> 인턴직</label> <label><input
-													type="checkbox" name="emp_type" value="disp"> 파견직</label>
+												<label>근무 형태</label>
+												<label><input type="checkbox" name="emp_type" value="full"> 정규직</label> 
+												<label><input type="checkbox" name="emp_type" value="cont"> 계약직</label> 
+												<label><input type="checkbox" name="emp_type" value="part"> 아르바이트</label>
+												<label><input type="checkbox" name="emp_type" value="inte"> 인턴직</label> 
+												<label><input type="checkbox" name="emp_type" value="disp"> 파견직</label>
 											</div>
 										</form></li>
 								</ul></li>
