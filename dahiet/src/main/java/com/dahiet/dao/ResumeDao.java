@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.dahiet.vo.ResumeVO;
-import com.dahiet.vo.UserVO;
 
 public class ResumeDao extends DAO {
 
@@ -14,41 +13,53 @@ public class ResumeDao extends DAO {
 	private ResumeVO vo;
 
 	// user 테이블의 값 불러오기
-	private final String LOADINFO = "SELECT * FROM USERS WHERE ID = ?";
+	private final String LOADINFO
+		=   " SELECT NAME, IMAG, BIRTH, EMAIL, TEL, ADDR, UNIV, MAJOR, SCORE " + 
+			" FROM USERS " + 
+			" WHERE TEL = ?;";
 
 	// 값 입력하기 (프로시저 사용?)
 //	private final String ~
 	
 	
-	// user 테이블의 값 불러오기
-	public ResumeVO loadInfo(ResumeVO vo) {
-		try {
-			psmt = conn.prepareStatement(LOADINFO);
-			psmt.setString(1, vo.getId());
-			rs = psmt.executeQuery();
-			if(rs.next()) {
-				vo.setId(rs.getString("id"));
-				vo.setTel(rs.getString("tel"));
-				vo.setTel(rs.getString("pw"));
-				vo.setTel(rs.getString("name"));
-				vo.setTel(rs.getString("birth"));
-				vo.setTel(rs.getString("email"));
-				vo.setTel(rs.getString("addr"));
-				vo.setTel(rs.getString("univ"));
-				vo.setTel(rs.getString("major"));
-				vo.setScore(rs.getString("score"));
-				vo.setImag(rs.getString("imag"));
-				
-			}
-		} catch(SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		} return vo;
-	}
+		
+		// user 테이블의 값 이력서에 불러오기
+		public ResumeVO loadInfo(ResumeVO vo) {
+			try {
+				psmt = conn.prepareStatement(LOADINFO);
+				psmt.setString(1, vo.getTel());
+				rs = psmt.executeQuery();
+				if(rs.next()) {
+					vo.setId(rs.getString("id"));
+					vo.setName(rs.getString("name"));
+					vo.setImag(rs.getString("imag"));
+					vo.setBirth(rs.getDate("birth"));
+					vo.setEmail(rs.getString("email"));
+					vo.setTel(rs.getString("tel"));
+					vo.setAddr(rs.getString("addr"));
+					vo.setUniv(rs.getString("univ"));
+					vo.setMajor(rs.getString("major"));
+					vo.setScore(rs.getString("score"));
+				}
+			} catch(SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			} return vo;
+		}
+	
+		// 이력서 등록
+		public int insertResume(ResumeVO vo2) {
+			int n = 0;
+			//
+			//
+			// -- 내 용 입 력 --
+			//
+			//
+			return n;
+		}
 
-	
-	
+		
 	private void close() {
 		try {
 			if(rs != null) {
@@ -69,5 +80,16 @@ public class ResumeDao extends DAO {
 			e.printStackTrace();
 		}
 	}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
