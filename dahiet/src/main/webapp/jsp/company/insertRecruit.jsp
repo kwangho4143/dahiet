@@ -18,7 +18,7 @@
 		<form id="frm1" name="frm1"
 			action="${pageContext.request.contextPath}/showRecruitList.do"
 			method="post">
-			<a style="display: none"><input type="text" id="no" name="no">사업자 번호</a>
+			<a style="display: none">사업자 번호<input type="text" id="no" name="no" value="no"></a>
 			<table border="1">
 				<tr>
 					<th width="80">공고 제목</th>
