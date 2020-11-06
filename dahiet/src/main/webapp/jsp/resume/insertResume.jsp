@@ -189,35 +189,35 @@ $(document).ready(function() {
 							</tr>
 							<tr height="50">
 								<th width="150">이력서 이름</th>
-								<td colspan="4"><input type="text" id="name" name="name" size="80"></td>
+								<td colspan="4"><input type="text" id="resume_name" name="resume_name" size="80"></td>
 							</tr>
 							<tr height="50">
 								<td rowspan="3"><img alt="" src="">(사진)</td>
 								<th width="120">이 름</th>
-								<td><input type="text" id="uname" name="uname"></td>
+								<td>${vo.name}</td>
 								<th width="120">생년월일</th>
-								<td><input type="date" id="birth" name="birth"></td>
+								<td>${vo.birth}</td>
 							</tr>
 							<tr height="50">
 								<th width="120">이메일</th>
-								<td><input type="text" id="email" name="email"></td>
+								<td>${vo.email}</td>
 								<th width="120">휴대폰</th>
-								<td><input type="text" id="tel" name="tel"></td>
+								<td>${vo.tel}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">주소</th>
-								<td colspan="3"><input type="text" id="addr" name="addr" size="60"></td>
+								<td colspan="3">${vo.addr}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">최종학력</th>
-								<td colspan="4"><input type="text" id="univ" name="univ"></td>
+								<td colspan="4">${vo.univ}</td>
 
 							</tr>
 							<tr>
 								<th width="120">전공</th>
-								<td colspan="2"><input type="text" id="major" name="major"></td>
+								<td colspan="2">${vo.major}</td>
 								<th width="120">졸업학점</th>
-								<td><input type="text" id="score" name="score"></td>
+								<td>${vo.score}</td>
 							</tr>
 						</table><br/><br/>
 					</div>
