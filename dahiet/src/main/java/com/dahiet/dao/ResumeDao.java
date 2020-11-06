@@ -15,27 +15,19 @@ public class ResumeDao extends DAO {
 	private ResumeVO vo;
 
 	// user 테이블의 값 불러오기
-<<<<<<< HEAD
 	private final String SELECTINF1 = "SELECT * FROM USERS WHERE ID = ?";
 	private final String SELECTINF2 = "SELECT * FROM RESUME WHERE TEL = ?";
-=======
 	private final String LOADINFO
 		=   " SELECT NAME, IMAG, BIRTH, EMAIL, TEL, ADDR, UNIV, MAJOR, SCORE " + 
 			" FROM USERS " + 
 			" WHERE TEL = ?;";
->>>>>>> branch 'main' of https://github.com/kwangho4143/dahiet.git
 
-	
-	private final String LOADINFO
-	=   " SELECT NAME, IMAG, BIRTH, EMAIL, TEL, ADDR, UNIV, MAJOR, SCORE " + 
-		" FROM USERS " + 
-		" WHERE TEL = ?;";
 	
 	// 값 입력하기 (프로시저 사용?)
 //	private final String ~
 	
-	
-<<<<<<< HEAD
+
+
 	// user 테이블의 값 불러오기
 	public ResumeVO selectedId(ResumeVO vo) {
 		try {
@@ -62,6 +54,7 @@ public class ResumeDao extends DAO {
 		} 
 		return vo;
 	}
+	
 	
 	public List<ResumeVO> selectedTel(ResumeVO vo) {
 		List<ResumeVO> list= new ArrayList<ResumeVO>();
@@ -112,46 +105,8 @@ public class ResumeDao extends DAO {
 			close();
 		} return vo;
 	}
-=======
-		
-		// user 테이블의 값 이력서에 불러오기
-		public ResumeVO loadInfo(ResumeVO vo) {
-			try {
-				psmt = conn.prepareStatement(LOADINFO);
-				psmt.setString(1, vo.getTel());
-				rs = psmt.executeQuery();
-				if(rs.next()) {
-					vo.setId(rs.getString("id"));
-					vo.setName(rs.getString("name"));
-					vo.setImag(rs.getString("imag"));
-					vo.setBirth(rs.getDate("birth"));
-					vo.setEmail(rs.getString("email"));
-					vo.setTel(rs.getString("tel"));
-					vo.setAddr(rs.getString("addr"));
-					vo.setUniv(rs.getString("univ"));
-					vo.setMajor(rs.getString("major"));
-					vo.setScore(rs.getString("score"));
-				}
-			} catch(SQLException e) {
-				e.printStackTrace();
-			} finally {
-				close();
-			} return vo;
-		}
-	
-		// 이력서 등록
-		public int insertResume(ResumeVO vo2) {
-			int n = 0;
-			//
-			//
-			// -- 내 용 입 력 --
-			//
-			//
-			return n;
-		}
->>>>>>> branch 'main' of https://github.com/kwangho4143/dahiet.git
 
-<<<<<<< HEAD
+	
 	// 이력서 등록
 	public int insertResume(ResumeVO vo2) {
 		int n = 0;
@@ -168,9 +123,6 @@ public class ResumeDao extends DAO {
 	
 	
 	
-=======
-		
->>>>>>> branch 'main' of https://github.com/kwangho4143/dahiet.git
 	private void close() {
 		try {
 			if(rs != null) {
@@ -192,15 +144,4 @@ public class ResumeDao extends DAO {
 		}
 	}
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
