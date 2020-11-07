@@ -82,6 +82,7 @@
 					</c:if>
 					<c:if test = "${sessionScope.id ne null}">
 						<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/logOut.do';" class="get-started-btn ml-auto" >로그아웃</button></li>
+						<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/Mypage.do';" class="get-started-btn ml-auto" >마이페이지</button></li>
 					</c:if>
 				</ul>
 
