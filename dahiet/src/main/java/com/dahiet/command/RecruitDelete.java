@@ -4,26 +4,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dahiet.common.Action;
+import com.dahiet.dao.RecruitDao;
 import com.dahiet.dao.ReviewDao;
+import com.dahiet.vo.RecruitVO;
 import com.dahiet.vo.ReviewVO;
 
-public class ReviewUpdate implements Action {
+public class RecruitDelete implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		ReviewDao dao = new ReviewDao();
-		ReviewVO vo = new ReviewVO();
+		RecruitDao dao = new RecruitDao();
+		RecruitVO vo = new RecruitVO();
 
-		vo.setNo(request.getParameter("no"));
-		vo.setTitle(request.getParameter("title"));
-		vo.setContent(request.getParameter("content"));
-		int n = dao.RE_UP_UPDATE(vo);
+		vo.setRecruit_seq(request.getParameter("recruit_seq"));
+
+		int n = dao.RECURUITDELETE(vo);
 		String page;
 
 		if (n != 0) {
-			page = "/ReviewAction.do";
+			page = "/showRecruitList.do";
 		} else {
-			page = "/ReviewAction.do";
+			page = "/showRecruitList.do";
 		}
 
 		return page;

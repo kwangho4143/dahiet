@@ -7,7 +7,7 @@ import com.dahiet.common.Action;
 import com.dahiet.dao.ReviewDao;
 import com.dahiet.vo.ReviewVO;
 
-public class ReviewUpdate implements Action {
+public class ReviewDelete implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
@@ -15,9 +15,7 @@ public class ReviewUpdate implements Action {
 		ReviewVO vo = new ReviewVO();
 
 		vo.setNo(request.getParameter("no"));
-		vo.setTitle(request.getParameter("title"));
-		vo.setContent(request.getParameter("content"));
-		int n = dao.RE_UP_UPDATE(vo);
+		int n = dao.RE_UP_DELETE(vo);
 		String page;
 
 		if (n != 0) {

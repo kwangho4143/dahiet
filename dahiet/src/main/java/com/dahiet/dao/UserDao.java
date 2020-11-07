@@ -76,6 +76,7 @@ public class UserDao extends DAO {
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				vo.setPw(rs.getString("pw"));
+				vo.setTel(rs.getString("tel"));
 			}
 			
 		}catch(SQLException e) {

@@ -80,6 +80,7 @@ public class ComDao extends DAO {
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				vo.setPw(rs.getString("pw"));
+				vo.setNo(rs.getString("no"));
 			}
 			
 		}catch(SQLException e) {

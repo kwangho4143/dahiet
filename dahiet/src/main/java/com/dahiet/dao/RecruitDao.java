@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.dahiet.vo.ComVO;
 import com.dahiet.vo.RecruitVO;
+import com.dahiet.vo.ReviewVO;
 
 public class RecruitDao extends DAO {
 	private PreparedStatement psmt; // sql명령어 작성시에 사용
@@ -16,9 +17,52 @@ public class RecruitDao extends DAO {
 
 	private final String RECRUITINSERT = "INSERT INTO RECRUIT(RECRUIT_SEQ,NO,TITLE,POSITION,EMP_TYPE,WORK,LOC,QUALIFY,SALARY,NEWBI) "
 			+ "VALUES(RECRUIT_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?,?,?,?)";
-	private final String RECRUITSELECT = "SELECT * FROM RECRUIT";
+	private final String RECRUITSELECT = "SELECT * FROM RECRUIT WHERE NO = ?";
 	private final String WANT = "SELECT * FROM RECRUIT WHERE RECRUIT_SEQ = ?";
+	private final String RECURUITUPDATE = "UPDATE RECRUIT SET TITLE=?, POSITION=?, EMP_TYPE=?, LOC=?, WORK=?, QUALIFY=?, SALARY=?, NEWBI=? WHERE RECRUIT_SEQ=?";
+	private final String RECURUITDELETE = "DELETE FROM RECRUIT WHERE RECRUIT_SEQ=?";
 
+	public int RECURUITDELETE(RecruitVO vo) {
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(RECURUITDELETE);
+			psmt.setString(1, vo.getRecruit_seq());
+			psmt.executeUpdate();
+		
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
+	}
+	
+	public int RECURUITUPDATE(RecruitVO vo) {
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(RECURUITUPDATE);
+			psmt.setString(9, vo.getRecruit_seq());
+			psmt.setString(1, vo.getTitle());
+			psmt.setString(2, vo.getPosition());
+			
+			psmt.setString(3, vo.getEmp_type());
+			psmt.setString(4, vo.getLoc());
+			psmt.setString(5, vo.getWork());
+			
+			psmt.setString(6, vo.getQualify());
+			psmt.setString(7, vo.getSalary());
+			psmt.setString(8, vo.getNewbi());
+			
+			psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
+	}
 	
 	public RecruitVO wantselect(RecruitVO vo) {
 		
@@ -58,6 +102,7 @@ public class RecruitDao extends DAO {
 		List<RecruitVO> rlists = new ArrayList<RecruitVO>();
 		try {
 			psmt = conn.prepareStatement(RECRUITSELECT);
+			psmt.setString(1,vo.getNo());
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new RecruitVO();

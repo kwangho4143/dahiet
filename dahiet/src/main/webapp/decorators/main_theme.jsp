@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="decorator"
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
 
@@ -36,7 +37,14 @@
 	rel="stylesheet">
 
 <link href="${pageContext.request.contextPath}/assets/css/style.css" rel="stylesheet">
+
 <decorator:head />
+<style>
+#main {
+	min-height: 500px;
+
+}
+</style>
 </head>
 
 <body>
@@ -67,9 +75,15 @@
 								<img src="${pageContext.request.contextPath}/images/search.png" height="20" width="20" alt="submit">
 							</button>
 						</form></li>
-					<li><a href="${pageContext.request.contextPath}/ResumeAction.do">개인</a></li>
+					<li><a href="${pageContext.request.contextPath}/ResumeList.do">개인</a></li>
 					<li><a href="${pageContext.request.contextPath}/showRecruitList.do">기업</a></li>
+					<c:if test = "${sessionScope.id eq null}">
 					<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" class="get-started-btn ml-auto" >로그인 / 가입</button></li>
+					</c:if>
+					<c:if test = "${sessionScope.id ne null}">
+						<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/UserMypage.do';" class="get-started-btn ml-auto" >마이페이지</button></li>
+						<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/logOut.do';" class="get-started-btn ml-auto" >로그아웃</button></li>
+					</c:if>
 				</ul>
 
 			</nav>
