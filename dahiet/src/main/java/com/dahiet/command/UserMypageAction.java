@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.dahiet.common.Action;
 
-public class MypageAction implements Action {
+public class UserMypageAction implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {

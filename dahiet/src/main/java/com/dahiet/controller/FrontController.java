@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dahiet.command.InsertResume;
 import com.dahiet.command.LogoutAction;
-import com.dahiet.command.MypageAction;
 import com.dahiet.command.RecruitCheck;
 import com.dahiet.command.RecruitDelete;
 import com.dahiet.command.RecruitUp;
@@ -29,6 +28,7 @@ import com.dahiet.command.ReviewInsert;
 import com.dahiet.command.ReviewUpdate;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.ShowRecruitList;
+import com.dahiet.command.UserMypageAction;
 import com.dahiet.command.comInsert;
 import com.dahiet.command.companyLoginAction;
 import com.dahiet.command.insertRecruit;
@@ -85,7 +85,7 @@ public class FrontController extends HttpServlet {
       //정은
       map.put("/companyLogin.do",new companyLoginAction()); //로그인 폼 호출
       map.put("/logOut.do",new LogoutAction()); //로그인 폼 호출
-      map.put("/Mypage.do",new MypageAction()); //로그인 폼 호출
+      map.put("/UserMypage.do",new UserMypageAction()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
