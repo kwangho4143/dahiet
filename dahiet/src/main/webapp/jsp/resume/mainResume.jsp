@@ -38,7 +38,7 @@ table {
 					<br />
 				</div>
 
-				<c:forEach var="vo" items="${list}">
+				<c:forEach var="vo" items="${relist}">
 					<div>
 						<table>
 							<tr height="50">

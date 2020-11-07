@@ -22,7 +22,9 @@ public class ShowRecruitList implements Action {
 		RecruitVO vo = new RecruitVO();
 		vo.setNo(no);
 		list = dao.select(vo);
+		
 		request.setAttribute("rlists", list);
+		
 		
 		return "/jsp/company/recruitList.jsp";
 	}

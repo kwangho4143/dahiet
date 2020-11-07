@@ -15,8 +15,7 @@ public class ResumeDao extends DAO {
 	private ResumeVO vo;
 
 	// user 테이블의 값 불러오기
-	private final String SELECTINF1 = "SELECT * FROM USERS WHERE ID = ?";
-	private final String SELECTINF2 = "SELECT * FROM RESUME WHERE TEL = ?";
+	private final String SELECTINF = "SELECT * FROM RESUME WHERE TEL = ?";
 	private final String LOADINFO
 		=   " SELECT NAME, IMAG, BIRTH, EMAIL, TEL, ADDR, UNIV, MAJOR, SCORE " + 
 			" FROM USERS " + 
@@ -27,41 +26,12 @@ public class ResumeDao extends DAO {
 //	private final String ~
 	
 
-
-	// user 테이블의 값 불러오기
-	public ResumeVO selectedId(ResumeVO vo) {
-		try {
-			psmt = conn.prepareStatement(SELECTINF1);
-			psmt.setString(1, vo.getId());
-			rs = psmt.executeQuery();
-			if(rs.next()) {
-				vo.setId(rs.getString("id"));
-				vo.setTel(rs.getString("tel"));
-				vo.setPw(rs.getString("pw"));
-				vo.setName(rs.getString("name"));
-				vo.setBirth(rs.getDate("birth"));
-				vo.setEmail(rs.getString("email"));
-				vo.setAddr(rs.getString("addr"));
-				vo.setUniv(rs.getString("univ"));
-				vo.setMajor(rs.getString("major"));
-				vo.setScore(rs.getString("score"));
-				vo.setImag(rs.getString("imag"));		
-			}
-		} catch(SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		} 
-		return vo;
-	}
-	
-	
 	public List<ResumeVO> selectedTel(ResumeVO vo) {
 		List<ResumeVO> list= new ArrayList<ResumeVO>();
 		
 		try {
-			vo = new ResumeVO();
-			psmt = conn.prepareStatement(SELECTINF2);
+			
+			psmt = conn.prepareStatement(SELECTINF);
 			psmt.setString(1, vo.getTel());
 			rs = psmt.executeQuery();
 			while(rs.next()) {
