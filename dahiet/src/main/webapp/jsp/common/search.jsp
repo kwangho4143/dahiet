@@ -121,7 +121,8 @@
 									src="${pageContext.request.contextPath}/images/"></td>
 
 								<th style="width: 1cm">공고이름</th>
-								<td colspan="3" style="width: 2cm">${simple.title}</td>
+								<td colspan="3" style="width: 2cm"><a href="${pageContext.request.contextPath}
+								/RecruitDetail.do?no=${simple.recruit_seq}">${simple.title}</a></td>
 							</tr>
 							<tr>
 								<th style="width: 1cm">회사이름</th>

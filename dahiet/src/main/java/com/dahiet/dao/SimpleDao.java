@@ -13,7 +13,7 @@ public class SimpleDao extends DAO {
 	private PreparedStatement psmt;
 	private ResultSet rs; // select 후 결과셋 받기
 
-	private final String SIMPLESELECT = "SELECT C.IMG, C.NAME, R.TITLE, R.EMP_TYPE, R.WORK, R.SALARY FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO";
+	private final String SIMPLESELECT = "SELECT R.RECRUIT_SEQ, C.IMG, C.NAME, R.TITLE, R.EMP_TYPE, R.WORK, R.SALARY FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO";
 
 	public List<SimpleVO> SIMPLESELECT(SimpleVO vo) {
 		List<SimpleVO> list = new ArrayList<SimpleVO>();
@@ -22,6 +22,7 @@ public class SimpleDao extends DAO {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new SimpleVO();
+				vo.setRecruit_seq(rs.getString("recruit_seq"));
 				vo.setImg(rs.getString("img"));
 				vo.setName(rs.getString("name"));
 				vo.setTitle(rs.getString("title"));

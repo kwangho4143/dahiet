@@ -1,6 +1,7 @@
 package com.dahiet.vo;
 
 public class SimpleVO { //상세검색
+	private String recruit_seq;
 	private String img;
 	private String name;
 	private String title;
@@ -44,6 +45,12 @@ public class SimpleVO { //상세검색
 	}
 	public void setSalary(String salary) {
 		this.salary = salary;
+	}
+	public String getRecruit_seq() {
+		return recruit_seq;
+	}
+	public void setRecruit_seq(String recruit_seq) {
+		this.recruit_seq = recruit_seq;
 	}
 	
 }
