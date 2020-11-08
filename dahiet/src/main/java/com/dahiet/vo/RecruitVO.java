@@ -11,7 +11,60 @@ public class RecruitVO {
 	private String qualify;
 	private String salary;
 	private String newbi;
+	// 디테일을 위한 companies 공간
+	private String img;
+	private String name;
+	private String item;
+	private String emps;
+	private String type;
+	private String profit;
+	private String link;
 	
+	
+	
+	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getItem() {
+		return item;
+	}
+	public void setItem(String item) {
+		this.item = item;
+	}
+	public String getEmps() {
+		return emps;
+	}
+	public void setEmps(String emps) {
+		this.emps = emps;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getProfit() {
+		return profit;
+	}
+	public void setProfit(String profit) {
+		this.profit = profit;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
 	public String getNewbi() {
 		return newbi;
 	}

@@ -4,19 +4,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dahiet.common.Action;
-import com.dahiet.dao.ReviewDao;
-import com.dahiet.vo.ReviewVO;
+import com.dahiet.dao.RecruitDao;
+import com.dahiet.vo.RecruitVO;
 
 public class RecruitDetial implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		ReviewDao dao = new ReviewDao();
-		ReviewVO vo = new ReviewVO();
-		vo.setNo(request.getParameter("no"));
-		vo = dao.RE_DE_SELECT(vo);
-		request.setAttribute("vo", vo);
-		return "/jsp/company/recuritDetail.jsp";
+		
+		RecruitDao dao = new RecruitDao();
+		RecruitVO vo = new RecruitVO();
+		vo.setRecruit_seq(request.getParameter("no"));
+		vo = dao.RECURUITDETAILSELECT(vo);
+		request.setAttribute("vo",vo);
+		
+		return "/jsp/company/recruitDetail.jsp";
 	}
 
 }	

@@ -9,6 +9,7 @@ import java.util.List;
 import com.dahiet.vo.ComVO;
 import com.dahiet.vo.RecruitVO;
 import com.dahiet.vo.ReviewVO;
+import com.dahiet.vo.SimpleVO;
 
 public class RecruitDao extends DAO {
 	private PreparedStatement psmt; // sql명령어 작성시에 사용
@@ -21,7 +22,47 @@ public class RecruitDao extends DAO {
 	private final String WANT = "SELECT * FROM RECRUIT WHERE RECRUIT_SEQ = ?";
 	private final String RECURUITUPDATE = "UPDATE RECRUIT SET TITLE=?, POSITION=?, EMP_TYPE=?, LOC=?, WORK=?, QUALIFY=?, SALARY=?, NEWBI=? WHERE RECRUIT_SEQ=?";
 	private final String RECURUITDELETE = "DELETE FROM RECRUIT WHERE RECRUIT_SEQ=?";
+	private final String RECURUITDETAILSELECT = "SELECT C.IMG, C.NAME, C.ITEM, C.EMPS, C.TYPE, C.PROFIT, C.LINK"
+					+ " ,R.QUALIFY, R.TITLE, R.EMP_TYPE, R.LOC, R.POSITION, R.WORK FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO AND R.RECRUIT_SEQ = ?";
+/* C.회사로고, , C.회사이름, C.업종, C.사원수, C.기업형태, C.매출액, C.회사홈페이지, 
+	R.지원자격, R.공고제목, R.근무형태, R.회사위치, R.모집부문, R.담당업무 */
+	
+		public RecruitVO RECURUITDETAILSELECT(RecruitVO vo) {
+			try {
+				psmt = conn.prepareStatement(RECURUITDETAILSELECT);
+				psmt.setString(1, vo.getRecruit_seq());
+				rs = psmt.executeQuery();
+				
+				if(rs.next()) {
+					//C. 영역
+					vo.setImg(rs.getString("img"));
+					vo.setName(rs.getString("name"));
+					vo.setItem(rs.getString("item"));
+					vo.setEmps(rs.getString("emps"));
+					vo.setType(rs.getString("type"));
+					vo.setProfit(rs.getString("profit"));
+					vo.setLink(rs.getString("link"));
+					//R. 영역
+					vo.setQualify(rs.getString("qualify"));
+					vo.setTitle(rs.getString("title"));
+					vo.setEmp_type(rs.getString("emp_type"));
+					vo.setLoc(rs.getString("loc"));
+					vo.setPosition(rs.getString("position"));
+					vo.setWork(rs.getString("work"));
+//					vo.setSalary(rs.getString("salary"));
+//					vo.setNewbi(rs.getString("newbi"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return vo;
+	}
 
+	
+	
+	
 	public int RECURUITDELETE(RecruitVO vo) {
 		int n = 0;
 		try {

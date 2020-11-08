@@ -12,8 +12,8 @@
 			<table border="1"
 				style="text-align: center; margin-left: auto; margin-right: auto;">
 				<tr>
-					<td colspan="2" rowspan="8">(회사로고)</td>
-					<th colspan="4" rowspan="2">(공고제목)</th>
+					<td colspan="2" rowspan="8">${vo.img}</td>
+					<th colspan="4" rowspan="2">${vo.title}</th>
 				</tr>
 				<tr />
 				<tr>
@@ -22,38 +22,38 @@
 				</tr>
 				<tr>
 					<th>회사이름</th>
-					<td>(회사이름)</td>
+					<td>${vo.name}</td>
 					<th>근무형태</th>
-					<td>(근무형태)</td>
+					<td>${vo.emp_type}</td>
 				</tr>
 				<tr>
 					<th>업종</th>
-					<td>(업종)</td>
+					<td>${vo.item}</td>
 					<th>회사위치</th>
-					<td>(회사위치)</td>
+					<td>${vo.loc}</td>
 				</tr>
 				<tr>
 					<th>사원수</th>
-					<td>(사원수)</td>
+					<td>${vo.emps}</td>
 					<th>모집부문</th>
-					<td>(모집부문)</td>
+					<td>${vo.position}</td>
 				</tr>
 				<tr>
 					<th>기업형태</th>
-					<td>(기업형태)</td>
+					<td>${vo.type}</td>
 					<th>담당업무</th>
-					<td>(담당업무)</td>
+					<td>${vo.work}</td>
 				</tr>
 				<tr>
 					<th>매출액</th>
-					<td colspan="3">(매출액)</td>
+					<td colspan="3">${vo.profit}</td>
 				</tr>
 				<tr>
 					<th>회사홈페이지</th>
-					<td colspan="5">(회사홈페이지)</td>
+					<td colspan="5">${vo.link}</td>
 				</tr>
 				<tr>
-					<td colspan="7">(회사 지원 자격 페이지)</td>
+					<td colspan="7">${vo.qualify}</td>
 				</tr>
 			</table>
 
