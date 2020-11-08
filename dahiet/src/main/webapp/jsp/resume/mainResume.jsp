@@ -30,7 +30,7 @@ table {
 						<tr height="50">
 							<td height="70" colspan="5" align="right">
 								<button type="button"
-									onclick="location.href='${pageContext.request.contextPath}/jsp/resume/insertResume.jsp';"
+									onclick="location.href='${pageContext.request.contextPath}/InsertResume.do';"
 									class="btn btn-danger">새 이력서 등록하기</button>&nbsp;&nbsp;&nbsp;
 							</td>
 						</tr>

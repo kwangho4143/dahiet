@@ -1,5 +1,8 @@
 package com.dahiet.command;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,19 +20,14 @@ public class InsertResume implements Action {
 
 		HttpSession session = request.getSession();
 		String tel = (String)session.getAttribute("tel");
+		List<ResumeVO> list=new ArrayList<>();
+		System.out.print(tel);
 		vo.setTel(tel);
-		vo = dao.loadInfo(vo);
+		list = dao.loadInfo(vo);
 		
-		request.setAttribute("vo", vo);
+		request.setAttribute("list",list);
 		
-		int n = dao.insertResume(vo);
-		String page;
-		if (n != 0) { //이력서 등록 성공
-			page = "jsp/resume/insertResumeSuccess.jsp";
-		} else { //이력서 등록 실패
-			page = "jsp/resume/insertResumeSuccess.jsp";
-		}
-		
-		return page;
+	
+		return "/jsp/resume/insertResume.jsp";
 	}
 }

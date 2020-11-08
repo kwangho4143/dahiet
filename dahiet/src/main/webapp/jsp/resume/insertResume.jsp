@@ -21,6 +21,11 @@
 	  padding: 10px;
 	  border: 1px solid lightgrey;
 	}
+	.point {
+    color: #fc0038;
+    font-size: 12px;
+    letter-spacing: -1px;
+}
 </style>
 
 <script>
@@ -108,7 +113,18 @@ $(document).ready(function() {
 	
 	// 삭제버튼 클릭시 아래에서부터 행 삭제
 	// 경력
- 	$('#rowDelCareer').on("click", function(event) {
+	${'#rowDelCareer'}.on("click", function(event) {
+		event.preventDefault();
+		if (cnt1 > 0) {
+			cnt1--;
+			$(this).closest('tr').remove();
+		} else {
+			alert("더 이상 삭제할 수 없습니다.");
+			return null;
+		}
+	}); 
+	
+/*  	$('#rowDelCareer').on("click", function(event) {
 		event.preventDefault();
 		if (cnt1 > 0) {
 			cnt1--;
@@ -117,7 +133,7 @@ $(document).ready(function() {
 			alert("더 이상 삭제할 수 없습니다.");
 			return null;
 		}
-	}); 
+	}); */ 
 
 	// 자격
 	$('#rowDelLicense').on("click", function(event) {
@@ -162,37 +178,36 @@ $(document).ready(function() {
 			alert("더 이상 삭제할 수 없습니다.");
 			return null;
 		}
-	}); 
+	});
 })
 
-	
-	
 </script>
-
 </head>
 
 
 <body>
+
 	<div align="center">
 	
 		<div>
 			<h1>이 력 서 작 성</h1>
 		</div> <br />
-		
 		<div>
 			<div id="resumeTbl">
 				<form id="resumeFrm" name="resumeFrm" action="" method="post" enctype="multipart/form-data">
+		
 					<div>
 						<table>
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">기 본 정 보</h3></td>
 							</tr>
 							<tr height="50">
-								<th width="150">이력서 이름</th>
+								<th width="150">이력서 제목<span class="point">&nbsp;&nbsp;&nbsp;*</span></th>
 								<td colspan="4"><input type="text" id="resume_name" name="resume_name" size="80"></td>
 							</tr>
+							<c:forEach items="${list}" var="vo">
 							<tr height="50">
-								<td rowspan="3"><img alt="" src="">${vo.imag}</td>
+								<td rowspan="3"><img alt="사진" src="${pageContext.request.contextPath}/images/${vo.imag}"></td>
 								<th width="120">이 름</th>
 								<td>${vo.name}</td>
 								<th width="120">생년월일</th>
@@ -211,7 +226,6 @@ $(document).ready(function() {
 							<tr height="50">
 								<th width="150">최종학력</th>
 								<td colspan="4">${vo.univ}</td>
-
 							</tr>
 							<tr>
 								<th width="120">전공</th>
@@ -219,6 +233,7 @@ $(document).ready(function() {
 								<th width="120">졸업학점</th>
 								<td>${vo.score}</td>
 							</tr>
+							</c:forEach>
 						</table><br/><br/>
 					</div>
 					
@@ -226,9 +241,8 @@ $(document).ready(function() {
 						<table id="tblCareer" style="display: none;">
 							<thead>
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">경 력 사 항&nbsp;
+								<td height="70" colspan="6"><h3 align="center">경 력 사 항&nbsp;
 								<button id="rowAddCareer" class="btn btn-danger btn-sm">추가</button>
-								<button id="rowDelCareer" class="btn btn-dark btn-sm">삭제</button>
 								</h3>
 								</td>
 							</tr>
@@ -236,7 +250,8 @@ $(document).ready(function() {
 							<tbody id="tbodyCareer">
 							<tr height="50">
 								<th width="150">회사명</th>
-								<td colspan="3"><input type="text" id="co_name" name="co_name"></td>
+								<td colspan="4"><input type="text" id="co_name" name="co_name"></td>
+								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
 							</tr>
 							<tr height="50">
 								<th width="120">근무부서</th>
@@ -263,9 +278,8 @@ $(document).ready(function() {
 						<table id="tblLicense" style="display: none;">
 							<thead>
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">자 격 사 항&nbsp;
+								<td height="70" colspan="6"><h3 align="center">자 격 사 항&nbsp;
 								<button id="rowAddLicense" class="btn btn-danger btn-sm">추가</button>
-								<button id="rowDelLicense" class="btn btn-dark btn-sm">삭제</button>
 								</h3></td>
 							</tr>
 							</thead>
@@ -273,6 +287,7 @@ $(document).ready(function() {
 							<tr height="50">
 								<th width="150">자격증명</th>
 								<td colspan="4"><input type="text" id="lic_name" name="lic_name"></td>
+								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
 							</tr>
 							<tr height="50">
 								<th width="150">자격증번호</th>
@@ -292,16 +307,16 @@ $(document).ready(function() {
 						<table id="tblActivity" style="display: none;">
 							<thead>
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">대 외 활 동&nbsp;
+								<td height="70" colspan="6"><h3 align="center">대 외 활 동&nbsp;
 								<button id="rowAddActivity" class="btn btn-danger btn-sm">추가</button>
-								<button id="rowDelActivity" class="btn btn-dark btn-sm">삭제</button>
 								</h3></td>
 							</tr>
 							</thead>
 							<tbody id="tbodyActivity">
 							<tr height="50">
 								<th width="150">구분(고용형태)</th>
-								<td colspan="4"><input type="text" id="act_type" name="act_type"></td>
+								<td colspan="4"><input type="text" id="act_type" name="act_type" ></td>
+								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
 							</tr>
 							<tr height="50">
 								<th width="150">활동명</th>
@@ -326,9 +341,8 @@ $(document).ready(function() {
 						<table id="tblAward" style="display: none;">
 							<thead>
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">수 상 내 역&nbsp;
+								<td height="70" colspan="6"><h3 align="center">수 상 내 역&nbsp;
 								<button id="rowAddAward" class="btn btn-danger btn-sm">추가</button>
-								<button id="rowDelAward" class="btn btn-dark btn-sm">삭제</button>
 								</h3></td>
 							</tr>
 							</thead>
@@ -336,6 +350,7 @@ $(document).ready(function() {
 							<tr height="50">
 								<th width="150">수상명</th>
 								<td colspan="4"><input type="text" id="awd_name" name="awd_name"></td>
+								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
 							</tr>
 							<tr height="50">
 								<th width="120">수여기관</th>
@@ -355,9 +370,8 @@ $(document).ready(function() {
 						<table id="tblLanguage" style="display: none;">
 							<thead>
 							<tr>
-								<td height="70" colspan="5"><h3 align="center">어 학 능 력&nbsp;
+								<td height="70" colspan="6"><h3 align="center">어 학 능 력&nbsp;
 								<button id="rowAddLanguage" class="btn btn-danger btn-sm">추가</button>
-								<button id="rowDelLanguage" class="btn btn-dark btn-sm">삭제</button>
 								</h3></td>
 							</tr>
 							</thead>
@@ -365,6 +379,7 @@ $(document).ready(function() {
 							<tr height="50">
 								<th width="150">어학자격명</th>
 								<td colspan="4"><input type="text" id="lag_name" name="lag_name"></td>
+								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
 							</tr>
 							<tr height="50">
 								<th width="150">인증기관</th>
@@ -398,6 +413,7 @@ $(document).ready(function() {
 							<input type="reset" value="취 소"></td>
 						</tr>
 					</table>
+					
 				</form>
 			</div>
 		</div>

@@ -16,10 +16,7 @@ public class ResumeDao extends DAO {
 
 	// user 테이블의 값 불러오기
 	private final String SELECTINF = "SELECT * FROM RESUME WHERE TEL = ?";
-	private final String LOADINFO
-		=   " SELECT NAME, IMAG, BIRTH, EMAIL, TEL, ADDR, UNIV, MAJOR, SCORE " + 
-			" FROM USERS " + 
-			" WHERE TEL = ?;";
+	private final String LOADINFO ="SELECT * FROM USERS WHERE TEL = ?";
 
 	
 	// 값 입력하기 (프로시저 사용?)
@@ -52,28 +49,31 @@ public class ResumeDao extends DAO {
 	
 	
 	// user 테이블의 값 이력서에 불러오기
-	public ResumeVO loadInfo(ResumeVO vo) {
+	public List<ResumeVO> loadInfo(ResumeVO vo) {
+		List<ResumeVO> list=new ArrayList<>();
 		try {
 			psmt = conn.prepareStatement(LOADINFO);
 			psmt.setString(1, vo.getTel());
 			rs = psmt.executeQuery();
-			if(rs.next()) {
-				vo.setId(rs.getString("id"));
-				vo.setName(rs.getString("name"));
-				vo.setImag(rs.getString("imag"));
-				vo.setBirth(rs.getDate("birth"));
-				vo.setEmail(rs.getString("email"));
-				vo.setTel(rs.getString("tel"));
-				vo.setAddr(rs.getString("addr"));
-				vo.setUniv(rs.getString("univ"));
-				vo.setMajor(rs.getString("major"));
-				vo.setScore(rs.getString("score"));
+			while(rs.next()) {
+				ResumeVO vo1=new ResumeVO();
+				vo1.setId(rs.getString("id"));
+				vo1.setName(rs.getString("name"));
+				vo1.setImag(rs.getString("imag"));
+				vo1.setBirth(rs.getDate("birth"));
+				vo1.setEmail(rs.getString("email"));
+				vo1.setTel(rs.getString("tel"));
+				vo1.setAddr(rs.getString("addr"));
+				vo1.setUniv(rs.getString("univ"));
+				vo1.setMajor(rs.getString("major"));
+				vo1.setScore(rs.getString("score"));
+				list.add(vo1);
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
-		} return vo;
+		} return list;
 	}
 
 	
