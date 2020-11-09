@@ -28,8 +28,20 @@
 					</c:forEach>
 					</select>
 					<button>지원하기</button>
-					</form>			
+					</form>
+					<c:if test="${n} == 1">
+					 <script>
+					 alert("이력서 전달 완료")
+					 </script>
+					</c:if>
+					<c:if test="${n} == 0">
+					<script>
+					alert("전달 실패")
+					</script>
+					</c:if>
+								
 		</div>
+
 		<hr />
 		<main id="main">
 			<form>
