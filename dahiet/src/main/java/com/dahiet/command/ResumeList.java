@@ -38,7 +38,6 @@ public class ResumeList implements Action {
 //			System.out.println(list.get(i).getTel());
 //		}
 
-		
 		request.setAttribute("relist", list);
 		return "/jsp/resume/mainResume.jsp";
 	}

@@ -6,16 +6,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.dahiet.vo.ComVO;
 import com.dahiet.vo.RecruitVO;
-import com.dahiet.vo.ReviewVO;
-import com.dahiet.vo.SimpleVO;
 
 public class RecruitDao extends DAO {
 	private PreparedStatement psmt; // sql명령어 작성시에 사용
 	private ResultSet rs; // select 후 결과셋 받기
 	private RecruitVO vo;
-
+	
+	private final String SELECTID = "SELECT * FROM COMPANIES C JOIN RECRUIT R ON C.NO = R.NO WHERE RECRUIT_SEQ = ?";
 	private final String RECRUITINSERT = "INSERT INTO RECRUIT(RECRUIT_SEQ,NO,TITLE,POSITION,EMP_TYPE,WORK,LOC,QUALIFY,SALARY,NEWBI) "
 			+ "VALUES(RECRUIT_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?,?,?,?)";
 	private final String RECRUITSELECT = "SELECT * FROM RECRUIT WHERE NO = ?";
@@ -23,11 +21,35 @@ public class RecruitDao extends DAO {
 	private final String RECURUITUPDATE = "UPDATE RECRUIT SET TITLE=?, POSITION=?, EMP_TYPE=?, LOC=?, WORK=?, QUALIFY=?, SALARY=?, NEWBI=? WHERE RECRUIT_SEQ=?";
 	private final String RECURUITDELETE = "DELETE FROM RECRUIT WHERE RECRUIT_SEQ=?";
 	private final String RECURUITDETAILSELECT = "SELECT C.IMG, C.NAME, C.ITEM, C.EMPS, C.TYPE, C.PROFIT, C.LINK"
-					+ " ,R.QUALIFY, R.TITLE, R.EMP_TYPE, R.LOC, R.POSITION, R.WORK FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO AND R.RECRUIT_SEQ = ?";
-/* C.회사로고, , C.회사이름, C.업종, C.사원수, C.기업형태, C.매출액, C.회사홈페이지, 
+					+ " ,R.QUALIFY, R.TITLE, R.EMP_TYPE, R.LOC, R.POSITION, R.WORK, C.ID FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO AND R.RECRUIT_SEQ = ?";
+	/* C.회사로고, , C.회사이름, C.업종, C.사원수, C.기업형태, C.매출액, C.회사홈페이지, 
 	R.지원자격, R.공고제목, R.근무형태, R.회사위치, R.모집부문, R.담당업무 */
 	
-		public RecruitVO RECURUITDETAILSELECT(RecruitVO vo) {
+	private final String RECURUITRESUMESELECT = "SELECT R.NAME, R.RESUME_SEQ FROM USERS U, RESUME R WHERE R.TEL = ?";
+	
+		// 이력서 select 목록 가져오기
+	public List<RecruitVO> RECURUITRESUMESELECT(RecruitVO vo) {
+		List<RecruitVO> rrlists = new ArrayList<RecruitVO>();
+		try {
+			psmt = conn.prepareStatement(RECURUITRESUMESELECT);
+			psmt.setString(1,vo.getTel());
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				vo = new RecruitVO();
+				vo.setResume_seq(rs.getString("resume_seq"));
+				vo.setResume_name(rs.getString("name"));
+				rrlists.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return rrlists;
+	}
+	
+	
+	public RecruitVO RECURUITDETAILSELECT(RecruitVO vo) {
 			try {
 				psmt = conn.prepareStatement(RECURUITDETAILSELECT);
 				psmt.setString(1, vo.getRecruit_seq());
@@ -49,7 +71,7 @@ public class RecruitDao extends DAO {
 					vo.setLoc(rs.getString("loc"));
 					vo.setPosition(rs.getString("position"));
 					vo.setWork(rs.getString("work"));
-//					vo.setSalary(rs.getString("salary"));
+					vo.setId(rs.getString("id"));
 //					vo.setNewbi(rs.getString("newbi"));
 			}
 		} catch (SQLException e) {
@@ -193,6 +215,51 @@ public class RecruitDao extends DAO {
 
 		return n;
 	}
+	
+	public RecruitVO selectinf(String recruit_seq) {
+		try {
+			psmt = conn.prepareStatement(SELECTID);
+			psmt.setString(1, recruit_seq);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				RecruitVO vo = new RecruitVO();
+				
+				vo.setRecruit_seq(rs.getString("recruit_seq"));
+				vo.setNo(rs.getString("no"));
+				vo.setTitle(rs.getString("title"));
+				vo.setPosition(rs.getString("position"));
+				vo.setEmp_type(rs.getString("emp_type"));
+				vo.setLoc(rs.getString("loc"));
+				vo.setWork(rs.getString("work"));
+				vo.setQualify(rs.getString("qualify"));
+				vo.setSalary(rs.getString("salary"));
+				vo.setNewbi(rs.getString("newbi"));
+				
+				//
+				vo.setImg(rs.getString("img"));
+				vo.setName(rs.getString("name"));
+				vo.setItem(rs.getString("item"));
+				vo.setEmps(rs.getString("emps"));
+				vo.setType(rs.getString("type"));
+				vo.setProfit(rs.getString("profit"));
+				vo.setLink(rs.getString("link"));
+				vo.setId(rs.getString("id"));
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}
+	return vo;
+}
+		
+		
+		
+
+	
+	
+	
 
 	private void close() {
 		try {

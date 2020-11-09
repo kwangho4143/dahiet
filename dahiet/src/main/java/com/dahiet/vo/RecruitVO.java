@@ -19,7 +19,11 @@ public class RecruitVO {
 	private String type;
 	private String profit;
 	private String link;
-	
+	private String id;
+	// resume
+	private String resume_seq;
+	private String tel;
+	private String resume_name;
 	
 	
 	
@@ -124,6 +128,30 @@ public class RecruitVO {
 	}
 	public void setSalary(String salary) {
 		this.salary = salary;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getResume_seq() {
+		return resume_seq;
+	}
+	public void setResume_seq(String resume_seq) {
+		this.resume_seq = resume_seq;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	public String getResume_name() {
+		return resume_name;
+	}
+	public void setResume_name(String resume_name) {
+		this.resume_name = resume_name;
 	}
 
 }

@@ -12,9 +12,9 @@
 		<div class="d-flex justify-content-between align-items-center">
 			<h2>취업 토크 상세 페이지</h2>
 			<p><a href="${pageContext.request.contextPath}/ReviewAction.do">토크목록</a>
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<a href="${pageContext.request.contextPath}/ReviewDetailUp.do?no=${vo.no}">토크수정</a>
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<a href="${pageContext.request.contextPath}/ReviewDelete.do?no=${vo.no}">토크삭제</a>
 				</p>
 		</div>
