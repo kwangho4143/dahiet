@@ -31,6 +31,7 @@ import com.dahiet.command.ReviewUpdate;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.ShowRecruitList;
 import com.dahiet.command.UserMypageAction;
+import com.dahiet.command.UsersApply;
 import com.dahiet.command.comInsert;
 import com.dahiet.command.companyLoginAction;
 import com.dahiet.command.insertRecruit;
@@ -72,8 +73,8 @@ public class FrontController extends HttpServlet {
       map.put("/Recruitupdate.do",new RecruitUpdate()); //공고리스트에서 상세로 넘어가서 수정
       map.put("/RecruitUp.do",new RecruitUp()); //로그인 폼 호출
       map.put("/RecruitDelete.do",new RecruitDelete()); //공고 리스트 삭제 기능
-      map.put("/resumeApply.do",new ResumeApply()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/resumeApply.do",new ResumeApply()); //공고리스트에서 이력서 넣기
+      map.put("/usersApply.do",new UsersApply()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
       //다희
       map.put("/ResumeList.do",new ResumeList()); //이력서 현황 호출
