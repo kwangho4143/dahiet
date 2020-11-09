@@ -6,10 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.dahiet.vo.ComVO;
 import com.dahiet.vo.RecruitVO;
-import com.dahiet.vo.ReviewVO;
-import com.dahiet.vo.SimpleVO;
 
 public class RecruitDao extends DAO {
 	private PreparedStatement psmt; // sql명령어 작성시에 사용
@@ -25,10 +22,34 @@ public class RecruitDao extends DAO {
 	private final String RECURUITDELETE = "DELETE FROM RECRUIT WHERE RECRUIT_SEQ=?";
 	private final String RECURUITDETAILSELECT = "SELECT C.IMG, C.NAME, C.ITEM, C.EMPS, C.TYPE, C.PROFIT, C.LINK"
 					+ " ,R.QUALIFY, R.TITLE, R.EMP_TYPE, R.LOC, R.POSITION, R.WORK, C.ID FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO AND R.RECRUIT_SEQ = ?";
-/* C.회사로고, , C.회사이름, C.업종, C.사원수, C.기업형태, C.매출액, C.회사홈페이지, 
+	/* C.회사로고, , C.회사이름, C.업종, C.사원수, C.기업형태, C.매출액, C.회사홈페이지, 
 	R.지원자격, R.공고제목, R.근무형태, R.회사위치, R.모집부문, R.담당업무 */
 	
-		public RecruitVO RECURUITDETAILSELECT(RecruitVO vo) {
+	private final String RECURUITRESUMESELECT = "SELECT R.NAME, R.RESUME_SEQ FROM USERS U, RESUME R WHERE R.TEL = ?";
+	
+		// 이력서 select 목록 가져오기
+	public List<RecruitVO> RECURUITRESUMESELECT(RecruitVO vo) {
+		List<RecruitVO> rrlists = new ArrayList<RecruitVO>();
+		try {
+			psmt = conn.prepareStatement(RECURUITRESUMESELECT);
+			psmt.setString(1,vo.getTel());
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				vo = new RecruitVO();
+				vo.setResume_seq(rs.getString("resume_seq"));
+				vo.setResume_name(rs.getString("name"));
+				rrlists.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return rrlists;
+	}
+	
+	
+	public RecruitVO RECURUITDETAILSELECT(RecruitVO vo) {
 			try {
 				psmt = conn.prepareStatement(RECURUITDETAILSELECT);
 				psmt.setString(1, vo.getRecruit_seq());

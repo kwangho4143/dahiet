@@ -14,8 +14,6 @@ import com.dahiet.vo.CodeVO;
 import com.dahiet.vo.ItemCodeVO;
 import com.dahiet.vo.SimpleVO;
 
-import sun.java2d.pipe.SpanShapeRenderer.Simple;
-
 public class SearchAction implements Action {
 
 	@Override

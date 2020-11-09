@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +20,15 @@
 			<p>
 				<a href="${pageContext.request.contextPath}/SearchAction.do">공고
 					목록</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-					<a href="${pageContext.request.contextPath}/ResumeApply.do?recruit_seq=${vo.recruit_seq}&resume_seq=${vo.resume_seq}">지원하기</a>
-			</p>
+					<form action="${pageContext.request.contextPath}/ResumeApply.do?recruit_seq=${vo.recruit_seq}&resume_seq=${reseq.seq}">
+					<label>이력서 선택</label>
+					<select name="resume" id="resume">
+					<c:forEach var="reseq" items="${rrlists}">
+					<option value="${reseq.resume_seq}">${reseq.resume_name}
+					</c:forEach>
+					</select>
+					<button>지원하기</button>
+					</form>			
 		</div>
 		<hr />
 		<main id="main">

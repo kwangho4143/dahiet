@@ -22,6 +22,8 @@ public class RecruitVO {
 	private String id;
 	// resume
 	private String resume_seq;
+	private String tel;
+	private String resume_name;
 	
 	
 	
@@ -138,6 +140,18 @@ public class RecruitVO {
 	}
 	public void setResume_seq(String resume_seq) {
 		this.resume_seq = resume_seq;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	public String getResume_name() {
+		return resume_name;
+	}
+	public void setResume_name(String resume_name) {
+		this.resume_name = resume_name;
 	}
 
 }
