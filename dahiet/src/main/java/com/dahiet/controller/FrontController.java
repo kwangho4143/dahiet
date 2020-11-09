@@ -20,6 +20,7 @@ import com.dahiet.command.RecruitDetial;
 import com.dahiet.command.RecruitUp;
 import com.dahiet.command.RecruitUpdate;
 import com.dahiet.command.ResumeApply;
+import com.dahiet.command.ResumeDetail;
 import com.dahiet.command.ResumeList;
 import com.dahiet.command.ReviewAction;
 import com.dahiet.command.ReviewCheck;
@@ -80,7 +81,7 @@ public class FrontController extends HttpServlet {
       //다희
       map.put("/ResumeList.do",new ResumeList()); //이력서 현황 호출
       map.put("/InsertResume.do",new InsertResume()); //이력서 등록 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/detailResume.do",new ResumeDetail()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
