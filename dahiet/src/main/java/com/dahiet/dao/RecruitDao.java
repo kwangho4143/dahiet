@@ -15,7 +15,8 @@ public class RecruitDao extends DAO {
 	private PreparedStatement psmt; // sql명령어 작성시에 사용
 	private ResultSet rs; // select 후 결과셋 받기
 	private RecruitVO vo;
-
+	
+	private final String SELECTID = "SELECT * FROM COMPANIES C JOIN RECRUIT R ON C.NO = R.NO WHERE RECRUIT_SEQ = ?";
 	private final String RECRUITINSERT = "INSERT INTO RECRUIT(RECRUIT_SEQ,NO,TITLE,POSITION,EMP_TYPE,WORK,LOC,QUALIFY,SALARY,NEWBI) "
 			+ "VALUES(RECRUIT_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?,?,?,?)";
 	private final String RECRUITSELECT = "SELECT * FROM RECRUIT WHERE NO = ?";
@@ -193,6 +194,51 @@ public class RecruitDao extends DAO {
 
 		return n;
 	}
+	
+	public RecruitVO selectinf(String recruit_seq) {
+		try {
+			psmt = conn.prepareStatement(SELECTID);
+			psmt.setString(1, recruit_seq);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				RecruitVO vo = new RecruitVO();
+				
+				vo.setRecruit_seq(rs.getString("recruit_seq"));
+				vo.setNo(rs.getString("no"));
+				vo.setTitle(rs.getString("title"));
+				vo.setPosition(rs.getString("position"));
+				vo.setEmp_type(rs.getString("emp_type"));
+				vo.setLoc(rs.getString("loc"));
+				vo.setWork(rs.getString("work"));
+				vo.setQualify(rs.getString("qualify"));
+				vo.setSalary(rs.getString("salary"));
+				vo.setNewbi(rs.getString("newbi"));
+				
+				//
+				vo.setImg(rs.getString("img"));
+				vo.setName(rs.getString("name"));
+				vo.setItem(rs.getString("item"));
+				vo.setEmps(rs.getString("emps"));
+				vo.setType(rs.getString("type"));
+				vo.setProfit(rs.getString("profit"));
+				vo.setLink(rs.getString("link"));
+				vo.setId(rs.getString("id"));
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}
+	return vo;
+}
+		
+		
+		
+
+	
+	
+	
 
 	private void close() {
 		try {
