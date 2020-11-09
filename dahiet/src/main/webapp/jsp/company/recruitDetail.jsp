@@ -26,7 +26,7 @@
 					<option value="${reseq.resume_seq}">${reseq.resume_name}
 					</c:forEach>
 				</select>
-				<button>지원하기</button>
+				<button class="get-started-btn ml-auto" style="width: 2cm; height: 20px">지원</button>
 			</form>
 			<c:if test="${n == 1}">
 				<script>

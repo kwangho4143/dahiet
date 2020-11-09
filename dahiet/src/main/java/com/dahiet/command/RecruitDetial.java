@@ -58,4 +58,3 @@ public class RecruitDetial implements Action {
 
 }	
 
-//rrlists

@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
  a.abc {
  border-radius: 7px; border: 1px solid; 
@@ -33,22 +36,11 @@
 								<li class="drop-down"><a href="#">지역 선택</a>
 									<ul>
 										<li>
-											
-											
-											
-											
-											
 											<div style="white-space: normal; margin: 0.5cm; width: 500px">
 												<c:forEach var="code" items="${codes}">
 													<label><input type="checkbox" name="loc"
 														value="${code.codename}" onchange="showloc(this.value)">${code.codevalue}</label>
 												</c:forEach>
-												 
-												
-												
-												
-												
-												${code.codename }
 											</div>
 										</li>
 									</ul></li>
@@ -59,7 +51,7 @@
 											<div style="white-space: normal; margin: 0.5cm; width: 500px">
 												<c:forEach var="itemcode" items="${itemcodes}">
 													<label><input type="checkbox" name="item"
-														value="${itemcode.itemid }">${itemcode.itemname}</label>
+														value="${itemcode.itemid }" onchange="showitem(this.value)">${itemcode.itemname}</label>
 
 												</c:forEach>
 											</div>
@@ -119,15 +111,15 @@
 						<div style="margin-left: 0%">
 							<h5 align="left">선택된 지역</h5>
 								<div id="selloc">
-								<a class="abc"/>
+								<a class="abc"></a>
 								</div>
 							<h5>선택된 업종</h5>
-								<a style="border-radius: 7px; border: 1px solid; height: 28px;"></a>
+							<div id="selitem"></div>
+								<a class="abc"></a>
 						</div>
 						<script>
 							function showloc(str) {
 							var loc = $(event.target).parent().text();
-							console.log(str);
 								if ($(event.target).is(":checked") == false) {
 									$('a:contains("'+loc+'")').remove();
 									return;
@@ -135,6 +127,16 @@
 									$('#selloc').append($('<a>').addClass('abc').text(loc))
 								}
 							}
+							
+							function showitem(str) {
+								var item = $(event.target).parent().text();
+									if ($(event.target).is(":checked") == false) {
+										$('a:contains("'+item+'")').remove();
+										return;
+									} else {
+										$('#selitem').append($('<a>').addClass('abc').text(item))
+									}
+								}
 							
 						</script>
 

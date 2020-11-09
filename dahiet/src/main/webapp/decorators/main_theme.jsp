@@ -78,7 +78,7 @@
 					<li><a href="${pageContext.request.contextPath}/ResumeList.do">개인</a></li>
 					<li><a href="${pageContext.request.contextPath}/showRecruitList.do">기업</a></li>
 					<c:if test = "${sessionScope.id eq null}">
-					<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" class="get-started-btn ml-auto" >로그인 / 가입</button></li>
+					<li>  <button type="button" class="btn btn-outline-primary" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" >로그인 / 가입</button></li>
 					</c:if>
 					<c:if test = "${sessionScope.id ne null}">
 						<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/UserMypage.do';" class="get-started-btn ml-auto" >마이페이지</button></li>
