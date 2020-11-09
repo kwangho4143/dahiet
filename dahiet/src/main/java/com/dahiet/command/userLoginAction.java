@@ -37,7 +37,6 @@ public class userLoginAction implements Action {
 		} else {
 			msq = "패스워드가 틀렸다.";
 		}
-
 		request.setAttribute("msg", msq);
 		return page;
 	}
