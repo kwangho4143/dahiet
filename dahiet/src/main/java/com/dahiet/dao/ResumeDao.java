@@ -15,10 +15,10 @@ public class ResumeDao extends DAO {
 	private ResultSet rs; // select 후 결과셋 받기
 	private ResumeVO vo;
 
-	// user 테이블의 값 불러오기
+	// 테이블의 값 불러오기
 	private final String SELECTINF = "SELECT * FROM RESUME WHERE TEL = ?";
 	private final String LOADINFO ="SELECT * FROM USERS WHERE TEL = ?";
-	private final String SELECTID = "select * from users u join resume r on u.tel = r.tel where resume_seq=?"	;
+	private final String SELECTID = "SELECT * FROM USERS U JOIN RESUME R ON U.TEL = R.TEL WHERE RESUME_SEQ=?"	;
 	
 	// 값 입력하기 (프로시저 사용?)
 //	private final String ~
@@ -79,7 +79,7 @@ public class ResumeDao extends DAO {
 
 	
 	// 이력서 등록
-	public int insertResume(ResumeVO vo2) {
+	public int insertResume(ResumeVO vo) {
 		int n = 0;
 		//
 		//
