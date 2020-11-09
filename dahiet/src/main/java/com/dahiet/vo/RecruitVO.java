@@ -20,7 +20,8 @@ public class RecruitVO {
 	private String profit;
 	private String link;
 	private String id;
-	
+	// resume
+	private String resume_seq;
 	
 	
 	
@@ -131,6 +132,12 @@ public class RecruitVO {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getResume_seq() {
+		return resume_seq;
+	}
+	public void setResume_seq(String resume_seq) {
+		this.resume_seq = resume_seq;
 	}
 
 }

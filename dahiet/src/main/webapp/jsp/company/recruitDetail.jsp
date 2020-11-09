@@ -19,7 +19,7 @@
 			<p>
 				<a href="${pageContext.request.contextPath}/SearchAction.do">공고
 					목록</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-					<a href="${pageContext.request.contextPath}/ResumeApply.do?id="${vo.id}>지원하기</a>
+					<a href="${pageContext.request.contextPath}/ResumeApply.do?recruit_seq=${vo.recruit_seq}&resume_seq=${vo.resume_seq}">지원하기</a>
 			</p>
 		</div>
 		<hr />
