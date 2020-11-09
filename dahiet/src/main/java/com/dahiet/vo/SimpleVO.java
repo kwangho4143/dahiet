@@ -5,10 +5,33 @@ public class SimpleVO { //상세검색
 	private String img;
 	private String name;
 	private String title;
-	private String emp_type;
+	private String emp_type; //SEARCH N SELECT
 	private String work;
-	private String salary;
+	private String salary; //SEARCH N SELECT
+	// SEARCH를 위한 값
+	private String loc;
+	private String item;
+	private String type; 
 	
+	
+	public String getLoc() {
+		return loc;
+	}
+	public void setLoc(String loc) {
+		this.loc = loc;
+	}
+	public String getItem() {
+		return item;
+	}
+	public void setItem(String item) {
+		this.item = item;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	
 	public String getImg() {
 		return img;

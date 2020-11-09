@@ -36,6 +36,10 @@ public class SearchAction implements Action {
 		SimpleVO svo = new SimpleVO();
 		slist = sdao.SIMPLESELECT(svo);
 		request.setAttribute("simples", slist);
+		
+		
+		
+		
 		return "/jsp/common/search.jsp";
 		
 	}

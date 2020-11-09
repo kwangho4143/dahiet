@@ -20,7 +20,7 @@
 			<p>
 				<a href="${pageContext.request.contextPath}/SearchAction.do">공고
 					목록</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-					<form action="${pageContext.request.contextPath}/ResumeApply.do?recruit_seq=${vo.recruit_seq}&resume_seq=${reseq.seq}">
+					<form action="${pageContext.request.contextPath}/ResumeApply.do?recruit_seq=${vo.recruit_seq}">
 					<label>이력서 선택</label>
 					<select name="resume" id="resume">
 					<c:forEach var="reseq" items="${rrlists}">

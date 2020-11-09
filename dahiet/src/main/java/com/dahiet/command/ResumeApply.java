@@ -19,23 +19,29 @@ public class ResumeApply implements Action {
 		String recruit_seq = request.getParameter("recruit_seq");
 		String resume_seq = request.getParameter("resume_seq");
 		
-		RecruitDao cdao = new RecruitDao();
-		RecruitVO cvo = new RecruitVO();
-		cvo = cdao.selectinf(recruit_seq);
+		System.out.println(recruit_seq);
+		System.out.println(resume_seq);
 		
-		ResumeDao sdao = new ResumeDao();
-		ResumeVO svo = new ResumeVO();
-		svo = sdao.selectinf(resume_seq);
 		
+//		RecruitDao cdao = new RecruitDao();
+//		RecruitVO cvo = new RecruitVO();
+//		cvo = cdao.selectinf(recruit_seq);
+//		
+//		ResumeDao sdao = new ResumeDao();
+//		ResumeVO svo = new ResumeVO();
+//		svo = sdao.selectinf(resume_seq);
+
 		ResumeStatusDao tdao = new ResumeStatusDao();
-		ResumeStatusVO tvo = new ResumeStatusVO();
+		//ResumeStatusVO tvo = new ResumeStatusVO();
+
+//		int n = tdao.insert(cvo, svo);
+		int n = tdao.insert(recruit_seq, resume_seq);
 		
-		tdao.insert(cvo, svo);
 		
-		n
+		request.setAttribute("n", n);
 		
 		
-		return null;
+		return "/jsp/company/recruitDetail.jsp";
 	}
 
 }
