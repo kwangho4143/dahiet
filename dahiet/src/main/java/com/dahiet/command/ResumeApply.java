@@ -29,13 +29,13 @@ public class ResumeApply implements Action {
 		
 		ResumeStatusDao tdao = new ResumeStatusDao();
 		ResumeStatusVO tvo = new ResumeStatusVO();
+
+		int n = tdao.insert(cvo, svo);
 		
-		tdao.insert(cvo, svo);
-		
-		n
+		request.setAttribute("n", n);
 		
 		
-		return null;
+		return "/jsp/company/recruitDetail.jsp";
 	}
 
 }

@@ -14,7 +14,7 @@ public class ResumeStatusDao extends DAO {
 
 	private String INSERTSTATUS = "INSERT INTO RESUME_STATUS(RESUME_SUPPLY_SEQ,RESUME_SEQ,RECRUIT_SEQ,APPLY_DATE) VALUES(RESUME_APPLY_VAL_SEQ.NEXTVAL,5,4,SYSDATE)";
 
-	public void insert(RecruitVO vo1, ResumeVO vo2) {
+	public int insert(RecruitVO vo1, ResumeVO vo2) {
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(INSERTSTATUS);
@@ -28,6 +28,8 @@ public class ResumeStatusDao extends DAO {
 			close();
 		}
 
+		return n;
+	
 	}
 
 	private void close() {
