@@ -30,6 +30,7 @@ import com.dahiet.command.ReviewInsert;
 import com.dahiet.command.ReviewUpdate;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.ShowRecruitList;
+import com.dahiet.command.UpdateUserInf;
 import com.dahiet.command.UserMypageAction;
 import com.dahiet.command.UsersApply;
 import com.dahiet.command.comInsert;
@@ -88,8 +89,8 @@ public class FrontController extends HttpServlet {
       //정은
       map.put("/companyLogin.do",new companyLoginAction()); //로그인 폼 호출
       map.put("/logOut.do",new LogoutAction()); //로그인 폼 호출
-      map.put("/UserMypage.do",new UserMypageAction()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/UserMypage.do",new UserMypageAction()); //회원정보리스트 
+      map.put("/updateUserInf.do",new UpdateUserInf()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
