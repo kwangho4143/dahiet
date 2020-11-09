@@ -19,6 +19,7 @@ public class RecruitVO {
 	private String type;
 	private String profit;
 	private String link;
+	private String id;
 	
 	
 	
@@ -124,6 +125,12 @@ public class RecruitVO {
 	}
 	public void setSalary(String salary) {
 		this.salary = salary;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

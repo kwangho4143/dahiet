@@ -117,8 +117,8 @@
 					<div>
 						<table border="1" style="width: 100%; height: 3cm">
 							<tr>
-								<td rowspan="3" style="width: 1cm; height: 2cm" ><img alt="회사로고"
-									src="${pageContext.request.contextPath}/images/"></td>
+								<td rowspan="3" style="width: 1px; height: 2cm" ><img style="margin: 1px" alt="회사로고"
+									src="${pageContext.request.contextPath}/images/${simple.img}"></td>
 
 								<th style="width: 1cm">공고이름</th>
 								<td colspan="3" style="width: 2cm"><a href="${pageContext.request.contextPath}

@@ -34,9 +34,9 @@ public class ResumeList implements Action {
 		}
 
 		//
-		for(int i=0;i<list.size();i++){
-			System.out.println(list.get(i).getTel());
-		}
+//		for(int i=0;i<list.size();i++){
+//			System.out.println(list.get(i).getTel());
+//		}
 		
 		
 
