@@ -18,17 +18,10 @@
 		<div class="d-flex justify-content-between align-items-center">
 			<h2>채용 공고 상세 페이지</h2>
 			<p>
-				<a href="${pageContext.request.contextPath}/SearchAction.do">공고
-					목록</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-					<form action="${pageContext.request.contextPath}/ResumeApply.do?recruit_seq=${vo.recruit_seq}">
-					<label>이력서 선택</label>
-					<select name="resume" id="resume">
-=======
-					목록</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="${pageContext.request.contextPath}/SearchAction.do">공고 목록</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<form action="${pageContext.request.contextPath}/resumeApply.do">
 				<input name = "recruit_seq" type = "hidden" value="${param.no}">
 				<label>이력서 선택</label> <select name="resume_seq" id="resume">
->>>>>>> branch 'main' of https://github.com/kwangho4143/dahiet.git
 					<c:forEach var="reseq" items="${rrlists}">
 					<option value="${reseq.resume_seq}">${reseq.resume_name}
 					</c:forEach>
