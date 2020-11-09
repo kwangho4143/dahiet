@@ -19,7 +19,32 @@ public class UserDao extends DAO {
 	private final String USERINSERT = "INSERT INTO USERS(ID,PW,NAME,IMAG,BIRTH,TEL,EMAIL,ADDR,UNIV,MAJOR,SCORE) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 	private final String SELECTLOGIN = "SELECT * FROM USERS WHERE ID = ? ";
 	private final String USERUPDATE = 
-			"UPDATE MEMBER SET NAME = ?, PASSWORD = ?, ADDRESS = ?, TEL = ? WHERE ID = ?";
+			"UPDATE USERS SET  PW = ?,EMAIL= ?, ADDR = ?, TEL = ?, UNIV= ?, MAJOR=?, SCORE=? WHERE ID = ?";
+	
+	public int UserUpdate(UserVO vo) {  //수정하기
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(USERUPDATE);
+			psmt.setString(1,vo.getPw());
+			psmt.setString(2, vo.getEmail());
+			psmt.setString(3, vo.getAddr());
+			psmt.setString(4, vo.getTel());
+			psmt.setString(5, vo.getUniv());
+			psmt.setString(6, vo.getMajor());
+			psmt.setString(7, vo.getScore());
+			psmt.setString(8, vo.getId());
+			
+			n = psmt.executeUpdate();
+			
+		}catch(SQLException e ) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return n;
+	}
+	
+
 	
 	public int insert(UserVO vo) {
 		int n=0;
@@ -97,27 +122,6 @@ public class UserDao extends DAO {
 		}
 		return vo;
 	}
-	
-	
-	public int UserUpdate(UserVO vo) {  //수정하기
-		int n = 0;
-		try {
-			psmt = conn.prepareStatement(USERUPDATE);
-			psmt.setString(1,vo.getName());
-			psmt.setString(2, vo.getPw());
-			psmt.setString(3, vo.getAddr());
-			psmt.setString(4, vo.getTel());
-			psmt.setString(5, vo.getId());
-			n = psmt.executeUpdate();
-			
-		}catch(SQLException e ) {
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		return n;
-	}
-	
 	
 	
 }
