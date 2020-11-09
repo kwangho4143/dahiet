@@ -30,17 +30,54 @@
 
 <script>
 $(document).ready(function() {
-	
+
+	// *경력
 	// 하단 체크박스 체크시 항목 추가
-	// 경력
 	$('#chkCareer').on("click", function() {
 		if ($('#tblCareer').css('display') == 'none') {
 			$('#tblCareer').show();
 		} else {
 			$('#tblCareer').hide();
 		}
-	});	
-	// 자격
+	});
+	
+	// 삭제 버튼 눌러서 체크한 항목 삭제
+	$('#rowDelCareer').click(function(event) {
+		event.preventDefault();
+		//체크된 행이 없을 경우
+		if ($('#tblCareer input:checkbox:checked').length == 0) {
+			alert("삭제할 행을 선택하여 주십시오.");
+		} else {
+			$('#tblCareer input[type=checkbox]:checked').each(function(index) {
+				if ($('#tblCareer input:checkbox').length == 1) {
+					alert("모든 행을 삭제할 수 없습니다.");
+				} else {
+					//체크박스를 포함하고 있는 행 제거 
+					var clickedRowCareer = $(this).parent().parent().parent();
+					var clickedRowCareerNext = clickedRowCareer.next("tr");
+					clickedRowCareer.remove();
+					clickedRowCareerNext.remove();
+				}
+			});
+		}
+	});
+	
+	var cloneCareerTr = $("#tblCareer tbody").clone();
+	//추가 버튼 눌러서 
+	$("#rowAddCareer").click(function(event) {
+		event.preventDefault();
+		//복제 대상이 없으면 문제가 되므로 
+		//문서가 로딩될때 복사할 대상을 변수에 담아 놓고 
+		//추가 버튼을 누를때마다 저장해놓은 요소를 복제해서 추가
+		cloneCareerTr.find("#tblCareer input").val(""); //텍스트박스 값 초기화
+		cloneCareerTr.find("#tblCareer input[type=checkbox]").removeAttr("checked");
+		$("#tblCareer").append(cloneCareerTr.clone())
+	});
+	
+	
+	
+	// *자격
+	// 하단 체크박스 체크시 항목 추가
 	$('#chkLicense').on("click", function() {
 		if ($('#tblLicense').css('display') == 'none') {
 			$('#tblLicense').show();
@@ -48,7 +85,41 @@ $(document).ready(function() {
 			$('#tblLicense').hide();
 		}
 	});	
-	// 대외
+	
+	// 삭제 버튼 눌러서 체크한 항목 삭제
+	$('#rowDelLicense').click(function(event) {
+		event.preventDefault();
+		//체크된 행이 없을 경우
+		if ($('#tblLicense input:checkbox:checked').length == 0) {
+			alert("삭제할 행을 선택하여 주십시오.");
+		} else {
+			$('#tblLicense input[type=checkbox]:checked').each(function(index) {
+				if ($('#tblLicense input:checkbox').length == 1) {
+					alert("모든 행을 삭제할 수 없습니다.");
+				} else {
+					//체크박스를 포함하고 있는 행 제거 
+					var clickedRowLicense = $(this).parent().parent().parent();
+					var clickedRowLicenseNext = clickedRowLicense.next("tr");
+					clickedRowLicense.remove();
+					clickedRowLicenseNext.remove();
+				}
+			});
+		}
+	});
+	
+	var cloneLicenseTr = $("#tblLicense tbody").clone();
+	//추가 버튼 눌러서 
+	$("#rowAddLicense").click(function(event) {
+		event.preventDefault();
+		cloneLicenseTr.find("#tblLicense input").val(""); //텍스트박스 값 초기화
+		cloneLicenseTr.find("#tblLicense input[type=checkbox]").removeAttr("checked");
+		$("#tblLicense").append(cloneLicenseTr.clone())
+	});
+	
+	
+	
+	// *대외
+	// 하단 체크박스 체크시 항목 추가
 	$('#chkActivity').on("click", function() {
 		if ($('#tblActivity').css('display') == 'none') {
 			$('#tblActivity').show();
@@ -56,7 +127,44 @@ $(document).ready(function() {
 			$('#tblActivity').hide();
 		}
 	});	
-	// 수상
+	
+	// 삭제 버튼 눌러서 체크한 항목 삭제
+	$('#rowDelActivity').click(function(event) {
+		event.preventDefault();
+		//체크된 행이 없을 경우
+		if ($('#tblActivity input:checkbox:checked').length == 0) {
+			alert("삭제할 행을 선택하여 주십시오.");
+		} else {
+			$('#tblActivity input[type=checkbox]:checked').each(function(index) {
+				if ($('#tblActivity input:checkbox').length == 1) {
+					alert("모든 행을 삭제할 수 없습니다.");
+				} else {
+					//체크박스를 포함하고 있는 행 제거 
+					var clickedRowActivity= $(this).parent().parent().parent();
+					var clickedRowActivityNext = clickedRowActivity.next("tr");
+					clickedRowActivity.remove();
+					clickedRowActivityNext.remove();
+				}
+			});
+		}
+	});
+	
+	var cloneActivityTr = $("#tblActivity tbody").clone();
+	//추가 버튼 눌러서 
+	$("#rowAddActivity").click(function(event) {
+		event.preventDefault();
+		//복제 대상이 없으면 문제가 되므로 
+		//문서가 로딩될때 복사할 대상을 변수에 담아 놓고 
+		//추가 버튼을 누를때마다 저장해놓은 요소를 복제해서 추가
+		cloneActivityTr.find("#tblActivity input").val(""); //텍스트박스 값 초기화
+		cloneActivityTr.find("#tblActivity input[type=checkbox]").removeAttr("checked");
+		$("#tblActivity").append(cloneActivityTr.clone())
+	});
+	
+	
+	
+	// *수상
+	// 하단 체크박스 체크시 항목 추가
 	$('#chkAward').on("click", function() {
 		if ($('#tblAward').css('display') == 'none') {
 			$('#tblAward').show();
@@ -64,7 +172,44 @@ $(document).ready(function() {
 			$('#tblAward').hide();
 		}
 	});	
-	// 어학
+	
+	// 삭제 버튼 눌러서 체크한 항목 삭제
+	$('#rowDelAward').click(function(event) {
+		event.preventDefault();
+		//체크된 행이 없을 경우
+		if ($('#tblAward input:checkbox:checked').length == 0) {
+			alert("삭제할 행을 선택하여 주십시오.");
+		} else {
+			$('#tblAward input[type=checkbox]:checked').each(function(index) {
+				if ($('#tblAward input:checkbox').length == 1) {
+					alert("모든 행을 삭제할 수 없습니다.");
+				} else {
+					//체크박스를 포함하고 있는 행 제거 
+					var clickedRowAward = $(this).parent().parent().parent();
+					var clickedRowAwardNext = clickedRowAward.next("tr");
+					clickedRowAward.remove();
+					clickedRowAwardNext.remove();
+				}
+			});
+		}
+	});
+	
+	var cloneAwardTr = $("#tblAward tbody").clone();
+	//추가 버튼 눌러서 
+	$("#rowAddAward").click(function(event) {
+		event.preventDefault();
+		//복제 대상이 없으면 문제가 되므로 
+		//문서가 로딩될때 복사할 대상을 변수에 담아 놓고 
+		//추가 버튼을 누를때마다 저장해놓은 요소를 복제해서 추가
+		cloneAwardTr.find("#tblAward input").val(""); //텍스트박스 값 초기화
+		cloneAwardTr.find("#tblAward input[type=checkbox]").removeAttr("checked");
+		$("#tblAward").append(cloneAwardTr.clone())
+	});
+	
+	
+	
+	// *어학
+	// 하단 체크박스 체크시 항목 추가
 	$('#chkLanguage').on("click", function() {
 		if ($('#tblLanguage').css('display') == 'none') {
 			$('#tblLanguage').show();
@@ -73,112 +218,40 @@ $(document).ready(function() {
 		}
 	});
 	
-	// 추가 버튼 클릭시 행 추가
-	var cnt1 = 0;
-	var cnt2 = 0;
-	var cnt3 = 0;
-	var cnt4 = 0;
-	var cnt5 = 0;
-	// 경력
-	$('#rowAddCareer').on("click", function(event) { 
-		cnt1++;
+	// 삭제 버튼 눌러서 체크한 항목 삭제
+	$('#rowDelLanguage').click(function(event) {
 		event.preventDefault();
-		$('#tbodyCareer').clone().appendTo('#tblCareer');
+		//체크된 행이 없을 경우
+		if ($('#tblLanguage input:checkbox:checked').length == 0) {
+			alert("삭제할 행을 선택하여 주십시오.");
+		} else {
+			$('#tblLanguage input[type=checkbox]:checked').each(function(index) {
+				if ($('#tblLanguage input:checkbox').length == 1) {
+					alert("모든 행을 삭제할 수 없습니다.");
+				} else {
+					//체크박스를 포함하고 있는 행 제거 
+					var clickedRowLanguage = $(this).parent().parent().parent();
+					var clickedRowLanguageNext = clickedRowLanguage.next("tr");
+					clickedRowLanguage.remove();
+					clickedRowLanguageNext.remove();
+				}
+			});
+		}
 	});
-	// 자격
-	$('#rowAddLicense').on("click", function(event) { 
-		cnt2++;
+	
+	var cloneLanguageTr = $("#tblLanguage tbody").clone();
+	//추가 버튼 눌러서 
+	$("#rowAddLanguage").click(function(event) {
 		event.preventDefault();
-		$('#tbodyLicense').clone().appendTo('#tblLicense');
-	});	
-	// 대외
-	$('#rowAddActivity').on("click", function(event) { 
-		cnt3++;
-		event.preventDefault();
-		$('#tbodyActivity').clone().appendTo('#tblActivity');
-	});	
-	// 수상
-	$('#rowAddAward').on("click", function(event) { 
-		cnt4++;
-		event.preventDefault();
-		$('#tbodyAward').clone().appendTo('#tblAward');
-	});	
-	// 어학
-	$('#rowAddLanguage').on("click", function(event) { 
-		cnt5++;
-		event.preventDefault();
-		$('#tbodyLanguage').clone().appendTo('#tblLanguage');
+		//복제 대상이 없으면 문제가 되므로 
+		//문서가 로딩될때 복사할 대상을 변수에 담아 놓고 
+		//추가 버튼을 누를때마다 저장해놓은 요소를 복제해서 추가
+		cloneLanguageTr.find("#tblLanguage input").val(""); //텍스트박스 값 초기화
+		cloneLanguageTr.find("#tblLanguage input[type=checkbox]").removeAttr("checked");
+		$("#tblLanguage").append(cloneLanguageTr.clone())
 	});
 	
 	
-	// 삭제버튼 클릭시 아래에서부터 행 삭제
-	// 경력
-	${'#rowDelCareer'}.on("click", function(event) {
-		event.preventDefault();
-		if (cnt1 > 0) {
-			cnt1--;
-			$(this).closest('tr').remove();
-		} else {
-			alert("더 이상 삭제할 수 없습니다.");
-			return null;
-		}
-	}); 
-	
-/*  	$('#rowDelCareer').on("click", function(event) {
-		event.preventDefault();
-		if (cnt1 > 0) {
-			cnt1--;
-			$('#tbodyCareer').remove();
-		} else {
-			alert("더 이상 삭제할 수 없습니다.");
-			return null;
-		}
-	}); */ 
-
-	// 자격
-	$('#rowDelLicense').on("click", function(event) {
-		event.preventDefault();
-		if (cnt2 > 0) {
-			cnt2--;
-			$('#tbodyLicense').remove();
-		} else {
-			alert("더 이상 삭제할 수 없습니다.");
-			return null;
-		}
-	}); 
-	// 대외
- 	$('#rowDelActivity').on("click", function(event) {
-		event.preventDefault();
-		if (cnt3 > 0) {
-			cnt3--;
-			$('#tbodyActivity').remove();
-		} else {
-			alert("더 이상 삭제할 수 없습니다.");
-			return null;
-		}
-	}); 
-	// 수상
- 	$('#rowDelAward').on("click", function(event) {
-		event.preventDefault();
-		if (cnt4 > 0) {
-			cnt4--;
-			$('#tbodyAward').remove();
-		} else {
-			alert("더 이상 삭제할 수 없습니다.");
-			return null;
-		}
-	}); 
-	// 어학
- 	$('#rowDelLanguage').on("click", function(event) {
-		event.preventDefault();
-		if (cnt5 > 0) {
-			cnt5--;
-			$('#tbodyLanguage').remove();
-		} else {
-			alert("더 이상 삭제할 수 없습니다.");
-			return null;
-		}
-	});
 })
 
 </script>
@@ -207,7 +280,7 @@ $(document).ready(function() {
 							</tr>
 							<c:forEach items="${list}" var="vo">
 							<tr height="50">
-								<td rowspan="3"><img alt="사진" src="${pageContext.request.contextPath}/images/${vo.imag}"></td>
+								<td rowspan="3"><img alt="사진" src="${pageContext.request.contextPath}/images/${vo.imag}" width="120" height="150" align="middle"></td>
 								<th width="120">이 름</th>
 								<td>${vo.name}</td>
 								<th width="120">생년월일</th>
@@ -243,6 +316,7 @@ $(document).ready(function() {
 							<tr>
 								<td height="70" colspan="6"><h3 align="center">경 력 사 항&nbsp;
 								<button id="rowAddCareer" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭제</button>
 								</h3>
 								</td>
 							</tr>
@@ -251,7 +325,7 @@ $(document).ready(function() {
 							<tr height="50">
 								<th width="150">회사명</th>
 								<td colspan="4"><input type="text" id="co_name" name="co_name"></td>
-								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelCareer"></td>
 							</tr>
 							<tr height="50">
 								<th width="120">근무부서</th>
@@ -280,6 +354,7 @@ $(document).ready(function() {
 							<tr>
 								<td height="70" colspan="6"><h3 align="center">자 격 사 항&nbsp;
 								<button id="rowAddLicense" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelLicense" class="btn btn-outline-danger btn-sm">삭제</button>
 								</h3></td>
 							</tr>
 							</thead>
@@ -287,7 +362,7 @@ $(document).ready(function() {
 							<tr height="50">
 								<th width="150">자격증명</th>
 								<td colspan="4"><input type="text" id="lic_name" name="lic_name"></td>
-								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelLicense"></td>
 							</tr>
 							<tr height="50">
 								<th width="150">자격증번호</th>
@@ -309,6 +384,7 @@ $(document).ready(function() {
 							<tr>
 								<td height="70" colspan="6"><h3 align="center">대 외 활 동&nbsp;
 								<button id="rowAddActivity" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelActivity" class="btn btn-outline-danger btn-sm">삭제</button>
 								</h3></td>
 							</tr>
 							</thead>
@@ -316,7 +392,7 @@ $(document).ready(function() {
 							<tr height="50">
 								<th width="150">구분(고용형태)</th>
 								<td colspan="4"><input type="text" id="act_type" name="act_type" ></td>
-								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelActivity"></td>
 							</tr>
 							<tr height="50">
 								<th width="150">활동명</th>
@@ -343,6 +419,7 @@ $(document).ready(function() {
 							<tr>
 								<td height="70" colspan="6"><h3 align="center">수 상 내 역&nbsp;
 								<button id="rowAddAward" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelAward" class="btn btn-outline-danger btn-sm">삭제</button>
 								</h3></td>
 							</tr>
 							</thead>
@@ -350,7 +427,7 @@ $(document).ready(function() {
 							<tr height="50">
 								<th width="150">수상명</th>
 								<td colspan="4"><input type="text" id="awd_name" name="awd_name"></td>
-								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelAward"></td>
 							</tr>
 							<tr height="50">
 								<th width="120">수여기관</th>
@@ -372,6 +449,7 @@ $(document).ready(function() {
 							<tr>
 								<td height="70" colspan="6"><h3 align="center">어 학 능 력&nbsp;
 								<button id="rowAddLanguage" class="btn btn-danger btn-sm">추가</button>
+								<button id="rowDelLanguage" class="btn btn-outline-danger btn-sm">삭제</button>
 								</h3></td>
 							</tr>
 							</thead>
@@ -379,7 +457,7 @@ $(document).ready(function() {
 							<tr height="50">
 								<th width="150">어학자격명</th>
 								<td colspan="4"><input type="text" id="lag_name" name="lag_name"></td>
-								<td rowspan="4" width="30"><button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭<br>제</button></td>
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelLanguage"></td>
 							</tr>
 							<tr height="50">
 								<th width="150">인증기관</th>
