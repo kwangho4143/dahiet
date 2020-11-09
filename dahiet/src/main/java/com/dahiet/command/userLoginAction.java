@@ -28,6 +28,16 @@ public class userLoginAction implements Action {
 
 		} else if (vo.getPw().equals(request.getParameter("pw"))) {
 			session.setAttribute("id", vo.getId());
+			session.setAttribute("pw", vo.getPw());
+			session.setAttribute("name", vo.getName());
+			session.setAttribute("birth", vo.getBirth());
+			session.setAttribute("email", vo.getEmail());
+			session.setAttribute("addr", vo.getAddr());
+			session.setAttribute("univ", vo.getUniv());
+			session.setAttribute("major", vo.getMajor());
+			session.setAttribute("score", vo.getScore());
+			session.setAttribute("imag", vo.getImage());
+			
 			session.setAttribute("tel", vo.getTel());
 			
 			msq = "정상적인 로그인";
