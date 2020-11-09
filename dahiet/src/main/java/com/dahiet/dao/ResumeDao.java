@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.dahiet.vo.RecruitVO;
 import com.dahiet.vo.ResumeVO;
 
 public class ResumeDao extends DAO {
@@ -17,7 +18,7 @@ public class ResumeDao extends DAO {
 	// user 테이블의 값 불러오기
 	private final String SELECTINF = "SELECT * FROM RESUME WHERE TEL = ?";
 	private final String LOADINFO ="SELECT * FROM USERS WHERE TEL = ?";
-
+	private final String SELECTID = "select * from users u join resume r on u.tel = r.tel where resume_seq=?"	;
 	
 	// 값 입력하기 (프로시저 사용?)
 //	private final String ~
@@ -32,7 +33,7 @@ public class ResumeDao extends DAO {
 			psmt.setString(1, vo.getTel());
 			rs = psmt.executeQuery();
 			while(rs.next()) {
-				vo.setSeq(rs.getString("seq"));
+				vo.setResume_seq(rs.getString("resume_seq"));
 				vo.setResume_name(rs.getString("resume_name"));
 				vo.setRedgt(rs.getDate("regdt"));
 				vo.setTel(rs.getString("tel"));
@@ -113,5 +114,56 @@ public class ResumeDao extends DAO {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
+	public ResumeVO selectinf(String resume_seq) {
+		try {
+			psmt = conn.prepareStatement(SELECTID);
+			psmt.setString(1, resume_seq);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				ResumeVO vo = new ResumeVO();
+				vo.setId(rs.getString("id"));
+				vo.setName(rs.getString("name"));
+				vo.setImag(rs.getString("imag"));
+				vo.setBirth(rs.getDate("birth"));
+				vo.setEmail(rs.getString("email"));
+				vo.setTel(rs.getString("tel"));
+				vo.setAddr(rs.getString("addr"));
+				vo.setUniv(rs.getString("univ"));
+				vo.setMajor(rs.getString("major"));
+				vo.setScore(rs.getString("score"));
+				vo.setResume_name(rs.getString("resume_name"));
+				vo.setResume_seq(rs.getString("resume_seq"));
+				vo.setRedgt(rs.getDate("redgt"));
+			
+			}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}
+	return vo;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
