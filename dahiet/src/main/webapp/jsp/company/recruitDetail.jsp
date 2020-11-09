@@ -23,19 +23,25 @@
 					<form action="${pageContext.request.contextPath}/ResumeApply.do?recruit_seq=${vo.recruit_seq}">
 					<label>이력서 선택</label>
 					<select name="resume" id="resume">
+=======
+					목록</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<form action="${pageContext.request.contextPath}/resumeApply.do">
+				<input name = "recruit_seq" type = "hidden" value="${param.no}">
+				<label>이력서 선택</label> <select name="resume_seq" id="resume">
+>>>>>>> branch 'main' of https://github.com/kwangho4143/dahiet.git
 					<c:forEach var="reseq" items="${rrlists}">
 					<option value="${reseq.resume_seq}">${reseq.resume_name}
 					</c:forEach>
-					</select>
-					<button>지원하기</button>
-					</form>
-					<c:if test="${n} == 1">
-					 <script>
-					 alert("이력서 전달 완료")
-					 </script>
-					</c:if>
-					<c:if test="${n} == 0">
-					<script>
+				</select>
+				<button>지원하기</button>
+			</form>
+			<c:if test="${n == 1}">
+				<script>
+					alert("이력서 전달 완료")
+				</script>
+			</c:if>
+			<c:if test="${n == 0}">
+				<script>
 					alert("전달 실패")
 					</script>
 					</c:if>

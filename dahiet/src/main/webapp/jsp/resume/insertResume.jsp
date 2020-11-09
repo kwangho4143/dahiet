@@ -153,9 +153,6 @@ $(document).ready(function() {
 	//추가 버튼 눌러서 
 	$("#rowAddActivity").click(function(event) {
 		event.preventDefault();
-		//복제 대상이 없으면 문제가 되므로 
-		//문서가 로딩될때 복사할 대상을 변수에 담아 놓고 
-		//추가 버튼을 누를때마다 저장해놓은 요소를 복제해서 추가
 		cloneActivityTr.find("#tblActivity input").val(""); //텍스트박스 값 초기화
 		cloneActivityTr.find("#tblActivity input[type=checkbox]").removeAttr("checked");
 		$("#tblActivity").append(cloneActivityTr.clone())
@@ -198,9 +195,6 @@ $(document).ready(function() {
 	//추가 버튼 눌러서 
 	$("#rowAddAward").click(function(event) {
 		event.preventDefault();
-		//복제 대상이 없으면 문제가 되므로 
-		//문서가 로딩될때 복사할 대상을 변수에 담아 놓고 
-		//추가 버튼을 누를때마다 저장해놓은 요소를 복제해서 추가
 		cloneAwardTr.find("#tblAward input").val(""); //텍스트박스 값 초기화
 		cloneAwardTr.find("#tblAward input[type=checkbox]").removeAttr("checked");
 		$("#tblAward").append(cloneAwardTr.clone())
@@ -243,9 +237,6 @@ $(document).ready(function() {
 	//추가 버튼 눌러서 
 	$("#rowAddLanguage").click(function(event) {
 		event.preventDefault();
-		//복제 대상이 없으면 문제가 되므로 
-		//문서가 로딩될때 복사할 대상을 변수에 담아 놓고 
-		//추가 버튼을 누를때마다 저장해놓은 요소를 복제해서 추가
 		cloneLanguageTr.find("#tblLanguage input").val(""); //텍스트박스 값 초기화
 		cloneLanguageTr.find("#tblLanguage input[type=checkbox]").removeAttr("checked");
 		$("#tblLanguage").append(cloneLanguageTr.clone())
@@ -323,9 +314,9 @@ $(document).ready(function() {
 							</thead>
 							<tbody id="tbodyCareer">
 							<tr height="50">
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelCareer"></td>
 								<th width="150">회사명</th>
 								<td colspan="4"><input type="text" id="co_name" name="co_name"></td>
-								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelCareer"></td>
 							</tr>
 							<tr height="50">
 								<th width="120">근무부서</th>
@@ -360,9 +351,9 @@ $(document).ready(function() {
 							</thead>
 							<tbody id="tbodyLicense">
 							<tr height="50">
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelLicense"></td>
 								<th width="150">자격증명</th>
 								<td colspan="4"><input type="text" id="lic_name" name="lic_name"></td>
-								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelLicense"></td>
 							</tr>
 							<tr height="50">
 								<th width="150">자격증번호</th>
@@ -390,9 +381,9 @@ $(document).ready(function() {
 							</thead>
 							<tbody id="tbodyActivity">
 							<tr height="50">
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelActivity"></td>
 								<th width="150">구분(고용형태)</th>
 								<td colspan="4"><input type="text" id="act_type" name="act_type" ></td>
-								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelActivity"></td>
 							</tr>
 							<tr height="50">
 								<th width="150">활동명</th>
@@ -425,9 +416,9 @@ $(document).ready(function() {
 							</thead>
 							<tbody id="tbodyAward">
 							<tr height="50">
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelAward"></td>
 								<th width="150">수상명</th>
 								<td colspan="4"><input type="text" id="awd_name" name="awd_name"></td>
-								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelAward"></td>
 							</tr>
 							<tr height="50">
 								<th width="120">수여기관</th>
@@ -455,9 +446,9 @@ $(document).ready(function() {
 							</thead>
 							<tbody id="tbodyLanguage">
 							<tr height="50">
+								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelLanguage"></td>
 								<th width="150">어학자격명</th>
 								<td colspan="4"><input type="text" id="lag_name" name="lag_name"></td>
-								<td rowspan="4" width="30"><input type="checkbox" name="resume" id="chkDelLanguage"></td>
 							</tr>
 							<tr height="50">
 								<th width="150">인증기관</th>
@@ -487,7 +478,7 @@ $(document).ready(function() {
 						</tr>
 						<tr>
 							<td colspan="2" align="center">
-							<input type="submit" value="이력서 등록"> &nbsp;&nbsp;
+							<input type="submit" value="이력서 등록" src="${pageContext.request.contextPath}/detailResume.do"> &nbsp;&nbsp;
 							<input type="reset" value="취 소"></td>
 						</tr>
 					</table>

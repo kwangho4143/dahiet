@@ -19,22 +19,27 @@
 				</div>
 				<hr />
 				<div align="center">
-					<table style="width: 80%;">
+					<table style="width: 100%;">
 						<tr align="center">
 							<th style="width: 5%; height: 1px">번호</th>
-							<th align="left" colspan="3" style="width: 50%;">공고제목</th>
+							<th align="left" colspan="3" style="width: 40%;">공고제목</th>
 							<th style="width: 15%;">모집부분</th>
 							<th style="width: 10%;">근무형태</th>
-							<th style="width: 30%;">지원자격</th>
+							<th style="width: 20%;">지원자격</th>
+							<th style="width: 15%;">지원자</th>
 						</tr>
 						<c:forEach var="rlist" items="${rlists}">
 							<tr align="center">
-								<td><a href="${pageContext.request.contextPath}
+								<td><a
+									href="${pageContext.request.contextPath}
 								/Recruitupdate.do?recruit_seq=${rlist.recruit_seq}">${rlist.recruit_seq}</a></td>
 								<td colspan="3">${rlist.title }</td>
 								<td>${rlist.position }</td>
 								<td>${rlist.emp_type }</td>
 								<td>${rlist.qualify }</td>
+								<td>
+								<button id = "inf" name = "inf" onclick = "location.href='${pageContext.request.contextPath}/usersApply.do?recruit_seq=${rlist.recruit_seq}'">지원자 확인</button>
+								</td>
 							</tr>
 						</c:forEach>
 					</table>
