@@ -83,8 +83,8 @@ public class FrontController extends HttpServlet {
       //다희
       map.put("/ResumeList.do",new ResumeList()); //이력서 현황 호출
       map.put("/resumePreInsert.do",new InsertPreResume()); //이력서 등록-기본정보 호출
-      map.put("/resumeInsert.do",new ResumeInsert()); //이력서 등록-입력창 호출
-      map.put("/detailResume.do",new ResumeDetail()); //이력서 상세보기 호출
+      map.put("/resumeInsert.do",new ResumeInsert()); //resume insert 후 입력창 호출
+      map.put("/resumeDetail.do",new ResumeDetail()); //career, license 등 insert 후 상세보기창 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출

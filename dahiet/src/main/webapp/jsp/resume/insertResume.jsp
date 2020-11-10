@@ -500,8 +500,8 @@ $(document).ready(function() {
 						</tr>
 						<tr>
 							<td colspan="2" align="center">
-							<button id="btnResumeInsert2" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/detailResume.do';">이력서 작성하기</button>&nbsp;&nbsp;
-							<button type="reset" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/jsp/resume/mainResume.jsp';">취 소</button>
+							<button type="button" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/resumeDetail.do'">이력서 작성하기</button>&nbsp;&nbsp;
+							<button type="reset" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/ResumeList.do'">취 소</button>
 							</td>
 						</tr>
 					</table>

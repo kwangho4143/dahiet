@@ -83,7 +83,7 @@ public class ResumeDao extends DAO {
 			psmt = conn.prepareStatement(INSERTRESUME);
 			psmt.setString(1, vo.getResume_name());
 			psmt.setString(2, vo.getTel());
-			psmt.executeQuery();
+			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

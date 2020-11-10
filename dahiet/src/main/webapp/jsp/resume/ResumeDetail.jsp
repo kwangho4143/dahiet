@@ -227,13 +227,10 @@
 					
 					
 					<br/><br/>
-					<table>
-						<tr>
-							<td colspan="2" align="center">
-							<input type="submit" value="확 인"> &nbsp;&nbsp;
-							<input type="reset" value="취 소"></td>
-						</tr>
-					</table>
+					<div>
+					<button type="button" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/ResumeList.do'">확 인</button>&nbsp;&nbsp;
+					<button type="reset" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/ResumeList.do'">취 소</button>
+					</div>
 					
 					
 				</form>
