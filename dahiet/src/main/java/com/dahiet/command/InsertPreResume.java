@@ -15,6 +15,7 @@ public class InsertPreResume implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
+		
 		ResumeDao dao = new ResumeDao();
 		ResumeVO vo = new ResumeVO();
 		HttpSession session = request.getSession();
@@ -26,6 +27,6 @@ public class InsertPreResume implements Action {
 		request.setAttribute("list", list);
 		
 		return "/jsp/resume/InsertPreResume.jsp";
+		
 	}
-
 }

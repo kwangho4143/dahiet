@@ -84,7 +84,7 @@
 				</tr>
 				<tr>
 					<td colspan="8" align="center"><input type="submit"
-						value="공고등록"> &nbsp;&nbsp;
+						value="공고수정"> 
 						<button type="button"
 							onclick="location.href='${pageContext.request.contextPath}/RecruitDelete.do?recruit_seq=${vo.recruit_seq}'">삭제</button>
 						<input type="reset" value="취 소"></td>

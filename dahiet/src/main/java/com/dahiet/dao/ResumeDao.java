@@ -18,7 +18,7 @@ public class ResumeDao extends DAO {
 	private final String SELECTINF = "SELECT * FROM RESUME WHERE TEL = ?";
 	private final String LOADINFO ="SELECT * FROM USERS WHERE TEL = ?";
 	private final String SELECTID = "SELECT * FROM USERS U JOIN RESUME R ON U.TEL = R.TEL WHERE RESUME_SEQ=?"	;
-	
+	private final String INSERTRESUME = "INSERT INTO RESUME VALUES (RESUME_VAL_SEQ.NEXTVAL, ?, SYSDATE, ?)";
 
 
 	public List<ResumeVO> selectedTel(String tel) {
@@ -79,18 +79,18 @@ public class ResumeDao extends DAO {
 	// 이력서 등록
 	public int insertResume(ResumeVO vo) {
 		int n = 0;
-		//
-		//
-		// -- 내 용 입 력 --
-		//
-		//
-		return n;
+		try {
+			psmt = conn.prepareStatement(INSERTRESUME);
+			psmt.setString(1, vo.getResume_name());
+			psmt.setString(2, vo.getTel());
+			psmt.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		} return n;
 	}
-	
-	
-	
-	
-	
+
 	
 	private void close() {
 		try {

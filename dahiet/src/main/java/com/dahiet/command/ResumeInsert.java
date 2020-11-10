@@ -1,8 +1,5 @@
 package com.dahiet.command;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,17 +12,27 @@ public class ResumeInsert implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
+		
 		ResumeDao dao = new ResumeDao();
 		ResumeVO vo = new ResumeVO();
+		
 		HttpSession session = request.getSession();
 		String tel = (String)session.getAttribute("tel");
-		List<ResumeVO> list=new ArrayList<>();
 		vo.setTel(tel);
-		list = dao.loadInfo(vo);
+		vo.setResume_name(request.getParameter("resume_name"));
 		
-		request.setAttribute("list",list);
+		int n = dao.insertResume(vo);
+		String page;
 		
-	
-		return "/jsp/resume/insertResume.jsp";
+		System.out.println(n);
+		
+		
+		if (n != 0) {
+			page = "jsp/resume/insertResume.jsp";
+		} else {
+			page = "jsp/resume/insertResumeFail.jsp";
+		}
+		
+		return page;
 	}
 }
