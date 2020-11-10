@@ -367,7 +367,13 @@ td {
 									</tr>
 									<tr>
 										<th width="150">기업형태</th>
-										<td><input type="text" id="type" name="type" size="80"></td>
+										<td><label>
+										<input type="radio"	name="type" value="big"> 대기업</label> <label><input
+													type="radio" name="type" value="mihi"> 중견기업</label> <label><input
+													type="radio" name="type" value="mi"> 중소기업</label> <label><input
+													type="radio" name="type" value="fo"> 외국계</label> <label><input
+													type="radio" name="type" value="stsm"> 강소기업</label> <label><input
+													type="radio" name="type" value="gove"> 공기업</label></td>
 									</tr>
 									<tr>
 										<th width="150">사원수</th>
@@ -380,7 +386,21 @@ td {
 									</tr>
 									<tr>
 										<th width="150">업종</th>
-										<td><input type="text" id="item" name="item" size="80"></td>
+										<td><label>
+										<input type="radio"	name="item" value="1"> 서비스업</label> <label><input
+													type="radio" name="item" value="2"> 제조·화학</label> <label><input
+													type="radio" name="item" value="3"> IT·웹·통신</label> <label><input
+													type="radio" name="item" value="4"> 은행·금융업</label> <label><input
+													type="radio" name="item" value="5"> 미디어·디자인</label> <label><input
+													type="radio" name="item" value="6"> 교육업</label>
+													<br><label><input
+													type="radio" name="item" value="7"> 의료·제약·복지</label>
+													<label><input
+													type="radio" name="item" value="8"> 판매·유통</label>
+													<label><input
+													type="radio" name="item" value="9"> 건설업</label>
+													<label><input
+													type="radio" name="item" value="10"> 기관·협회</label></td>
 									</tr>
 									<tr>
 										<td colspan="2" align="center"><input type="submit"
