@@ -32,7 +32,7 @@ public class UpdateUserInf implements Action {
 		
 		request.setAttribute("n", n);
 		
-		return "test.jsp";
+		return "/UserMypage.do";
 	}
 
 }

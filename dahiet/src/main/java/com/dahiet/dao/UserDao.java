@@ -111,8 +111,6 @@ public class UserDao extends DAO {
 				vo.setMajor(rs.getString("major"));
 				vo.setScore(rs.getString("score"));
 				vo.setImage(rs.getString("imag"));
-				
-				
 			}
 			
 		}catch(SQLException e) {

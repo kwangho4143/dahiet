@@ -83,8 +83,10 @@ th {
 							id="score" name="score" style="width: 100%"></td>
 					</tr>
 					<tr>
-						<td align="center"><input type="submit" value="회원정보수정">
-							<input type="reset" value="취 소"></td>
+						<td align="center">
+							<input type="submit" value="회원정보수정">
+							<input type="reset" value="취 소">
+						</td>
 					</tr>
 				</table>
 			</form>
