@@ -29,6 +29,7 @@ public class companyLoginAction implements Action {
 		else if(vo.getPw().equals(request.getParameter("pw"))) {
 			session.setAttribute("id", vo.getId());  //session에 id 담음
 			session.setAttribute("no", vo.getNo());  //session에 no 담음
+			session.setAttribute("link", vo.getLink());
 			
 			msq = "정상적인 로그인";
 			request.setAttribute("msg", msq);

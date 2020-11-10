@@ -18,7 +18,6 @@ public class UserMypageAction implements Action {
 		UserVO vo = new UserVO();
 		vo.setId(id);
 		vo = dao.selectLogIn(vo);
-		System.out.println(vo.getId());
 		request.setAttribute("vo", vo);
 		
 		return "/jsp/user/UserMypage.jsp";

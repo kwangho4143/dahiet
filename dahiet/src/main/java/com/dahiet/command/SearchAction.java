@@ -1,5 +1,6 @@
 package com.dahiet.command;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,8 @@ import com.dahiet.dao.ItemCodeDao;
 import com.dahiet.dao.SimpleDao;
 import com.dahiet.vo.CodeVO;
 import com.dahiet.vo.ItemCodeVO;
+import com.dahiet.vo.RecruitVO;
+import com.dahiet.vo.SearchVO;
 import com.dahiet.vo.SimpleVO;
 
 public class SearchAction implements Action {
@@ -38,7 +41,19 @@ public class SearchAction implements Action {
 		request.setAttribute("simples", slist);
 		
 		
+		SimpleDao sedao = new SimpleDao();
+		SearchVO sevo = new SearchVO();
+		List<RecruitVO> searchlist = new ArrayList<RecruitVO>();
 		
+		sevo.setLoc(request.getParameterValues("loc"));
+		sevo.setItem(request.getParameterValues("item"));
+		sevo.setSalary(request.getParameter("salary"));
+		sevo.setType(request.getParameterValues("type"));
+		sevo.setEmp_type(request.getParameterValues("emp_type"));
+		searchlist = sedao.SIMPLE_SEARCH(sevo); //서치에 담아서
+		request.setAttribute("simples", searchlist);
+		
+	
 		
 		return "/jsp/common/search.jsp";
 		

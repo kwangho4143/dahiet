@@ -75,8 +75,12 @@
 								<img src="${pageContext.request.contextPath}/images/search.png" height="20" width="20" alt="submit">
 							</button>
 						</form></li>
-					<li><a href="${pageContext.request.contextPath}/ResumeList.do">개인</a></li>
-					<li><a href="${pageContext.request.contextPath}/showRecruitList.do">기업</a></li>
+					<c:if test = "${sessionScope.major ne null}">
+					<li><a href="${pageContext.request.contextPath}/ResumeList.do">이력서 관리</a></li>
+					</c:if>
+					<c:if test = "${sessionScope.link ne null}">
+					<li><a href="${pageContext.request.contextPath}/showRecruitList.do">공고관리</a></li>
+					</c:if>
 					<c:if test = "${sessionScope.id eq null}">
 					<li>  <button type="button" class="btn btn-outline-primary" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" >로그인 / 가입</button></li>
 					</c:if>

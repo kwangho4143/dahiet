@@ -79,8 +79,18 @@ public class ComDao extends DAO {
 
 			rs = psmt.executeQuery();
 			if(rs.next()) {
+				vo.setId(rs.getString("id"));
 				vo.setPw(rs.getString("pw"));
 				vo.setNo(rs.getString("no"));
+				vo.setName(rs.getString("name"));
+				vo.setTel(rs.getString("tel"));
+				vo.setAddr(rs.getString("addr"));
+				vo.setImg(rs.getString("img"));
+				vo.setLink(rs.getString("link"));
+				vo.setType(rs.getString("type"));
+				vo.setEmps(rs.getString("emps"));
+				vo.setProfit(rs.getString("profit"));
+				vo.setItem(rs.getString("item"));		
 			}
 			
 		}catch(SQLException e) {
