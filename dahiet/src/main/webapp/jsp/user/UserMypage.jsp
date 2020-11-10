@@ -1,11 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+   .point {
+    color: #fc0038;
+    font-size: 12px;
+    letter-spacing: -1px;
+   }
+
+
 table {
 	width: 850px;
 	border: 1px solid;
@@ -40,8 +49,8 @@ th {
 						<td>&nbsp;&nbsp;${vo.id}</td>
 					</tr>
 					<tr>
-						<td>&nbsp;&nbsp;비밀번호</td>
-						<td><input type="text" id="pw" name="pw"></td>
+						<td><span class="point">&nbsp;*</span>비밀번호</td>
+						<td><input type="text" id="pw" name="pw" placeholder="비밀번호를 재입력하시오"></td>
 					</tr>
 					<tr>
 						<td>&nbsp;&nbsp;이름</td>
@@ -63,11 +72,6 @@ th {
 							id="addr" name="addr" style="width: 100%"></td>
 					</tr>
 					<tr>
-						<td>&nbsp;&nbsp;전화번호</td>
-						<td colspan="3"><input type="text" value="${vo.tel}" id="tel"
-							name="tel" style="width: 100%"></td>
-					</tr>
-					<tr>
 						<td>&nbsp;&nbsp;최종학력</td>
 						<td colspan="3"><input type="text" value="${vo.univ}"
 							id="univ" name="univ" style="width: 100%"></td>
@@ -82,15 +86,22 @@ th {
 						<td colspan="3"><input type="text" value="${vo.score}"
 							id="score" name="score" style="width: 100%"></td>
 					</tr>
-					<tr>
-						<td align="center">
+				</table>
+						<div align="center">
 							<input type="submit" value="회원정보수정">
 							<input type="reset" value="취 소">
-						</td>
-					</tr>
-				</table>
+						</div>
 			</form>
 		</div>
+		
+		<c:if test="${n==1}">
+			<script type="text/javascript">
+			   alert("수정을 완료 하였습니다.");
+			</script>
+		</c:if>
+		
+		
+		
 		<%--tab1마지막 --%>
 	</div>
 </body>

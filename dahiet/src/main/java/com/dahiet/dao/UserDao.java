@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.dahiet.vo.ResumeVO;
 import com.dahiet.vo.UserVO;
 
 
@@ -19,7 +20,7 @@ public class UserDao extends DAO {
 	private final String USERINSERT = "INSERT INTO USERS(ID,PW,NAME,IMAG,BIRTH,TEL,EMAIL,ADDR,UNIV,MAJOR,SCORE) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 	private final String SELECTLOGIN = "SELECT * FROM USERS WHERE ID = ? ";
 	private final String USERUPDATE = 
-			"UPDATE USERS SET  PW = ?,EMAIL= ?, ADDR = ?, TEL = ?, UNIV= ?, MAJOR=?, SCORE=? WHERE ID = ?";
+			"UPDATE USERS SET  PW = ?,EMAIL= ?, ADDR = ?, UNIV= ?, MAJOR=?, SCORE=? WHERE ID = ?";
 	
 	public int UserUpdate(UserVO vo) {  //수정하기
 		int n = 0;
@@ -28,11 +29,10 @@ public class UserDao extends DAO {
 			psmt.setString(1,vo.getPw());
 			psmt.setString(2, vo.getEmail());
 			psmt.setString(3, vo.getAddr());
-			psmt.setString(4, vo.getTel());
-			psmt.setString(5, vo.getUniv());
-			psmt.setString(6, vo.getMajor());
-			psmt.setString(7, vo.getScore());
-			psmt.setString(8, vo.getId());
+			psmt.setString(4, vo.getUniv());
+			psmt.setString(5, vo.getMajor());
+			psmt.setString(6, vo.getScore());
+			psmt.setString(7, vo.getId());
 			
 			n = psmt.executeUpdate();
 			
@@ -101,6 +101,7 @@ public class UserDao extends DAO {
 
 			rs = psmt.executeQuery();
 			if(rs.next()) {
+				vo = new UserVO();
 				vo.setPw(rs.getString("pw"));
 				vo.setTel(rs.getString("tel"));
 				vo.setName(rs.getString("name"));
@@ -111,6 +112,7 @@ public class UserDao extends DAO {
 				vo.setMajor(rs.getString("major"));
 				vo.setScore(rs.getString("score"));
 				vo.setImage(rs.getString("imag"));
+				vo.setId(rs.getString("id"));
 			}
 			
 		}catch(SQLException e) {

@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.dahiet.vo.RecruitVO;
 import com.dahiet.vo.ResumeVO;
 
 public class ResumeDao extends DAO {
@@ -54,19 +53,20 @@ public class ResumeDao extends DAO {
 	/
 */
 
-	public List<ResumeVO> selectedTel(ResumeVO vo) {
+	public List<ResumeVO> selectedTel(String tel) {
 		List<ResumeVO> list= new ArrayList<ResumeVO>();
 		
 		try {
 			
 			psmt = conn.prepareStatement(SELECTINF);
-			psmt.setString(1, vo.getTel());
+			psmt.setString(1, tel);
 			rs = psmt.executeQuery();
 			while(rs.next()) {
+				vo = new ResumeVO();
 				vo.setResume_seq(rs.getString("resume_seq"));
 				vo.setResume_name(rs.getString("resume_name"));
 				vo.setRedgt(rs.getDate("regdt"));
-				vo.setTel(rs.getString("tel"));
+				//vo.setTel(rs.getString("tel"));
 				list.add(vo);
 			}
 		} catch(SQLException e) {

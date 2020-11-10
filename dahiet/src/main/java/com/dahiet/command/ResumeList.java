@@ -16,15 +16,18 @@ public class ResumeList implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		List<ResumeVO> list = new ArrayList<ResumeVO>();
 		ResumeDao dao = new ResumeDao();
 		ResumeVO vo = new ResumeVO();
 		HttpSession session = request.getSession();
 		String tel = (String) session.getAttribute("tel");
 		vo.setTel(tel);
 		//System.out.println(vo.getTel());
-		list = dao.selectedTel(vo);
-
+		List<ResumeVO> list  = dao.selectedTel(tel);
+		
+		for(int i = 0; i<list.size();i++) {
+			System.out.println(list.get(i).getResume_name());
+		}
+		
 		//
 		Enumeration se = session.getAttributeNames();
 
