@@ -17,11 +17,9 @@ public class ResumeInsert implements Action {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		ResumeDao dao = new ResumeDao();
 		ResumeVO vo = new ResumeVO();
-
 		HttpSession session = request.getSession();
 		String tel = (String)session.getAttribute("tel");
 		List<ResumeVO> list=new ArrayList<>();
-		System.out.print(tel);
 		vo.setTel(tel);
 		list = dao.loadInfo(vo);
 		

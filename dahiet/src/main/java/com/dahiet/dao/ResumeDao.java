@@ -49,7 +49,7 @@ public class ResumeDao extends DAO {
 	
 	// user 테이블의 값 이력서에 불러오기
 	public List<ResumeVO> loadInfo(ResumeVO vo) {
-		List<ResumeVO> list=new ArrayList<>();
+		List<ResumeVO> list = new ArrayList<>();
 		try {
 			psmt = conn.prepareStatement(LOADINFO);
 			psmt.setString(1, vo.getTel());

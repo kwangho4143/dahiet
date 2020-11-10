@@ -17,17 +17,15 @@ public class InsertPreResume implements Action {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		ResumeDao dao = new ResumeDao();
 		ResumeVO vo = new ResumeVO();
-
 		HttpSession session = request.getSession();
 		String tel = (String)session.getAttribute("tel");
-		List<ResumeVO> list=new ArrayList<>();
-		System.out.print(tel);
+		List<ResumeVO> list = new ArrayList<>();
 		vo.setTel(tel);
 		list = dao.loadInfo(vo);
 		
-		request.setAttribute("list",list);
+		request.setAttribute("list", list);
 		
-		return "/jsp/resume/insertPreResume.jsp";
+		return "/jsp/resume/InsertPreResume.jsp";
 	}
 
 }

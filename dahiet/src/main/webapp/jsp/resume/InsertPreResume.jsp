@@ -84,8 +84,8 @@
 					</div>
 					
 					<div>
-					<input type="submit" value="이력서 작성하기">&nbsp;&nbsp;
-					<input type="reset" value="취 소">
+					<button id="btnResumeInsert" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/resumeInsert.do';">이력서 작성하기</button>&nbsp;&nbsp;
+					<button type="reset" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/ResumeList.do';">취 소</button>
 					</div>
 					
 				</form>
