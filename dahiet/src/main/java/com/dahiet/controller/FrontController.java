@@ -17,6 +17,7 @@ import com.dahiet.command.LogoutAction;
 import com.dahiet.command.RecruitCheck;
 import com.dahiet.command.RecruitDelete;
 import com.dahiet.command.RecruitDetial;
+import com.dahiet.command.RecruitSearch;
 import com.dahiet.command.RecruitUp;
 import com.dahiet.command.RecruitUpdate;
 import com.dahiet.command.ResumeApply;
@@ -105,13 +106,18 @@ public class FrontController extends HttpServlet {
       map.put("/ReviewDelete.do",new ReviewDelete()); // 취업투크 삭제 기능
       		//회사 디테일
       map.put("/RecruitDetail.do",new RecruitDetial()); //채용공고 상세페이지 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
-
       map.put("/userLogin.do",new userLoginAction()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
-   
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      		//검색 액션
+    map.put("/RecruitSearch.do",new RecruitSearch()); //채용공고 검색 페이지
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
    }
    //doget,dopost를 사용해도 되지만 간단히 하기 위해서

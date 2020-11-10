@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.dahiet.vo.RecruitVO;
 import com.dahiet.vo.SimpleVO;
 
 
@@ -17,13 +18,19 @@ public class SimpleDao extends DAO {
 	private final String SIMPLE_SEARCH = "SELECT * FROM RECRUIT WHERE EMP_TYPE IN (?) AND LOC IN (?) AND ITEM IN (?) AND SALARY (?) AND TYPE (?)";
 
 	
-	public List<SimpleVO> SIMPLE_SEARCH(SimpleVO vo) {
-		List<SimpleVO> list = new ArrayList<SimpleVO>();
+	public List<RecruitVO> SIMPLE_SEARCH(RecruitVO vo) {
+		List<RecruitVO> searchlist = new ArrayList<RecruitVO>();
+		
 		try {
 			psmt = conn.prepareStatement(SIMPLE_SEARCH);
+			for(int i=0; i< vo.getLoc().length(); i++) {
+				String where = "where 1 = 1";
+				if (vo.getLoc() != null && ! vo.getLoc().isEmpty()) {
+				where += " and loc in("+vo.getLoc()+")" ;	
+				}}
 			rs = psmt.executeQuery();
 			while (rs.next()) {
-				vo = new SimpleVO();
+				vo = new RecruitVO();
 				vo.setRecruit_seq(rs.getString("recruit_seq"));
 				vo.setImg(rs.getString("img"));
 				vo.setName(rs.getString("name"));
@@ -33,7 +40,7 @@ public class SimpleDao extends DAO {
 				vo.setSalary(rs.getString("salary"));
 				
 				
-				list.add(vo);
+				searchlist.add(vo);
 
 			}
 		} catch (SQLException e) {
@@ -41,7 +48,7 @@ public class SimpleDao extends DAO {
 		} finally {
 			close();
 		}
-		return list;
+		return searchlist;
 	}
 	
 	

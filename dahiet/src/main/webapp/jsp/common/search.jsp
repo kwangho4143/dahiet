@@ -21,16 +21,15 @@
 <body>
 	<main id="main">
 		<section id="breadcrumbs" class="breadcrumbs">
-			<form action="">
+			<form action="SearchAction">
 				<div class="container">
 					<div class="d-flex justify-content-between align-items-center">
 						<nav class="nav-menu d-none d-lg-block">
 							<ul>
 								<li><h2>상세 검색</h2></li>
 								<li><input type="text" id="search" name="search">
-									<button type="button" style="border: 0px; background: none">
-										<img
-											src="${pageContext.request.contextPath}/images/search.png"
+									<button type="submit" style="border: 0px; background: none">
+										<img src="${pageContext.request.contextPath}/images/search.png"
 											height="20" width="20" alt="submit">
 									</button></li>
 								<li class="drop-down"><a href="#">지역 선택</a>
@@ -44,7 +43,6 @@
 											</div>
 										</li>
 									</ul></li>
-
 								<li class="drop-down"><a href="#">업종 선택</a>
 									<ul>
 										<li>
@@ -110,12 +108,9 @@
 					<div class="col-lg-12 d-flex">
 						<div style="margin-left: 0%">
 							<h5 align="left">선택된 지역</h5>
-								<div id="selloc">
-								<a class="abc"></a>
-								</div>
+								<div id="selloc">&nbsp;</div>
 							<h5>선택된 업종</h5>
-							<div id="selitem"></div>
-								<a class="abc"></a>
+							<div id="selitem">&nbsp;</div>
 						</div>
 						<script>
 							function showloc(str) {
