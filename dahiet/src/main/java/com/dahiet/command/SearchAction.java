@@ -34,12 +34,6 @@ public class SearchAction implements Action {
 		ilist = idao.ITEMCODESELECT(ivo);
 		request.setAttribute("itemcodes", ilist);
 		
-		SimpleDao sdao = new SimpleDao();
-		List<SimpleVO> slist = new ArrayList<SimpleVO>();
-		SimpleVO svo = new SimpleVO();
-		slist = sdao.SIMPLESELECT(svo);
-		request.setAttribute("simples", slist);
-		
 		
 		SimpleDao sedao = new SimpleDao();
 		SearchVO sevo = new SearchVO();

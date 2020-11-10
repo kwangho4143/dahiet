@@ -18,7 +18,7 @@ public class SimpleDao extends DAO {
 	private final String SIMPLESELECT = "SELECT R.RECRUIT_SEQ, "
 			+ "C.IMG, C.NAME, R.TITLE, R.EMP_TYPE, R.WORK, R.SALARY "
 			+ "FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO";
-	private String SIMPLE_SEARCH = "SELECT * FROM RECRUIT R JOIN COMPANIES C ON C.NO = R.NO"; 
+	private String SIMPLE_SEARCH = "SELECT * FROM RECRUIT R JOIN COMPANIES C ON C.NO = R.NO "; 
 
 	
 	public List<RecruitVO> SIMPLE_SEARCH(SearchVO vo) {
@@ -29,7 +29,7 @@ public class SimpleDao extends DAO {
 			// 지역검색
 			if (vo.getLoc() != null && vo.getLoc().length > 0)
 			{ 
-				where += "and r.loc in (" ;
+				where += " and r.loc in (" ;
 				for(int i=0; i<vo.getLoc().length; i++) 
 				{ 
 					where += "'" + vo.getLoc()[i] + "'"; 
@@ -42,7 +42,7 @@ public class SimpleDao extends DAO {
 			//업종 검색
 			if (vo.getItem() != null && vo.getItem().length > 0)
 			{ 
-				where += "and c.item in (" ;
+				where += " and c.item in (" ;
 				for(int i=0; i<vo.getItem().length; i++) 
 				{ 
 					where += "'" + vo.getItem()[i] + "'"; 
@@ -55,7 +55,7 @@ public class SimpleDao extends DAO {
 			// 기업형태
 			if (vo.getType() != null && vo.getType().length > 0)
 			{ 
-				where += "and c.type in (" ;
+				where += " and c.type in (" ;
 				for(int i=0; i<vo.getType().length; i++) 
 				{ 
 					where += "'" + vo.getType()[i] + "'"; 
@@ -68,7 +68,7 @@ public class SimpleDao extends DAO {
 			// 근무형태
 			if (vo.getEmp_type() != null && vo.getEmp_type().length > 0)
 			{ 
-				where += "and r.emp_type in (" ;
+				where += " and r.emp_type in (" ;
 				for(int i=0; i<vo.getEmp_type().length; i++) 
 					{ 
 					where += "'" + vo.getEmp_type()[i] + "'"; 
@@ -81,9 +81,9 @@ public class SimpleDao extends DAO {
 			
 			if (vo.getSalary() != null && ! vo.getSalary().isEmpty())
 			{ 
-				where += "and r.salary in ('" +vo.getSalary()+"');";
+				where += " and r.salary >= " +vo.getSalary();
 				};
-				
+				System.out.println(SIMPLE_SEARCH + where);
 				
 			psmt = conn.prepareStatement(SIMPLE_SEARCH + where);
 			rs = psmt.executeQuery();
