@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.dahiet.vo.RecruitVO;
 import com.dahiet.vo.ResumeVO;
 
 public class ResumeDao extends DAO {
@@ -23,42 +22,10 @@ public class ResumeDao extends DAO {
 	// 값 입력하기
 //	private final String insertResume = 
 
-/*	insertResume 프로시저
-	declare
-	resume_seq number=?; // 이력서와 경력 자격증 등 다른 테이블들을 이어주는 시퀀스 
-	resume_sub_seq number // 서브 시퀀스
-	career_count:=들어와야됨; // 경력 카운트 몇 개 입력됐는지(몇 건인지 확인)
-	license_count:=;// 자격증 카운트
-	activity_count:=; // 대외활동 카운트
-	award_count:=; // 수상내역 카운트
-	language_count:=; // 어학능력 카운트
-	store_seq number; // resume_seq 값을 담아줄 store_seq 선언
-	begin
-	store_seq:=resume_seq.nextval;
-	insert into resume values(store_seq,컬럼명1,컬럼명2);
-	if career_count>1 then
-	  while(career_count>0)
-	loop
-	  insert into 경력(store_seq,경력컬럼1,경력컬럼2,경력컬럼3,v2_seq.nextval)
-	  values(aa,aa,aa);
-	  v_count=v_count=-1;
-	loop end;
-	 if license_count>1 then
-	  while(license_count>0)
-	loop
-	  insert into 자격증(store_seq,aa,bb,cc,v2_seq.nextval)
-	  values(aa,aa,aa);
-	  v_count=v_count=-1;
-	loop end;
-	end;
-	/
-*/
-
 	public List<ResumeVO> selectedTel(ResumeVO vo) {
 		List<ResumeVO> list= new ArrayList<ResumeVO>();
 		
 		try {
-			
 			psmt = conn.prepareStatement(SELECTINF);
 			psmt.setString(1, vo.getTel());
 			rs = psmt.executeQuery();

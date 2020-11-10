@@ -25,7 +25,7 @@
     color: #fc0038;
     font-size: 12px;
     letter-spacing: -1px;
-}
+	}
 </style>
 
 <script>
@@ -41,6 +41,7 @@ $(document).ready(function() {
 		}
 	});
 	
+	var career_count = 1; // 몇 건 추가하는지 카운트
 	// 삭제 버튼 눌러서 체크한 항목 삭제
 	$('#rowDelCareer').click(function(event) {
 		event.preventDefault();
@@ -49,6 +50,7 @@ $(document).ready(function() {
 			alert("삭제할 행을 선택하여 주십시오.");
 		} else {
 			$('#tblCareer input[type=checkbox]:checked').each(function(index) {
+				career_count--;
 				if ($('#tblCareer input:checkbox').length == 1) {
 					alert("모든 행을 삭제할 수 없습니다.");
 				} else {
@@ -63,9 +65,11 @@ $(document).ready(function() {
 	});
 	
 	var cloneCareerTr = $("#tblCareer tbody").clone();
+
 	//추가 버튼 눌러서 
 	$("#rowAddCareer").click(function(event) {
 		event.preventDefault();
+		career_count++;
 		//복제 대상이 없으면 문제가 되므로 
 		//문서가 로딩될때 복사할 대상을 변수에 담아 놓고 
 		//추가 버튼을 누를때마다 저장해놓은 요소를 복제해서 추가
@@ -86,6 +90,8 @@ $(document).ready(function() {
 		}
 	});	
 	
+	var license_count = 1; // 몇 건 추가하는지 카운트
+
 	// 삭제 버튼 눌러서 체크한 항목 삭제
 	$('#rowDelLicense').click(function(event) {
 		event.preventDefault();
@@ -94,6 +100,7 @@ $(document).ready(function() {
 			alert("삭제할 행을 선택하여 주십시오.");
 		} else {
 			$('#tblLicense input[type=checkbox]:checked').each(function(index) {
+				license_count--;
 				if ($('#tblLicense input:checkbox').length == 1) {
 					alert("모든 행을 삭제할 수 없습니다.");
 				} else {
@@ -111,6 +118,7 @@ $(document).ready(function() {
 	//추가 버튼 눌러서 
 	$("#rowAddLicense").click(function(event) {
 		event.preventDefault();
+		license_count++;
 		cloneLicenseTr.find("#tblLicense input").val(""); //텍스트박스 값 초기화
 		cloneLicenseTr.find("#tblLicense input[type=checkbox]").removeAttr("checked");
 		$("#tblLicense").append(cloneLicenseTr.clone())
@@ -128,6 +136,8 @@ $(document).ready(function() {
 		}
 	});	
 	
+	var activity_count = 1; // 몇 건 추가하는지 카운트
+
 	// 삭제 버튼 눌러서 체크한 항목 삭제
 	$('#rowDelActivity').click(function(event) {
 		event.preventDefault();
@@ -136,6 +146,7 @@ $(document).ready(function() {
 			alert("삭제할 행을 선택하여 주십시오.");
 		} else {
 			$('#tblActivity input[type=checkbox]:checked').each(function(index) {
+				activity_count--;
 				if ($('#tblActivity input:checkbox').length == 1) {
 					alert("모든 행을 삭제할 수 없습니다.");
 				} else {
@@ -153,6 +164,7 @@ $(document).ready(function() {
 	//추가 버튼 눌러서 
 	$("#rowAddActivity").click(function(event) {
 		event.preventDefault();
+		activity_count++;
 		cloneActivityTr.find("#tblActivity input").val(""); //텍스트박스 값 초기화
 		cloneActivityTr.find("#tblActivity input[type=checkbox]").removeAttr("checked");
 		$("#tblActivity").append(cloneActivityTr.clone())
@@ -170,6 +182,8 @@ $(document).ready(function() {
 		}
 	});	
 	
+	var award_count = 1; // 몇 건 추가하는지 카운트
+	
 	// 삭제 버튼 눌러서 체크한 항목 삭제
 	$('#rowDelAward').click(function(event) {
 		event.preventDefault();
@@ -178,6 +192,7 @@ $(document).ready(function() {
 			alert("삭제할 행을 선택하여 주십시오.");
 		} else {
 			$('#tblAward input[type=checkbox]:checked').each(function(index) {
+				award_count--;
 				if ($('#tblAward input:checkbox').length == 1) {
 					alert("모든 행을 삭제할 수 없습니다.");
 				} else {
@@ -195,6 +210,7 @@ $(document).ready(function() {
 	//추가 버튼 눌러서 
 	$("#rowAddAward").click(function(event) {
 		event.preventDefault();
+		award_count++;
 		cloneAwardTr.find("#tblAward input").val(""); //텍스트박스 값 초기화
 		cloneAwardTr.find("#tblAward input[type=checkbox]").removeAttr("checked");
 		$("#tblAward").append(cloneAwardTr.clone())
@@ -212,6 +228,8 @@ $(document).ready(function() {
 		}
 	});
 	
+	var language_count = 1; // 몇 건 추가하는지 카운트
+	
 	// 삭제 버튼 눌러서 체크한 항목 삭제
 	$('#rowDelLanguage').click(function(event) {
 		event.preventDefault();
@@ -220,6 +238,8 @@ $(document).ready(function() {
 			alert("삭제할 행을 선택하여 주십시오.");
 		} else {
 			$('#tblLanguage input[type=checkbox]:checked').each(function(index) {
+				language_count--;
+				console.log(language_count);
 				if ($('#tblLanguage input:checkbox').length == 1) {
 					alert("모든 행을 삭제할 수 없습니다.");
 				} else {
@@ -237,9 +257,11 @@ $(document).ready(function() {
 	//추가 버튼 눌러서 
 	$("#rowAddLanguage").click(function(event) {
 		event.preventDefault();
+		language_count++;
 		cloneLanguageTr.find("#tblLanguage input").val(""); //텍스트박스 값 초기화
 		cloneLanguageTr.find("#tblLanguage input[type=checkbox]").removeAttr("checked");
 		$("#tblLanguage").append(cloneLanguageTr.clone())
+	console.log(language_count);
 	});
 	
 	
@@ -478,7 +500,7 @@ $(document).ready(function() {
 						</tr>
 						<tr>
 							<td colspan="2" align="center">
-							<input type="submit" value="이력서 등록" src="${pageContext.request.contextPath}/detailResume.do"> &nbsp;&nbsp;
+							<input type="submit" value="이력서 등록"> &nbsp;&nbsp;
 							<input type="reset" value="취 소"></td>
 						</tr>
 					</table>
