@@ -191,6 +191,15 @@
 td {
 	height: 1cm;
 }
+
+th.signin{
+width: 90px;
+text-align: center;
+}
+
+input.signin {
+width: 250px;
+}
 </style>
 <title>Insert title here</title>
 </head>
@@ -289,38 +298,42 @@ td {
 									method="post" enctype="multipart/form-data">
 									<table border="1">
 										<tr>
-											<th width="150">아이디</th>
-											<td width="500"><input type="text" id="id" name="id"></td>
-											<th width="150">패스워드</th>
-											<td><input type="text" id="pw" name="pw"></td>
+											<th class="signin">아이디</th>
+											<td ><input class="signin" type="text" id="id" name="id"></td>
+											<th class="signin">패스워드</th>
+											<td><input class="signin" type="password" id="pw" name="pw"></td>
 										</tr>
 										<tr>
-											<th width="150">이 름</th>
-											<td><input type="text" id="name" name="name"></td>
-											<th width="150">사 진</th>
-											<td><input type="file" id="image" name="image"></td>
-											<th width="150">생 일</th>
-											<td><input type="date" id="birth" name="birth"></td>
-											<th width="150">이메일</th>
-											<td><input type="text" id="email" name="email"></td>
+											<th class="signin">이 름</th>
+											<td><input class="signin" type="text" id="name" name="name"></td>
+											<th class="signin">사 진</th>
+											<td ><input class="signin" type="file" id="image" name="image" style="width: 250px"></td>
+										</tr>
+										<tr>	
+											<th class="signin">생 일</th>
+											<td><input class="signin" type="date" id="birth" name="birth"></td>
+											<th class="signin">이메일</th>
+											<td><input class="signin" type="text" id="email" name="email"></td>
 										</tr>
 										<tr>
-											<th width="150">전화번호</th>
-											<td><input type="text" id="tel" name="tel"></td>
-											<th width="150">최종학력</th>
-											<td><input type="text" id="univ" name="univ"></td>
-											<th width="150">전 공</th>
-											<td><input type="text" id="major" name="major"></td>
+											<th class="signin">전화번호</th>
+											<td><input class="signin" type="text" id="tel" name="tel"></td>
+											<th class="signin">최종학력</th>
+											<td><input class="signin" type="text" id="univ" name="univ"></td>
 										</tr>
 										<tr>
-											<th width="150">주 소</th>
-											<td colspan="3"><input type="text" id="addr" name="addr"
-												size="80"></td>
-											<th width="150">학 점</th>
-											<td><input type="text" id="score" name="score"></td>
+											<th class="signin">전 공</th>
+											<td><input class="signin" type="text" id="major" name="major"></td>
+											<th class="signin">학 점</th>
+											<td><input class="signin" type="text" id="score" name="score"></td>
 										</tr>
 										<tr>
-											<td colspan="2" align="center"><input type="submit"
+											<th class="signin">주 소</th>
+											<td colspan="3"><input style="width: 500px" type="text" id="addr" name="addr"
+												></td>
+										</tr>
+										<tr>
+											<td colspan="4" align="center"><input type="submit"
 												onclick="return formCheck1()" value="가입하기">
 												&nbsp;&nbsp; <input type="reset" value="취 소"></td>
 										</tr>
@@ -334,40 +347,41 @@ td {
 								method="post" enctype="multipart/form-data">
 								<table border="1">
 									<tr>
-										<th width="150">아이디</th>
-										<td width="500"><input type="text" id="id" name="id"></td>
+										<th class="signin">아이디</th>
+										<td><input class="signin" type="text" id="id" name="id"></td>
+										<th class="signin">패스워드</th>
+										<td><input class="signin" type="text" id="pw" name="pw"></td>
 									</tr>
 									<tr>
-										<th width="150">패스워드</th>
-										<td><input type="text" id="pw" name="pw"></td>
+										<th class="signin">사업자 번호</th>
+										<td><input class="signin" type="text" id="no" name="no"></td>
+										<th class="signin">기업이름</th>
+										<td><input class="signin" type="text" id="name" name="name"></td>
 									</tr>
 									<tr>
-										<th width="150">사업자 번호</th>
-										<td><input type="text" id="no" name="no"></td>
+										<th class="signin">전화번호</th>
+										<td><input class="signin" type="text" id="tel" name="tel"></td>
+										<th class="signin">로 고</th>
+										<td><input class="signin" type="file" id="img" name="img" ></td>
 									</tr>
 									<tr>
-										<th width="150">기업이름</th>
-										<td><input type="text" id="name" name="name"></td>
+										<th class="signin">주 소</th>
+										<td colspan="3"><input type="text" id="addr" name="addr" size="68"></td>
 									</tr>
 									<tr>
-										<th width="150">전화번호</th>
-										<td><input type="text" id="tel" name="tel"></td>
+										<th class="signin">기업링크</th>
+										<td colspan="3"><input type="text" id="link" name="link" size="68"></td>
 									</tr>
 									<tr>
-										<th width="150">주 소</th>
-										<td><input type="text" id="addr" name="addr" size="80"></td>
+										<th class="signin">사원수</th>
+										<td><input class="signin" type="text" id="emps" name="emps"></td>
+										<th class="signin">매출액</th>
+										<td><input class="signin" type="text" id="profit" name="profit"
+											></td>
 									</tr>
 									<tr>
-										<th width="150">로 고</th>
-										<td><input type="file" id="img" name="img" size="80"></td>
-									</tr>
-									<tr>
-										<th width="150">기업링크</th>
-										<td><input type="text" id="link" name="link" size="80"></td>
-									</tr>
-									<tr>
-										<th width="150">기업형태</th>
-										<td><label>
+										<th class="signin">기업형태</th>
+										<td colspan="3"><label>
 										<input type="radio"	name="type" value="big"> 대기업</label> <label><input
 													type="radio" name="type" value="mihi"> 중견기업</label> <label><input
 													type="radio" name="type" value="mi"> 중소기업</label> <label><input
@@ -376,24 +390,15 @@ td {
 													type="radio" name="type" value="gove"> 공기업</label></td>
 									</tr>
 									<tr>
-										<th width="150">사원수</th>
-										<td><input type="text" id="emps" name="emps" size="80"></td>
-									</tr>
-									<tr>
-										<th width="150">매출액</th>
-										<td><input type="text" id="profit" name="profit"
-											size="80"></td>
-									</tr>
-									<tr>
-										<th width="150">업종</th>
-										<td><label>
+										<th class="signin">업종</th>
+										<td colspan="3"><label>
 										<input type="radio"	name="item" value="1"> 서비스업</label> <label><input
 													type="radio" name="item" value="2"> 제조·화학</label> <label><input
 													type="radio" name="item" value="3"> IT·웹·통신</label> <label><input
 													type="radio" name="item" value="4"> 은행·금융업</label> <label><input
-													type="radio" name="item" value="5"> 미디어·디자인</label> <label><input
+													type="radio" name="item" value="5"> 미디어·디자인</label> <br><label><input
 													type="radio" name="item" value="6"> 교육업</label>
-													<br><label><input
+													<label><input
 													type="radio" name="item" value="7"> 의료·제약·복지</label>
 													<label><input
 													type="radio" name="item" value="8"> 판매·유통</label>
@@ -403,7 +408,7 @@ td {
 													type="radio" name="item" value="10"> 기관·협회</label></td>
 									</tr>
 									<tr>
-										<td colspan="2" align="center"><input type="submit"
+										<td colspan="4" align="center"><input type="submit"
 											onclick="return formCheck2()" value="가입하기">
 											&nbsp;&nbsp; <input type="reset" value="취 소"></td>
 									</tr>
