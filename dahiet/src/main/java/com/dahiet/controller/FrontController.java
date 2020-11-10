@@ -88,11 +88,11 @@ public class FrontController extends HttpServlet {
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
       //정은
-      map.put("/companyLogin.do",new companyLoginAction()); //로그인 폼 호출
-      map.put("/logOut.do",new LogoutAction()); //로그인 폼 호출
-      map.put("/UserMypage.do",new UserMypageAction()); //회원정보리스트 
-      map.put("/updateUserInf.do",new UpdateUserInf()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/companyLogin.do",new companyLoginAction()); //기업로그인 
+      map.put("/logOut.do",new LogoutAction()); //로그아웃 
+      map.put("/UserMypage.do",new UserMypageAction()); //사용자회원정보리스트 
+      map.put("/UpdateUserInf.do",new UpdateUserInf()); //사용자회원정보 수정 
+//      map.put("/UpdateCompanyMypage.do",new CompanyMypageAction()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
