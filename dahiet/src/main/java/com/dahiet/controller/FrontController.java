@@ -12,11 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dahiet.command.InsertResume;
+import com.dahiet.command.ResumeLoad;
+import com.dahiet.command.InsertPreResume;
 import com.dahiet.command.LogoutAction;
 import com.dahiet.command.RecruitCheck;
 import com.dahiet.command.RecruitDelete;
 import com.dahiet.command.RecruitDetial;
+import com.dahiet.command.RecruitSearch;
 import com.dahiet.command.RecruitUp;
 import com.dahiet.command.RecruitUpdate;
 import com.dahiet.command.ResumeApply;
@@ -80,19 +82,19 @@ public class FrontController extends HttpServlet {
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
       //다희
       map.put("/ResumeList.do",new ResumeList()); //이력서 현황 호출
-      map.put("/InsertResume.do",new InsertResume()); //이력서 등록 호출
-      map.put("/detailResume.do",new ResumeDetail()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/resumePreInsert.do",new ResumeLoad()); //이력서 기본정보 호출
+//      map.put("/resumeInsert.do",new ResumeLoad()); //이력서 등록 호출
+      map.put("/detailResume.do",new ResumeDetail()); //이력서 상세보기 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
       //정은
-      map.put("/companyLogin.do",new companyLoginAction()); //로그인 폼 호출
-      map.put("/logOut.do",new LogoutAction()); //로그인 폼 호출
-      map.put("/UserMypage.do",new UserMypageAction()); //회원정보리스트 
-      map.put("/updateUserInf.do",new UpdateUserInf()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/companyLogin.do",new companyLoginAction()); //기업로그인 
+      map.put("/logOut.do",new LogoutAction()); //로그아웃 
+      map.put("/UserMypage.do",new UserMypageAction()); //사용자회원정보리스트 
+      map.put("/UpdateUserInf.do",new UpdateUserInf()); //사용자회원정보 수정 
+//      map.put("/UpdateCompanyMypage.do",new CompanyMypageAction()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
@@ -105,13 +107,18 @@ public class FrontController extends HttpServlet {
       map.put("/ReviewDelete.do",new ReviewDelete()); // 취업투크 삭제 기능
       		//회사 디테일
       map.put("/RecruitDetail.do",new RecruitDetial()); //채용공고 상세페이지 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
-
       map.put("/userLogin.do",new userLoginAction()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
-   
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      		//검색 액션
+    map.put("/RecruitSearch.do",new RecruitSearch()); //채용공고 검색 페이지
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
    }
    //doget,dopost를 사용해도 되지만 간단히 하기 위해서
