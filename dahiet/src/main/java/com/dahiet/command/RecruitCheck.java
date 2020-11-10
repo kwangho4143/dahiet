@@ -26,6 +26,7 @@ public class RecruitCheck implements Action {
 				ItemCodeDao idao = new ItemCodeDao();
 				List<ItemCodeVO> ilist = new ArrayList<ItemCodeVO>();
 				ItemCodeVO ivo = new ItemCodeVO();
+				ivo.setGroupid("1");
 				ilist = idao.ITEMCODESELECT(ivo);
 				request.setAttribute("itemcodes", ilist);
 				

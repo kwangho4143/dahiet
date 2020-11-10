@@ -195,6 +195,7 @@ td {
 th.signin{
 width: 90px;
 text-align: center;
+
 }
 
 input.signin {

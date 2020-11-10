@@ -21,7 +21,8 @@ public class RecruitDao extends DAO {
 	private final String RECURUITUPDATE = "UPDATE RECRUIT SET TITLE=?, POSITION=?, EMP_TYPE=?, LOC=?, WORK=?, QUALIFY=?, SALARY=?, NEWBI=? WHERE RECRUIT_SEQ=?";
 	private final String RECURUITDELETE = "DELETE FROM RECRUIT WHERE RECRUIT_SEQ=?";
 	private final String RECURUITDETAILSELECT = "SELECT C.IMG, C.NAME, C.ITEM, C.EMPS, C.TYPE, C.PROFIT, C.LINK"
-					+ " ,R.QUALIFY, R.TITLE, R.EMP_TYPE, R.LOC, R.POSITION, R.WORK, C.ID FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO AND R.RECRUIT_SEQ = ?";
+					+ " ,R.QUALIFY, R.TITLE, R.EMP_TYPE, R.LOC, R.POSITION, R.WORK, "
+					+ "C.ID FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO AND R.RECRUIT_SEQ = ?";
 	/* C.회사로고, , C.회사이름, C.업종, C.사원수, C.기업형태, C.매출액, C.회사홈페이지, 
 	R.지원자격, R.공고제목, R.근무형태, R.회사위치, R.모집부문, R.담당업무 */
 	

@@ -11,10 +11,10 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
-a.abc {
-	border-radius: 7px;
-	border: 1px solid;
+span.abc {
 	height: 28px;
+	margin-right: 10px;
+	border-bottom: 3px solid lightgray; 
 }
 </style>
 <meta charset="utf-8">
@@ -114,9 +114,12 @@ a.abc {
 					<div class="col-lg-12 d-flex">
 						<div style="margin-left: 0%">
 							<h5 align="left">선택된 지역</h5>
-							<div id="selloc">&nbsp;</div>
+							<div id="selloc"></div>
+							<hr>
 							<h5>선택된 업종</h5>
-							<div id="selitem">&nbsp;</div>
+							<div id="selitem">&nbsp;
+							</div>
+							<hr>
 						</div>
 						<script>
 							function showloc(str) {
@@ -126,7 +129,7 @@ a.abc {
 									return;
 								} else {
 									$('#selloc').append(
-											$('<a>').addClass('abc').text(loc))
+											$('<span>').addClass('abc').text(loc))
 								}
 							}
 
@@ -138,7 +141,7 @@ a.abc {
 								} else {
 									$('#selitem')
 											.append(
-													$('<a>').addClass('abc')
+													$('<span>').addClass('abc')
 															.text(item))
 								}
 							}
