@@ -25,7 +25,7 @@ public class RecruitDao extends DAO {
 	/* C.회사로고, , C.회사이름, C.업종, C.사원수, C.기업형태, C.매출액, C.회사홈페이지, 
 	R.지원자격, R.공고제목, R.근무형태, R.회사위치, R.모집부문, R.담당업무 */
 	
-	private final String RECURUITRESUMESELECT = "SELECT R.NAME, R.RESUME_SEQ FROM USERS U, RESUME R WHERE R.TEL = ?";
+	private final String RECURUITRESUMESELECT = "SELECT R.RESUME_NAME, R.RESUME_SEQ FROM RESUME R WHERE R.TEL = ?";
 	
 		// 이력서 select 목록 가져오기
 	public List<RecruitVO> RECURUITRESUMESELECT(RecruitVO vo) {
@@ -37,7 +37,7 @@ public class RecruitDao extends DAO {
 			while (rs.next()) {
 				vo = new RecruitVO();
 				vo.setResume_seq(rs.getString("resume_seq"));
-				vo.setResume_name(rs.getString("name"));
+				vo.setResume_name(rs.getString("resume_name"));
 				rrlists.add(vo);
 			}
 		} catch (SQLException e) {
