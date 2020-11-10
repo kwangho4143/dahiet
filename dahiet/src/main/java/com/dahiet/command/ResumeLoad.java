@@ -11,7 +11,7 @@ import com.dahiet.common.Action;
 import com.dahiet.dao.ResumeDao;
 import com.dahiet.vo.ResumeVO;
 
-public class InsertResume implements Action {
+public class ResumeLoad implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
@@ -28,6 +28,6 @@ public class InsertResume implements Action {
 		request.setAttribute("list",list);
 		
 	
-		return "/jsp/resume/insertResume.jsp";
+		return "/jsp/resume/insertPreResume.jsp";
 	}
 }

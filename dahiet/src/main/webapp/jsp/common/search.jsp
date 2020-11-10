@@ -4,15 +4,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
- a.abc {
- border-radius: 7px; border: 1px solid; 
- height: 28px;
- }
-
+a.abc {
+	border-radius: 7px;
+	border: 1px solid;
+	height: 28px;
+}
 </style>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -21,7 +24,7 @@
 <body>
 	<main id="main">
 		<section id="breadcrumbs" class="breadcrumbs">
-			<form action="SearchAction">
+			<form action="SearchAction.do">
 				<div class="container">
 					<div class="d-flex justify-content-between align-items-center">
 						<nav class="nav-menu d-none d-lg-block">
@@ -29,7 +32,8 @@
 								<li><h2>상세 검색</h2></li>
 								<li><input type="text" id="search" name="search">
 									<button type="submit" style="border: 0px; background: none">
-										<img src="${pageContext.request.contextPath}/images/search.png"
+										<img
+											src="${pageContext.request.contextPath}/images/search.png"
 											height="20" width="20" alt="submit">
 									</button></li>
 								<li class="drop-down"><a href="#">지역 선택</a>
@@ -49,7 +53,8 @@
 											<div style="white-space: normal; margin: 0.5cm; width: 500px">
 												<c:forEach var="itemcode" items="${itemcodes}">
 													<label><input type="checkbox" name="item"
-														value="${itemcode.itemid }" onchange="showitem(this.value)">${itemcode.itemname}</label>
+														value="${itemcode.itemid }"
+														onchange="showitem(this.value)">${itemcode.itemname}</label>
 
 												</c:forEach>
 											</div>
@@ -60,6 +65,7 @@
 										<li>
 											<div>
 												<label>연봉</label> <select name="salary" id="salary">
+													<option value="0">전체</option>
 													<option value="2000">2,000만원 이상</option>
 													<option value="3000">3,000만원 이상</option>
 													<option value="4000">4,000만원 이상</option>
@@ -108,31 +114,34 @@
 					<div class="col-lg-12 d-flex">
 						<div style="margin-left: 0%">
 							<h5 align="left">선택된 지역</h5>
-								<div id="selloc">&nbsp;</div>
+							<div id="selloc">&nbsp;</div>
 							<h5>선택된 업종</h5>
 							<div id="selitem">&nbsp;</div>
 						</div>
 						<script>
 							function showloc(str) {
-							var loc = $(event.target).parent().text();
+								var loc = $(event.target).parent().text();
 								if ($(event.target).is(":checked") == false) {
-									$('a:contains("'+loc+'")').remove();
+									$('a:contains("' + loc + '")').remove();
 									return;
 								} else {
-									$('#selloc').append($('<a>').addClass('abc').text(loc))
+									$('#selloc').append(
+											$('<a>').addClass('abc').text(loc))
 								}
 							}
-							
+
 							function showitem(str) {
 								var item = $(event.target).parent().text();
-									if ($(event.target).is(":checked") == false) {
-										$('a:contains("'+item+'")').remove();
-										return;
-									} else {
-										$('#selitem').append($('<a>').addClass('abc').text(item))
-									}
+								if ($(event.target).is(":checked") == false) {
+									$('a:contains("' + item + '")').remove();
+									return;
+								} else {
+									$('#selitem')
+											.append(
+													$('<a>').addClass('abc')
+															.text(item))
 								}
-							
+							}
 						</script>
 
 					</div>

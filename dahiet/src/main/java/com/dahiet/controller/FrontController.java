@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dahiet.command.InsertResume;
+import com.dahiet.command.ResumeLoad;
+import com.dahiet.command.InsertPreResume;
 import com.dahiet.command.LogoutAction;
 import com.dahiet.command.RecruitCheck;
 import com.dahiet.command.RecruitDelete;
@@ -81,9 +82,9 @@ public class FrontController extends HttpServlet {
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
       //다희
       map.put("/ResumeList.do",new ResumeList()); //이력서 현황 호출
-      map.put("/InsertResume.do",new InsertResume()); //이력서 등록 호출
-      map.put("/detailResume.do",new ResumeDetail()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/resumePreInsert.do",new ResumeLoad()); //이력서 기본정보 호출
+//      map.put("/resumeInsert.do",new ResumeLoad()); //이력서 등록 호출
+      map.put("/detailResume.do",new ResumeDetail()); //이력서 상세보기 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
