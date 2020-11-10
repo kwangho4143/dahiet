@@ -14,6 +14,7 @@ import com.dahiet.dao.SimpleDao;
 import com.dahiet.vo.CodeVO;
 import com.dahiet.vo.ItemCodeVO;
 import com.dahiet.vo.RecruitVO;
+import com.dahiet.vo.SearchVO;
 import com.dahiet.vo.SimpleVO;
 
 public class SearchAction implements Action {
@@ -41,15 +42,15 @@ public class SearchAction implements Action {
 		
 		
 		SimpleDao sedao = new SimpleDao();
-		RecruitVO sevo = new RecruitVO();
+		SearchVO sevo = new SearchVO();
 		List<RecruitVO> searchlist = new ArrayList<RecruitVO>();
 		
-		sevo.setLoc(request.getParameter("loc"));
-		sevo.setItem(request.getParameter("item"));
+		sevo.setLoc(request.getParameterValues("loc"));
+		sevo.setItem(request.getParameterValues("item"));
 		sevo.setSalary(request.getParameter("salary"));
-		sevo.setType(request.getParameter("type"));
-		sevo.setEmp_type(request.getParameter("emp_type"));
-		searchlist = sedao.SIMPLE_SEARCH(sevo);
+		sevo.setType(request.getParameterValues("type"));
+		sevo.setEmp_type(request.getParameterValues("emp_type"));
+		searchlist = sedao.SIMPLE_SEARCH(sevo); //서치에 담아서
 		request.setAttribute("simples", searchlist);
 		
 	
