@@ -24,9 +24,10 @@ public class ResumeInsert implements Action {
 		HttpSession session = request.getSession();
 		String tel = (String)session.getAttribute("tel");
 		vo.setTel(tel);
-		vo.setResume_name(request.getParameter("resume_name"));
 		
-	
+		
+		System.out.println(request.getParameter("resume_name"));
+		request.setAttribute("name", request.getParameter("resume_name"));
 		
 		
 		int n = dao.insertResume(vo);
@@ -35,6 +36,9 @@ public class ResumeInsert implements Action {
 		List<ResumeVO> list = new ArrayList<>();
 		list = daoD.loadInfo(vo);
 		request.setAttribute("list", list);
+		
+		
+	
 		
 		String page;
 
