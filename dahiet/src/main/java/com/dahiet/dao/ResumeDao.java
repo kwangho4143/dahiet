@@ -66,6 +66,7 @@ public class ResumeDao extends DAO {
 				vo1.setUniv(rs.getString("univ"));
 				vo1.setMajor(rs.getString("major"));
 				vo1.setScore(rs.getString("score"));
+			
 				list.add(vo1);
 			}
 		} catch(SQLException e) {
