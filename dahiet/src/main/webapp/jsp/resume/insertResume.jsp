@@ -289,7 +289,7 @@ $(document).ready(function() {
 							</tr>
 							<tr height="50">
 								<th width="150">이력서 제목<span class="point">&nbsp;&nbsp;&nbsp;*</span></th>
-								<td colspan="4"><input type="text" id="resume_name" name="resume_name" size="80"></td>
+								<td colspan="4">${name}</td>
 							</tr>
 							<c:forEach items="${list}" var="vo">
 							<tr height="50">

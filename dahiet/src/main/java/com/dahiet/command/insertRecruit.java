@@ -20,7 +20,6 @@ public class insertRecruit implements Action {
 		String no = (String)session.getAttribute("no");
 		vo.setNo(no);
 		vo.setTitle(request.getParameter("title"));
-		vo.setPosition(request.getParameter("position"));
 		vo.setWork(request.getParameter("work"));
 		vo.setEmp_type(request.getParameter("emp_type"));
 		vo.setLoc(request.getParameter("loc"));

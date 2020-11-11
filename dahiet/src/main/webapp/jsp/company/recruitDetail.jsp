@@ -69,8 +69,6 @@ th.title {
 							<td>${vo.loc}</td>
 							<th class="title">사원수</th>
 							<td>${vo.emps}</td>
-							<th class="title">모집부문</th>
-							<td>${vo.position}</td>
 						</tr>
 						<tr>
 							<th class="title">기업형태</th>

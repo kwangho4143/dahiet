@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dahiet.command.ResumeInsert;
 import com.dahiet.command.CompanyMypageAction;
 import com.dahiet.command.InsertPreResume;
 import com.dahiet.command.LogoutAction;
@@ -24,6 +23,7 @@ import com.dahiet.command.RecruitUp;
 import com.dahiet.command.RecruitUpdate;
 import com.dahiet.command.ResumeApply;
 import com.dahiet.command.ResumeDetail;
+import com.dahiet.command.ResumeInsert;
 import com.dahiet.command.ResumeList;
 import com.dahiet.command.ReviewAction;
 import com.dahiet.command.ReviewCheck;

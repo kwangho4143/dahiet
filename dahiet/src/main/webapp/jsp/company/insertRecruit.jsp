@@ -22,8 +22,6 @@
 				<tr>
 					<th width="80">공고 제목</th>
 					<td colspan="2" width="250"><input style="width: 100%" type="text" id="title" name="title"></td>
-					<!-- <th width="80">모집부문</th>
-					<td width="150"><input style="width: 100%" type="text" id="position" name="position"></td> -->
 					<th width="80">급여</th>
 					<td width="150"><input style="width: 100%" type="text" id="salary" name="salary"></td>
 					<th>경력</th>
