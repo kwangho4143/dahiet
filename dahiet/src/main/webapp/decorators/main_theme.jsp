@@ -1,10 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="decorator"
-	uri="http://www.opensymphony.com/sitemesh/decorator"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -100,12 +96,14 @@
 		</div>
 	</header>
 	<!-- End Header -->
+	<body>
 	<section id="about" class="about">
 		<main id="main">
 			<br> <br>
 			<decorator:body />
 		</main>
 	</section>
+	</body>
 	<!-- ======= Footer ======= -->
 	<footer id="footer">
 		<div class="footer-top">
