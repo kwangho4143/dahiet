@@ -84,8 +84,13 @@
 					<c:if test = "${sessionScope.id eq null}">
 					<li>  <button type="button" class="btn btn-outline-primary" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" >로그인 / 가입</button></li>
 					</c:if>
-					<c:if test = "${sessionScope.id ne null}">
+					<c:if test = "${sessionScope.birth ne null}">
 						<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/UserMypage.do';" class="get-started-btn ml-auto" >마이페이지</button></li>
+					</c:if>
+					<c:if test = "${sessionScope.no ne null}">
+						<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/companyMypage.do';" class="get-started-btn ml-auto" >마이페이지</button></li>
+					</c:if>
+					<c:if test = "${sessionScope.id ne null}">
 						<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/logOut.do';" class="get-started-btn ml-auto" >로그아웃</button></li>
 					</c:if>
 				</ul>

@@ -33,6 +33,7 @@ import com.dahiet.command.ReviewInsert;
 import com.dahiet.command.ReviewUpdate;
 import com.dahiet.command.SearchAction;
 import com.dahiet.command.ShowRecruitList;
+import com.dahiet.command.UpdateComInf;
 import com.dahiet.command.UpdateUserInf;
 import com.dahiet.command.UserMypageAction;
 import com.dahiet.command.UsersApply;
@@ -83,8 +84,8 @@ public class FrontController extends HttpServlet {
       //다희
       map.put("/ResumeList.do",new ResumeList()); //이력서 현황 호출
       map.put("/resumePreInsert.do",new InsertPreResume()); //이력서 등록-기본정보 호출
-      map.put("/resumeInsert.do",new ResumeInsert()); //이력서 등록-입력창 호출
-      map.put("/detailResume.do",new ResumeDetail()); //이력서 상세보기 호출
+      map.put("/resumeInsert.do",new ResumeInsert()); //resume insert 후 입력창 호출
+      map.put("/resumeDetail.do",new ResumeDetail()); //career, license 등 insert 후 상세보기창 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
@@ -94,8 +95,8 @@ public class FrontController extends HttpServlet {
       map.put("/logOut.do",new LogoutAction()); //로그아웃 
       map.put("/UserMypage.do",new UserMypageAction()); //사용자회원정보리스트 
       map.put("/UpdateUserInf.do",new UpdateUserInf()); //사용자회원정보 수정 
-//      map.put("/UpdateCompanyMypage.do",new CompanyMypageAction()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/companyMypage.do",new CompanyMypageAction()); //로그인 폼 호출
+      map.put("/UpdateComInf.do",new UpdateComInf()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
       //평강

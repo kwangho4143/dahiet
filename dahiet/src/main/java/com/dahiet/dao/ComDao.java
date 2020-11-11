@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dahiet.vo.ComVO;
+import com.dahiet.vo.UserVO;
 
 
 
@@ -19,7 +20,34 @@ public class ComDao extends DAO {
 	
 	private final String COMPANYINSERT = "INSERT INTO COMPANIES(ID,PW,NO,TEL,NAME,ADDR,ITEM,IMG,EMPS,LINK,PROFIT,TYPE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 	private final String COMSELECTLOGIN = "SELECT * FROM COMPANIES WHERE ID = ? ";
+	private final String COMUPDATE = 
+			"UPDATE COMPANIES SET  PW = ?, NAME= ?, TEL=?, ADDR = ?, LINK= ?, TYPE=?, EMPS=?, PROFIT=?, ITEM=?, IMG=?, WHERE ID = ?";
 	
+	public int ComUpdate(ComVO vo) {  //수정하기
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(COMUPDATE);
+			psmt.setString(1,vo.getPw());
+			psmt.setString(2, vo.getName());
+			psmt.setString(3, vo.getTel());
+			psmt.setString(4, vo.getAddr());
+			psmt.setString(5, vo.getLink());
+			psmt.setString(6, vo.getType());
+			psmt.setString(7, vo.getEmps());
+			psmt.setString(8, vo.getProfit());
+			psmt.setString(9, vo.getItem());
+			psmt.setString(10, vo.getImg());
+			psmt.setString(11, vo.getId());
+			
+			n = psmt.executeUpdate();
+			
+		}catch(SQLException e ) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return n;
+	}
 	
 	public int insert(ComVO vo) {
 		int n=0;
