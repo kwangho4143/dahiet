@@ -112,19 +112,40 @@ to {
 	margin: auto;
 }
 
+.recruit-each {
+	max-width: 190px;
+	height: 180px;
+	position: relative;
+	border-top: 5px solid #bbb;
+	padding: 5px;
+	margin: 5px;
+	float: left;
+}
 
 #recruitImg {
-	width: 200px;
-	height: 150px;
+	width: 170px;
+	height: 67px;
+	margin: 5px;
 }
 
-#recuit {
-	border: 1px;
+.info-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
 }
 
-#recuits:hover {
-	background-color: yellow;
+.info-cell {
+	max-width: 200px;
+	height: 270px;
+	border-top: 5px solid #bbb;
+	padding: 10px;
+	position: relative;
 }
+
+.info-cell-cell {
+	display: inline;
+}
+
 </style>
 
 </head>
@@ -185,18 +206,37 @@ to {
 		
 	
 <div class="recruit-container">	
-	<div>
-	<h5>채용공고</h5>	
+	<div><h5>채용공고</h5></div>
+		<c:forEach var="mainlist" items="${mainlists}" begin="0" end="9">
+			<div class="recruit-each" id="recruit-each">
+				<span id="recuit" onclick="location.href='${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}'">
+					<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/${mainlist.img}">
+					<br>${mainlist.name}<br><b>${mainlist.title}</b>
+				</span>
+			</div>
+		</c:forEach>
+</div><br><br>
+
+
+<div class="info-container">	
+	<div><h5>직업·진로</h5></div>
+	<div class="info-cell" id="info-cell">
+		<p>직업심리검사</p>
+		<div id="info-cell-cell">
+			<div id="img-link">
+				<a href="https://www.work.go.kr/consltJobCarpa/jobPsyExamNew/jobPsyExamYouthList.do">
+					<img alt="어린이/청소년" src="${pageContext.request.contextPath}/images/1.png"></a>
+				<p>어린이/청소년</p>
+			</div>
+			<div id="img-link">
+				<a href="https://www.work.go.kr/consltJobCarpa/jobPsyExamNew/jobPsyExamAdultList.do">
+					<img alt="대학생/성인" src="${pageContext.request.contextPath}/images/2.png"></a>
+				<p>대학생/성인</p>
+			</div>
+		</div>
 	</div>
-	<span id="recuits">
-	<c:forEach var="mainlist" items="${mainlists}">
-		<span id="recuit" onclick="location.href='${pageContext.request.contextPath}/RecruitDetail.do?no=${mainlist.recruit_seq}'">
-			<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/${mainlist.img}">
-			<br>${mainlist.name }<br><b> ${mainlist.title }</b>
-		</span>
-	</c:forEach>
-	</span>
 </div>
+
 
 	
 	

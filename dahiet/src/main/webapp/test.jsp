@@ -113,18 +113,21 @@ to {
 }
 
 .recruit-each {
-	max-width: 200px;
-	height: 270px;
-	border-top: 5px solid #bbb;
-	padding: 10px;
+	max-width: 190px;
+	height: 180px;
 	position: relative;
+	border-top: 5px solid #bbb;
+	padding: 5px;
+	margin: 5px;
+	float: left;
+	background-color: pink;
 }
 
 #recruitImg {
-	width: 200px;
-	height: 170px;
+	width: 170px;
+	height: 67px;
+	margin: 5px;
 }
-
 
 .info-container {
 	max-width: 1000px;
@@ -143,7 +146,6 @@ to {
 .info-cell-cell {
 	display: inline;
 }
-
 
 </style>
 
@@ -206,14 +208,14 @@ to {
 	
 <div class="recruit-container">	
 	<div><h5>채용공고</h5></div>
-	<div class="recruit-each" id="recruit-each">
-		<span id="recuits">
-			<span id="recuit" onclick="location.href='${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}'">
-				<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/삼성.png">
-				<br>삼성전자<br><b>삼성전자 각 부문 신입/경력 공개채용</b>
-			</span>
-		</span>
-	</div>
+		<c:forEach var="mainlist" items="${mainlists}" begin="0" end="9">
+			<div class="recruit-each" id="recruit-each">
+				<span id="recuit" onclick="location.href='${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}'">
+					<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/${mainlist.img}">
+					<br>${mainlist.name}<br><b>${mainlist.title}</b>
+				</span>
+			</div>
+		</c:forEach>
 </div><br><br>
 
 
@@ -236,6 +238,8 @@ to {
 	</div>
 </div>
 
+
+	
 	
 </body>
 </html>

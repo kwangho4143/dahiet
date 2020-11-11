@@ -50,7 +50,7 @@
 		<div class="container d-flex align-items-center">
 
 			<h1 class="logo">
-				<a href="${pageContext.request.contextPath}/test.jsp">Job Zone</a>
+				<a href="${pageContext.request.contextPath}/MainListShow.do">Job Zone</a>
 			</h1>
 			<!-- Uncomment below if you prefer to use an image logo -->
 			<!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
