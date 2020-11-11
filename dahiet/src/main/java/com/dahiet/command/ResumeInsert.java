@@ -23,9 +23,7 @@ public class ResumeInsert implements Action {
 		
 		int n = dao.insertResume(vo);
 		String page;
-		
-		System.out.println(n);
-		
+
 		
 		if (n != 0) {
 			page = "jsp/resume/insertResume.jsp";
