@@ -40,7 +40,7 @@
 		</div> <br />
 		<div>
 			<div id="resumeTbl">
-				<form id="resumeFrm" name="resumeFrm" action="" method="post">
+				<form id="resumeFrm" name="resumeFrm" action="${pageContext.request.contextPath}/resumeInsert.do" method="post">
 		
 					<div>
 						<table>
@@ -84,8 +84,8 @@
 					</div>
 					
 					<div>
-					<button type="button" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/resumeInsert.do'">이력서 작성하기</button>&nbsp;&nbsp;
-					<button type="reset" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/ResumeList.do'">취 소</button>
+					<input type="submit" class="btn btn-danger" value="이력서 작성하기" >&nbsp;&nbsp;
+					<input type="reset" class="btn btn-danger" value= "취소">
 					</div>
 					
 				</form>
