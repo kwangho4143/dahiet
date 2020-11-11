@@ -13,14 +13,14 @@ public class ResumeDetailDao extends DAO{
 	private PreparedStatement psmt; // sql명령어 작성시에 사용
 	private ResultSet rs; // select 후 결과셋 받기
 	private ResumeVO vo;
-	
+		
 	private final String LOADINFO = "SELECT * FROM USERS WHERE TEL = ?";
 	private final String loadresume = "";
-	private final String insertCareer = "";
-	private final String insertLicense = "";
-	private final String insertActivity = "";
-	private final String insertAward = "";
-	private final String insertLanguage = "";
+	private final String insertCareer = "insert into career values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?, ?, ?)";
+	private final String insertLicense = "insert into license values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?);";
+	private final String insertActivity = "insert into ACTIVITY values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?, ?);";
+	private final String insertAward = "insert into award values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?);";
+	private final String insertLanguage = "insert into language values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?);";
 	
 	// user 테이블의 값 이력서에 불러오기
 	public List<ResumeVO> loadInfo(ResumeVO vo) {
