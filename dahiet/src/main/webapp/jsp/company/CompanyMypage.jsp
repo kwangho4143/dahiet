@@ -27,6 +27,17 @@ th {
 	border: 1px solid;
 }
 </style>
+<script>
+	function Display() {
+		var d = document.tap1;
+		if(d.pw.value == ""){
+			alert("password를 입력하세요.");
+		d.pw.focus();
+		return false;
+
+		}
+	};
+</script>
 </head>
 <body>
 	<div align="center">
@@ -94,7 +105,7 @@ th {
 					</tr>
 				</table>
 				<div align="center">
-					<input type="submit" value="회원정보수정"> <input type="reset"
+					<input type="submit" value="회원정보수정" onclick="return Display()"> <input type="reset"
 						value="취 소">
 				</div>
 			</form>

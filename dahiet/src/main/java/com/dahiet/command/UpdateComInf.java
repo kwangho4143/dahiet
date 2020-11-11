@@ -19,7 +19,6 @@ public class UpdateComInf implements Action {
 		String id= (String)session.getAttribute("id");
 		vo.setId(id);
 		vo.setPw(request.getParameter("pw"));
-		vo.setName(request.getParameter("name"));
 		vo.setTel(request.getParameter("tel"));
 		vo.setAddr(request.getParameter("addr"));
 		vo.setLink(request.getParameter("link"));
