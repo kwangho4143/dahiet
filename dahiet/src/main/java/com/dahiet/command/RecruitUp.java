@@ -18,7 +18,6 @@ public class RecruitUp implements Action {
 
 		vo.setRecruit_seq(request.getParameter("recruit_seq"));
 		vo.setTitle(request.getParameter("title"));
-		vo.setPosition(request.getParameter("position"));
 		vo.setEmp_type(request.getParameter("emp_type"));
 		vo.setLoc(request.getParameter("loc"));
 		vo.setWork(request.getParameter("work"));

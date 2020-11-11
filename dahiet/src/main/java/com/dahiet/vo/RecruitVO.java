@@ -4,7 +4,6 @@ public class RecruitVO {
 	private String recruit_seq;
 	private String no;
 	private String title;
-	private String position;
 	private String emp_type;
 	private String loc;
 	private String work;
@@ -92,12 +91,6 @@ public class RecruitVO {
 	}
 	public void setTitle(String title) {
 		this.title = title;
-	}
-	public String getPosition() {
-		return position;
-	}
-	public void setPosition(String position) {
-		this.position = position;
 	}
 	public String getEmp_type() {
 		return emp_type;
