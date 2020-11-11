@@ -28,6 +28,17 @@ th {
 	border: 1px solid;
 }
 </style>
+
+<script>
+function Display() {
+	var pw = document.frmInf;
+	if(pw.pw.value == ""){
+		alert("password를 입력해주세요.");
+		pw.pw.focus();
+		return false;
+	}
+}
+</script>
 </head>
 <body>
 	<div align="center">
@@ -41,7 +52,9 @@ th {
 					<tr>
 						<td rowspan="6" align="center" width="20%"><img alt="사진"
 							src="${pageContext.request.contextPath}/images/${vo.image}"
-							width="120" height="150" align="middle"></td>
+							width="120" height="150" align="middle">
+							<input class="signin" type="file" id="image" name="image_file" >
+							<input type="hidden" value="${vo.image}" id="image" name="image"></td>
 						<td colspan="3" align="center">개인정보</td>
 					</tr>
 					<tr>
@@ -88,7 +101,7 @@ th {
 					</tr>
 				</table>
 						<div align="center">
-							<input type="submit" value="회원정보수정">
+							<input type="submit" onclick="return Display()" value="회원정보수정">
 							<input type="reset" value="취 소">
 						</div>
 			</form>

@@ -51,7 +51,9 @@ th {
 					<tr>
 						<td rowspan="6" align="center" width="20%"><img alt="사진"
 							src="${pageContext.request.contextPath}/images/${vo.img}"
-							width="120" height="150" align="middle"></td>
+							width="120" height="150" align="middle">
+							<input class="signin" type="file" id="img" name="img_file" >
+							<input type="hidden" value="${vo.img }" id="img" name="img"></td>
 						<td colspan="3" align="center">기업정보</td>
 					</tr>
 					<tr>
