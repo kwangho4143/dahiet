@@ -6,6 +6,7 @@ public class SearchVO {
 	private String emp_type[];
 	private String salary;
 	private String type[];
+	private String work[];
 	public String[] getLoc() {
 		return loc;
 	}
@@ -35,6 +36,12 @@ public class SearchVO {
 	}
 	public void setType(String[] type) {
 		this.type = type;
+	}
+	public String[] getWork() {
+		return work;
+	}
+	public void setWork(String work[]) {
+		this.work = work;
 	}
 
 }	

@@ -33,6 +33,12 @@ public class SearchAction implements Action {
 		ilist = idao.ITEMCODESELECT(ivo);
 		request.setAttribute("itemcodes", ilist);
 		
+		ItemCodeDao wdao = new ItemCodeDao();
+		List<ItemCodeVO> wlist = new ArrayList<ItemCodeVO>();
+		ItemCodeVO wvo = new ItemCodeVO();
+		wvo.setGroupid("3");
+		wlist = wdao.WITEMCODESELECT(wvo);
+		request.setAttribute("witemcodes", wlist);
 		
 		SimpleDao sedao = new SimpleDao();
 		SearchVO sevo = new SearchVO();
@@ -43,6 +49,7 @@ public class SearchAction implements Action {
 		sevo.setSalary(request.getParameter("salary"));
 		sevo.setType(request.getParameterValues("type"));
 		sevo.setEmp_type(request.getParameterValues("emp_type"));
+		sevo.setWork(request.getParameterValues("work"));
 		searchlist = sedao.SIMPLE_SEARCH(sevo); //서치에 담아서
 		request.setAttribute("simples", searchlist);
 		

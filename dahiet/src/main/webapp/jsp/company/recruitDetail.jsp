@@ -50,7 +50,7 @@ th.title {
 				<div style="margin: 20%, 10%, 20%, 10%" align="center">
 					<table border="1" style="text-align: center;">
 						<tr>
-							<td colspan="2" rowspan="6"><img style="margin: 0px;"
+							<td colspan="2" rowspan="7"><img style="margin: 0px;"
 								alt="회사로고"
 								src="${pageContext.request.contextPath}/images/${vo.img}"></td>
 							<th width="800px" colspan="6" rowspan="2" style="font-size: 35px">${vo.title}</th>
@@ -61,18 +61,20 @@ th.title {
 							<td>${vo.name}</td>
 							<th class="title">근무형태</th>
 							<td>${vo.emp_type}</td>
+						</tr>
+						<tr>
 							<th class="title">업종</th>
 							<td>${vo.item}</td>
-						</tr>
-						<tr>
 							<th class="title">회사위치</th>
 							<td>${vo.loc}</td>
-							<th class="title">사원수</th>
-							<td>${vo.emps}</td>
 						</tr>
 						<tr>
+							<th class="title">사원수</th>
+							<td>${vo.emps}</td>
 							<th class="title">기업형태</th>
 							<td>${vo.type}</td>
+						</tr>
+						<tr>
 							<th class="title">담당업무</th>
 							<td>${vo.work}</td>
 							<th class="title">매출액</th>
@@ -84,6 +86,7 @@ th.title {
 						</tr>
 						<tr>
 							<td colspan="8">${vo.qualify}</td>
+
 						</tr>
 					</table>
 				</div>

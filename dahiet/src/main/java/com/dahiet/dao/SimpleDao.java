@@ -15,7 +15,10 @@ public class SimpleDao extends DAO {
 	private PreparedStatement psmt;
 	private ResultSet rs; // select 후 결과셋 받기
 
-	private String SIMPLE_SEARCH = "SELECT R.RECRUIT_SEQ, C.IMG, C.NAME, R.TITLE, FINDCODENAME(R.EMP_TYPE) EMP_TYPE, FINDCODENAME(R.WORK) WORK, R.SALARY FROM RECRUIT R JOIN COMPANIES C ON C.NO = R.NO "; 
+	private String SIMPLE_SEARCH = "SELECT R.RECRUIT_SEQ, C.IMG, C.NAME, R.TITLE, "
+			+ "FINDCODENAME(R.EMP_TYPE) EMP_TYPE, "
+			+ "FINDCODENAME(R.WORK) WORK, R.SALARY FROM RECRUIT R "
+			+ "JOIN COMPANIES C ON C.NO = R.NO "; 
 
 	
 	public List<RecruitVO> SIMPLE_SEARCH(SearchVO vo) {
@@ -31,6 +34,18 @@ public class SimpleDao extends DAO {
 				{ 
 					where += "'" + vo.getLoc()[i] + "'"; 
 					if (i < vo.getLoc().length - 1)
+						where += ",";
+				};
+				
+				where += ")";
+			}
+			if (vo.getWork() != null && vo.getWork().length > 0)
+			{ 
+				where += " and r.work in (" ;
+				for(int i=0; i<vo.getWork().length; i++) 
+				{ 
+					where += "'" + vo.getWork()[i] + "'"; 
+					if (i < vo.getWork().length - 1)
 						where += ",";
 				};
 				

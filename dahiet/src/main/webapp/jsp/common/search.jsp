@@ -14,7 +14,7 @@
 span.abc {
 	height: 28px;
 	margin-right: 10px;
-	border-bottom: 3px solid lightgray; 
+	border-bottom: 3px solid lightgray;
 }
 </style>
 <meta charset="utf-8">
@@ -58,8 +58,18 @@ span.abc {
 
 												</c:forEach>
 											</div>
-										</li>
 									</ul></li>
+								<li class="drop-down"><a href="#">담당 업무 선택</a>
+									<ul>
+										<li>
+											<div style="white-space: normal; margin: 0.5cm; width: 500px">
+												<c:forEach var="workid" items="${witemcodes}">
+													<label><input type="checkbox" name="work"
+														value="${workid.itemid }" onchange="showwork(this.value)">${workid.itemname}</label>
+												</c:forEach>
+											</div>
+									</ul></li>
+
 								<li class="drop-down"><a href="#">상세 선택</a>
 									<ul>
 										<li>
@@ -113,38 +123,51 @@ span.abc {
 				<div class="row">
 					<div class="col-lg-12 d-flex">
 						<div style="margin-left: 0%">
-							<h5 align="left">선택된 지역</h5>
-							<div id="selloc"></div>
+							<h5>선택된 지역</h5>
+							<div id="selloc">&nbsp;</div>
 							<hr>
 							<h5>선택된 업종</h5>
-							<div id="selitem">&nbsp;
-							</div>
+							<div id="selitem">&nbsp;</div>
+							<hr>
+							<h5>선택된 담당 업무</h5>
+							<div id="selwork">&nbsp;</div>
 							<hr>
 						</div>
 						<script>
 							function showloc(str) {
 								var loc = $(event.target).parent().text();
 								if ($(event.target).is(":checked") == false) {
-									$('a:contains("' + loc + '")').remove();
+									$('span:contains("' + loc + '")').remove();
 									return;
 								} else {
 									$('#selloc').append(
-											$('<span>').addClass('abc').text(loc))
+											$('<span>').addClass('abc').text(
+													loc))
 								}
-							}
-
+							};
+							
 							function showitem(str) {
 								var item = $(event.target).parent().text();
 								if ($(event.target).is(":checked") == false) {
-									$('a:contains("' + item + '")').remove();
+									$('span:contains("' + item + '")').remove();
 									return;
 								} else {
-									$('#selitem')
-											.append(
-													$('<span>').addClass('abc')
-															.text(item))
+									$('#selitem').append(
+											$('<span>').addClass('abc').text(
+													item))
 								}
-							}
+							};
+							function showwork(str) {
+								var work = $(event.target).parent().text();
+								if ($(event.target).is(":checked") == false) {
+									$('span:contains("' + work + '")').remove();
+									return;
+								} else {
+									$('#selwork').append(
+											$('<span>').addClass('abc').text(
+													work))
+								}
+							};
 						</script>
 
 					</div>

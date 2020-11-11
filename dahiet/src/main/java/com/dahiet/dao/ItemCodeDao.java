@@ -14,7 +14,8 @@ public class ItemCodeDao extends DAO {
 	private PreparedStatement psmt;
 	private ResultSet rs; // select 후 결과셋 받기
 
-	private final String ITEMCODESELECT = "SELECT ITEMNAME, ITEMID FROM ITEMCODE WHERE GROUPID = 3";
+	private final String ITEMCODESELECT = "SELECT ITEMNAME, ITEMID FROM ITEMCODE WHERE GROUPID = 1";
+	private final String WITEMCODESELECT = "SELECT ITEMNAME, ITEMID FROM ITEMCODE WHERE GROUPID = 3";
 
 	public List<ItemCodeVO> ITEMCODESELECT(ItemCodeVO vo) {
 		List<ItemCodeVO> list = new ArrayList<ItemCodeVO>();
@@ -35,6 +36,26 @@ public class ItemCodeDao extends DAO {
 		}
 		return list;
 	}
+	public List<ItemCodeVO> WITEMCODESELECT(ItemCodeVO vo) {
+		List<ItemCodeVO> wlist = new ArrayList<ItemCodeVO>();
+		try {
+			psmt = conn.prepareStatement(WITEMCODESELECT);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				vo = new ItemCodeVO();
+				vo.setItemname(rs.getString("itemname"));
+				vo.setItemid(rs.getString("itemid"));
+				wlist.add(vo);
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return wlist;
+	}
+
 
 	private void close() {
 		try {
