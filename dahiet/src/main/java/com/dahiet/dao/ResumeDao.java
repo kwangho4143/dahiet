@@ -12,19 +12,48 @@ public class ResumeDao extends DAO {
 
 	private PreparedStatement psmt; // sql명령어 작성시에 사용
 	private ResultSet rs; // select 후 결과셋 받기
-	private ResumeVO vo;
+	//private ResumeVO vo;
 
 	// 테이블의 값 불러오기
 	private final String SELECTINF = "SELECT * FROM RESUME WHERE TEL = ?";
 	private final String LOADINFO ="SELECT * FROM USERS WHERE TEL = ?";
 	private final String SELECTID = "SELECT * FROM USERS U JOIN RESUME R ON U.TEL = R.TEL WHERE RESUME_SEQ=?"	;
-	private final String INSERTRESUME = "INSERT INTO RESUME VALUES (RESUME_VAL_SEQ.NEXTVAL, ?, SYSDATE, ?)";
+	private final String INSERTRESUME = "INSERT INTO RESUME VALUES (?, ?, SYSDATE, ?)";
+	private final String SELECTSEQ = "SELECT RESUME_VAL_SEQ.NEXTVAL AS SEQ FROM DUAL";
 
+	// 이력서 등록
+	public int insertResume(ResumeVO vo) {
+		int n = 0;
 
+		try {
+			psmt = conn.prepareStatement(SELECTSEQ);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				vo.setResume_seq(rs.getString("SEQ"));
+			}
+					
+			psmt = conn.prepareStatement(INSERTRESUME);
+			psmt.setString(1, vo.getResume_seq());	
+			psmt.setString(2, vo.getResume_name());
+			psmt.setString(3, vo.getTel());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		} return n;
+	}
+	
+	
+	
+	
+	
+	
+	
 	public List<ResumeVO> selectedTel(String tel) {
 	
 		List<ResumeVO> list= new ArrayList<ResumeVO>();
-		
+		ResumeVO vo = new ResumeVO();
 		try {
 			psmt = conn.prepareStatement(SELECTINF);
 			psmt.setString(1, tel);
@@ -34,7 +63,7 @@ public class ResumeDao extends DAO {
 				vo.setResume_seq(rs.getString("resume_seq"));
 				vo.setResume_name(rs.getString("resume_name"));
 				vo.setRedgt(rs.getDate("regdt"));
-				//vo.setTel(rs.getString("tel"));
+				vo.setTel(rs.getString("tel"));
 				list.add(vo);
 			}
 		} catch(SQLException e) {
@@ -77,20 +106,7 @@ public class ResumeDao extends DAO {
 	}
 
 	
-	// 이력서 등록
-	public int insertResume(ResumeVO vo) {
-		int n = 0;
-		try {
-			psmt = conn.prepareStatement(INSERTRESUME);
-			psmt.setString(1, vo.getResume_name());
-			psmt.setString(2, vo.getTel());
-			n = psmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		} return n;
-	}
+
 
 	
 	private void close() {
@@ -137,14 +153,14 @@ public class ResumeDao extends DAO {
 				vo.setResume_name(rs.getString("resume_name"));
 				vo.setResume_seq(rs.getString("resume_seq"));
 				vo.setRedgt(rs.getDate("redgt"));
-			
+				return vo;
 			}
 	} catch (SQLException e) {
 		e.printStackTrace();
 	} finally {
 		close();
 	}
-	return vo;
+	return null;
 }
 	
 	
