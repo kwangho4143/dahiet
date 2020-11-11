@@ -15,12 +15,101 @@ public class ResumeDetailDao extends DAO{
 	private ResumeVO vo;
 		
 	private final String LOADINFO = "SELECT * FROM USERS WHERE TEL = ?";
-	private final String loadresume = "";
-	private final String insertCareer = "insert into career values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?, ?, ?)";
-	private final String insertLicense = "insert into license values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?);";
-	private final String insertActivity = "insert into ACTIVITY values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?, ?);";
-	private final String insertAward = "insert into award values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?);";
-	private final String insertLanguage = "insert into language values (RESUME_SUB_SEQ.nextval, a, ?, ?, ?, ?);";
+	
+	private final String INSERTCAREER = "INSERT INTO CAREER VALUES(RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
+	
+	private final String INSERTLICENSE = "INSERT INTO LICENSE VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?)";
+	private final String INSERTACTIVITY = "INSERT INTO ACTIVITY VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?)";
+	
+	private final String INSERTAWARD = "INSERT INTO AWARD VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?);";
+	private final String INSERTLANGUAGE = "INSERT INTO LANGUAGE VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?);";
+	
+	//상세 값넣기
+	public void insertLa(ResumeVO vo) {
+		try {
+			psmt = conn.prepareStatement(INSERTLANGUAGE);
+			
+			psmt.setString(1, vo.getResume_seq());
+			psmt.setString(2, vo.getLag_name());
+			psmt.setString(3, vo.getLag_place());
+			psmt.setString(4, vo.getLag_score());
+			psmt.setDate(5, vo.getLag_date());
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}	
+	}
+
+	public void insertAw(ResumeVO vo) {
+		try {
+			psmt = conn.prepareStatement(INSERTAWARD);
+			psmt.setString(1, vo.getResume_seq());
+			psmt.setString(2, vo.getAwd_name());
+			psmt.setString(3, vo.getAwd_place());
+			psmt.setDate(4, vo.getAwd_date());
+			psmt.setString(5, vo.getAwd_content());
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}	
+	}
+	public void insertAc(ResumeVO vo) {
+		try {
+			psmt = conn.prepareStatement(INSERTACTIVITY);
+			psmt.setString(1, vo.getResume_seq());
+			psmt.setString(2, vo.getAct_type());
+			psmt.setString(3, vo.getAct_name());
+			psmt.setString(4, vo.getAct_publish());
+			psmt.setDate(5, vo.getAct_startdate());
+			psmt.setDate(6, vo.getAct_enddate());
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}	
+	}
+
+	public void insertLi(ResumeVO vo) {
+		try {
+			psmt = conn.prepareStatement(INSERTLICENSE);
+			psmt.setString(1, vo.getResume_seq());
+			psmt.setString(2, vo.getLic_name());
+			psmt.setString(3, vo.getLic_no());
+			psmt.setString(4, vo.getLic_place());
+			psmt.setDate(5,vo.getLic_getdate());
+			
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}	
+	}
+
+	public void insertCa(ResumeVO vo) {
+		try {
+			psmt = conn.prepareStatement(INSERTCAREER);
+			psmt.setString(1, vo.getResume_seq());
+			psmt.setString(2, vo.getCo_name());
+			psmt.setString(3, vo.getDept_name());
+			psmt.setString(4, vo.getCa_salary());
+			psmt.setDate(5, vo.getCa_hiredate());
+			psmt.setDate(6, vo.getCa_retiredate());
+			psmt.setString(7, vo.getCa_worked());
+			
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}	
+	}
+
 	
 	// user 테이블의 값 이력서에 불러오기
 	public List<ResumeVO> loadInfo(ResumeVO vo) {
@@ -50,33 +139,6 @@ public class ResumeDetailDao extends DAO{
 		} return list;
 	}
 
-	public List<ResumeVO> insertCareer(String resume_seq) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<ResumeVO> insertLicense(String resume_seq) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<ResumeVO> insertActivity(String resume_seq) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<ResumeVO> insertAward(String resume_seq) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<ResumeVO> insertLanguage(String resume_seq) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-	
 	private void close() {
 		try {
 			if(rs != null) {

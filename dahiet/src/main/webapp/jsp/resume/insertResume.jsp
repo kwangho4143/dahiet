@@ -280,7 +280,7 @@ $(document).ready(function() {
 		</div> <br />
 		<div>
 			<div id="resumeTbl">
-				<form id="resumeFrm" name="resumeFrm" action="" method="post" enctype="multipart/form-data">
+				<form id="resumeFrm" name="resumeFrm" action="${pageContext.request.contextPath}/resumeDetail.do" method="post" enctype="multipart/form-data">
 		
 					<div>
 						<table>
@@ -362,7 +362,7 @@ $(document).ready(function() {
 					</div>
 					
 					<div>
-						<table id="tblLicense" style="display: none;">
+						<table id="tblLicense"  style="display: none;">
 							<thead>
 							<tr>
 								<td height="70" colspan="6"><h3 align="center">자 격 사 항&nbsp;
@@ -500,7 +500,7 @@ $(document).ready(function() {
 						</tr>
 						<tr>
 							<td colspan="2" align="center">
-							<button type="button" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/resumeDetail.do'">이력서 작성하기</button>&nbsp;&nbsp;
+							<input type="submit" class="btn btn-danger" value = "이력서 작성하기">&nbsp;&nbsp;
 							<button type="reset" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/ResumeList.do'">취 소</button>
 							</td>
 						</tr>

@@ -24,17 +24,19 @@ public class ResumeList implements Action {
 		//System.out.println(vo.getTel());
 		List<ResumeVO> list  = dao.selectedTel(tel);
 		
+		
+		
 		for(int i = 0; i<list.size();i++) {
 			System.out.println(list.get(i).getResume_name());
 		}
 		
 		//
-		Enumeration se = session.getAttributeNames();
-
-		while (se.hasMoreElements()) {
-			String getse = se.nextElement() + "";
-			System.out.println("@@@@@@@ session : " + getse + " : " + session.getAttribute(getse));
-		}
+//		Enumeration se = session.getAttributeNames();
+//
+//		while (se.hasMoreElements()) {
+//			String getse = se.nextElement() + "";
+//			System.out.println("@@@@@@@ session : " + getse + " : " + session.getAttribute(getse));
+//		}
 
 		//
 //		for(int i=0;i<list.size();i++){
