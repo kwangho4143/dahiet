@@ -30,7 +30,7 @@ public class RecruitDao extends DAO {
 	
 	
 	//main에 값나오게 설정하기 쿼리
-	private final String MAINSELECT = "SELECT * FROM RECRUIT R, COMPANIES C WHERE R.NO = C.NO"; 
+	private final String MAINSELECT = "SELECT r.recruit_seq, c.img, c.name, r.title FROM RECRUIT R, COMPANIES C WHERE R.NO = C.NO"; 
 	
 	
 	// main에 값나오게 설정하기 

@@ -192,7 +192,7 @@ to {
 	<c:forEach var="mainlist" items="${mainlists}">
 		<span id="recuit" onclick="location.href='${pageContext.request.contextPath}/RecruitDetail.do?no=${mainlist.recruit_seq}'">
 			<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/${mainlist.img}">
-			<br>회사이름 ${mainlist.name }<br><b>공고제목 ${mainlist.title }</b>
+			<br>${mainlist.name }<br><b> ${mainlist.title }</b>
 		</span>
 	</c:forEach>
 	</span>
