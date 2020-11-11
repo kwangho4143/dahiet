@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.dahiet.command.CompanyMypageAction;
 import com.dahiet.command.InsertPreResume;
 import com.dahiet.command.LogoutAction;
+import com.dahiet.command.MainListShow;
+import com.dahiet.command.MainShow;
 import com.dahiet.command.RecruitCheck;
 import com.dahiet.command.RecruitDelete;
 import com.dahiet.command.RecruitDetial;
@@ -109,8 +111,8 @@ public class FrontController extends HttpServlet {
       		//회사 디테일
       map.put("/RecruitDetail.do",new RecruitDetial()); //채용공고 상세페이지 호출
       map.put("/userLogin.do",new userLoginAction()); //로그인 폼 호출
-//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
-//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/MainListShow.do",new MainListShow()); //메인 채용공고 보여주는 기능
+      map.put("/MainShow.do",new MainShow()); //로그인 폼 호출
 //    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 
       		//검색 액션

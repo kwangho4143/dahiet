@@ -28,7 +28,34 @@ public class RecruitDao extends DAO {
 	
 	private final String RECURUITRESUMESELECT = "SELECT R.RESUME_NAME, R.RESUME_SEQ FROM RESUME R WHERE R.TEL = ?";
 	
-		// 이력서 select 목록 가져오기
+	
+	//main에 값나오게 설정하기 쿼리
+	private final String MAINSELECT = "SELECT * FROM RECRUIT R, COMPANIES C WHERE R.NO = C.NO"; 
+	
+	
+	// main에 값나오게 설정하기 
+	public List<RecruitVO> MAINSELECT(RecruitVO vo) {
+		List<RecruitVO> mainlist = new ArrayList<RecruitVO>();
+		try {
+			psmt = conn.prepareStatement(MAINSELECT);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				vo = new RecruitVO();
+				vo.setRecruit_seq(rs.getString("recruit_seq"));
+				vo.setImg(rs.getString("img"));
+				vo.setName(rs.getString("name"));
+				vo.setTitle(rs.getString("title"));
+				
+				mainlist.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return mainlist;
+	}
+	// 이력서 select 목록 가져오기
 	public List<RecruitVO> RECURUITRESUMESELECT(RecruitVO vo) {
 		List<RecruitVO> rrlists = new ArrayList<RecruitVO>();
 		try {

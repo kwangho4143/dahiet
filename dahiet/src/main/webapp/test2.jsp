@@ -112,39 +112,19 @@ to {
 	margin: auto;
 }
 
-.recruit-each {
-	max-width: 200px;
-	height: 270px;
-	border-top: 5px solid #bbb;
-	padding: 10px;
-	position: relative;
-}
 
 #recruitImg {
 	width: 200px;
-	height: 170px;
+	height: 150px;
 }
 
-
-.info-container {
-	max-width: 1000px;
-	position: relative;
-	margin: auto;
+#recuit {
+	border: 1px;
 }
 
-.info-cell {
-	max-width: 200px;
-	height: 270px;
-	border-top: 5px solid #bbb;
-	padding: 10px;
-	position: relative;
+#recuits:hover {
+	background-color: yellow;
 }
-
-.info-cell-cell {
-	display: inline;
-}
-
-
 </style>
 
 </head>
@@ -205,37 +185,20 @@ to {
 		
 	
 <div class="recruit-container">	
-	<div><h5>채용공고</h5></div>
-	<div class="recruit-each" id="recruit-each">
-		<span id="recuits">
-			<span id="recuit" onclick="location.href='${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}'">
-				<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/삼성.png">
-				<br>삼성전자<br><b>삼성전자 각 부문 신입/경력 공개채용</b>
-			</span>
+	<div>
+	<h5>채용공고</h5>	
+	</div>
+	<span id="recuits">
+	<c:forEach var="mainlist" items="${mainlists}">
+		<span id="recuit" onclick="location.href='${pageContext.request.contextPath}/RecruitDetail.do?no=${mainlist.recruit_seq}'">
+			<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/${mainlist.img}">
+			<br>회사이름 ${mainlist.name }<br><b>공고제목 ${mainlist.title }</b>
 		</span>
-	</div>
-</div><br><br>
-
-
-<div class="info-container">	
-	<div><h5>직업·진로</h5></div>
-	<div class="info-cell" id="info-cell">
-		<p>직업심리검사</p>
-		<div id="info-cell-cell">
-			<div id="img-link">
-				<a href="https://www.work.go.kr/consltJobCarpa/jobPsyExamNew/jobPsyExamYouthList.do">
-					<img alt="어린이/청소년" src="${pageContext.request.contextPath}/images/1.png"></a>
-				<p>어린이/청소년</p>
-			</div>
-			<div id="img-link">
-				<a href="https://www.work.go.kr/consltJobCarpa/jobPsyExamNew/jobPsyExamAdultList.do">
-					<img alt="대학생/성인" src="${pageContext.request.contextPath}/images/2.png"></a>
-				<p>대학생/성인</p>
-			</div>
-		</div>
-	</div>
+	</c:forEach>
+	</span>
 </div>
 
+	
 	
 </body>
 </html>

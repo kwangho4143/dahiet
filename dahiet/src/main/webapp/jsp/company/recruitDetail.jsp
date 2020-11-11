@@ -82,7 +82,7 @@ th.title {
 						</tr>
 						<tr>
 							<th class="title">회사홈페이지</th>
-							<td colspan="5">${vo.link}</td>
+							<td colspan="5"><a href="${vo.link}">${vo.link}</a></td>
 						</tr>
 						<tr>
 							<td colspan="8">${vo.qualify}</td>
