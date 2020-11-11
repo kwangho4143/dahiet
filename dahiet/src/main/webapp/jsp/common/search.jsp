@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -11,6 +12,189 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
+div.banner_list {
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+}
+
+div.wrap_list_banner {
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	margin-top: 33px;
+	width: 100%;
+}
+
+div.area_title {
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	position: relative;
+	margin-bottom: 10px;
+	letter-spacing: -1px;
+}
+
+h2.tit_banner {
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	position: relative;
+	margin-bottom: 10px;
+	letter-spacing: -1px;
+}
+
+ul.list_product {
+	color: #000;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	background-color: #f1f4ff;
+}
+
+li.item {
+	color: #000;
+	padding: 0;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	list-style: none;
+	position: relative;
+	float: left;
+	padding-top: 143px;
+	margin: -1px 0 0 -1px;
+	height: 176px;
+	border: 1px solid red;
+	box-sizing: border-box;
+	font-size: 14px;
+	background-color: #fff;
+	transition: box-shadow 0.5s, transform 0.5s;
+	width: 316px;
+}
+
+a.link {
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	list-style: none;
+	font-size: 14px;
+	text-decoration: none;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	color: #222;
+}
+
+span.logo {
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	list-style: none;
+	font-size: 14px;
+	color: #222;
+	display: inline-block;
+	position: relative;
+	z-index: 5;
+	text-align: left;
+	vertical-align: middle;
+}
+
+span.corp {
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	list-style: none;
+	display: block;
+	margin-top: 10px;
+	font-size: 14px;
+	letter-spacing: -1px;
+	line-height: 18px;
+	color: #425ad4;
+}
+
+strong.tit {
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	list-style: none;
+	font-style: normal;
+	font-weight: bold;
+	display: block;
+	overflow: hidden;
+	margin-top: 3px;
+	font-size: 14px;
+	letter-spacing: -0.5px;
+	line-height: 20px;
+	color: #444;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+ul.desc {
+	font-size: 14px;
+	color: #222;
+	margin: 0;
+	padding: 0;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	list-style: none;
+	margin-top: 4px;
+}
+
+li.company_local ellipsis {
+	margin: 0;
+	padding: 0;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	list-style: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	float: left;
+	margin-left: 10px;
+	font-size: 12px;
+	color: #949494;
+	letter-spacing: -1px;
+	line-height: 17px;
+}
+
+button.sri_btn_xs {
+	list-style: none;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	line-height: normal;
+	background: transparent;
+	padding: 0;
+	height: 18px;
+	border: 0;
+	box-sizing: border-box;
+	text-align: center;
+	vertical-align: top;
+	cursor: pointer;
+	overflow: visible;
+	float: right;
+	position: relative;
+	z-index: 3;
+	margin: 0 19px 0 0;
+}
+
+span.date {
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	list-style: none;
+	display: inline-block;
+	float: right;
+	position: relative;
+	z-index: 1;
+	height: 16px;
+	font-size: 12px;
+	color: #949494;
+	letter-spacing: -0.5px;
+	line-height: 16px;
+	vertical-align: top;
+	margin-right: 9px;
+}
+
 span.abc {
 	height: 28px;
 	margin-right: 10px;
@@ -145,7 +329,7 @@ span.abc {
 													loc))
 								}
 							};
-							
+
 							function showitem(str) {
 								var item = $(event.target).parent().text();
 								if ($(event.target).is(":checked") == false) {
@@ -169,38 +353,34 @@ span.abc {
 								}
 							};
 						</script>
-
 					</div>
+					
 					<c:forEach var="simple" items="${simples}">
-						<div>
-							<table border="1" style="width: 100%; height: 3cm">
-								<tr>
-									<td rowspan="3" style="width: 1px; height: 2cm"><img
-										style="margin: 1px" alt="회사로고"
-										src="${pageContext.request.contextPath}/images/${simple.img}"></td>
-
-									<th style="width: 1cm">공고이름</th>
-									<td colspan="3" style="width: 2cm"><a
-										href="${pageContext.request.contextPath}
-								/RecruitDetail.do?no=${simple.recruit_seq}">${simple.title}</a></td>
-								</tr>
-								<tr>
-									<th style="width: 1cm">회사이름</th>
-									<td style="width: 4cm">${simple.name}</td>
-									<th style="width: 1cm">고용형태</th>
-									<td style="width: 4cm">${simple.emp_type}</td>
-								</tr>
-								<tr>
-									<th style="width: 1cm">직무</th>
-									<td>${simple.work}</td>
-									<th style="width: 1cm">급여</th>
-									<td>${simple.salary}</td>
-								</tr>
-							</table>
+						<div id="banner_list" class="banner_list">
+							<div class="wrap_list_banner">
+								<ul class="list_product">
+									<li class="item"><a
+										href="${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}"
+										target="_blank"
+										onclick="try{s_trackApply(this, 'area_recruit', 'section_favor_001', '', 101, {});}catch(e){};"
+										onfocus="this.blur();" title="${simple.title}"
+										onmousedown="Saramin.clickAds(39004634, 'ads_category=section_favor_001')"
+										class="link" rel="sponsored"> <span class="logo"><img
+												src="${pageContext.request.contextPath}/images/${simple.img}"
+												border="0" width="110" height="38"></span> <span class="corp">${simple.name}</span>
+											<strong class="tit">${simple.title}</strong>
+											<ul class="desc">
+												<li>${simple.work}</li>
+												<li>${simple.emp_type}</li>
+												<li class="company_local ellipsis">${simple.salary}만원</li>
+											</ul>
+									</a>
+								</ul>
+							</div>
 						</div>
 					</c:forEach>
-				</div>
-			</div>
+					</div>
+</div>
 		</section>
 	</main>
 </body>
