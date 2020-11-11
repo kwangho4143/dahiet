@@ -29,15 +29,11 @@ public class insertRecruit implements Action {
 		vo.setNewbi(request.getParameter("newbi"));
 		
 		int n = dao.insert(vo);
-		String page;
+		request.setAttribute("n", n);
 
-		if (n != 0) {
-			page = "jsp/company/recruitSucess.jsp";
-		} else {
-			page = "jsp/company/recruitFail.jsp";
-		}
 
-		return page;
+
+		return "/showRecruitList.do";
 	}
 
 }

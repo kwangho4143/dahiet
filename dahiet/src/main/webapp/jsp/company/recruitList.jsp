@@ -34,7 +34,7 @@
 									href="${pageContext.request.contextPath}
 								/Recruitupdate.do?recruit_seq=${rlist.recruit_seq}">${rlist.recruit_seq}</a></td>
 								<td colspan="3">${rlist.title }</td>
-								<td>${rlist.position }</td>
+								<td>${rlist.work }</td>
 								<td>${rlist.emp_type }</td>
 								<td>${rlist.qualify }</td>
 								<td>
@@ -47,5 +47,15 @@
 			</div>
 		</section>
 	</main>
+			<c:if test="${n==1}">
+			<script type="text/javascript">
+			   alert("공고 등록을 완료 하였습니다.");
+			</script>
+		</c:if>
+		<c:if test="${b==1}">
+			<script type="text/javascript">
+			   alert("공고 수정을 완료 하였습니다.");
+			</script>
+		</c:if>
 </body>
 </html>

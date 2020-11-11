@@ -92,13 +92,13 @@ span.abc {
 											<div>
 												<hr>
 												<label>근무 형태</label> <label><input type="checkbox"
-													name="emp_type" value="full"> 정규직</label> <label><input
-													type="checkbox" name="emp_type" value="cont"> 계약직</label> <label>
-													<input type="checkbox" name="emp_type" value="part">
+													name="emp_type" value="a1"> 정규직</label> <label><input
+													type="checkbox" name="emp_type" value="a2"> 계약직</label> <label>
+													<input type="checkbox" name="emp_type" value="a3">
 													아르바이트
 												</label> <label><input type="checkbox" name="emp_type"
-													value="inte"> 인턴직</label> <label><input
-													type="checkbox" name="emp_type" value="disp"> 파견직</label>
+													value="a4"> 인턴직</label> <label><input
+													type="checkbox" name="emp_type" value="a5"> 파견직</label>
 											</div>
 										</li>
 									</ul></li>

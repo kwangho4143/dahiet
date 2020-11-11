@@ -14,13 +14,12 @@ public class ItemCodeDao extends DAO {
 	private PreparedStatement psmt;
 	private ResultSet rs; // select 후 결과셋 받기
 
-	private final String ITEMCODESELECT = "SELECT ITEMNAME, ITEMID FROM ITEMCODE WHERE GROUPID = ?";
+	private final String ITEMCODESELECT = "SELECT ITEMNAME, ITEMID FROM ITEMCODE WHERE GROUPID = 3";
 
 	public List<ItemCodeVO> ITEMCODESELECT(ItemCodeVO vo) {
 		List<ItemCodeVO> list = new ArrayList<ItemCodeVO>();
 		try {
 			psmt = conn.prepareStatement(ITEMCODESELECT);
-			psmt.setString(1, vo.getGroupid());
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new ItemCodeVO();

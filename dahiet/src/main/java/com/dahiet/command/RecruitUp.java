@@ -26,15 +26,9 @@ public class RecruitUp implements Action {
 		vo.setSalary(request.getParameter("salary"));
 		vo.setNewbi(request.getParameter("newbi"));
 		int n = dao.RECURUITUPDATE(vo);
-		String page;
+		request.setAttribute("b", n);
 
-		if (n != 0) {
-			page = "/showRecruitList.do";
-		} else {
-			page = "/showRecruitList.do";
-		}
-
-		return page;
+		return "/showRecruitList.do";
 	}
 
 }

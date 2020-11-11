@@ -1,6 +1,5 @@
 package com.dahiet.command;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import com.dahiet.vo.CodeVO;
 import com.dahiet.vo.ItemCodeVO;
 import com.dahiet.vo.RecruitVO;
 import com.dahiet.vo.SearchVO;
-import com.dahiet.vo.SimpleVO;
 
 public class SearchAction implements Action {
 

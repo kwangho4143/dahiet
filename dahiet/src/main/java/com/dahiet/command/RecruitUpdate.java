@@ -38,6 +38,7 @@ public class RecruitUpdate implements Action {
 		ilist = idao.ITEMCODESELECT(ivo);
 		request.setAttribute("itemcodes", ilist);
 		
+
 		
 		return "/jsp/company/recruitUpdate.jsp";
 	}

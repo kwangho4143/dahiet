@@ -30,11 +30,8 @@
 				</tr>
 				<tr>
 					<th width="80">공고 제목</th>
-					<td width="250"><input style="width: 100%" type="text"
+					<td colspan="3" width="250"><input style="width: 100%" type="text"
 						id="title" name="title" value="${vo.title}"></td>
-					<th width="80">모집부문</th>
-					<td width="150"><input style="width: 100%" type="text"
-						id="position" name="position" value="${vo.position}"></td>
 					<th width="80">급여</th>
 					<td width="150"><input style="width: 100%" type="text"
 						id="salary" name="salary" value="${vo.salary}"></td>
@@ -46,12 +43,11 @@
 				<tr>
 					<th width="80">근무형태</th>
 					<!--  ${vo.emp_type} -->
-					<td colspan="7"><label><input type="radio"
-							name="emp_type" value="full"> 정규직</label> <label><input
-							type="radio" name="emp_type" value="cont"> 계약직</label> <label><input
-							type="radio" name="emp_type" value="part"> 아르바이트</label> <label><input
-							type="radio" name="emp_type" value="inte"> 인턴직</label> <label><input
-							type="radio" name="emp_type" value="disp"> 파견직</label></td>
+					<td colspan="7"><label><input type="radio" name="emp_type" value="a1"> 정규직</label> 
+						<label><input type="radio" name="emp_type" value="a2"> 계약직</label> 
+						<label><input type="radio" name="emp_type" value="a3"> 아르바이트</label>
+						<label><input type="radio" name="emp_type" value="a4"> 인턴직</label> 
+						<label><input type="radio" name="emp_type" value="a5"> 파견직</label>
 				</tr>
 				<tr>
 					<th width="50">지역 선택</th>

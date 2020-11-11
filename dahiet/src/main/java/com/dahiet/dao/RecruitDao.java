@@ -14,14 +14,14 @@ public class RecruitDao extends DAO {
 	private RecruitVO vo;
 	
 	private final String SELECTID = "SELECT * FROM COMPANIES C JOIN RECRUIT R ON C.NO = R.NO WHERE RECRUIT_SEQ = ?";
-	private final String RECRUITINSERT = "INSERT INTO RECRUIT(RECRUIT_SEQ,NO,TITLE,POSITION,EMP_TYPE,WORK,LOC,QUALIFY,SALARY,NEWBI) "
-			+ "VALUES(RECRUIT_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?,?,?,?)";
-	private final String RECRUITSELECT = "SELECT * FROM RECRUIT WHERE NO = ?";
+	private final String RECRUITINSERT = "INSERT INTO RECRUIT(RECRUIT_SEQ,NO,TITLE,EMP_TYPE,WORK,LOC,QUALIFY,SALARY,NEWBI) "
+			+ "VALUES(RECRUIT_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?,?,?)";
+	private final String RECRUITSELECT = "SELECT RECRUIT_SEQ, TITLE, FINDCODENAME(EMP_TYPE) EMP_TYPE, FINDCODENAME(WORK) WORK, LOC ,QUALIFY, NO, SALARY, NEWBI FROM RECRUIT WHERE NO = ?";
 	private final String WANT = "SELECT * FROM RECRUIT WHERE RECRUIT_SEQ = ?";
-	private final String RECURUITUPDATE = "UPDATE RECRUIT SET TITLE=?, POSITION=?, EMP_TYPE=?, LOC=?, WORK=?, QUALIFY=?, SALARY=?, NEWBI=? WHERE RECRUIT_SEQ=?";
+	private final String RECURUITUPDATE = "UPDATE RECRUIT SET TITLE=?, EMP_TYPE=?, LOC=?, WORK=?, QUALIFY=?, SALARY=?, NEWBI=? WHERE RECRUIT_SEQ=?";
 	private final String RECURUITDELETE = "DELETE FROM RECRUIT WHERE RECRUIT_SEQ=?";
-	private final String RECURUITDETAILSELECT = "SELECT C.IMG, C.NAME, C.ITEM, C.EMPS, C.TYPE, C.PROFIT, C.LINK"
-					+ " ,R.QUALIFY, R.TITLE, R.EMP_TYPE, R.LOC, R.POSITION, R.WORK, "
+	private final String RECURUITDETAILSELECT = "SELECT C.IMG, C.NAME, FINDCODENAME(C.ITEM) ITEM, C.EMPS, C.TYPE, C.PROFIT, C.LINK"
+					+ " ,R.QUALIFY, R.TITLE, FINDCODENAME(R.EMP_TYPE) EMP_TYPE, R.LOC, R.WORK, "
 					+ "C.ID FROM COMPANIES C, RECRUIT R WHERE C.NO = R.NO AND R.RECRUIT_SEQ = ?";
 	/* C.회사로고, , C.회사이름, C.업종, C.사원수, C.기업형태, C.매출액, C.회사홈페이지, 
 	R.지원자격, R.공고제목, R.근무형태, R.회사위치, R.모집부문, R.담당업무 */
@@ -70,7 +70,6 @@ public class RecruitDao extends DAO {
 					vo.setTitle(rs.getString("title"));
 					vo.setEmp_type(rs.getString("emp_type"));
 					vo.setLoc(rs.getString("loc"));
-					vo.setPosition(rs.getString("position"));
 					vo.setWork(rs.getString("work"));
 					vo.setId(rs.getString("id"));
 //					vo.setNewbi(rs.getString("newbi"));
@@ -106,17 +105,16 @@ public class RecruitDao extends DAO {
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(RECURUITUPDATE);
-			psmt.setString(9, vo.getRecruit_seq());
+			psmt.setString(8, vo.getRecruit_seq());
 			psmt.setString(1, vo.getTitle());
-			psmt.setString(2, vo.getPosition());
 			
-			psmt.setString(3, vo.getEmp_type());
-			psmt.setString(4, vo.getLoc());
-			psmt.setString(5, vo.getWork());
+			psmt.setString(2, vo.getEmp_type());
+			psmt.setString(3, vo.getLoc());
+			psmt.setString(4, vo.getWork());
 			
-			psmt.setString(6, vo.getQualify());
-			psmt.setString(7, vo.getSalary());
-			psmt.setString(8, vo.getNewbi());
+			psmt.setString(5, vo.getQualify());
+			psmt.setString(6, vo.getSalary());
+			psmt.setString(7, vo.getNewbi());
 			
 			psmt.executeUpdate();
 			
@@ -138,7 +136,6 @@ public class RecruitDao extends DAO {
 			if(rs.next()) {
 				vo.setNo(rs.getString("no"));
 				vo.setTitle(rs.getString("title"));
-				vo.setPosition(rs.getString("position"));
 				vo.setEmp_type(rs.getString("emp_type"));
 				vo.setLoc(rs.getString("loc"));
 				vo.setWork(rs.getString("work"));
@@ -173,7 +170,6 @@ public class RecruitDao extends DAO {
 				vo.setRecruit_seq(rs.getString("recruit_seq"));
 				vo.setNo(rs.getString("no"));
 				vo.setTitle(rs.getString("title"));
-				vo.setPosition(rs.getString("position"));
 				vo.setEmp_type(rs.getString("emp_type"));
 				vo.setLoc(rs.getString("loc"));
 				vo.setWork(rs.getString("work"));
@@ -200,13 +196,12 @@ public class RecruitDao extends DAO {
 			psmt = conn.prepareStatement(RECRUITINSERT);
 			psmt.setString(1, vo.getNo());
 			psmt.setString(2, vo.getTitle());
-			psmt.setString(3, vo.getPosition());
-			psmt.setString(4, vo.getEmp_type());
-			psmt.setString(5, vo.getWork());
-			psmt.setString(6, vo.getLoc());
-			psmt.setString(7, vo.getQualify());
-			psmt.setString(8, vo.getSalary());
-			psmt.setString(9, vo.getNewbi());
+			psmt.setString(3, vo.getEmp_type());
+			psmt.setString(4, vo.getWork());
+			psmt.setString(5, vo.getLoc());
+			psmt.setString(6, vo.getQualify());
+			psmt.setString(7, vo.getSalary());
+			psmt.setString(8, vo.getNewbi());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -229,7 +224,6 @@ public class RecruitDao extends DAO {
 				vo.setRecruit_seq(rs.getString("recruit_seq"));
 				vo.setNo(rs.getString("no"));
 				vo.setTitle(rs.getString("title"));
-				vo.setPosition(rs.getString("position"));
 				vo.setEmp_type(rs.getString("emp_type"));
 				vo.setLoc(rs.getString("loc"));
 				vo.setWork(rs.getString("work"));
