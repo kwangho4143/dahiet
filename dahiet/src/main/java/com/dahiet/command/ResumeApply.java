@@ -35,7 +35,7 @@ public class ResumeApply implements Action {
 		//ResumeStatusVO tvo = new ResumeStatusVO();
 
 //		int n = tdao.insert(cvo, svo);
-		int n = tdao.insert(recruit_seq, resume_seq);
+		int n = tdao.insert(resume_seq, recruit_seq );
 		
 		
 		request.setAttribute("n", n);

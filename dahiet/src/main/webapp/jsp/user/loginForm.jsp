@@ -382,13 +382,13 @@ width: 250px;
 									</tr>
 									<tr>
 										<th class="signin">기업형태</th>
-										<td colspan="3"><label>
-										<input type="radio"	name="type" value="big"> 대기업</label> <label><input
-													type="radio" name="type" value="mihi"> 중견기업</label> <label><input
-													type="radio" name="type" value="mi"> 중소기업</label> <label><input
-													type="radio" name="type" value="fo"> 외국계</label> <label><input
-													type="radio" name="type" value="stsm"> 강소기업</label> <label><input
-													type="radio" name="type" value="gove"> 공기업</label></td>
+										<td colspan="3"><label><input type="radio"
+													name="type" value="c1"> 대기업</label> <label><input
+													type="radio" name="type" value="c2"> 중견기업</label> <label><input
+													type="radio" name="type" value="c3"> 중소기업</label> <label><input
+													type="radio" name="type" value="c4"> 외국계</label> <label><input
+													type="radio" name="type" value="c5"> 강소기업</label> <label><input
+													type="radio" name="type" value="c6"> 공기업</label>
 									</tr>
 									<tr>
 										<th class="signin">업종</th>

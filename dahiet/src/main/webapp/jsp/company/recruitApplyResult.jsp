@@ -31,6 +31,10 @@ table {
 							<tr height="50">
 								<th width="150">이력서 번호</th>
 								<td width="450">${vo.resume_seq}</td>
+								<th width="150">이력서 이름</th>
+								<td width="450">${vo.apply_date}</td>
+								<th width="150">지원자 이름</th>
+								<td width="450">${vo.apply_date}</td>
 								<th width="150">지원 날짜</th>
 								<td width="450">${vo.apply_date}</td>
 							</tr>

@@ -21,7 +21,7 @@ public class ResumeStatusDao extends DAO {
 		
 		try {
 			psmt = conn.prepareStatement(SELECTWANT);
-			psmt.setString(1,recruit_seq);
+			psmt.setString(1, recruit_seq);
 
 			rs = psmt.executeQuery();
 			while (rs.next()) {
@@ -60,23 +60,6 @@ public class ResumeStatusDao extends DAO {
 		}
 		return n;
 	}
-//	public int insert(RecruitVO vo1, ResumeVO vo2) {
-//		int n = 0;
-//		try {
-//			psmt = conn.prepareStatement(INSERTSTATUS);
-//			psmt.setString(1, vo1.getRecruit_seq());
-//			psmt.setString(2, vo2.getResume_seq());
-//
-//			n = psmt.executeUpdate();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close();
-//		}
-//
-//		return n;
-//	
-//	}
 
 	private void close() {
 		try {

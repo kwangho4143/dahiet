@@ -82,12 +82,12 @@ span.abc {
 											<hr>
 											<div>
 												<label>기업 형태</label> <label><input type="checkbox"
-													name="type"> 대기업</label> <label><input
-													type="checkbox" name="type" value="mihi"> 중견기업</label> <label><input
-													type="checkbox" name="type" value="mi"> 중소기업</label> <label><input
-													type="checkbox" name="type" value="fo"> 외국계</label> <label><input
-													type="checkbox" name="type" value="stsm"> 강소기업</label> <label><input
-													type="checkbox" name="type" value="gove"> 공기업</label>
+													name="type" value="c1"> 대기업</label> <label><input
+													type="checkbox" name="type" value="c2"> 중견기업</label> <label><input
+													type="checkbox" name="type" value="c3"> 중소기업</label> <label><input
+													type="checkbox" name="type" value="c4"> 외국계</label> <label><input
+													type="checkbox" name="type" value="c5"> 강소기업</label> <label><input
+													type="checkbox" name="type" value="c6"> 공기업</label>
 											</div>
 											<div>
 												<hr>
