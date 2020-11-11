@@ -105,7 +105,6 @@ to {
 	}
 }
 
-
 .recruit-container {
 	max-width: 1000px;
 	position: relative;
@@ -113,13 +112,14 @@ to {
 }
 
 .recruit-each {
-	max-width: 190px;
+	width: 185px;
 	height: 180px;
 	position: relative;
 	border-top: 5px solid #bbb;
 	padding: 5px;
 	margin: 5px;
-	float: left;
+	display: inline-block;
+/* 	float: left; */
 }
 
 #recruitImg {
@@ -142,8 +142,33 @@ to {
 	position: relative;
 }
 
-.info-cell-cell {
-	display: inline;
+.main-job-cont {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+
+.main-job-cont .main-cell {
+	min-height: 260px;
+	padding: 24px 24px 0 24px;
+}
+
+.main-cell:first-child {
+	margin-left: 0;
+}
+
+.main-cell .cell-1 {
+	width: 275px;
+}
+
+.img-links {
+	display: inline-block;
+}
+
+table tr td{
+	text-align: center;
+	font-size: 80%;
+	padding: 4px 8px 4px 8px;
 }
 
 </style>
@@ -206,36 +231,56 @@ to {
 		
 	
 <div class="recruit-container">	
-	<div><h5>채용공고</h5></div>
-		<c:forEach var="mainlist" items="${mainlists}" begin="0" end="9">
-			<div class="recruit-each" id="recruit-each">
-				<span id="recuit" onclick="location.href='${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}'">
-					<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/${mainlist.img}">
-					<br>${mainlist.name}<br><b>${mainlist.title}</b>
-				</span>
-			</div>
-		</c:forEach>
+	<div>
+		<h5>채용공고</h5>
+	</div>
+	<c:forEach var="mainlist" items="${mainlists}" begin="0" end="9">
+		<div class="recruit-each" id="recruit-each">
+			<a href="${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}">
+				<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/${mainlist.img}">
+				<p>${mainlist.name}</p><b>${mainlist.title}</b>
+			</a>
+		</div>
+	</c:forEach>
 </div><br><br>
 
 
-<div class="info-container">	
-	<div><h5>직업·진로</h5></div>
-	<div class="info-cell" id="info-cell">
-		<p>직업심리검사</p>
-		<div id="info-cell-cell">
-			<div id="img-link">
-				<a href="https://www.work.go.kr/consltJobCarpa/jobPsyExamNew/jobPsyExamYouthList.do">
-					<img alt="어린이/청소년" src="${pageContext.request.contextPath}/images/1.png"></a>
-				<p>어린이/청소년</p>
-			</div>
-			<div id="img-link">
-				<a href="https://www.work.go.kr/consltJobCarpa/jobPsyExamNew/jobPsyExamAdultList.do">
-					<img alt="대학생/성인" src="${pageContext.request.contextPath}/images/2.png"></a>
-				<p>대학생/성인</p>
-			</div>
+
+
+
+<div class="main-job-cont">	
+	<div>
+		<h5>직업·진로</h5>
+	</div>
+	<div class="main-cell cell-1">
+		<p class="tit">직업심리검사</p>
+		<div class="img-link">
+			<table>
+				<tr>
+					<td>
+						<a href="https://www.work.go.kr/consltJobCarpa/jobPsyExamNew/jobPsyExamYouthList.do" target="_blank" onclick="">
+							<img src="${pageContext.request.contextPath}/images/1.png" alt="어린이/청소년 아이콘"><br></a>
+					</td>
+					<td>
+						<a href="https://www.work.go.kr/consltJobCarpa/jobPsyExamNew/jobPsyExamAdultList.do" target="_blank" onclick="">
+							<img src="${pageContext.request.contextPath}/images/2.png" alt="대학생/성인 아이콘"><br>
+					</td>
+				</tr>
+				<tr>
+					<td>어린이/청소년</td>
+					<td><span class="txt" style="font-size: small;">대학생/성인</span></td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </div>
+
+
+
+
+
+
+
 
 
 	
