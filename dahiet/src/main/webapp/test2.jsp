@@ -119,13 +119,12 @@ to {
 	padding: 5px;
 	margin: 5px;
 	display: inline-block;
-/* 	float: left; */
 }
 
 #recruitImg {
 	width: 170px;
 	height: 67px;
-	margin: 5px;
+	margin: 5px 5px 15px 5px;
 }
 
 .info-container {
@@ -236,7 +235,7 @@ table tr td{
 	</div>
 	<c:forEach var="mainlist" items="${mainlists}" begin="0" end="9">
 		<div class="recruit-each" id="recruit-each">
-			<a href="${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}">
+			<a href="${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}" style="color: black;">
 				<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/${mainlist.img}">
 				<p>${mainlist.name}</p><b>${mainlist.title}</b>
 			</a>
@@ -263,12 +262,12 @@ table tr td{
 					</td>
 					<td>
 						<a href="https://www.work.go.kr/consltJobCarpa/jobPsyExamNew/jobPsyExamAdultList.do" target="_blank" onclick="">
-							<img src="${pageContext.request.contextPath}/images/2.png" alt="대학생/성인 아이콘"><br>
+							<img src="${pageContext.request.contextPath}/images/2.png" alt="대학생/성인 아이콘"><br></a>
 					</td>
 				</tr>
 				<tr>
 					<td>어린이/청소년</td>
-					<td><span class="txt" style="font-size: small;">대학생/성인</span></td>
+					<td>대학생/성인</td>
 				</tr>
 			</table>
 		</div>
