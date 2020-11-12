@@ -21,8 +21,8 @@ public class ResumeDetailDao extends DAO{
 	private final String INSERTLICENSE = "INSERT INTO LICENSE VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?)";
 	private final String INSERTACTIVITY = "INSERT INTO ACTIVITY VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?)";
 	
-	private final String INSERTAWARD = "INSERT INTO AWARD VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?);";
-	private final String INSERTLANGUAGE = "INSERT INTO LANGUAGE VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?);";
+	private final String INSERTAWARD = "INSERT INTO AWARD VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?)";
+	private final String INSERTLANGUAGE = "INSERT INTO LANGUAGE VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?)";
 	
 	//상세 값넣기
 	public void insertLa(ResumeVO vo) {
@@ -63,9 +63,9 @@ public class ResumeDetailDao extends DAO{
 			psmt.setString(1, vo.getResume_seq());
 			psmt.setString(2, vo.getAct_type());
 			psmt.setString(3, vo.getAct_name());
-			psmt.setString(4, vo.getAct_publish());
-			psmt.setDate(5, vo.getAct_startdate());
-			psmt.setDate(6, vo.getAct_enddate());
+			psmt.setString(6, vo.getAct_publish());
+			psmt.setDate(4, vo.getAct_startdate());
+			psmt.setDate(5, vo.getAct_enddate());
 			psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -78,10 +78,10 @@ public class ResumeDetailDao extends DAO{
 		try {
 			psmt = conn.prepareStatement(INSERTLICENSE);
 			psmt.setString(1, vo.getResume_seq());
-			psmt.setString(2, vo.getLic_name());
-			psmt.setString(3, vo.getLic_no());
+			psmt.setString(2, vo.getLic_no());
+			psmt.setString(3, vo.getLic_name());
 			psmt.setString(4, vo.getLic_place());
-			psmt.setDate(5,vo.getLic_getdate());
+			psmt.setDate(5, vo.getLic_getdate());
 			
 			psmt.executeUpdate();
 		} catch (SQLException e) {
