@@ -32,6 +32,7 @@ img {
 	max-width: 1000px;
 	position: relative;
 	margin: auto;
+	padding-top: 50px;
 }
 
 /* Caption text */

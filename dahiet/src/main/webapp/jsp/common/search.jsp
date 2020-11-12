@@ -340,8 +340,8 @@ span.abc {
 				</div>
 		</section>
 		<section id="portfolio" class="portfolio">
-			<div style="padding: 0% 10% 0% 10%">
-				<div class="row" style="margin: 0% 5% 20% 5%">
+			<div style="align-items: center">
+				<div class="row">
 					<div class="col-lg-12 d-flex">
 								<div class="row col-12" >
 											<div id="selloc" class="col"></div>
