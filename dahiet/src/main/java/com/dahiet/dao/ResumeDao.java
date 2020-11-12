@@ -152,7 +152,8 @@ public class ResumeDao extends DAO {
 				vo.setScore(rs.getString("score"));
 				vo.setResume_name(rs.getString("resume_name"));
 				vo.setResume_seq(rs.getString("resume_seq"));
-				vo.setRedgt(rs.getDate("redgt"));
+				vo.setRedgt(rs.getDate("regdt"));
+				
 				return vo;
 			}
 	} catch (SQLException e) {

@@ -41,6 +41,7 @@ import com.dahiet.command.UsersApply;
 import com.dahiet.command.comInsert;
 import com.dahiet.command.companyLoginAction;
 import com.dahiet.command.insertRecruit;
+import com.dahiet.command.resumeResult;
 import com.dahiet.command.userInsert;
 import com.dahiet.command.userLoginAction;
 import com.dahiet.common.Action;
@@ -87,7 +88,7 @@ public class FrontController extends HttpServlet {
       map.put("/resumePreInsert.do",new InsertPreResume()); //이력서 등록-기본정보 호출
       map.put("/resumeInsert.do",new ResumeInsert()); //resume insert 후 입력창 호출
       map.put("/resumeDetail.do",new ResumeDetail()); //career, license 등 insert 후 상세보기창 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/ResumeResult.do",new resumeResult()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출

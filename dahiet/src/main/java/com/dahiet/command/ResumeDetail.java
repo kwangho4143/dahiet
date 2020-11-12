@@ -2,6 +2,7 @@ package com.dahiet.command;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -119,7 +120,16 @@ public class ResumeDetail implements Action {
 				;
 			}
 		}
-		return "/jsp/resume/ResumeDetail.jsp";
+		Enumeration se = session.getAttributeNames();
+
+		while (se.hasMoreElements()) {
+			String getse = se.nextElement() + "";
+			System.out.println("@@@@@@@ session : " + getse + " : " + session.getAttribute(getse));
+		}
+		
+		
+		
+		return "/ResumeResult.do";
 	}
 
 }
