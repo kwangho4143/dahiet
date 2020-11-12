@@ -1,5 +1,8 @@
 package com.dahiet.command;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -37,7 +40,18 @@ public class companyLoginAction implements Action {
 			page = "/jsp/company/comloginResult.jsp";
 		}
 		else {
-			msq = "패스워드가 틀렸습니다.";
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter writer;
+			try {
+				writer = response.getWriter();
+				writer.println("<script>alert('패스워드가 틀렸습니다 다시 확인해주세요.'); location.href='" + request.getContextPath()
+						+ "/jsp/user/loginForm.jsp';</script>");
+				writer.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+
+			}
 		}
 		request.setAttribute("msg", msq);
 		return page;
