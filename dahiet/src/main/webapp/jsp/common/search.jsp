@@ -12,6 +12,35 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
+button.btn btn-xs btn-danger {
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+box-sizing: border-box;
+font: inherit;
+overflow: visible;
+text-transform: none;
+font-family: inherit;
+display: inline-block;
+font-weight: 400;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+touch-action: manipulation;
+cursor: pointer;
+user-select: none;
+border: 1px solid transparent;
+color: #fff;
+background-color: #d9534f;
+padding: 1px 5px;
+font-size: 12px;
+line-height: 1.5;
+border-radius: 3px;
+text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+background-image: linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);
+background-repeat: repeat-x;
+border-color: #b92c28;
+margin: 5px 0;
+}
 li.duty {
 	color: #000;
 	margin: 0;
@@ -319,9 +348,7 @@ span.abc {
 											<div id="selitem" class="col"></div>
 											<div id="selwork" class="col"></div>
 											<div class="col">
-											<button type="submit" id="search_btn" class="btn_search" >
-											 <span id="search_btn_txt">검색하기</span>
-											</button>
+											<button type="submit" class="btn btn-xs btn-danger">검색하기</button>
 											</div>
 								</div>
 								

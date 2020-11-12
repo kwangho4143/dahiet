@@ -20,6 +20,7 @@ public class SearchAction implements Action {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 	//  체크박스 리스트 구현
+		
 		CodeDao dao = new CodeDao();
 		List<CodeVO> list = new ArrayList<CodeVO>();
 		CodeVO vo = new CodeVO();
