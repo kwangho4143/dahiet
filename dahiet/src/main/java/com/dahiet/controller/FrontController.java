@@ -89,7 +89,7 @@ public class FrontController extends HttpServlet {
       map.put("/resumeInsert.do",new ResumeInsert()); //resume insert 후 입력창 호출
       map.put("/resumeDetail.do",new ResumeDetail()); //career, license 등 insert 후 상세보기창 호출
       map.put("/ResumeResult.do",new resumeResult()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+//      map.put("/resumeSelect.do",new ResumeSelect()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
       //정은

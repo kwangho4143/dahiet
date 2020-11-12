@@ -29,14 +29,13 @@ table {
 					<div>
 						<table>
 							<tr height="50">
-								<th width="150">이력서 번호</th>
-								<td width="450">${vo.resume_seq}</td>
-								<th width="150">이력서 이름</th>
-								<td width="450">${vo.apply_date}</td>
-								<th width="150">지원자 이름</th>
-								<td width="450">${vo.apply_date}</td>
-								<th width="150">지원 날짜</th>
-								<td width="450">${vo.apply_date}</td>
+								<th width="100">이력서 번호</th>
+								<td width="200">${vo.resume_seq}</td>
+								<th width="100">지원 날짜</th>
+								<td width="200">${vo.apply_date}</td>
+								<td>
+								<button id = "bt" name = "bt" onclick = "location.href='${pageContext.request.contextPath}/ResumeResult.do?resumed_seq=${vo.resume_seq}'">지원자 이력서 확인</button>
+								</td>
 							</tr>
 						</table>
 						<br />

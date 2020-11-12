@@ -16,9 +16,25 @@ public class resumeResult implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
+		String resume_seq;
+		if(request.getParameter("resumed_seq") != null) {
+			resume_seq = request.getParameter("resumed_seq");
+		}else {
+			//기본정보
+			HttpSession session = request.getSession();
+			resume_seq =(String)session.getAttribute("currentseq");
+			
+		}
+		
+		
+		
+		
+		
+		
+		//기존
 		//기본정보
-		HttpSession session = request.getSession();
-		String resume_seq =(String)session.getAttribute("currentseq");
+		//HttpSession session = request.getSession();
+		//String resume_seq =(String)session.getAttribute("currentseq");
 		
 		
 		//이력서 작성, 기업 이력서 조희 동일
