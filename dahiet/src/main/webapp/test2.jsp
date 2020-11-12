@@ -109,6 +109,7 @@ to {
 	max-width: 1000px;
 	position: relative;
 	margin: auto;
+	display: float-root;
 }
 
 .recruit-each {
@@ -131,6 +132,7 @@ to {
 	max-width: 1000px;
 	position: relative;
 	margin: auto;
+	display: float-root;
 }
 
 .info-cell {
@@ -145,7 +147,7 @@ to {
 	max-width: 1000px;
 	position: relative;
 	margin: auto;
-	display: inline-block;
+	display: float-root;
 }
 
 .main-job-container .main-cell {
@@ -163,7 +165,7 @@ to {
 }
 
 .img-links {
-	display: inline-block;
+	display: float-root;
 }
 
 table tr td{
@@ -253,8 +255,8 @@ table tr td{
 	<div>
 		<h5>직업·진로</h5>
 	</div>
-	<div class="main-cell cell-1" style="float: left;">
-		<p class="tit">직업심리검사</p>	
+	<div class="main-cell cell-1" style="display: inline-block;">
+		<b class="tit">직업심리검사</b>	
 		<div class="img-link">
 			<table>
 				<tr>
@@ -273,10 +275,10 @@ table tr td{
 				</tr>
 			</table>
 		</div>
-	</div>
+	</div>&nbsp;&nbsp;&nbsp;&nbsp;
 	
-	<div class="main-cell cell-1" style="float: ;">
-		<p class="tit">직업·학과정보</p>
+	<div class="main-cell cell-1" style="display: inline-block;">
+		<b class="tit">직업·학과정보</b>
 		<div class="img-link">
 			<table>
 				<tr>
@@ -295,16 +297,44 @@ table tr td{
 				</tr>
 			</table>
 		</div>
-	</div>
+	</div>&nbsp;&nbsp;&nbsp;&nbsp;
 	
+	<div class="main-cell cell-1" style="display: inline-block;">
+		<b class="tit">취업가이드</b>
+		<div class="img-link">
+			<table>
+				<tr>
+					<td>
+						<a href="https://www.work.go.kr/empSpt/empGuide/empTrend/resumeSelfIntroGuide.do" target="_blank" onclick="">
+							<img src="${pageContext.request.contextPath}/images/5.png" alt="이력서·자소서 아이콘"><br></a>
+					</td>
+					<td>
+						<a href="https://www.work.go.kr/empSpt/empGuide/empTrend/interviewGuide.do" target="_blank" onclick="">
+							<img src="${pageContext.request.contextPath}/images/6.png" alt="면접전략 아이콘"><br></a>
+					</td>
+					<td>
+						<a href="https://www.work.go.kr/empSpt/empTrend/empTrend2020.do" target="_blank" onclick="">
+							<img src="${pageContext.request.contextPath}/images/7.png" alt="채용트렌드 아이콘"><br></a>
+					</td>
+					<td>
+						<a href="https://www.work.go.kr/empSpt/empBlind/retrieveEmpBlind.do" target="_blank" onclick="">
+							<img src="${pageContext.request.contextPath}/images/8.png" alt="블라인드채용 아이콘"><br></a>
+					</td>
+				</tr>
+				<tr>
+					<td>이력서·자소서</td>
+					<td>면접전략</td>
+					<td>채용트렌드</td>
+					<td>블라인드채용</td>
+				</tr>
+			</table>
+		</div>
+	</div>
 </div>
 
 
-
-
-
-
-
+<div class="main-job-container">	
+</div>
 
 
 	

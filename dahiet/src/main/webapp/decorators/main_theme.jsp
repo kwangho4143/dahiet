@@ -96,6 +96,8 @@
 		</div>
 	</header>
 	<!-- End Header -->
+	
+	
 	<body>
 	<section id="about" class="about">
 		<main id="main">
@@ -104,6 +106,8 @@
 		</main>
 	</section>
 	</body>
+	
+	
 	<!-- ======= Footer ======= -->
 	<footer id="footer">
 		<div class="footer-top">
