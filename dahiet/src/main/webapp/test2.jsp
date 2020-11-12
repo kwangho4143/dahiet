@@ -141,15 +141,17 @@ to {
 	position: relative;
 }
 
-.main-job-cont {
+.main-job-container {
 	max-width: 1000px;
 	position: relative;
 	margin: auto;
+	display: inline-block;
 }
 
-.main-job-cont .main-cell {
-	min-height: 260px;
-	padding: 24px 24px 0 24px;
+.main-job-container .main-cell {
+    min-height: 200px;
+    max-width: 275px;
+    padding: 24px 24px 0 24px;
 }
 
 .main-cell:first-child {
@@ -247,12 +249,12 @@ table tr td{
 
 
 
-<div class="main-job-cont">	
+<div class="main-job-container">	
 	<div>
 		<h5>직업·진로</h5>
 	</div>
-	<div class="main-cell cell-1">
-		<p class="tit">직업심리검사</p>
+	<div class="main-cell cell-1" style="float: left;">
+		<p class="tit">직업심리검사</p>	
 		<div class="img-link">
 			<table>
 				<tr>
@@ -272,6 +274,29 @@ table tr td{
 			</table>
 		</div>
 	</div>
+	
+	<div class="main-cell cell-1" style="float: ;">
+		<p class="tit">직업·학과정보</p>
+		<div class="img-link">
+			<table>
+				<tr>
+					<td>
+						<a href="https://www.work.go.kr/consltJobCarpa/srch/jobInfoSrch/srchJobInfo.do" target="_blank" onclick="">
+							<img src="${pageContext.request.contextPath}/images/3.png" alt="직업정보찾기 아이콘"><br></a>
+					</td>
+					<td>
+						<a href="https://www.work.go.kr/consltJobCarpa/srch/schdpt/schdptSrch.do" target="_blank" onclick="">
+							<img src="${pageContext.request.contextPath}/images/4.png" alt="학과검색 아이콘"><br></a>
+					</td>
+				</tr>
+				<tr>
+					<td>직업정보찾기</td>
+					<td>학과검색</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
 </div>
 
 
