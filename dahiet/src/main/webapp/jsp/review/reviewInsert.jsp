@@ -18,11 +18,10 @@ String id = session.getAttribute("id");
 		<div style="margin: 20%, 10%, 20%, 10%" align="center">
 			<table border="1" style="align-items: center">
 				<tr align="center">
-				<th width="100px" height="30px">아이디</th>
-					<td colspan="1"><input type="text" id="id" name="id"
-						style="border: white" value="${id}"></td>
-					<th width="100px" height="30px">제목</th>
-					<td colspan="1"><input type="text" id="title" name="title"
+					<td style="display: none" colspan="1"><input type="text" id="id" name="id"
+						style="border: white" value="익명"></td>
+					<th colspan="1" width="100px" height="30px">제목</th>
+					<td colspan="3"><input type="text" id="title" name="title"
 						style="border: white" placeholder="글 제목을 입력하세요"></td>
 				
 					<th>회사</th>
