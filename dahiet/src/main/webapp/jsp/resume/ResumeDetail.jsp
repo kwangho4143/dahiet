@@ -79,12 +79,12 @@
 					
 					<div>
 						<table id="tblCareer">
-							
+							<c:if test="${list1 != null  && list1.size()>0 }"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">경 력 사 항&nbsp;</h3>
 								</td>
 							</tr>
-							
+							</c:if>
 							<c:forEach items="${list1}" var="v1">
 							<tr height="50">
 								<th width="150">회사명</th>
@@ -114,12 +114,12 @@
 					
 					<div>
 						<table id="tblLicense">
-							
+							<c:if test="${list4 != null && list4.size()>0}"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">자 격 사 항&nbsp;</h3>
 								</td>
 							</tr>
-						
+							</c:if>
 							<c:forEach items="${list4}" var="v4">
 							<tr height="50">
 								<th width="150">자격증명</th>
@@ -142,11 +142,13 @@
 					
 					<div>
 						<table id="tblActivity">
+						<c:if test="${list2 != null && list2.size()>0}"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">대 외 활 동&nbsp;</h3>
 								</td>
 							</tr>
-					
+						</c:if>						
+						
 							<c:forEach items="${list2}" var="v2">
 							<tr height="50">
 								<th width="150">구분(고용형태)</th>
@@ -174,12 +176,12 @@
 					
 					<div>
 						<table id="tblAward">
-							
+							<c:if test="${list3 != null && list3.size()>0}"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">수 상 내 역&nbsp;</h3>
 								</td>
 							</tr>
-						
+							</c:if>
 							
 							<c:forEach items="${list3}" var="v3">
 							<tr height="50">
@@ -203,10 +205,12 @@
 					
 					<div>
 						<table id="tblLanguage">
+							<c:if test="${list5 != null  && list5.size()>0}"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">어 학 능 력&nbsp;</h3>
 								</td>
 							</tr>
+							</c:if>
 							<c:forEach items="${list5}" var="v5">
 							<tr height="50">
 								<th width="150">어학자격명</th>

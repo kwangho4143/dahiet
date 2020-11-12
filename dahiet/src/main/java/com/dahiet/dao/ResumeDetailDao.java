@@ -16,7 +16,7 @@ public class ResumeDetailDao extends DAO{
 		
 	private final String LOADINFO = "SELECT * FROM USERS WHERE TEL = ?";
 	
-	private final String SELECTCAREER = "SELECT  FROM CAREER WHERE RESUME_SEQ = ?";
+	private final String SELECTCAREER = "SELECT * FROM CAREER WHERE RESUME_SEQ = ?";
 	private final String INSERTCAREER = "INSERT INTO CAREER VALUES(RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
 	
 	private final String INSERTLICENSE = "INSERT INTO LICENSE VALUES (RESUME_SUB_SEQ.NEXTVAL, ?, ?, ?, ?, ?)";
@@ -147,7 +147,7 @@ public class ResumeDetailDao extends DAO{
 				vo1.setResume_name(rs.getString("resume_seq"));
 				vo1.setAct_type(rs.getString("act_type"));
 				vo1.setAct_name(rs.getString("act_name"));
-				vo1.setAct_publish(rs.getString("act_pulish"));
+				vo1.setAct_publish(rs.getString("act_publish"));
 				vo1.setAct_startdate(rs.getDate("act_startdate"));
 				vo1.setAct_enddate(rs.getDate("act_enddate"));
 				list.add(vo1);
