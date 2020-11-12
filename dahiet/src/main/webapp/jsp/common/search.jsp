@@ -12,6 +12,20 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
+li.duty {
+	color: #000;
+	margin: 0;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	position: relative;
+	padding: 13px 15px 20px;
+	width: 100%;
+	height: 109px;
+	border: 1px solid #ddd;
+	border-top: 0;
+	box-sizing: border-box;
+	background: #fcfcfc;
+}
+
 div.banner_list {
 	color: #000;
 	margin: 0;
@@ -67,7 +81,7 @@ li.item {
 	padding-top: 143px;
 	margin: -1px 0 0 -1px;
 	height: 176px;
-	border: 1px solid red;
+	border: 1px solid gray;
 	box-sizing: border-box;
 	font-size: 14px;
 	background-color: #fff;
@@ -206,20 +220,15 @@ span.abc {
 <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
+
 	<main id="main">
-		<section id="breadcrumbs" class="breadcrumbs">
 			<form action="SearchAction.do">
+		<section id="breadcrumbs" class="breadcrumbs">
 				<div class="container">
 					<div class="d-flex justify-content-between align-items-center">
 						<nav class="nav-menu d-none d-lg-block">
 							<ul>
 								<li><h2>상세 검색</h2></li>
-								<li><input type="text" id="search" name="search">
-									<button type="submit" style="border: 0px; background: none">
-										<img
-											src="${pageContext.request.contextPath}/images/search.png"
-											height="20" width="20" alt="submit">
-									</button></li>
 								<li class="drop-down"><a href="#">지역 선택</a>
 									<ul>
 										<li>
@@ -300,23 +309,22 @@ span.abc {
 						</nav>
 					</div>
 				</div>
-			</form>
 		</section>
 		<section id="portfolio" class="portfolio">
-			<div class="container">
-				<div class="row">
+			<div style="padding: 0% 10% 0% 10%">
+				<div class="row" style="margin: 0% 5% 20% 5%">
 					<div class="col-lg-12 d-flex">
-						<div style="margin-left: 0%">
-							<h5>선택된 지역</h5>
-							<div id="selloc">&nbsp;</div>
-							<hr>
-							<h5>선택된 업종</h5>
-							<div id="selitem">&nbsp;</div>
-							<hr>
-							<h5>선택된 담당 업무</h5>
-							<div id="selwork">&nbsp;</div>
-							<hr>
-						</div>
+								<div class="row col-12" >
+											<div id="selloc" class="col"></div>
+											<div id="selitem" class="col"></div>
+											<div id="selwork" class="col"></div>
+											<div class="col">
+											<button type="submit" id="search_btn" class="btn_search" >
+											 <span id="search_btn_txt">검색하기</span>
+											</button>
+											</div>
+								</div>
+								
 						<script>
 							function showloc(str) {
 								var loc = $(event.target).parent().text();
@@ -354,7 +362,7 @@ span.abc {
 							};
 						</script>
 					</div>
-					
+
 					<c:forEach var="simple" items="${simples}">
 						<div id="banner_list" class="banner_list">
 							<div class="wrap_list_banner">
@@ -379,9 +387,10 @@ span.abc {
 							</div>
 						</div>
 					</c:forEach>
-					</div>
-</div>
+				</div>
+			</div>
 		</section>
+			</form>
 	</main>
 </body>
 </html>
