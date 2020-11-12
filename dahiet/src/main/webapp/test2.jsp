@@ -174,6 +174,7 @@ table tr td{
 	padding: 4px 8px 4px 8px;
 }
 
+
 </style>
 
 </head>
@@ -333,11 +334,6 @@ table tr td{
 </div>
 
 
-<div class="main-job-container">	
-</div>
-
-
-	
 	
 </body>
 </html>

@@ -20,7 +20,7 @@
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
 	rel="stylesheet">
 
-
+	
 <link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -41,6 +41,7 @@
 
 }
 </style>
+
 </head>
 
 <body>
@@ -78,7 +79,7 @@
 					<li><a href="${pageContext.request.contextPath}/showRecruitList.do">공고관리</a></li>
 					</c:if>
 					<c:if test = "${sessionScope.id eq null}">
-					<li>  <button type="button" class="btn btn-outline-primary" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" >로그인 / 가입</button></li>
+					<li>  <button type="button" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';" >로그인 / 가입</button></li>
 					</c:if>
 					<c:if test = "${sessionScope.birth ne null}">
 						<li><button type="button" onclick="location.href='${pageContext.request.contextPath}/UserMypage.do';" class="get-started-btn ml-auto" >마이페이지</button></li>
