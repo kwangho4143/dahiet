@@ -26,8 +26,9 @@ public class ResumeInsert implements Action {
 		vo.setTel(tel);
 		
 		
-		System.out.println(request.getParameter("resume_name"));
+		System.out.println("이력서제목:"+request.getParameter("resume_name"));
 		request.setAttribute("name", request.getParameter("resume_name"));
+		vo.setResume_name(request.getParameter("resume_name"));
 		
 		
 		int n = dao.insertResume(vo);
