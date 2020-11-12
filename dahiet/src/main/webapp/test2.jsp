@@ -117,7 +117,7 @@ to {
 	position: relative;
 	border-top: 5px solid #bbb;
 	padding: 5px;
-	margin: 5px;
+	margin: 5px 5px 30px 5px;
 	display: inline-block;
 }
 
@@ -235,7 +235,7 @@ table tr td{
 	</div>
 	<c:forEach var="mainlist" items="${mainlists}" begin="0" end="9">
 		<div class="recruit-each" id="recruit-each">
-			<a href="${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}" style="color: black;">
+			<a href="${pageContext.request.contextPath}/RecruitDetail.do?no=${mainlist.recruit_seq}" style="color: black;">
 				<img id="recruitImg" alt="회사로고" src="${pageContext.request.contextPath}/images/${mainlist.img}">
 				<p>${mainlist.name}</p><b>${mainlist.title}</b>
 			</a>
