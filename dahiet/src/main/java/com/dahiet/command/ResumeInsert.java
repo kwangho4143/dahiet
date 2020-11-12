@@ -27,7 +27,7 @@ public class ResumeInsert implements Action {
 		
 		
 		System.out.println("이력서제목:"+request.getParameter("resume_name"));
-		request.setAttribute("name", request.getParameter("resume_name"));
+		request.setAttribute("resume_name", request.getParameter("resume_name"));
 		vo.setResume_name(request.getParameter("resume_name"));
 		
 		

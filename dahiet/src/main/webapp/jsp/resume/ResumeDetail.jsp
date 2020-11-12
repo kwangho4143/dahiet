@@ -37,7 +37,6 @@
 			<div id="resumeTbl">
 				<form id="resumeFrm" name="resumeFrm" action="" method="post" enctype="multipart/form-data">
 
-				
 					<div>
 						<table>
 							<tr>
@@ -45,183 +44,189 @@
 							</tr>
 							<tr height="50">
 								<th width="150">이력서 제목</th>
-								<td colspan="4">resume_name</td>
+								<td colspan="4">${vo.resume_name}</td>
 							</tr>
 							<tr height="50">
-								<td rowspan="3"><img alt="" src="">imag</td>
+								<td rowspan="3"><img alt="사진" src="${pageContext.request.contextPath}/images/${vo.imag}"></td>
 								<th width="120">이 름</th>
-								<td>name</td>
+								<td>${vo.name}</td>
 								<th width="120">생년월일</th>
-								<td>birth</td>
+								<td>${vo.birth}</td>
 							</tr>
 							<tr height="50">
 								<th width="120">이메일</th>
-								<td>email</td>
+								<td>${vo.email}</td>
 								<th width="120">휴대폰</th>
-								<td>tel</td>
+								<td>${vo.tel}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">주소</th>
-								<td colspan="3">addr</td>
+								<td colspan="3">${vo.addr}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">최종학력</th>
-								<td colspan="4">univ</td>
+								<td colspan="4">${vo.univ}</td>
 
 							</tr>
 							<tr>
 								<th width="120">전공</th>
-								<td colspan="2">major</td>
+								<td colspan="2">${vo.major}</td>
 								<th width="120">졸업학점</th>
-								<td>score</td>
+								<td>${vo.score}</td>
 							</tr>
 						</table><br/><br/>
 					</div>
 					
 					<div>
 						<table id="tblCareer">
-							<thead>
+							<c:if test="${list1 != null  && list1.size()>0 }"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">경 력 사 항&nbsp;</h3>
 								</td>
 							</tr>
-							</thead>
-							<tbody id="tbodyCareer">
+							</c:if>
+							<c:forEach items="${list1}" var="v1">
 							<tr height="50">
 								<th width="150">회사명</th>
-								<td colspan="4">co_name</td>
+								<td colspan="4">${v1.co_name}</td>
 							</tr>
 							<tr height="50">
 								<th width="120">근무부서</th>
-								<td colspan="2">dept_name</td>
+								<td colspan="2">${v1.dept_name}</td>
 								<th width="120">연봉</th>
-								<td>ca_salary</td>
+								<td>${v1.ca_salary}</td>
 							</tr>
 							<tr height="50">
 								<th width="120">재직기간</th>
 								<th width="120">입사일</th>
-								<td>ca_hiredate</td>
+								<td>${v1.ca_hiredate}</td>
 								<th width="120">퇴사일</th>
-								<td>ca_retiredate</td>
+								<td>${v1.ca_retiredate}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">담당업무</th>
-								<td colspan="4">ca_worked</td>
+								<td colspan="4">${v1.ca_worked}</td>
 							</tr>
-							</tbody>
+							</c:forEach>
+						
 						</table><br/><br/>
 					</div>
 					
 					<div>
 						<table id="tblLicense">
-							<thead>
+							<c:if test="${list4 != null && list4.size()>0}"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">자 격 사 항&nbsp;</h3>
 								</td>
 							</tr>
-							</thead>
-							<tbody id="tbodyLicense">
+							</c:if>
+							<c:forEach items="${list4}" var="v4">
 							<tr height="50">
 								<th width="150">자격증명</th>
-								<td colspan="4">lic_name</td>
+								<td colspan="4">${v4.lic_name}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">자격증번호</th>
-								<td colspan="4">lic_no</td>
+								<td colspan="4">${v4.lic_no}</td>
 							</tr>
 							<tr height="50">
 								<th width="120">발행저</th>
-								<td colspan="2">lic_place</td>
+								<td colspan="2">${v4.lic_place}</td>
 								<th width="120">취득연월일</th>
-								<td>lic_getdate</td>
+								<td>${v4.lic_getdate}</td>
 							</tr>
-							</tbody>
+							</c:forEach>
+							
 						</table><br/><br/>
 					</div>
 					
 					<div>
 						<table id="tblActivity">
-							<thead>
+						<c:if test="${list2 != null && list2.size()>0}"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">대 외 활 동&nbsp;</h3>
 								</td>
 							</tr>
-							</thead>
-							<tbody id="tbodyActivity">
+						</c:if>						
+						
+							<c:forEach items="${list2}" var="v2">
 							<tr height="50">
 								<th width="150">구분(고용형태)</th>
-								<td colspan="4">act_type</td>
+								<td colspan="4">${v2.act_type}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">활동명</th>
-								<td colspan="4">act_name</td>
+								<td colspan="4">${v2.act_name}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">활동주관처</th>
-								<td colspan="4">act_publish</td>
+								<td colspan="4">${v2.act_publish}</td>
 							</tr>
 							<tr height="50">
 								<th width="120">활동기간</th>
 								<th width="120">시작일</th>
-								<td>act_startdate</td>
+								<td>${v2.act_startdate}</td>
 								<th width="120">종료일</th>
-								<td>act_enddate</td>
+								<td>${v2.act_enddate}</td>
 							</tr>
-							</tbody>
+							</c:forEach>
+							
 						</table><br/><br/>
 					</div>
 					
 					<div>
 						<table id="tblAward">
-							<thead>
+							<c:if test="${list3 != null && list3.size()>0}"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">수 상 내 역&nbsp;</h3>
 								</td>
 							</tr>
-							</thead>
-							<tbody id="tbodyAward">
+							</c:if>
+							
+							<c:forEach items="${list3}" var="v3">
 							<tr height="50">
 								<th width="150">수상명</th>
-								<td colspan="4">awd_name</td>
+								<td colspan="4">${v3.awd_name}</td>
 							</tr>
 							<tr height="50">
 								<th width="120">수여기관</th>
-								<td colspan="2">awd_place</td>
+								<td colspan="2">${v3.awd_place}</td>
 								<th width="120">수상일</th>
-								<td>awd_date</td>
+								<td>${v3.awd_date}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">수상내용</th>
-								<td colspan="4">awd_content</td>
+								<td colspan="4">${v3.awd_content}</td>
 							</tr>
-							</tbody>
+							</c:forEach>
+							
 						</table><br/><br/>
 					</div>
 					
 					<div>
 						<table id="tblLanguage">
-							<thead>
+							<c:if test="${list5 != null  && list5.size()>0}"> 
 							<tr>
 								<td height="70" colspan="5"><h3 align="center">어 학 능 력&nbsp;</h3>
 								</td>
 							</tr>
-							</thead>
-							<tbody id="tbodyLanguage">
+							</c:if>
+							<c:forEach items="${list5}" var="v5">
 							<tr height="50">
 								<th width="150">어학자격명</th>
-								<td colspan="4">lag_name</td>
+								<td colspan="4">${v5.lag_name}</td>
 							</tr>
 							<tr height="50">
 								<th width="150">인증기관</th>
-								<td colspan="4">lag_place</td>
+								<td colspan="4">${v5.lag_place}</td>
 							</tr>
 							<tr height="50">
 								<th width="120">성적</th>
-								<td colspan="2">lag_score</td>
+								<td colspan="2">${v5.lag_score}</td>
 								<th width="120">인증날짜</th>
-								<td>lag_date</td>
+								<td>${v5.lag_date}</td>
 							</tr>
-							</tbody>
+							</c:forEach>
 						</table><br/>
 					</div>
 					

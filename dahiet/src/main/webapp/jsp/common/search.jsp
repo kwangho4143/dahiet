@@ -12,6 +12,51 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
+button.btn btn-xs btn-danger {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	box-sizing: border-box;
+	font: inherit;
+	overflow: visible;
+	text-transform: none;
+	font-family: inherit;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	user-select: none;
+	border: 1px solid transparent;
+	color: #fff;
+	background-color: #d9534f;
+	padding: 1px 5px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 3px;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px
+		rgba(0, 0, 0, .075);
+	background-image: linear-gradient(to bottom, #d9534f 0, #c12e2a 100%);
+	background-repeat: repeat-x;
+	border-color: #b92c28;
+	margin: 5px 0;
+}
+
+li.duty {
+	color: #000;
+	margin: 0;
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	position: relative;
+	padding: 13px 15px 20px;
+	width: 100%;
+	height: 109px;
+	border: 1px solid #ddd;
+	border-top: 0;
+	box-sizing: border-box;
+	background: #fcfcfc;
+}
+
 div.banner_list {
 	color: #000;
 	margin: 0;
@@ -67,7 +112,7 @@ li.item {
 	padding-top: 143px;
 	margin: -1px 0 0 -1px;
 	height: 176px;
-	border: 1px solid red;
+	border: 1px solid gray;
 	box-sizing: border-box;
 	font-size: 14px;
 	background-color: #fff;
@@ -206,117 +251,110 @@ span.abc {
 <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
+
 	<main id="main">
-		<section id="breadcrumbs" class="breadcrumbs">
-			<form action="SearchAction.do">
-				<div class="container">
-					<div class="d-flex justify-content-between align-items-center">
-						<nav class="nav-menu d-none d-lg-block">
-							<ul>
-								<li><h2>상세 검색</h2></li>
-								<li><input type="text" id="search" name="search">
-									<button type="submit" style="border: 0px; background: none">
-										<img
-											src="${pageContext.request.contextPath}/images/search.png"
-											height="20" width="20" alt="submit">
-									</button></li>
-								<li class="drop-down"><a href="#">지역 선택</a>
-									<ul>
-										<li>
-											<div style="white-space: normal; margin: 0.5cm; width: 500px">
-												<c:forEach var="code" items="${codes}">
-													<label><input type="checkbox" name="loc"
-														value="${code.codename}" onchange="showloc(this.value)">${code.codevalue}</label>
-												</c:forEach>
-											</div>
-										</li>
-									</ul></li>
-								<li class="drop-down"><a href="#">업종 선택</a>
-									<ul>
-										<li>
-											<div style="white-space: normal; margin: 0.5cm; width: 500px">
-												<c:forEach var="itemcode" items="${itemcodes}">
-													<label><input type="checkbox" name="item"
-														value="${itemcode.itemid }"
-														onchange="showitem(this.value)">${itemcode.itemname}</label>
+		<form action="SearchAction.do"></form>
+		<section id="breadcrumbs" class="breadcrumbs"
+			style="padding: 0%; margin-top: 0px;">
+			<div class="container">
+				<div class="d-flex justify-content-between align-items-center">
+					<nav class="nav-menu d-none d-lg-block">
+						<ul>
+							<li><h2>상세 검색</h2></li>
+							<li class="drop-down"><a href="#">지역 선택</a>
+								<ul>
+									<li>
+										<div style="white-space: normal; margin: 0.5cm; width: 500px">
+											<c:forEach var="code" items="${codes}">
+												<label><input type="checkbox" name="loc"
+													value="${code.codename}" onchange="showloc(this.value)">${code.codevalue}</label>
+											</c:forEach>
+										</div>
+									</li>
+								</ul></li>
+							<li class="drop-down"><a href="#">업종 선택</a>
+								<ul>
+									<li>
+										<div style="white-space: normal; margin: 0.5cm; width: 500px">
+											<c:forEach var="itemcode" items="${itemcodes}">
+												<label><input type="checkbox" name="item"
+													value="${itemcode.itemid }" onchange="showitem(this.value)">${itemcode.itemname}</label>
 
-												</c:forEach>
-											</div>
-									</ul></li>
-								<li class="drop-down"><a href="#">담당 업무 선택</a>
-									<ul>
-										<li>
-											<div style="white-space: normal; margin: 0.5cm; width: 500px">
-												<c:forEach var="workid" items="${witemcodes}">
-													<label><input type="checkbox" name="work"
-														value="${workid.itemid }" onchange="showwork(this.value)">${workid.itemname}</label>
-												</c:forEach>
-											</div>
-									</ul></li>
+											</c:forEach>
+										</div>
+								</ul></li>
+							<li class="drop-down"><a href="#">담당 업무 선택</a>
+								<ul>
+									<li>
+										<div style="white-space: normal; margin: 0.5cm; width: 500px">
+											<c:forEach var="workid" items="${witemcodes}">
+												<label><input type="checkbox" name="work"
+													value="${workid.itemid }" onchange="showwork(this.value)">${workid.itemname}</label>
+											</c:forEach>
+										</div>
+								</ul></li>
 
-								<li class="drop-down"><a href="#">상세 선택</a>
-									<ul>
-										<li>
-											<div>
-												<label>연봉</label> <select name="salary" id="salary">
-													<option value="0">전체</option>
-													<option value="2000">2,000만원 이상</option>
-													<option value="3000">3,000만원 이상</option>
-													<option value="4000">4,000만원 이상</option>
-													<option value="5000">5,000만원 이상</option>
-													<option value="6000">6,000만원 이상</option>
-													<option value="7000">7,000만원 이상</option>
-													<option value="8000">8,000만원 이상</option>
-													<option value="9000">9,000만원 이상</option>
-													<option value="10000">10,000만원 이상</option>
-												</select> <img
-													src="${pageContext.request.contextPath}/images/search.png"
-													height="20" width="20" alt="submit">
-											</div>
+							<li class="drop-down"><a href="#">상세 선택</a>
+								<ul>
+									<li>
+										<div>
+											<label>연봉</label> <select name="salary" id="salary">
+												<option value="0">전체</option>
+												<option value="2000">2,000만원 이상</option>
+												<option value="3000">3,000만원 이상</option>
+												<option value="4000">4,000만원 이상</option>
+												<option value="5000">5,000만원 이상</option>
+												<option value="6000">6,000만원 이상</option>
+												<option value="7000">7,000만원 이상</option>
+												<option value="8000">8,000만원 이상</option>
+												<option value="9000">9,000만원 이상</option>
+												<option value="10000">10,000만원 이상</option>
+											</select> <img
+												src="${pageContext.request.contextPath}/images/search.png"
+												height="20" width="20" alt="submit">
+										</div>
+										<hr>
+										<div>
+											<label>기업 형태</label> <label><input type="checkbox"
+												name="type" value="c1"> 대기업</label> <label><input
+												type="checkbox" name="type" value="c2"> 중견기업</label> <label><input
+												type="checkbox" name="type" value="c3"> 중소기업</label> <label><input
+												type="checkbox" name="type" value="c4"> 외국계</label> <label><input
+												type="checkbox" name="type" value="c5"> 강소기업</label> <label><input
+												type="checkbox" name="type" value="c6"> 공기업</label>
+										</div>
+										<div>
 											<hr>
-											<div>
-												<label>기업 형태</label> <label><input type="checkbox"
-													name="type" value="c1"> 대기업</label> <label><input
-													type="checkbox" name="type" value="c2"> 중견기업</label> <label><input
-													type="checkbox" name="type" value="c3"> 중소기업</label> <label><input
-													type="checkbox" name="type" value="c4"> 외국계</label> <label><input
-													type="checkbox" name="type" value="c5"> 강소기업</label> <label><input
-													type="checkbox" name="type" value="c6"> 공기업</label>
-											</div>
-											<div>
-												<hr>
-												<label>근무 형태</label> <label><input type="checkbox"
-													name="emp_type" value="a1"> 정규직</label> <label><input
-													type="checkbox" name="emp_type" value="a2"> 계약직</label> <label>
-													<input type="checkbox" name="emp_type" value="a3">
-													아르바이트
-												</label> <label><input type="checkbox" name="emp_type"
-													value="a4"> 인턴직</label> <label><input
-													type="checkbox" name="emp_type" value="a5"> 파견직</label>
-											</div>
-										</li>
-									</ul></li>
-							</ul>
-						</nav>
+											<label>근무 형태</label> <label><input type="checkbox"
+												name="emp_type" value="a1"> 정규직</label> <label><input
+												type="checkbox" name="emp_type" value="a2"> 계약직</label> <label>
+												<input type="checkbox" name="emp_type" value="a3">
+												아르바이트
+											</label> <label><input type="checkbox" name="emp_type"
+												value="a4"> 인턴직</label> <label><input
+												type="checkbox" name="emp_type" value="a5"> 파견직</label>
+										</div>
+									</li>
+								</ul></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="row col-8" style="margin: 0px 50px 0px 50px; max-width: 1000px; max-height: 3cm">
+					<div id="selloc" class="col" style="max-width: 300px"></div>
+					<div id="selitem" class="col" style="max-width: 300px"></div>
+					<div id="selwork" class="col" style="max-width: 300px"></div>
+					<div class="col">
+						<button type="submit" class="btn btn-xs btn-danger">검색하기</button>
 					</div>
 				</div>
-			</form>
+			</div>
+
 		</section>
 		<section id="portfolio" class="portfolio">
-			<div class="container">
-				<div class="row">
+			<div style="align-items: center">
+				<div>
 					<div class="col-lg-12 d-flex">
-						<div style="margin-left: 0%">
-							<h5>선택된 지역</h5>
-							<div id="selloc">&nbsp;</div>
-							<hr>
-							<h5>선택된 업종</h5>
-							<div id="selitem">&nbsp;</div>
-							<hr>
-							<h5>선택된 담당 업무</h5>
-							<div id="selwork">&nbsp;</div>
-							<hr>
-						</div>
+
 						<script>
 							function showloc(str) {
 								var loc = $(event.target).parent().text();
@@ -354,7 +392,7 @@ span.abc {
 							};
 						</script>
 					</div>
-					
+
 					<c:forEach var="simple" items="${simples}">
 						<div id="banner_list" class="banner_list">
 							<div class="wrap_list_banner">
@@ -379,9 +417,10 @@ span.abc {
 							</div>
 						</div>
 					</c:forEach>
-					</div>
-</div>
+				</div>
+			</div>
 		</section>
+
 	</main>
 </body>
 </html>

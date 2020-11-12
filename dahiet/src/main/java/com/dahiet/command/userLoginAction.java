@@ -1,5 +1,8 @@
 package com.dahiet.command;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -37,18 +40,44 @@ public class userLoginAction implements Action {
 			session.setAttribute("major", vo.getMajor());
 			session.setAttribute("score", vo.getScore());
 			session.setAttribute("imag", vo.getImage());
-			
+
 			session.setAttribute("tel", vo.getTel());
-			
-			msq = "정상적인 로그인";
-			request.setAttribute("msg", msq);
+
 			request.setAttribute("vo", vo); // 멤버를 실어 보냄
-			page = "/jsp/user/userloginResult.jsp";
+
+			//
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter writer;
+			try {
+				writer = response.getWriter();
+				writer.println("<script>alert('" + vo.getId() + " 님 로그인 되었습니다.'); location.href='"
+						+ request.getContextPath() + "/MainListShow.do';</script>");
+				writer.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+
+			}
+
+			//
+
 		} else {
-			msq = "패스워드가 틀렸다.";
+			//
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter writer;
+			try {
+				writer = response.getWriter();
+				writer.println("<script>alert('패스워드가 틀렸습니다 다시 확인해주세요.'); location.href='" + request.getContextPath()
+						+ "/jsp/user/loginForm.jsp';</script>");
+				writer.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+
+			}
+			//
 		}
-		request.setAttribute("msg", msq);
-		return page;
+		return null;
 	}
 
 }

@@ -27,7 +27,7 @@
 							<th style="width: 10%;">작성 일자</th>
 						</tr>
 						<c:forEach var="relist" items="${relists}">
-							<tr align="center">
+							<tr s align="center">
 								<td>${relist.no }</td>
 								<td colspan="3"><a href="${pageContext.request.contextPath}
 								/ReviewDetail.do?no=${relist.no}">${relist.title }</a></td>
