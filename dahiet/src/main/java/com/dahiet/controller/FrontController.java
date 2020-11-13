@@ -109,7 +109,7 @@ public class FrontController extends HttpServlet {
       map.put("/ReviewDetail.do",new ReviewDetail()); //취업토크 상세 페이지 호출
       map.put("/ReviewDetailUp.do",new ReviewDetailUp()); //취업토크 수정 페이지 호출
       map.put("/ReviewUpdate.do",new ReviewUpdate()); //취업토크 수정 기능
-      map.put("/ReviewDelete.do",new ReviewDelete()); // 취업투크 삭제 기능
+      //map.put("/ReviewDelete.do",new ReviewDelete()); // 취업투크 삭제 기능
       		//회사 디테일
       map.put("/RecruitDetail.do",new RecruitDetial()); //채용공고 상세페이지 호출
       map.put("/userLogin.do",new userLoginAction()); //로그인 폼 호출

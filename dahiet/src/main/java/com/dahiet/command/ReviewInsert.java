@@ -22,6 +22,7 @@ public class ReviewInsert implements Action {
 		vo.setContent(request.getParameter("content"));
 		vo.setCompany(request.getParameter("company"));
 		vo.setNewbi(request.getParameter("newbi"));
+		vo.setPassword(request.getParameter("password"));
 		int n = dao.re_insert(vo);
 
 		if (n != 0) {

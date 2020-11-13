@@ -17,9 +17,9 @@ public class ReviewDao extends DAO{
 	private ReviewVO vo;
 	
 	private final String RE_LI_SELECT = "SELECT NO, TITLE, ID, REDATE FROM REVIEW";
-	private final String RE_LI_INSERT = "INSERT INTO REVIEW (NO, ID, TITLE, CONTENT, COMPANY, NEWBI)"
-			+ " VALUES(REVIEW_VALUE_SEQ.NEXTVAL,?,?,?,?,?)";
-	private final String RE_DE_SELECT = "SELECT TITLE, NO, ID, COMPANY, NEWBI, REDATE, CONTENT FROM REVIEW WHERE NO=?";
+	private final String RE_LI_INSERT = "INSERT INTO REVIEW (NO, ID, TITLE, CONTENT, COMPANY, NEWBI, PASSWORD)"
+			+ " VALUES(REVIEW_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?)";
+	private final String RE_DE_SELECT = "SELECT TITLE, NO, ID, COMPANY, NEWBI, REDATE, PASSWORD ,CONTENT FROM REVIEW WHERE NO=?";
  	private final String RE_UP_UPDATE = "UPDATE REVIEW SET TITLE=?, CONTENT =? WHERE NO=?";
  	private final String RE_UP_DELETE = "DELETE FROM REVIEW WHERE NO=?";
 	
@@ -87,6 +87,7 @@ public int RE_UP_DELETE(ReviewVO vo) {
 				psmt.setString(3, vo.getContent());
 				psmt.setString(4, vo.getCompany());
 				psmt.setString(5, vo.getNewbi());
+				psmt.setString(6, vo.getPassword());
 				n = psmt.executeUpdate();				
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -110,6 +111,7 @@ public int RE_UP_DELETE(ReviewVO vo) {
 				vo.setNewbi(rs.getString("newbi"));
 				vo.setCompany(rs.getString("company"));
 				vo.setContent(rs.getString("content"));
+				vo.setPassword(rs.getString("password"));
 			}
 			
 			} catch (SQLException e) {

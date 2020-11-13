@@ -21,12 +21,14 @@ String id = session.getAttribute("id");
 					<td style="display: none" colspan="1"><input type="text" id="id" name="id"
 						style="border: white" value="익명"></td>
 					<th colspan="1" width="100px" height="30px">제목</th>
-					<td colspan="3"><input type="text" id="title" name="title"
-						style="border: white" placeholder="글 제목을 입력하세요"></td>
-				
+					<td colspan="1"><input type="text" id="title" name="title"
+						style="border: white; width: 100%" placeholder="글 제목을 입력하세요"></td>
+					<th>비밀번호</th>
+					<td style="width: 3cm"><input type="password" id="password" name="password"
+						style="border: white; width: 100%" placeholder="비밀번호 입력"></td>
 					<th>회사</th>
 					<td><input type="text" id="company" name="company"
-						style="border: white" placeholder="회사이름을 입력하세요"></td>
+						style="border: white; width: 100%" placeholder="회사이름을 입력하세요"></td>
 					<th>경력</th>
 					<td><input type="radio" name="newbi" value="new" checked>신입 &nbsp&nbsp<input
 						type="radio" name="newbi" value="old">경력</td>

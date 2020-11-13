@@ -79,6 +79,7 @@
 	padding: 150px 15px 15px 0px;
 }
 .solumn {
+padding-left: 3cm;
 	float: left;
 	width: 1200px;
 	padding: 15px;
