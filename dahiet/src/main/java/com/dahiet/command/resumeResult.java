@@ -23,7 +23,6 @@ public class resumeResult implements Action {
 			//기본정보
 			HttpSession session = request.getSession();
 			resume_seq =(String)session.getAttribute("currentseq");
-			
 		}
 		
 		
