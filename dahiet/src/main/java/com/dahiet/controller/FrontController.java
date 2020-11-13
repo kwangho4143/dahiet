@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dahiet.command.CompanyMypageAction;
+import com.dahiet.command.EventAction;
 import com.dahiet.command.InsertPreResume;
 import com.dahiet.command.LogoutAction;
 import com.dahiet.command.MainListShow;
@@ -99,7 +100,7 @@ public class FrontController extends HttpServlet {
       map.put("/UpdateUserInf.do",new UpdateUserInf()); //사용자회원정보 수정 
       map.put("/companyMypage.do",new CompanyMypageAction()); //로그인 폼 호출
       map.put("/UpdateComInf.do",new UpdateComInf()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/Event.do",new EventAction()); //로그인 폼 호출
 //      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
       //평강
       map.put("/ReviewInsert.do",new ReviewInsert()); //취업 토크 값 인서트 호출

@@ -109,7 +109,7 @@
 					<li><a href="#">기업정보</a></li>
 					<li><a
 						href="${pageContext.request.contextPath}/ReviewAction.do">취업토크</a></li>
-					<li><a href="#">고객센터</a></li>
+					<li><a href="${pageContext.request.contextPath}/Event.do">고객센터</a></li>
 
 					<li></li>
 					<li><form action="" method="post">
