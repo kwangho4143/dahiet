@@ -107,18 +107,8 @@
 					<li><a
 						href="${pageContext.request.contextPath}/SearchAction.do">채용정보</a>
 					<li><a href="#">기업정보</a></li>
-					<li><a
-						href="${pageContext.request.contextPath}/ReviewAction.do">취업토크</a></li>
-					<li><a href="#">고객센터</a></li>
-
-					<li></li>
-					<li><form action="" method="post">
-							<input type="text" id="search" name="search">
-							<button type="button" style="border: 0px; background: none">
-								<img src="${pageContext.request.contextPath}/images/search.png"
-									height="20" width="20" alt="submit">
-							</button>
-						</form></li>
+<li><a href="${pageContext.request.contextPath}/Event.do">고객센터</a></li>
+					
 					<c:if test="${sessionScope.major ne null}">
 						<li><a
 							href="${pageContext.request.contextPath}/ResumeList.do">이력서
@@ -128,31 +118,30 @@
 						<li><a
 							href="${pageContext.request.contextPath}/showRecruitList.do">공고관리</a></li>
 					</c:if>
+					<li><a
+						href="${pageContext.request.contextPath}/ReviewAction.do">취업토크</a></li>
+					<li><a href="#">고객센터</a></li>
+				</ul>
+			</nav>
+					
+					<div style="padding-left: 8cm">
 					<c:if test="${sessionScope.id eq null}">
-						<li>
-							<button type="button" class="btn btn-danger"
-								onclick="location.href='${pageContext.request.contextPath}/jsp/user/loginForm.jsp';">로그인
-								/ 가입</button>
-						</li>
+					<a href="${pageContext.request.contextPath}/jsp/user/loginForm.jsp"><img style="width: 2cm" alt="login" src="${pageContext.request.contextPath}/images/login.png"
+								></a>
 					</c:if>
 					<c:if test="${sessionScope.birth ne null}">
-						<li><button type="button"
-								onclick="location.href='${pageContext.request.contextPath}/UserMypage.do';"
-								class="get-started-btn ml-auto">마이페이지</button></li>
-					</c:if>
+				<a href="${pageContext.request.contextPath}/UserMypage.do"><img style="width: 1cm" alt="mypage" src="${pageContext.request.contextPath}/images/mypage.png"
+								></a></c:if>
 					<c:if test="${sessionScope.no ne null}">
-						<li><button type="button"
-								onclick="location.href='${pageContext.request.contextPath}/companyMypage.do';"
-								class="get-started-btn ml-auto">마이페이지</button></li>
+						<a href="${pageContext.request.contextPath}/companyMypage.do"><img style="width: 1cm" alt="mypage" src="${pageContext.request.contextPath}/images/mypage.png"
+								></a>
 					</c:if>
 					<c:if test="${sessionScope.id ne null}">
-						<li><button type="button"
-								onclick="location.href='${pageContext.request.contextPath}/logOut.do';"
-								class="get-started-btn ml-auto">로그아웃</button></li>
+						<a style="margin-left: 15px " href="${pageContext.request.contextPath}/logOut.do"><img style="width: 0.9cm" alt="logout" src="${pageContext.request.contextPath}/images/logout.png"
+								></a>
 					</c:if>
-				</ul>
+					</div>
 
-			</nav>
 			<!-- .nav-menu -->
 		</div>
 	</header>
