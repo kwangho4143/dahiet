@@ -16,7 +16,7 @@ table {
 </head>
 <body>
 	<div align="center">
-<<<<<<< HEAD
+
 <section id="breadcrumbs" class="breadcrumbs"
 			style="padding: 0%; margin-top: 0px;">
 					<nav class="nav-menu d-none d-lg-block">
@@ -24,17 +24,10 @@ table {
 							<li><h1 align="left">내 이력서 현황</h1></li>
 							</ul>
 							
-=======
-		<div>
-			<h1>내 이력서 현황</h1>
->>>>>>> branch 'main' of https://github.com/kwangho4143/dahiet.git
-		</div>
-		<br />
-<<<<<<< HEAD
+</div>
 </nav>
 </section>
-=======
->>>>>>> branch 'main' of https://github.com/kwangho4143/dahiet.git
+
 		<div>
 			<form id="resumeFrm" name="resumeFrm" action="" method="post"
 				enctype="multipart/form-data">
