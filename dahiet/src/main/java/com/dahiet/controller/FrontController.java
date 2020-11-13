@@ -29,7 +29,7 @@ import com.dahiet.command.ResumeInsert;
 import com.dahiet.command.ResumeList;
 import com.dahiet.command.ReviewAction;
 import com.dahiet.command.ReviewCheck;
-import com.dahiet.command.ReviewDelete;
+//import com.dahiet.command.ReviewDelete;
 import com.dahiet.command.ReviewDetail;
 import com.dahiet.command.ReviewDetailUp;
 import com.dahiet.command.ReviewInsert;
