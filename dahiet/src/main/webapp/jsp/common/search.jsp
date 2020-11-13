@@ -159,6 +159,15 @@ span.corp {
 	line-height: 18px;
 	color: #425ad4;
 }
+span.corps {
+	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+	list-style: none;
+	display: block;
+	font-size: 14px;
+	letter-spacing: -1px;
+	line-height: 18px;
+	color: black;
+}
 
 strong.tit {
 	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
@@ -250,16 +259,14 @@ span.abc {
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
+<body class="col-lg-3 col-md-12">
 
 	<main id="main">
-		<form action="SearchAction.do"></form>
+		<form action="SearchAction.do">
 		<section id="breadcrumbs" class="breadcrumbs"
 			style="padding: 0%; margin-top: 0px;">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center">
 					<nav class="nav-menu d-none d-lg-block">
-						<ul>
+						<ul style="padding-left: 80px;">
 							<li><h2>상세 검색</h2></li>
 							<li class="drop-down"><a href="#">지역 선택</a>
 								<ul>
@@ -338,7 +345,6 @@ span.abc {
 								</ul></li>
 						</ul>
 					</nav>
-				</div>
 				<div class="row col-8" style="margin: 0px 50px 0px 50px; max-width: 1000px; max-height: 3cm">
 					<div id="selloc" class="col" style="max-width: 300px"></div>
 					<div id="selitem" class="col" style="max-width: 300px"></div>
@@ -347,7 +353,6 @@ span.abc {
 						<button type="submit" class="btn btn-xs btn-danger">검색하기</button>
 					</div>
 				</div>
-			</div>
 
 		</section>
 		<section id="portfolio" class="portfolio">
@@ -394,9 +399,9 @@ span.abc {
 					</div>
 
 					<c:forEach var="simple" items="${simples}">
-						<div id="banner_list" class="banner_list">
-							<div class="wrap_list_banner">
-								<ul class="list_product">
+							<div align="center" style="padding-left: 100px;">
+						<div>
+								<ul>
 									<li class="item"><a
 										href="${pageContext.request.contextPath}/RecruitDetail.do?no=${simple.recruit_seq}"
 										target="_blank"
@@ -405,14 +410,14 @@ span.abc {
 										onmousedown="Saramin.clickAds(39004634, 'ads_category=section_favor_001')"
 										class="link" rel="sponsored"> <span class="logo"><img
 												src="${pageContext.request.contextPath}/images/${simple.img}"
-												border="0" width="110" height="38"></span> <span class="corp">${simple.name}</span>
+												border="0" width="110" height="38"></span> 
+												<span class="corp">${simple.name}</span>
 											<strong class="tit">${simple.title}</strong>
-											<ul class="desc">
-												<li>${simple.work}</li>
-												<li>${simple.emp_type}</li>
-												<li class="company_local ellipsis">${simple.salary}만원</li>
-											</ul>
+											<span class="corps">${simple.work}</span>
+											<span class="corps">${simple.emp_type}</span>
+											<span class="corps">${simple.salary}만원</span>
 									</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -420,7 +425,7 @@ span.abc {
 				</div>
 			</div>
 		</section>
-
+</form>
 	</main>
 </body>
 </html>
