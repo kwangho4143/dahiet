@@ -69,7 +69,7 @@
 .columnright {
 	float: right;
 	width: 100px;
-	padding-top: 150px;
+	padding-top: 30px;
 	position: relative; 
 	
 }
@@ -102,7 +102,7 @@
 
 			<nav class="nav-menu d-none d-lg-block">
 
-				<ul>
+				<ul style="width: 700px">
 
 					<li><a
 						href="${pageContext.request.contextPath}/SearchAction.do">채용정보</a>
@@ -124,13 +124,13 @@
 				</ul>
 			</nav>
 					
-					<div style="padding-left: 8cm">
+					<div>
 					<c:if test="${sessionScope.id eq null}">
-					<a href="${pageContext.request.contextPath}/jsp/user/loginForm.jsp"><img style="width: 2cm" alt="login" src="${pageContext.request.contextPath}/images/login.png"
+					<a href="${pageContext.request.contextPath}/jsp/user/loginForm.jsp"><img style="width: 3cm" alt="login" src="${pageContext.request.contextPath}/images/login.png"
 								></a>
 					</c:if>
 					<c:if test="${sessionScope.birth ne null}">
-				<a href="${pageContext.request.contextPath}/UserMypage.do"><img style="width: 1cm" alt="mypage" src="${pageContext.request.contextPath}/images/mypage.png"
+				<a style="padding-left: 20px" href="${pageContext.request.contextPath}/UserMypage.do"><img style="width: 1cm" alt="mypage" src="${pageContext.request.contextPath}/images/mypage.png"
 								></a></c:if>
 					<c:if test="${sessionScope.no ne null}">
 						<a href="${pageContext.request.contextPath}/companyMypage.do"><img style="width: 1cm" alt="mypage" src="${pageContext.request.contextPath}/images/mypage.png"
