@@ -22,9 +22,7 @@ table {
 		<br />
 
 		<div>
-			<!--   <form id="resumeFrm" name="resumeFrm" action="" method="post"
-				enctype="multipart/form-data">
--->
+		
 				<c:forEach var="vo" items="${list}">
 					<div>
 						<table>
@@ -41,9 +39,7 @@ table {
 						<br />
 					</div>
 				</c:forEach>
-<!-- 
-			</form>
-			-->
+
 		</div>
 
 	</div>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dahiet.command.CheckApply;
 import com.dahiet.command.CompanyMypageAction;
 import com.dahiet.command.EventAction;
 import com.dahiet.command.InsertPreResume;
@@ -82,8 +83,8 @@ public class FrontController extends HttpServlet {
       map.put("/RecruitUp.do",new RecruitUp()); //로그인 폼 호출
       map.put("/RecruitDelete.do",new RecruitDelete()); //공고 리스트 삭제 기능
       map.put("/resumeApply.do",new ResumeApply()); //공고리스트에서 이력서 넣기
-      map.put("/usersApply.do",new UsersApply()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/usersApply.do",new UsersApply()); //
+      map.put("/checkApply.do",new CheckApply()); //회사공고에 지원한 내역
       //다희
       map.put("/ResumeList.do",new ResumeList()); //이력서 현황 호출
       map.put("/resumePreInsert.do",new InsertPreResume()); //이력서 등록-기본정보 호출
@@ -128,6 +129,7 @@ public class FrontController extends HttpServlet {
    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       //수행할 명령을 처리
       request.setCharacterEncoding("utf-8");
+      response.setContentType("text/html; charset=utf-8");
       String uri = request.getRequestURI();
       String contextPath = request.getContextPath();
       String path = uri.substring(contextPath.length()); //실제 들어오는 요청 페이지를 찾음

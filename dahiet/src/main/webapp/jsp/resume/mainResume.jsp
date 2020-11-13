@@ -16,12 +16,10 @@ table {
 </head>
 <body>
 	<div align="center">
-
 		<div>
 			<h1>내 이력서 현황</h1>
 		</div>
 		<br />
-
 		<div>
 			<form id="resumeFrm" name="resumeFrm" action="" method="post"
 				enctype="multipart/form-data">
@@ -29,6 +27,10 @@ table {
 					<table>
 						<tr height="50">
 							<td height="70" colspan="5" align="right">
+								<button type="button"
+									onclick="location.href='${pageContext.request.contextPath}/checkApply.do';"
+									class="btn btn-danger">지원한 공고 목록</button>&nbsp;&nbsp;&nbsp;
+								
 								<button type="button"
 									onclick="location.href='${pageContext.request.contextPath}/resumePreInsert.do';"
 									class="btn btn-danger">새 이력서 등록하기</button>&nbsp;&nbsp;&nbsp;
@@ -42,10 +44,13 @@ table {
 					<div>
 						<table>
 							<tr height="50">
-								<th width="150">이력서 번호</th>
-								<td width="450">${vo.resume_seq}</td>
-								<th width="150">이력서 이름</th>
-								<td width="450">${vo.resume_name}</td>
+								<th width="100">이력서 번호</th>
+								<td width="200">${vo.resume_seq}</td>
+								<th width="100">이력서 이름</th>
+								<td width="200">${vo.resume_name}</td>
+								<td>
+								<button type = "button" id = "bt2" name = "bt2" onclick = "location.href='${pageContext.request.contextPath}/ResumeResult.do?resumed_seq=${vo.resume_seq}'">이력서 상세보기</button>
+								</td>
 							</tr>
 						</table>
 						<br />

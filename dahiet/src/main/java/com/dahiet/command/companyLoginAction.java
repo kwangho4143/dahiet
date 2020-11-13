@@ -23,7 +23,7 @@ public class companyLoginAction implements Action {
 		
 		vo = dao.selectLogIn(vo);  //MemberDao 를 실행시킨다.
 		
-		if (vo.getPw() == null) {
+		if (vo.getPw() == null || vo.getId() ==null)  {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter writer;
 			try {
