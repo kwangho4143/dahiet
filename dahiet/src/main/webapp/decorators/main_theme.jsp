@@ -126,7 +126,7 @@
 					
 					<div>
 					<c:if test="${sessionScope.id eq null}">
-					<a href="${pageContext.request.contextPath}/jsp/user/loginForm.jsp"><img style="width: 3cm" alt="login" src="${pageContext.request.contextPath}/images/login.png"
+					<a href="${pageContext.request.contextPath}/jsp/user/loginForm.jsp"><img style="width: 3.5cm" alt="login" src="${pageContext.request.contextPath}/images/login.png"
 								></a>
 					</c:if>
 					<c:if test="${sessionScope.birth ne null}">
