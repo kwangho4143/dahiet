@@ -108,7 +108,7 @@
 						href="${pageContext.request.contextPath}/SearchAction.do">채용정보</a>
 					<li><a href="#">기업정보</a></li>
 <li><a href="${pageContext.request.contextPath}/Event.do">고객센터</a></li>
-					
+
 					<c:if test="${sessionScope.major ne null}">
 						<li><a
 							href="${pageContext.request.contextPath}/ResumeList.do">이력서
