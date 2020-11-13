@@ -168,18 +168,6 @@
 	}
 
 	
-	
-	function showList(value) {
-		if (value == '1') {
-			tblList1.style.display = '';
-			tblList2.style.display = 'none';
-		} else {
-			tblList2.style.display = '';
-			tblList1.style.display = 'none';
-
-		}
-	};​
-
 </script>
 
 
@@ -200,12 +188,10 @@
 		<div class="menuWrap">
 			<div align="center">
 				<h5>자주묻는질문</h5><br>
-				<input type="radio" id="btnList1" onchange="showList(this.value);" value="1" checked>
-<!-- 				<a href="#" class="btn" id="btnList1" onchange="showList(this.value);" value="1"> -->
+ 				<a href="#" class="btn" id="btnList1">
 					<img src="${pageContext.request.contextPath}/images/tab_gg.png" alt="개인회원"></a><br>
-				<input type="radio" id="btnList2" onchange="showList(this.value);" value="2">
-<!-- 				<a href="#" class="btn" id="btnList2" onchange="showList(this.value);" value="2">
- -->					<img src="${pageContext.request.contextPath}/images/tab_gi.png" alt="기업회원"></a>
+ 				<a href="#" class="btn" id="btnList2">
+					<img src="${pageContext.request.contextPath}/images/tab_gi.png" alt="기업회원"></a>
 			</div><br><br><br>
 			<div align="right">
 				<img src="${pageContext.request.contextPath}/images/customer_center.png"
