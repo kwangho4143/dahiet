@@ -103,21 +103,22 @@ ul.list_product {
 }
 
 li.item {
-	color: #000;
-	padding: 0;
-	font-family: "Malgun Gothic", dotum, gulim, sans-serif;
-	list-style: none;
-	position: relative;
-	float: left;
-	padding-top: 143px;
-	margin: -1px 0 0 -1px;
-	height: 176px;
-	border: 1px solid gray;
-	box-sizing: border-box;
-	font-size: 14px;
-	background-color: #fff;
-	transition: box-shadow 0.5s, transform 0.5s;
-	width: 316px;
+    color: #000;
+    padding: 0;
+    font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+    list-style: none;
+    position: relative;
+    float: left;
+    padding-top: 143px;
+    margin: -1px 0 0 -1px;
+    height: 176px;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgray;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #fff;
+    transition: box-shadow 0.5s, transform 0.5s;
+    width: 316px;
 }
 
 a.link {
