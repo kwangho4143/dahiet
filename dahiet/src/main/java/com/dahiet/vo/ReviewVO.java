@@ -10,6 +10,7 @@ public class ReviewVO {
 	private Date redate;
 	private String company;
 	private String newbi;
+	private String password;
 	public String getNo() {
 		return no;
 	}
@@ -51,6 +52,12 @@ public class ReviewVO {
 	}
 	public void setNewbi(String newbi) {
 		this.newbi = newbi;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	
