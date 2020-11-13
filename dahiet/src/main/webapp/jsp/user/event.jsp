@@ -11,10 +11,9 @@
 <style>
 .faq-container {
 	position: relative;
+	width: 1000px;
 	height: 500px;
 	padding-left: 210px;
-	overflow-x: hidden;
-	overflow-y: auto;
 }
 
 .faq-container .menuWrap {
@@ -59,18 +58,6 @@
 	margin: 0;
 }
 
-.faq-container .listWrap .inner .pagenation {
-	font-size: 12px;
-	font-family: gulim, "\AD74\B9BC", dotum, "\B3CB\C6C0", arial, sans-serif;
-	color: #434a54;
-	clear: both;
-	position: relative;
-	text-align: center;
-	width: 500px;
-	padding: 20px 0;
-	margin: 0 auto;
-}
-
 .faq-container .listWrap .inner .tbFaq .onA .answer {
 	font-family: gulim, "\AD74\B9BC", dotum, "\B3CB\C6C0", arial, sans-serif;
 	color: #434a54;
@@ -84,47 +71,19 @@
 	line-height: 18px;
 }
 
-ul {
+.faq_ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 }
 
-li {
+.faq_li {
 	float: left;
-}
+} */
 
-li a, .dropbtn {
-	display: inline-block;
-	color: black;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-li.dropdown {
-	display: inline-block;
-}
-
-.dropdown-content {
-	display: block;
-	position: relative;
-	min-width: 100px;
-	z-index: 1;
-	font-size: 80%
-}
-
-.dropdown-content a {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
-
-.dropdown-content a:hover {
-	background-color: #f1f1f1;
+.mark1 {
+	padding: .2em;
 }
 </style>
 
@@ -153,24 +112,135 @@ li.dropdown {
 		}
 	</script>
 
+
 <script>
-$(document).ready(function() {
-	var _qno = "";
-	var _qidx = "";
-	if (_qno!="" && _qidx!="") {
-		show_content(_qno, _qidx);
-	}
+	$(document).ready(function()
+	{
+		var speed = 300;
+		var lipos = $('.listWrap').offset();
+
+		$('.btnTop').hide();
+
+		$(function(){
+			$('.listWrap').scroll(function () {
+				if ($('.listWrap').scrollTop() > 0) $('.btnTop').fadeIn(100);
+				else  $('.btnTop').fadeOut(200);
+			});
+
+			$('.btnTop button').click(function() {
+				$('.listWrap').animate({scrollTop:lipos.top-60}, speed);
+							return false;
+			});
+
+			$('#btnSearch').click(function(){
+				var search_keyword = $("#search_keyword").val();
+
+				if(search_keyword == "궁금하신 내용을 입력하세요. 예)회원가입" || search_keyword == "") {
+					alert("검색 내용을 입력해 주세요.");
+					$("#search_keyword").focus();
+					return false;
+				}
+				document.frmFAQ.submit();
+			});
+
+			$(".txBx>img").each(function(){
+				if($(this).prop("width") > 580) {
+					$(this).width(580);
+				}
+			});
+		});
+
+		var _qno = "";
+		var _qidx = "";
+		if (_qno!="" && _qidx!="") {
+			show_content(_qno, _qidx);
+		}
+
+		// 개인정보 동의 및 위탁
+        $('.agree button').on('click', function() {
+            var $target = $(this);
+            var $agreeTerms = $target.parent().next('.agreeBox');
+            if ($target.hasClass('active')) {
+                $agreeTerms.slideUp(300, function() {
+                    $target.removeClass('active');
+                    $target.html("내용보기");
+                });
+            } else {
+                $target.addClass('active');
+                $agreeTerms.slideDown(300, function() {
+                    $target.html("내용닫기");
+                });
+            }
+        });
+
+        // 전담컨설턴트 레이어 열기
+        $('#dev_request_rm').on('click', function() {
+			var checkLogin = checkCorpLogin();
+			if (checkLogin == true) {
+				$('.lyCorpConsultingWp').show();
+				var width = $('.lyCorpConsulting').width();
+				var height = $('.lyCorpConsulting').height();
+				$('.lyCorpConsulting').css({
+					'left': ($(window).width() - width) / 2,
+					'top': ($(window).height() - height) / 2
+				});
+			}
+        });
+
+        // 레이어 닫기
+        $('.btnClo').on('click', function() {
+            $('.lyCorpConsultingWp').hide();
+        });
+
+		// 전담컨설턴트 요청 완료
+		$('.lyCorpConsulting .btnWp button').on('click', function () {
+            var checkLogin = checkCorpLogin();
+            if (checkLogin == true) {
+                var inputName = $('#lb_name_1').val();
+                var phone1 = $('#lb_tel_1').val();
+                var phone2 = $('#lb_tel_2').val();
+                var phone3 = $('#lb_tel_3').val();
+                var phoneNo = phone1 + phone2 + phone3;
+
+                // 입력필드 유효성 검사
+                if (inputName.length > 10) {
+                    alert("이름은 최대 10자까지 입력 가능합니다.");
+                    inputName.focus();
+                    return false;
+                }
+                if (inputName.length < 1) {
+                    alert("이름을 입력해주세요.");
+                    $('#lb_name_1').focus();
+                    return false;
+                }
+                if (phone1 == "선택" || phone2.length > 4 || phone3.length > 4 || phone2.length < 1 || phone3.length < 1) {
+                    alert("연락처를 입력해주세요");
+                    return false;
+                }
+                if ($('#lb_privacy_1').is(":checked") == false) {
+                    alert("개인정보 수집 이용에 동의해주세요.");
+                    return false;
+                }
+                if ($('#lb_privacy_2').is(":checked") == false) {
+                    alert("개인정보 처리위탁에 동의해주세요.");
+                    return false;
+                }
+
+                requestRMSend(inputName, phoneNo, 0);
+            }
+        });
+	});
 
 	function show_content(qno,qidx) {
-		for (var i=0; i <= 5; i++) {
+		for (var i=0; i <= 8; i++) {
 			if ($(eval("viewcontent_" + i))) {
 				if (qno == i) {
 					if ($(eval("viewcontent_" + i)).css('display') == "none") {
 						$(eval("viewcontent_" + qno)).attr("style", "display:;"); // 내용보임
 						$(eval("question_" + qno)).attr("class", "onQ");
-						$(eval("arrow_" + qno)).attr("src", "https://contents.albamon.kr/monimg/customer/faq/icon_arrow_close.gif");
+						$(eval("arrow_" + qno)).attr("src", "http://contents.albamon.kr/monimg/customer/faq/icon_arrow_close.gif");
 						$(eval("arrow_" + qno)).attr("alt", "내용닫기");
-	
+
 						//조회수
 						$("#ifmRead").attr("src", "/customer/mon_faq_list_process.asp?qidx=" + qidx);
 					}
@@ -178,53 +248,105 @@ $(document).ready(function() {
 					{
 						$(eval("viewcontent_" + qno)).attr("style", "display:none;");
 						$(eval("question_" + qno)).attr("class", "offQ");
-						$(eval("arrow_" + qno)).attr("src", "https://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif");
+						$(eval("arrow_" + qno)).attr("src", "http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif");
 						$(eval("arrow_" + qno)).attr("alt", "내용열기");
 					}
 				}
 				else {
 					$(eval("viewcontent_" + i)).attr("style", "display:none;");
 					$(eval("question_" + i)).attr("class", "offQ");
-					$(eval("arrow_" + i)).attr("src", "https://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif");
+					$(eval("arrow_" + i)).attr("src", "http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif");
 					$(eval("arrow_" + i)).attr("alt", "내용열기");
 				}
 			}
 		}
 	}
-})
 
+	// 기업회원 로그인 여부 체크
+	function checkCorpLogin() {
+		var result = false;
+		$.ajax({
+			url: "/account/auth/check-login?v=" + new Date().getTime(),
+			type: "GET",
+			dataType: 'json',
+			data: [],
+			async: false,
+			error: function (info, xhr) { },
+			success: function (req) {
+				if (req) {
+					if (req.IsLogin && req.MemberTypeCode == 'C') {
+						result = true;
+					}
+					else if (req.IsLogin && req.MemberTypeCode == "M") {
+						alert("기업회원만 요청하실 수 있습니다.");
+					}
+					else {
+						alert("오랫동안 사용하지 않아 로그아웃 되었습니다. 다시 로그인 해주세요");
+						location.href = '/login/login_member.asp?mtype=gi&re_url=' + encodeURIComponent(location.href);
+					}
+				}
+			}
+		});
+		return result;
+	}
+
+	// 전담컨설턴트 요청 처리
+	function requestRMSend(name, phone, checkStat) {
+		$.ajax({
+			url: "/recruitmanager/Request-RM-Send",
+			type: "POST",
+			cache: false,
+			async: false,
+			data: {
+				hr_ofc_man_name: name,
+				ctt_us: phone,
+				is_already_check: checkStat
+			},
+			success: function (data) {
+				// 요청이 정상적으로 처리되었을 경우
+				if (data.ResultCode == 1) {
+					alert("전담컨설턴트 요청이 완료되었습니다.\n최대한 빠르게 연락 드리도록 하겠습니다.");
+					document.location.reload();
+				}
+				// 이미 요청한 경우
+				else if (data.ResultCode == 2) {
+					alert("이미 신청하셨습니다\n최대한 빠르게 연락 드리도록 하겠습니다.");
+				}
+				// 요청이력이 없을 경우 레이어 띄우기
+				else if (data.ResultCode == 3) {
+					$('.lyCorpConsultingWp').show();
+					var width = $('.lyCorpConsulting').width();
+					var height = $('.lyCorpConsulting').height();
+					$('.lyCorpConsulting').css({ 'left': ($(window).width() - width) / 2, 'top': ($(window).height() - height) / 2 });
+					$('.agree').css("margin-top", "0");
+				}
+				else {
+					alert('오류가 발생하였습니다. 잠시 후 다시 시도해 주십시오.');
+				}
+			},
+			error: function () {
+				alert('오류가 발생하였습니다. 잠시 후 다시 시도해 주십시오.');
+			}
+		});
+	}
 </script>
+
+
 </head>
 <body>
 	<div class="faq-container">
 		<div class="menuWrap">
+			<div><h5 align="center">자주묻는질문</h5>
+				<a href="javascript:void(0)" class="btn">
+					<img src="${pageContext.request.contextPath}/images/tab_gg.png" alt="개인회원">
+				</a>
+				<a href="javascript:void(0)" class="btn">
+					<img src="${pageContext.request.contextPath}/images/tab_gi.png" alt="기업회원">
+				</a>
+			</div><br>
 			<div>
-				<ul>
-					<li class="dropdown"><a href="javascript:void(0)"
-						class="dropbtn"><img
-							src="${pageContext.request.contextPath}/images/tab_gg.png"
-							alt="개인"></a>
-						<div class="dropdown-content">
-							<a href="#">회원가입</a> <a href="#">회원정보관리</a> <a href="#">이력서관리</a>
-							<a href="#">공고검색</a> <a href="#">기타문의</a>
-						</div></li>
-					<li class="dropdown"><a href="javascript:void(0)"
-						class="dropbtn"><img
-							src="${pageContext.request.contextPath}/images/tab_gi.png"
-							alt="기업회원"></a>
-						<div class="dropdown-content">
-							<a href="#">회원가입</a> <a href="#">기업정보관리</a> <a href="#">공고등록관리</a>
-							<a href="#">이력서열람</a> <a href="#">기타문의</a>
-						</div></li>
-				</ul>
-			</div>
-			<br>
-			<div>
-				<ul class="bnr">
-					<li><img
-						src="${pageContext.request.contextPath}/images/call1.png"
-						alt="고객센터 1588-9351 / 평일 09:00 ~ 19:00, 토요일 09:00~15:00" /></li>
-				</ul>
+				<img src="${pageContext.request.contextPath}/images/call1.png"
+					 alt="고객센터 1588-9351 / 평일 09:00 ~ 19:00, 토요일 09:00~15:00" />
 			</div>
 		</div>
 		<div class="listWrap">
@@ -239,30 +361,26 @@ $(document).ready(function() {
 						<tbody>
 
 							<tr class="offQ" id="question_0">
-								<td class="mark">Q.</td>
-								<td class="question"><a href="#"
-									onclick="show_content(0,1);">회원가입은 무료인가요?</a></td>
-								<td class="arrow"><a href="#" onclick="show_content(0,1);"><img
-										id="arrow_0"
-										src="https://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif"
-										alt="내용열기"></a></td>
+								<td class="mark1">Q.</td>
+								<td class="question"><a href="#" onclick="show_content(0,1);">회원가입은 무료인가요?</a></td>
+								<td class="arrow"><a href="#" onclick="show_content(0,1);">
+									<img id="arrow_0"
+										 src="https://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif"
+										 alt="내용열기"></a></td>
 							</tr>
 							<tr class="onA" id="viewcontent_0" style="display: none;">
 								<td colspan="3" class="answer">
 									<div class="txBx">
-										알바몬 회원가입은 무료입니다.<br> <br> 회원가입 방법으로는 `알바몬 아이디 만들기`와
-										`소셜 로그인` 중 선택하실 수 있습니다.<br> <br> <b>알바몬 아이디 만들기</b><br>
-										아이디, 비밀번호, 이메일 주소 등 간단한 개인정보를 입력하고 휴대폰 번호인증을 완료하면 바로 회원가입이 되어
-										알바몬의 개인회원 서비스를 이용하실 수 있습니다.<br> <br> <b>소셜 로그인으로
-											가입</b><br> 네이버/카카오/페이스북/구글로 로그인 → 서비스 권한 요청 동의 → 알바몬 시작 및 약관
-										동의 → 회원가입 완료<br> <br> * 가입 시 작성한 정보를 수정은 로그인 후 개인서비스
-										&gt; 회원정보 관리 메뉴에서 하실 수 있습니다.
+										회원가입은 무료입니다.<br><br>
+										회원가입 방법으로는 `회원가입` 버튼을 클릭하여 가입하실 수 있습니다.<br><br>
+										아이디, 비밀번호, 이메일 주소 등 간단한 개인정보를 입력하고 휴대폰 번호인증을 완료하면 바로 회원가입이 되어 Job Zone의 개인회원 서비스를 이용하실 수 있습니다.<br><br>
+										* 가입 시 작성한 정보의 수정은 로그인 후 마이페이지 메뉴에서 가능합니다.
 									</div>
 								</td>
 							</tr>
 
 							<tr class="offQ" id="question_1">
-								<td class="mark">Q.</td>
+								<td class="mark1">Q.</td>
 								<td class="question"><a href="#"
 									onclick="show_content(1,3);">잡코리아 아이디가 있는데 알바몬에서 사용할 수 있나요?</a></td>
 								<td class="arrow"><a href="#" onclick="show_content(1,3);"><img
@@ -284,7 +402,7 @@ $(document).ready(function() {
 							</tr>
 
 							<tr class="offQ" id="question_2">
-								<td class="mark">Q.</td>
+								<td class="mark1">Q.</td>
 								<td class="question"><a href="#"
 									onclick="show_content(2,28);">회원탈퇴는 어디에서 하나요?</a></td>
 								<td class="arrow"><a href="#" onclick="show_content(2,28);"><img
@@ -304,7 +422,7 @@ $(document).ready(function() {
 							</tr>
 
 							<tr class="offQ" id="question_3">
-								<td class="mark">Q.</td>
+								<td class="mark1">Q.</td>
 								<td class="question"><a href="#"
 									onclick="show_content(3,29);">개인회원으로는 채용공고를 등록할 수 없나요?</a></td>
 								<td class="arrow"><a href="#" onclick="show_content(3,29);"><img
@@ -322,7 +440,7 @@ $(document).ready(function() {
 							</tr>
 
 							<tr class="offQ" id="question_4">
-								<td class="mark">Q.</td>
+								<td class="mark1">Q.</td>
 								<td class="question"><a href="#"
 									onclick="show_content(4,96);">알바몬에서 회원탈퇴 하면 잡코리아도 사용할 수 없게
 										되나요?</a></td>
@@ -343,7 +461,7 @@ $(document).ready(function() {
 							</tr>
 
 							<tr class="offQ" id="question_5">
-								<td class="mark">Q.</td>
+								<td class="mark1">Q.</td>
 								<td class="question"><a href="#"
 									onclick="show_content(5,97);">미성년자는 회원가입이 안 되나요?</a></td>
 								<td class="arrow"><a href="#" onclick="show_content(5,97);"><img
@@ -361,7 +479,7 @@ $(document).ready(function() {
 							</tr>
 
 							<tr class="offQ" id="question_6">
-								<td class="mark">Q.</td>
+								<td class="mark1">Q.</td>
 								<td class="question"><a href="#"
 									onclick="show_content(6,274);">네이버 로그인, 카카오 로그인 등 소셜 로그인으로
 										알바몬에 가입하는 방법이 궁금합니다.</a></td>
@@ -385,7 +503,7 @@ $(document).ready(function() {
 							</tr>
 
 							<tr class="offQ" id="question_7">
-								<td class="mark">Q.</td>
+								<td class="mark1">Q.</td>
 								<td class="question"><a href="#"
 									onclick="show_content(7,276);">소셜 로그인으로 알바몬을 이용중 입니다. 만약
 										연동한 소셜서비스를 탈퇴하면 어떻게 되나요?</a></td>
@@ -405,7 +523,7 @@ $(document).ready(function() {
 							</tr>
 
 							<tr class="offQ" id="question_8">
-								<td class="mark">Q.</td>
+								<td class="mark1">Q.</td>
 								<td class="question"><a href="#"
 									onclick="show_content(8,277);">소셜 로그인으로 알바몬을 이용하고 있는데 알바몬을
 										탈퇴하면 어떻게 되나요?</a></td>
@@ -426,11 +544,6 @@ $(document).ready(function() {
 
 						</tbody>
 					</table>
-				</div>
-				<div class="pagenation">
-					<ul>
-						<li><em>1</em></li>
-					</ul>
 				</div>
 			</div>
 		</div>
