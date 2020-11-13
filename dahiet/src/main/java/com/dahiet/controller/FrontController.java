@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dahiet.command.CheckApply;
 import com.dahiet.command.CompanyMypageAction;
 import com.dahiet.command.EventAction;
 import com.dahiet.command.InsertPreResume;
@@ -28,7 +29,7 @@ import com.dahiet.command.ResumeInsert;
 import com.dahiet.command.ResumeList;
 import com.dahiet.command.ReviewAction;
 import com.dahiet.command.ReviewCheck;
-import com.dahiet.command.ReviewDelete;
+//import com.dahiet.command.ReviewDelete;
 import com.dahiet.command.ReviewDetail;
 import com.dahiet.command.ReviewDetailUp;
 import com.dahiet.command.ReviewInsert;
@@ -82,8 +83,8 @@ public class FrontController extends HttpServlet {
       map.put("/RecruitUp.do",new RecruitUp()); //로그인 폼 호출
       map.put("/RecruitDelete.do",new RecruitDelete()); //공고 리스트 삭제 기능
       map.put("/resumeApply.do",new ResumeApply()); //공고리스트에서 이력서 넣기
-      map.put("/usersApply.do",new UsersApply()); //로그인 폼 호출
-//      map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/usersApply.do",new UsersApply()); //
+      map.put("/checkApply.do",new CheckApply()); //회사공고에 지원한 내역
       //다희
       map.put("/ResumeList.do",new ResumeList()); //이력서 현황 호출
       map.put("/resumePreInsert.do",new InsertPreResume()); //이력서 등록-기본정보 호출

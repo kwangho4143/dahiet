@@ -16,12 +16,17 @@ table {
 </head>
 <body>
 	<div align="center">
-
-		<div>
-			<h1>내 이력서 현황</h1>
+<section id="breadcrumbs" class="breadcrumbs"
+			style="padding: 0%; margin-top: 0px;">
+					<nav class="nav-menu d-none d-lg-block">
+		<div style="padding-left: 130px;" ><ul>
+							<li><h1 align="left">내 이력서 현황</h1></li>
+							</ul>
+							
 		</div>
 		<br />
-
+</nav>
+</section>
 		<div>
 			<form id="resumeFrm" name="resumeFrm" action="" method="post"
 				enctype="multipart/form-data">

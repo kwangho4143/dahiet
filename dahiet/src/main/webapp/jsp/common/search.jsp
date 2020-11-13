@@ -267,7 +267,7 @@ span.abc {
 		<section id="breadcrumbs" class="breadcrumbs"
 			style="padding: 0%; margin-top: 0px;">
 					<nav class="nav-menu d-none d-lg-block">
-						<ul style="padding-left: 80px;">
+						<ul style="padding-left: 120px;">
 							<li><h2>상세 검색</h2></li>
 							<li class="drop-down"><a href="#">지역 선택</a>
 								<ul>
