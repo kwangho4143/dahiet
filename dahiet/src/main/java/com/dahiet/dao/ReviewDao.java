@@ -16,7 +16,7 @@ public class ReviewDao extends DAO{
 	private ResultSet rs;
 	private ReviewVO vo;
 	
-	private final String RE_LI_SELECT = "SELECT NO, TITLE, ID, REDATE FROM REVIEW";
+	private final String RE_LI_SELECT = "SELECT NO, TITLE, ID, REDATE, COMPANY FROM REVIEW";
 	private final String RE_LI_INSERT = "INSERT INTO REVIEW (NO, ID, TITLE, CONTENT, COMPANY, NEWBI, PASSWORD)"
 			+ " VALUES(REVIEW_VALUE_SEQ.NEXTVAL,?,?,?,?,?,?)";
 	private final String RE_DE_SELECT = "SELECT TITLE, NO, ID, COMPANY, NEWBI, REDATE, PASSWORD ,CONTENT FROM REVIEW WHERE NO=?";
@@ -35,6 +35,7 @@ public class ReviewDao extends DAO{
 				vo.setTitle(rs.getString("title"));
 				vo.setId(rs.getString("id"));
 				vo.setRedate(rs.getDate("redate"));
+				vo.setCompany(rs.getString("company"));
 				list.add(vo);
 
 			}

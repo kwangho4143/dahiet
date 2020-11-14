@@ -122,10 +122,8 @@
 				}
         	}
 		}
-	</script>
 
 
-<script>
 	$(document).ready(function()
 	{
 		var _qno = "";
@@ -165,20 +163,11 @@
 				}
 			}
 		}
-	}
+	};
 
 	
 	
-	function showList(value) {
-		if (value == '1') {
-			tblList1.style.display = '';
-			tblList2.style.display = 'none';
-		} else {
-			tblList2.style.display = '';
-			tblList1.style.display = 'none';
-
-		}
-	};​
+​
 
 </script>
 
@@ -200,24 +189,34 @@
 		<div class="menuWrap">
 			<div align="center">
 				<h5>자주묻는질문</h5><br>
-				<input type="radio" id="btnList1" onchange="showList(this.value);" value="1" checked>
-<!-- 				<a href="#" class="btn" id="btnList1" onchange="showList(this.value);" value="1"> -->
+	<a href="javascript:void(0);" onclick="showList('1');" class="btn" id="btnList1" > 
 					<img src="${pageContext.request.contextPath}/images/tab_gg.png" alt="개인회원"></a><br>
-				<input type="radio" id="btnList2" onchange="showList(this.value);" value="2">
-<!-- 				<a href="#" class="btn" id="btnList2" onchange="showList(this.value);" value="2">
- -->					<img src="${pageContext.request.contextPath}/images/tab_gi.png" alt="기업회원"></a>
+				<a href="javascript:void(0);" onclick="showList('2');" class="btn" id="btnList2" >
+					<img src="${pageContext.request.contextPath}/images/tab_gi.png" alt="기업회원"></a>
 			</div><br><br><br>
 			<div align="right">
 				<img src="${pageContext.request.contextPath}/images/customer_center.png"
 					 alt="고객센터 1588-9351 / 평일 09:00 ~ 19:00, 토요일 09:00~15:00" width="140"/>
 			</div>
+			<script>
+			function showList(value) {
+				if (value == '1') {
+					tblList1.style.display = '';
+					tblList2.style.display = 'none';
+				} else {
+					tblList2.style.display = '';
+					tblList1.style.display = 'none';
+
+				}
+			};
+			</script>
 		</div>
 		<div class="listWrap">
 			<div class="inner">
 
 			<!-- 리스트-개인 -->
-				<div class="list" id="tblList1" style="display: visibility; z-index: 2;">
-					<table summary="FAQ 리스트" class="tbFaq">
+				<div class="list">
+					<table summary="FAQ 리스트" class="tbFaq" id="tblList1" style="display: ">
 						<colgroup>
 							<col width="25">
 							<col width="*">
@@ -396,106 +395,138 @@
 
 						</tbody>
 					</table>
-				</div>
 			<!-- 리스트-개인 -->
 
 			<!--// 리스트-기업 -->
-				<div class="list" id="tblList2" style="display: none; z-index: 1;">
-					<table summary="FAQ 리스트" class="tbFaq">
+					<table summary="FAQ 리스트" class="tbFaq" id="tblList2" style="display: none">
 						<colgroup>
 							<col width="25">
 							<col width="*">
 							<col width="40">
 						</colgroup>
 						<tbody>
-	
+
 							<tr class="offQ" id="question_0">
 								<td class="mark1">Q.</td>
-								<td class="question"><a href="#" onclick="show_content(0,31);">기업회원 가입은 무료입니까?</a></td>
-								<td class="arrow"><a href="#" onclick="show_content(0,31);"><img id="arrow_0" src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif" alt="내용열기"></a></td>
+								<td class="question"><a href="#"
+									onclick="show_content(0,31);">기업회원 가입은 무료입니까?</a></td>
+								<td class="arrow"><a href="#" onclick="show_content(0,31);"><img
+										id="arrow_0"
+										src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif"
+										alt="내용열기"></a></td>
 							</tr>
-							<tr class="onA" id="viewcontent_0" style="display:none;">
-									<td colspan="3" class="answer">
-										<div class="txBx">Job Zone에 기업회원으로 가입 하시는 데는 일체 비용이 들지 않습니다.<br>
-											즉, 회원가입은 무료입니다.<br><br>
-											회원가입 시 아이디, 비밀번호, 회사명, 사업자 등록번호 등 기업 정보를 입력하시면 바로 회원가입이 되어 Job Zone의 기업회원 서비스를 이용하실 수 있습니다.<br><br>
-											가입 시 작성하셨던 정보를 수정하시려면 상단 메뉴 중 [마이페이지]로 들어가신 후 기업정보, 가입자정보 등을 수정하실 수 있습니다.<br><br>
-											공고 등록 역시 무료로 하실 수 있습니다.
-											</div>
-									</td>
-								</tr>
-	
-								<tr class="offQ" id="question_1">
-									<td class="mark1">Q.</td>
-									<td class="question"><a href="#" onclick="show_content(1,32);">회원탈퇴는 어디에서 하나요?</a></td>
-								<td class="arrow"><a href="#" onclick="show_content(1,32);"><img id="arrow_1" src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif" alt="내용열기"></a></td>
-							</tr>
-							<tr class="onA" id="viewcontent_1" style="display:none;">
+							<tr class="onA" id="viewcontent_0" style="display: none;">
 								<td colspan="3" class="answer">
-									<div class="txBx">별도로 안내되어 있는 고객센터 전화번호로 전화를 주시면 탈퇴신청이 접수됩니다.<br><br>
-										즉시 탈퇴처리가 되는 것은 아니며, 운영자 확인을 거쳐 탈퇴가 이루어집니다.<br>
-										운영자 확인까지 1시간 가량 시간이 걸릴 수 있으니 양해해 주시기 바랍니다.<br>
-										(고객센터 업무 외 시간에 신청을 하시면 다음날에 처리될 수 있습니다.)<br><br>
-										탈퇴처리가 되면 회원님의 메일로 탈퇴 되었다는 메일이 발송됩니다.<br>
-										탈퇴 후에는 동일 아이디로 다시 가입할 수 없으며, 아이디와 데이터는 복구할 수 없으니 신중하게 선택해 주세요.
+									<div class="txBx">
+										Job Zone에 기업회원으로 가입 하시는 데는 일체 비용이 들지 않습니다.<br> 즉, 회원가입은
+										무료입니다.<br>
+										<br> 회원가입 시 아이디, 비밀번호, 회사명, 사업자 등록번호 등 기업 정보를 입력하시면 바로
+										회원가입이 되어 Job Zone의 기업회원 서비스를 이용하실 수 있습니다.<br>
+										<br> 가입 시 작성하셨던 정보를 수정하시려면 상단 메뉴 중 [마이페이지]로 들어가신 후 기업정보,
+										가입자정보 등을 수정하실 수 있습니다.<br>
+										<br> 공고 등록 역시 무료로 하실 수 있습니다.
 									</div>
 								</td>
 							</tr>
-	
+
+							<tr class="offQ" id="question_1">
+								<td class="mark1">Q.</td>
+								<td class="question"><a href="#"
+									onclick="show_content(1,32);">회원탈퇴는 어디에서 하나요?</a></td>
+								<td class="arrow"><a href="#" onclick="show_content(1,32);"><img
+										id="arrow_1"
+										src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif"
+										alt="내용열기"></a></td>
+							</tr>
+							<tr class="onA" id="viewcontent_1" style="display: none;">
+								<td colspan="3" class="answer">
+									<div class="txBx">
+										별도로 안내되어 있는 고객센터 전화번호로 전화를 주시면 탈퇴신청이 접수됩니다.<br>
+										<br> 즉시 탈퇴처리가 되는 것은 아니며, 운영자 확인을 거쳐 탈퇴가 이루어집니다.<br>
+										운영자 확인까지 1시간 가량 시간이 걸릴 수 있으니 양해해 주시기 바랍니다.<br> (고객센터 업무 외
+										시간에 신청을 하시면 다음날에 처리될 수 있습니다.)<br>
+										<br> 탈퇴처리가 되면 회원님의 메일로 탈퇴 되었다는 메일이 발송됩니다.<br> 탈퇴 후에는
+										동일 아이디로 다시 가입할 수 없으며, 아이디와 데이터는 복구할 수 없으니 신중하게 선택해 주세요.
+									</div>
+								</td>
+							</tr>
+
 							<tr class="offQ" id="question_2">
 								<td class="mark1">Q.</td>
-								<td class="question"><a href="#" onclick="show_content(2,37);">사업자등록증이 없어도 회원가입이 가능한가요?</a></td>
-								<td class="arrow"><a href="#" onclick="show_content(2,37);"><img id="arrow_2" src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif" alt="내용열기"></a></td>
+								<td class="question"><a href="#"
+									onclick="show_content(2,37);">사업자등록증이 없어도 회원가입이 가능한가요?</a></td>
+								<td class="arrow"><a href="#" onclick="show_content(2,37);"><img
+										id="arrow_2"
+										src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif"
+										alt="내용열기"></a></td>
 							</tr>
-							<tr class="onA" id="viewcontent_2" style="display:none;">
-									<td colspan="3" class="answer">
-										<div class="txBx">발급받은 사업자등록증의 번호를 입력해야만 회원가입이 가능합니다.<br>
-											필수 입력 정보로서, 이는 사업자등록번호 도용 등에 의해 발생할 수 있는 피해를 미연에 방지하기 위함이니 양해 바랍니다.<br><br>
-											더 자세한 내용은 Job Zone 고객센터로 전화 문의하시기 바랍니다.
-										</div>
-									</td>
-								</tr>
-	
-								<tr class="offQ" id="question_3">
-									<td class="mark1">Q.</td>
-									<td class="question"><a href="#" onclick="show_content(3,94);">공고등록은 유료인가요? </a></td>
-								<td class="arrow"><a href="#" onclick="show_content(3,94);"><img id="arrow_3" src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif" alt="내용열기"></a></td>
+							<tr class="onA" id="viewcontent_2" style="display: none;">
+								<td colspan="3" class="answer">
+									<div class="txBx">
+										발급받은 사업자등록증의 번호를 입력해야만 회원가입이 가능합니다.<br> 필수 입력 정보로서, 이는
+										사업자등록번호 도용 등에 의해 발생할 수 있는 피해를 미연에 방지하기 위함이니 양해 바랍니다.<br>
+										<br> 더 자세한 내용은 Job Zone 고객센터로 전화 문의하시기 바랍니다.
+									</div>
+								</td>
 							</tr>
-							<tr class="onA" id="viewcontent_3" style="display:none;">
-									<td colspan="3" class="answer">
-										<div class="txBx">Job Zone의 공고 등록 서비스는 모두 무료입니다.<br><br>
-										단, 귀사의 공고에 차별화된 노출 지면/위치 및 특별한 노출 효과를 주시려면 Job Zone 고객센터로 전화 문의하시기 바랍니다.
-										</div>
-									</td>
-								</tr>
-	
-								<tr class="offQ" id="question_4">
-									<td class="mark1">Q.</td>
-									<td class="question"><a href="#" onclick="show_content(4,133);">공고를 등록하면 채용정보 리스트에 바로 게재되나요?</a></td>
-								<td class="arrow"><a href="#" onclick="show_content(4,133);"><img id="arrow_4" src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif" alt="내용열기"></a></td>
+
+							<tr class="offQ" id="question_3">
+								<td class="mark1">Q.</td>
+								<td class="question"><a href="#"
+									onclick="show_content(3,94);">공고등록은 유료인가요? </a></td>
+								<td class="arrow"><a href="#" onclick="show_content(3,94);"><img
+										id="arrow_3"
+										src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif"
+										alt="내용열기"></a></td>
 							</tr>
-							<tr class="onA" id="viewcontent_4" style="display:none;">
-									<td colspan="3" class="answer">
-										<div class="txBx">등록한 공고는 즉시 게재됩니다.<br>
-										</div>
-									</td>
-								</tr>
-	
-								<tr class="offQ" id="question_5">
-									<td class="mark1">Q.</td>
-									<td class="question"><a href="#" onclick="show_content(5,260);">회원가입 없이 구인등록을 할 수 있나요?</a></td>
-								<td class="arrow"><a href="#" onclick="show_content(5,260);"><img id="arrow_5" src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif" alt="내용열기"></a></td>
+							<tr class="onA" id="viewcontent_3" style="display: none;">
+								<td colspan="3" class="answer">
+									<div class="txBx">
+										Job Zone의 공고 등록 서비스는 모두 무료입니다.<br>
+										<br> 단, 귀사의 공고에 차별화된 노출 지면/위치 및 특별한 노출 효과를 주시려면 Job Zone
+										고객센터로 전화 문의하시기 바랍니다.
+									</div>
+								</td>
 							</tr>
-							<tr class="onA" id="viewcontent_5" style="display:none;">
-									<td colspan="3" class="answer">
-										<div class="txBx">Job Zone은 비회원 구인등록이 불가능합니다.<br>
-											공고 등록을 하기 위해서는 기업회원으로 가입 하셔야 합니다.</div>
-									</td>
-								</tr>
-	
-							</tbody>
-						</table>
-					</div>
+
+							<tr class="offQ" id="question_4">
+								<td class="mark1">Q.</td>
+								<td class="question"><a href="#"
+									onclick="show_content(4,133);">공고를 등록하면 채용정보 리스트에 바로 게재되나요?</a></td>
+								<td class="arrow"><a href="#"
+									onclick="show_content(4,133);"><img id="arrow_4"
+										src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif"
+										alt="내용열기"></a></td>
+							</tr>
+							<tr class="onA" id="viewcontent_4" style="display: none;">
+								<td colspan="3" class="answer">
+									<div class="txBx">
+										등록한 공고는 즉시 게재됩니다.<br>
+									</div>
+								</td>
+							</tr>
+
+							<tr class="offQ" id="question_5">
+								<td class="mark1">Q.</td>
+								<td class="question"><a href="#"
+									onclick="show_content(5,260);">회원가입 없이 구인등록을 할 수 있나요?</a></td>
+								<td class="arrow"><a href="#"
+									onclick="show_content(5,260);"><img id="arrow_5"
+										src="http://contents.albamon.kr/monimg/customer/faq/icon_arrow_open.gif"
+										alt="내용열기"></a></td>
+							</tr>
+							<tr class="onA" id="viewcontent_5" style="display: none;">
+								<td colspan="3" class="answer">
+									<div class="txBx">
+										Job Zone은 비회원 구인등록이 불가능합니다.<br> 공고 등록을 하기 위해서는 기업회원으로 가입
+										하셔야 합니다.
+									</div>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
 				<!-- 리스트-기업 //-->
 			</div>
 		</div>

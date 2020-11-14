@@ -22,7 +22,8 @@
 					<table style="width: 80%;">
 						<tr align="center">
 							<th style="width: 5%; height: 1px">번호</th>
-							<th align="left" colspan="3" style="width: 70%;">제목</th>
+							<th align="left" colspan="3" style="width: 60%;">제목</th>
+							<th style="width: 10%;">회사</th>
 							<th style="width: 10%;">작성 일자</th>
 						</tr>
 						<c:forEach var="relist" items="${relists}">
@@ -30,6 +31,7 @@
 								<td>${relist.no }</td>
 								<td colspan="3"><a href="${pageContext.request.contextPath}
 								/ReviewDetail.do?no=${relist.no}">${relist.title }</a></td>
+								<td>${relist.company }</td>
 								<td>${relist.redate }</td>
 							</tr>
 						</c:forEach>
