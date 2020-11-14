@@ -305,8 +305,8 @@ span.abc {
 							<li class="drop-down"><a href="#">상세 선택</a>
 								<ul>
 									<li>
-										<div>
-											<label>연봉</label> <select name="salary" id="salary">
+										<div style=" margin: 0.5cm">
+											<h5 >연봉</h5> <select name="salary" id="salary">
 												<option value="0">전체</option>
 												<option value="2000">2,000만원 이상</option>
 												<option value="3000">3,000만원 이상</option>
@@ -317,13 +317,11 @@ span.abc {
 												<option value="8000">8,000만원 이상</option>
 												<option value="9000">9,000만원 이상</option>
 												<option value="10000">10,000만원 이상</option>
-											</select> <img
-												src="${pageContext.request.contextPath}/images/search.png"
-												height="20" width="20" alt="submit">
+											</select>
 										</div>
 										<hr>
-										<div>
-											<label>기업 형태</label> <label><input type="checkbox"
+										<div style=" margin: 0.5cm">
+											<h5>기업 형태</h5> <label><input type="checkbox"
 												name="type" value="c1"> 대기업</label> <label><input
 												type="checkbox" name="type" value="c2"> 중견기업</label> <label><input
 												type="checkbox" name="type" value="c3"> 중소기업</label> <label><input
@@ -331,9 +329,9 @@ span.abc {
 												type="checkbox" name="type" value="c5"> 강소기업</label> <label><input
 												type="checkbox" name="type" value="c6"> 공기업</label>
 										</div>
-										<div>
+										<div style=" margin: 0.5cm">
 											<hr>
-											<label>근무 형태</label> <label><input type="checkbox"
+											<h5>근무 형태</h5> <label><input type="checkbox"
 												name="emp_type" value="a1"> 정규직</label> <label><input
 												type="checkbox" name="emp_type" value="a2"> 계약직</label> <label>
 												<input type="checkbox" name="emp_type" value="a3">
