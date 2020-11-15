@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 <style>
 .faq-container {
 	position: relative;
@@ -52,7 +54,7 @@
 }
 
 .faq-container .listWrap .inner .list {
-	font-size: 14px;
+	font-size: 13px;
 	font-family: gulim, "\AD74\B9BC", dotum, "\B3CB\C6C0", arial, sans-serif;
 	color: #434a54;
 	padding: 0;
@@ -122,8 +124,6 @@
 				}
         	}
 		}
-
-
 	$(document).ready(function()
 	{
 		var _qno = "";
@@ -139,7 +139,7 @@
 			if ($(eval("viewcontent_" + i))) {
 				if (qno == i) {
 					if ($(eval("viewcontent_" + i)).css('display') == "none") {
-						$(eval("viewcontent_" + qno)).show(800); // 내용보임
+						$(eval("viewcontent_" + qno)).show('slow'); // 내용보임
 						$(eval("question_" + qno)).attr("class", "onQ");
 						$(eval("arrow_" + qno)).attr("src", "http://contents.albamon.kr/monimg/customer/faq/icon_arrow_close.gif");
 						$(eval("arrow_" + qno)).attr("alt", "내용닫기");
@@ -164,11 +164,6 @@
 			}
 		}
 	};
-
-	
-	
-​
-
 </script>
 
 
@@ -189,7 +184,7 @@
 		<div class="menuWrap">
 			<div align="center">
 				<h5>자주묻는질문</h5><br>
-	<a href="javascript:void(0);" onclick="showList('1');" class="btn" id="btnList1" > 
+				<a href="javascript:void(0);" onclick="showList('1');" class="btn" id="btnList1" > 
 					<img src="${pageContext.request.contextPath}/images/tab_gg.png" alt="개인회원"></a><br>
 				<a href="javascript:void(0);" onclick="showList('2');" class="btn" id="btnList2" >
 					<img src="${pageContext.request.contextPath}/images/tab_gi.png" alt="기업회원"></a>

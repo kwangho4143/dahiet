@@ -44,7 +44,7 @@
 		
 					<div>
 						<table>
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="5"><h3 align="center">기 본 정 보</h3></td>
 							</tr>
 							<tr height="50">
@@ -73,7 +73,7 @@
 								<th width="150">최종학력</th>
 								<td colspan="4">${vo.univ}</td>
 							</tr>
-							<tr>
+							<tr style="border-bottom: 5px solid lightgrey;">
 								<th width="120">전공</th>
 								<td colspan="2">${vo.major}</td>
 								<th width="120">졸업학점</th>

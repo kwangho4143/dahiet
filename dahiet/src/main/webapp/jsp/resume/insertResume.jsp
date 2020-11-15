@@ -284,7 +284,7 @@ $(document).ready(function() {
 		
 					<div>
 						<table>
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="5"><h3 align="center">기 본 정 보</h3></td>
 							</tr>
 							<tr height="50">
@@ -313,7 +313,7 @@ $(document).ready(function() {
 								<th width="150">최종학력</th>
 								<td colspan="4">${vo.univ}</td>
 							</tr>
-							<tr>
+							<tr style="border-bottom: 5px solid lightgrey;">
 								<th width="120">전공</th>
 								<td colspan="2">${vo.major}</td>
 								<th width="120">졸업학점</th>
@@ -326,7 +326,7 @@ $(document).ready(function() {
 					<div>
 						<table id="tblCareer" style="display: none;">
 							<thead>
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="6"><h3 align="center">경 력 사 항&nbsp;
 								<button id="rowAddCareer" class="btn btn-danger btn-sm">추가</button>
 								<button id="rowDelCareer" class="btn btn-outline-danger btn-sm">삭제</button>
@@ -353,7 +353,7 @@ $(document).ready(function() {
 								<th width="120">퇴사일</th>
 								<td><input type="date" id="ca_retiredate" name="ca_retiredate"></td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 5px solid lightgrey;">
 								<th width="150">담당업무</th>
 								<td colspan="4"><input type="text" id="ca_worked" name="ca_worked" size="80"></td>
 							</tr>
@@ -364,7 +364,7 @@ $(document).ready(function() {
 					<div>
 						<table id="tblLicense"  style="display: none;">
 							<thead>
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="6"><h3 align="center">자 격 사 항&nbsp;
 								<button id="rowAddLicense" class="btn btn-danger btn-sm">추가</button>
 								<button id="rowDelLicense" class="btn btn-outline-danger btn-sm">삭제</button>
@@ -381,7 +381,7 @@ $(document).ready(function() {
 								<th width="150">자격증번호</th>
 								<td colspan="4"><input type="text" id="lic_no" name="lic_no"></td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 5px solid lightgrey;">
 								<th width="120">발행저</th>
 								<td colspan="2"><input type="text" id="lic_place" name="lic_place"></td>
 								<th width="120">취득연월일</th>
@@ -394,7 +394,7 @@ $(document).ready(function() {
 					<div>
 						<table id="tblActivity" style="display: none;">
 							<thead>
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="6"><h3 align="center">대 외 활 동&nbsp;
 								<button id="rowAddActivity" class="btn btn-danger btn-sm">추가</button>
 								<button id="rowDelActivity" class="btn btn-outline-danger btn-sm">삭제</button>
@@ -415,7 +415,7 @@ $(document).ready(function() {
 								<th width="150">활동주관처</th>
 								<td colspan="4"><input type="text" id="act_publish" name="act_publish"></td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 5px solid lightgrey;">
 								<th width="120">활동기간</th>
 								<th width="120">시작일</th>
 								<td><input type="date" id="act_startdate" name="act_startdate"></td>
@@ -429,7 +429,7 @@ $(document).ready(function() {
 					<div>
 						<table id="tblAward" style="display: none;">
 							<thead>
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="6"><h3 align="center">수 상 내 역&nbsp;
 								<button id="rowAddAward" class="btn btn-danger btn-sm">추가</button>
 								<button id="rowDelAward" class="btn btn-outline-danger btn-sm">삭제</button>
@@ -448,7 +448,7 @@ $(document).ready(function() {
 								<th width="120">수상일</th>
 								<td><input type="date" id="awd_date" name="awd_date"></td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 5px solid lightgrey;">
 								<th width="150">수상내용</th>
 								<td colspan="4"><input type="text" id="awd_content" name="awd_content"></td>
 							</tr>
@@ -459,7 +459,7 @@ $(document).ready(function() {
 					<div>
 						<table id="tblLanguage" style="display: none;">
 							<thead>
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="6"><h3 align="center">어 학 능 력&nbsp;
 								<button id="rowAddLanguage" class="btn btn-danger btn-sm">추가</button>
 								<button id="rowDelLanguage" class="btn btn-outline-danger btn-sm">삭제</button>
@@ -476,7 +476,7 @@ $(document).ready(function() {
 								<th width="150">인증기관</th>
 								<td colspan="4"><input type="text" id="lag_place" name="lag_place"></td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 5px solid lightgrey;">
 								<th width="120">성적</th>
 								<td colspan="2"><input type="text" id="lag_score" name="lag_score"></td>
 								<th width="120">인증날짜</th>
