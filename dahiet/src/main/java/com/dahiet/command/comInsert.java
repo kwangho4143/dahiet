@@ -57,9 +57,9 @@ public class comInsert implements Action {
 		}
 
 		int n = dao.insert(vo);
-		String page;
 		vo.setNo(request.getParameter("no"));
 		vo = dao.selectLogIn(vo);
+		String page;
 
 		if (n != 0) {
 			page = "jsp/company/insertCompanySucess.jsp";
