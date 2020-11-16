@@ -22,7 +22,6 @@
 			$.ajax({
 				url:'${pageContext.request.contextPath}/ajax/userIdCheck.do',
 				data : $("#frm1").serialize(),
-				datatype: 'json',
 				error:function(xhr,status,msg){
 					//console.log("상태값 :" + status + " Http에러메시지 :"+msg);
 					console.log("아작스 에러");

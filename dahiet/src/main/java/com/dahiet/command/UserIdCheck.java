@@ -23,8 +23,9 @@ public class UserIdCheck implements Action {
 		String ms="사용가능합니다.";
 		
 		for(int i=0;i<list.size();i++) {
-			if(request.getParameter("id") == list.get(i).getId()) {
+			if(request.getParameter("id").equals(list.get(i).getId())) {
 				ms="아이디를 다른 것으로 설정해주세요.";
+				break;
 			}		
 		}
 		

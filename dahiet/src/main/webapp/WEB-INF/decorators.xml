@@ -17,6 +17,7 @@
 
 	<excludes>
 		<pattern>*/exclude/*</pattern>
+		<pattern>*/ajax/*</pattern>
 		<pattern>/data/plaintext/*</pattern>
 		<pattern>index.jsp</pattern>
 	</excludes>
