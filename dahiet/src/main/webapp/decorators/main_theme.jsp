@@ -120,7 +120,7 @@ padding-left: 3cm;
 					</c:if>
 					<li><a
 						href="${pageContext.request.contextPath}/ReviewAction.do">취업토크</a></li>
-					<li><a href="#">고객센터</a></li>
+					<li><a href="${pageContext.request.contextPath}/Event.do">고객센터</a></li>
 				</ul>
 			</nav>
 					
@@ -142,7 +142,6 @@ padding-left: 3cm;
 					</c:if>
 					</div>
 
-			<!-- .nav-menu -->
 		</div>
 	</header>
 	<!-- End Header -->
@@ -158,8 +157,8 @@ padding-left: 3cm;
 		</div>
 
 		<div class="columnright">
-			<a href="${pageContext.request.contextPath}/Event.do">
-			<img style="position: fixed; padding-right: 30px" src="${pageContext.request.contextPath}/images/QNA.jpg">
+
+			<a href="${pageContext.request.contextPath}/Event.do"><img style="position: fixed; padding-right: 30px" src="${pageContext.request.contextPath}/images/QNA.jpg">
 			</a>
 		</div>
 	</div>

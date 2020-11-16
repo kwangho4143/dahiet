@@ -39,7 +39,7 @@
 
 					<div>
 						<table>
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="5"><h3 align="center">기 본 정 보</h3></td>
 							</tr>
 							<tr height="50">
@@ -68,7 +68,7 @@
 								<td colspan="4">${vo.univ}</td>
 
 							</tr>
-							<tr>
+							<tr style="border-bottom: 5px solid lightgrey;">
 								<th width="120">전공</th>
 								<td colspan="2">${vo.major}</td>
 								<th width="120">졸업학점</th>
@@ -80,7 +80,7 @@
 					<div>
 						<table id="tblCareer">
 							<c:if test="${list1 != null  && list1.size()>0 }"> 
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="5"><h3 align="center">경 력 사 항&nbsp;</h3>
 								</td>
 							</tr>
@@ -103,7 +103,7 @@
 								<th width="120">퇴사일</th>
 								<td>${v1.ca_retiredate}</td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 4px solid lightgrey">
 								<th width="150">담당업무</th>
 								<td colspan="4">${v1.ca_worked}</td>
 							</tr>
@@ -115,7 +115,7 @@
 					<div>
 						<table id="tblLicense">
 							<c:if test="${list4 != null && list4.size()>0}"> 
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="5"><h3 align="center">자 격 사 항&nbsp;</h3>
 								</td>
 							</tr>
@@ -129,7 +129,7 @@
 								<th width="150">자격증번호</th>
 								<td colspan="4">${v4.lic_no}</td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 5px solid lightgrey;">
 								<th width="120">발행저</th>
 								<td colspan="2">${v4.lic_place}</td>
 								<th width="120">취득연월일</th>
@@ -143,7 +143,7 @@
 					<div>
 						<table id="tblActivity">
 						<c:if test="${list2 != null && list2.size()>0}"> 
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="5"><h3 align="center">대 외 활 동&nbsp;</h3>
 								</td>
 							</tr>
@@ -162,7 +162,7 @@
 								<th width="150">활동주관처</th>
 								<td colspan="4">${v2.act_publish}</td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 5px solid lightgrey;">
 								<th width="120">활동기간</th>
 								<th width="120">시작일</th>
 								<td>${v2.act_startdate}</td>
@@ -177,7 +177,7 @@
 					<div>
 						<table id="tblAward">
 							<c:if test="${list3 != null && list3.size()>0}"> 
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="5"><h3 align="center">수 상 내 역&nbsp;</h3>
 								</td>
 							</tr>
@@ -194,7 +194,7 @@
 								<th width="120">수상일</th>
 								<td>${v3.awd_date}</td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 5px solid lightgrey;">
 								<th width="150">수상내용</th>
 								<td colspan="4">${v3.awd_content}</td>
 							</tr>
@@ -206,7 +206,7 @@
 					<div>
 						<table id="tblLanguage">
 							<c:if test="${list5 != null  && list5.size()>0}"> 
-							<tr>
+							<tr style="border-top: 5px solid lightgrey; border-bottom: 5px solid lightgrey;">
 								<td height="70" colspan="5"><h3 align="center">어 학 능 력&nbsp;</h3>
 								</td>
 							</tr>
@@ -220,7 +220,7 @@
 								<th width="150">인증기관</th>
 								<td colspan="4">${v5.lag_place}</td>
 							</tr>
-							<tr height="50">
+							<tr height="50" style="border-bottom: 5px solid lightgrey;">
 								<th width="120">성적</th>
 								<td colspan="2">${v5.lag_score}</td>
 								<th width="120">인증날짜</th>
