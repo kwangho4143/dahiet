@@ -55,7 +55,7 @@ location.href="ReviewDetailUp.do?ac=del&no=${vo.no }&password="+passwor
 						<th width="100px" height="30px">작성일자</th>
 						<td width="100px">${vo.redate }</td>
 					<tr style="min-height: 400px">
-						<td valign="top" colspan="8">${vo.content}</td>
+						<td valign="top" colspan="8"><textarea rows="30" cols="120" readonly="readonly"> ${vo.content}</textarea></td>
 					</tr>
 				</table>
 			</div>

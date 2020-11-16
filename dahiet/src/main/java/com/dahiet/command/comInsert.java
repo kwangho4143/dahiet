@@ -14,7 +14,6 @@ import com.dahiet.common.FileUtil;
 import com.dahiet.dao.ComDao;
 import com.dahiet.vo.ComVO;
 
-
 public class comInsert implements Action {
 
 	@Override
@@ -34,13 +33,12 @@ public class comInsert implements Action {
 		vo.setEmps(request.getParameter("emps"));
 		vo.setProfit(request.getParameter("profit"));
 		vo.setItem(request.getParameter("item"));
-		
-		
+
 		String appPath = request.getServletContext().getRealPath("/images");
 		System.out.println(appPath);
 		// 여러건
 		try {
-			for (Part part : request.getParts()) { //파일 읽을 때
+			for (Part part : request.getParts()) { // 파일 읽을 때
 				String fileName = FileUtil.extractFileName(part);
 				if (!fileName.equals("")) {
 					// 파일 명 중복 체크
@@ -57,18 +55,18 @@ public class comInsert implements Action {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-	
+
 		int n = dao.insert(vo);
 		String page;
+		vo.setNo(request.getParameter("no"));
+		vo = dao.selectLogIn(vo);
 
 		if (n != 0) {
 			page = "jsp/company/insertCompanySucess.jsp";
 		} else {
 			page = "jsp/company/insertCompanyFail.jsp";
 		}
-
+		request.setAttribute("vo", vo);
 		return page;
 	}
 
