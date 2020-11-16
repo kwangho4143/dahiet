@@ -157,6 +157,7 @@ padding-left: 3cm;
 		</div>
 
 		<div class="columnright">
+
 			<a href="${pageContext.request.contextPath}/Event.do"><img style="position: fixed; padding-right: 30px" src="${pageContext.request.contextPath}/images/QNA.jpg">
 			</a>
 		</div>
