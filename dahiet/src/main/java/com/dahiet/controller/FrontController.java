@@ -38,6 +38,7 @@ import com.dahiet.command.SearchAction;
 import com.dahiet.command.ShowRecruitList;
 import com.dahiet.command.UpdateComInf;
 import com.dahiet.command.UpdateUserInf;
+import com.dahiet.command.UserIdCheck;
 import com.dahiet.command.UserMypageAction;
 import com.dahiet.command.UsersApply;
 import com.dahiet.command.comInsert;
@@ -52,7 +53,7 @@ import com.dahiet.common.Action;
 
 //쿠키는 request객체가 아니라 response객체에 담는다.
 //session에는 특정 유지해야하는 것들 로그인 등등 을 담는다.
-@MultipartConfig(maxFileSize = 1024 * 1024 * 2 // size of any uploaded file
+@MultipartConfig(maxFileSize = 1024 * 1024 * 10 // size of any uploaded file
 , maxRequestSize = 1024 * 1024 * 10 // overall size of all uploaded files
 , fileSizeThreshold = 1024)
 
@@ -85,6 +86,7 @@ public class FrontController extends HttpServlet {
       map.put("/resumeApply.do",new ResumeApply()); //공고리스트에서 이력서 넣기
       map.put("/usersApply.do",new UsersApply()); //
       map.put("/checkApply.do",new CheckApply()); //회사공고에 지원한 내역
+      map.put("/ajax/userIdCheck.do",new UserIdCheck()); //중복체크
       //다희
       map.put("/ResumeList.do",new ResumeList()); //이력서 현황 호출
       map.put("/resumePreInsert.do",new InsertPreResume()); //이력서 등록-기본정보 호출

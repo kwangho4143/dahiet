@@ -6,7 +6,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		userIdCheck();
+
+	});
+
+
+	function userIdCheck(){
+		$('#idcheck').on('click',function(){
+			
+			var userid = $('#checkid').val();
+			$.ajax({
+				url:'${pageContext.request.contextPath}/ajax/userIdCheck.do',
+				data : $("#frm1").serialize(),
+				datatype: 'json',
+				error:function(xhr,status,msg){
+					//console.log("상태값 :" + status + " Http에러메시지 :"+msg);
+					console.log("아작스 에러");
+				},success:function(ms) {
+					console.log(ms);
+					
+				}
+			});
+		
+		});	
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	function formCheck1() {
 		var f = document.frm1;
 
@@ -300,7 +340,9 @@ width: 250px;
 									<table border="1">
 										<tr>
 											<th class="signin">아이디</th>
-											<td ><input class="signin" type="text" id="id" name="id"></td>
+											<td ><input class="signin" type="text" id="id" name="id">
+											<input type ="button" id="idcheck" name = "idcheck" value = "중복 확인">
+											</td>
 											<th class="signin">패스워드</th>
 											<td><input class="signin" type="password" id="pw" name="pw"></td>
 										</tr>
@@ -349,7 +391,9 @@ width: 250px;
 								<table border="1">
 									<tr>
 										<th class="signin">아이디</th>
-										<td><input class="signin" type="text" id="id" name="id"></td>
+										<td><input class="signin" type="text" id="id" name="id">
+										<input type ="button" value = "아이디중복체크" id = "idcheck">
+										</td>
 										<th class="signin">패스워드</th>
 										<td><input class="signin" type="text" id="pw" name="pw"></td>
 									</tr>
