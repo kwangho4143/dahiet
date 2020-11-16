@@ -188,8 +188,10 @@
 				<a href="javascript:void(0);" onclick="showList('1');" class="btn" id="btnList1" > 
 					<img src="${pageContext.request.contextPath}/images/tab_gg.png" alt="개인회원"></a><br>
 				<a href="javascript:void(0);" onclick="showList('2');" class="btn" id="btnList2" >
-					<img src="${pageContext.request.contextPath}/images/tab_gi.png" alt="기업회원"></a>
-			</div><br><br><br>
+					<img src="${pageContext.request.contextPath}/images/tab_gi.png" alt="기업회원"></a><br><br>
+				<a href="javascript:void(0);" onclick="showList('3');" class="btn" id="btnList3">
+					<img src="${pageContext.request.contextPath}/images/developers_g.png" alt="개발자" width="50"></a>
+			</div><br>
 			<div align="right">
 				<img src="${pageContext.request.contextPath}/images/customer_center.png"
 					 alt="고객센터 1588-9351 / 평일 09:00 ~ 19:00, 토요일 09:00~15:00" width="140"/>
@@ -199,10 +201,15 @@
 				if (value == '1') {
 					tblList1.style.display = '';
 					tblList2.style.display = 'none';
-				} else {
+					tblList3.style.display = 'none';
+				} else if (value == '2'){
 					tblList2.style.display = '';
 					tblList1.style.display = 'none';
-
+					tblList3.style.display = 'none';
+				} else {
+					tblList3.style.display = '';
+					tblList1.style.display = 'none';
+					tblList2.style.display = 'none';
 				}
 			};
 			</script>
@@ -524,6 +531,31 @@
 					</table>
 				</div>
 				<!-- 리스트-기업 //-->
+				
+				
+				<!-- 리스트-개발자 -->
+				<div class="list">
+					<table summary="FAQ 개발자" class="tbFaq" id="tblList3" style="display: none;">
+						<tr>
+							<td colspan="4" align="center" height="50"><h5>만든 사람들</h5></td>
+						</tr>
+						<tr align="center">
+							<td class="dev"><img alt="이광호" src="${pageContext.request.contextPath}/images/peng_gh.jpg" width="180"></td>
+							<td class="dev"><img alt="김다희" src="${pageContext.request.contextPath}/images/peng_dh.jpg" width="180"></td>
+							<td class="dev"><img alt="염평강" src="${pageContext.request.contextPath}/images/peng_pg.jpg" width="180"></td>
+							<td class="dev"><img alt="이정은" src="${pageContext.request.contextPath}/images/peng_je.jpg" width="180"></td>
+						</tr>
+						<tr align="center" height="50">
+							<td class="devInfo">이광호</td>
+							<td class="devInfo">김다희</td>
+							<td class="devInfo">염평강</td>
+							<td class="devInfo">이정은</td>
+						</tr>
+					</table>
+				</div>
+				<!-- 리스트-개발자 -->
+				
+				
 			</div>
 		</div>
 	</div>
