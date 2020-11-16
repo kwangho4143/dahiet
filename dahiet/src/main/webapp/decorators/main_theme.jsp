@@ -209,17 +209,13 @@ padding-left: 3cm;
 				</div>
 
 				<div class="col-lg-3 col-md-6 footer-links">
-					<h4>사이트 바로가기</h4>
+					<h4>메뉴 바로가기</h4>
 					<ul>
-						<li><i class="bx bx-chevron-right"></i> <a href="#">Web
-								Design</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="#">Web
-								Development</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="#">Product
-								Management</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="#">Graphic
-								Design</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="${pageContext.request.contextPath}/jsp/user/loginForm.jsp">로그인</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="${pageContext.request.contextPath}/jsp/user/loginForm.jsp">회원가입</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="${pageContext.request.contextPath}/SearchAction.do">채용정보</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="${pageContext.request.contextPath}/ReviewAction.do">취업토크</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="${pageContext.request.contextPath}/Event.do">고객센터</a></li>
 					</ul>
 				</div>
 

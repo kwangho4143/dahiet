@@ -3,8 +3,9 @@ package com.dahiet.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.dahiet.vo.ResumeVO;
 import com.dahiet.vo.UserVO;
 
 
@@ -17,6 +18,7 @@ public class UserDao extends DAO {
 	private ResultSet rs; //select 후 결과셋 받기
 	private UserVO vo;
 	
+	private final String CH = "SELECT ID FROM USERS";
 	private final String USERINSERT = "INSERT INTO USERS(ID,PW,NAME,IMAG,BIRTH,TEL,EMAIL,ADDR,UNIV,MAJOR,SCORE) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 	private final String SELECTLOGIN = "SELECT * FROM USERS WHERE ID = ? ";
 	private final String USERUPDATE = 
@@ -43,6 +45,29 @@ public class UserDao extends DAO {
 		}
 		return n;
 	}
+	
+	public List<UserVO> check() {  //중복체크
+		List<UserVO> list = new ArrayList<>();
+		try {
+			psmt = conn.prepareStatement(CH);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				vo = new UserVO();
+				vo.setId(rs.getString("id"));
+				list.add(vo);
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return list;
+	}
+	
+	
+	
+	
 	
 
 	
