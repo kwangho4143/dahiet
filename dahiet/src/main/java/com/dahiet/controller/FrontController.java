@@ -52,7 +52,7 @@ import com.dahiet.common.Action;
 
 //쿠키는 request객체가 아니라 response객체에 담는다.
 //session에는 특정 유지해야하는 것들 로그인 등등 을 담는다.
-@MultipartConfig(maxFileSize = 1024 * 1024 * 2 // size of any uploaded file
+@MultipartConfig(maxFileSize = 1024 * 1024 * 10 // size of any uploaded file
 , maxRequestSize = 1024 * 1024 * 10 // overall size of all uploaded files
 , fileSizeThreshold = 1024)
 
