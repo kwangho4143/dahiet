@@ -263,12 +263,15 @@ span.abc {
 <body class="col-lg-3 col-md-12">
 
 	<main id="main">
+		<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>채용 정보</h2>
+				</div>
 		<form action="SearchAction.do">
 		<section id="breadcrumbs" class="breadcrumbs"
 			style="padding: 0%; margin-top: 0px;">
 					<nav class="nav-menu d-none d-lg-block">
 						<ul style="padding-left: 120px;">
-							<li><h2>상세 검색</h2></li>
+							<li><h4>상세 검색</h4></li>
 							<li class="drop-down"><a href="#">지역 선택</a>
 								<ul>
 									<li>
@@ -344,12 +347,12 @@ span.abc {
 								</ul></li>
 						</ul>
 					</nav>
-				<div class="row col-8" style="margin: 0px 50px 0px 50px; max-width: 1000px; max-height: 3cm">
+				<div class="row col-8" style="margin: 0px 2px 0px 169px; max-width: 1000px; max-height: 3cm">
 					<div id="selloc" class="col" style="max-width: 300px"></div>
 					<div id="selitem" class="col" style="max-width: 300px"></div>
 					<div id="selwork" class="col" style="max-width: 300px"></div>
 					<div class="col">
-						<button type="submit" class="btn btn-xs btn-danger">검색하기</button>
+						<button style="margin-left: 77px;" type="submit" class="btn btn-xs btn-danger">검색하기</button>
 					</div>
 				</div>
 

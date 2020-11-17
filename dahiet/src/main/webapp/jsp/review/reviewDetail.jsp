@@ -24,16 +24,17 @@ location.href="ReviewDetailUp.do?ac=del&no=${vo.no }&password="+passwor
 </head>
 <body>
 <body>
-	<div class="container">
-		<div class="d-flex justify-content-between align-items-center">
+	<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
 			<h2>취업 토크 상세 페이지</h2>
-			<p><button type="button" onclick="location.href ='${pageContext.request.contextPath}/ReviewAction.do'" class="btn btn-sm btn-danger">토크목록</button>
+			<p style="padding-right: 75px"><button type="button" onclick="location.href ='${pageContext.request.contextPath}/ReviewAction.do'" class="btn btn-sm btn-danger">토크목록</button>
 			<button type="button" onclick="putpass();" class="btn btn-sm btn-danger">토크수정</button>
 			<button type="button" onclick="putpassdel();" class="btn btn-sm btn-danger">토크삭제</button>
 				</p>
+				</div>
+				<hr>
+	<div class="container">
+		<div class="d-flex justify-content-between align-items-center">
 		</div>
-	
-		<hr />
 		<form id="reviewDeFrm" name="reviewDeFrm"
 			enctype="multipart/form-data">
 			<div style="margin: 20%, 10%, 20%, 10%; min-height: 500px" align="center">
