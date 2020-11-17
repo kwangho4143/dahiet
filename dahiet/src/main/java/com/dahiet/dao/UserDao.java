@@ -120,13 +120,14 @@ public class UserDao extends DAO {
 		
 	}
 	public UserVO selectLogIn(UserVO vo) {  //한행을 검색할때
+		
 		try {
 			psmt = conn.prepareStatement(SELECTLOGIN);
 			psmt.setString(1, vo.getId());
 
 			rs = psmt.executeQuery();
 			if(rs.next()) {
-				vo = new UserVO();
+				//vo = new UserVO();
 				vo.setPw(rs.getString("pw"));
 				vo.setTel(rs.getString("tel"));
 				vo.setName(rs.getString("name"));
@@ -138,6 +139,7 @@ public class UserDao extends DAO {
 				vo.setScore(rs.getString("score"));
 				vo.setImage(rs.getString("imag"));
 				vo.setId(rs.getString("id"));
+				
 			}
 			
 		}catch(SQLException e) {

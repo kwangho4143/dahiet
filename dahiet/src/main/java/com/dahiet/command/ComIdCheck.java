@@ -7,19 +7,17 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 import com.dahiet.common.Action;
-import com.dahiet.dao.UserDao;
-import com.dahiet.vo.UserVO;
+import com.dahiet.dao.ComDao;
+import com.dahiet.vo.ComVO;
 
-public class UserIdCheck implements Action {
+
+public class ComIdCheck implements Action {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		List<UserVO> list = new ArrayList<>();
-		UserDao dao = new UserDao();
-		UserVO vo = new UserVO();
+		ComDao dao = new ComDao();
+		ComVO vo = new ComVO();
 		vo.setId(request.getParameter("id"));
 		String ms="아이디가 중복됩니다.";
 
@@ -35,8 +33,6 @@ public class UserIdCheck implements Action {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 		return null;
 	}
 

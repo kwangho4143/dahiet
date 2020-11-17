@@ -11,6 +11,7 @@
 
 	$(function(){
 		userIdCheck();
+		comIdCheck();
 
 	});
 
@@ -18,7 +19,6 @@
 	function userIdCheck(){
 		$('#idcheck').on('click',function(){
 			
-			var userid = $('#checkid').val();
 			$.ajax({
 				url:'${pageContext.request.contextPath}/ajax/userIdCheck.do',
 				data : $("#frm1").serialize(),
@@ -26,7 +26,7 @@
 					//console.log("상태값 :" + status + " Http에러메시지 :"+msg);
 					console.log("아작스 에러");
 				},success:function(ms) {
-					console.log(ms);
+					alert(ms);
 					
 				}
 			});
@@ -34,7 +34,23 @@
 		});	
 	}
 
-
+	function comIdCheck(){
+		$('#idcheck2').on('click',function(){
+			
+			$.ajax({
+				url:'${pageContext.request.contextPath}/ajax/comIdCheck.do',
+				data : $("#frm2").serialize(),
+				error:function(xhr,status,msg){
+					//console.log("상태값 :" + status + " Http에러메시지 :"+msg);
+					console.log("아작스 에러");
+				},success:function(ms) {
+					alert(ms);
+					
+				}
+			});
+		
+		});	
+	}
 
 
 
@@ -391,7 +407,7 @@ width: 250px;
 									<tr>
 										<th class="signin">아이디</th>
 										<td><input class="signin" type="text" id="id" name="id">
-										<input type ="button" value = "아이디중복체크" id = "idcheck">
+										<input type ="button" value = "중복체크" id = "idcheck2">
 										</td>
 										<th class="signin">패스워드</th>
 										<td><input class="signin" type="text" id="pw" name="pw"></td>
