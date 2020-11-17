@@ -410,7 +410,7 @@ width: 250px;
 										<input type ="button" value = "중복체크" id = "idcheck2">
 										</td>
 										<th class="signin">패스워드</th>
-										<td><input class="signin" type="text" id="pw" name="pw"></td>
+										<td><input class="signin" type="password" id="pw" name="pw"></td>
 									</tr>
 									<tr>
 										<th class="signin">사업자 번호</th>

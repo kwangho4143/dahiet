@@ -30,7 +30,7 @@ public class userLoginAction implements Action {
 			try {
 				writer = response.getWriter();
 				writer.println("<script>alert('아이디 또는 비밀번호가 다릅니다.'); location.href='" + request.getContextPath()
-						+ "/MainListShow.do';</script>");
+						+ "/jsp/user/loginForm.jsp';</script>");
 				writer.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
