@@ -18,8 +18,8 @@ public class MainListShow implements Action {
 		
 		RecruitDao dao = new RecruitDao();
 		List<RecruitVO> mainlist = new ArrayList<RecruitVO>();
-		RecruitVO vo = new RecruitVO();
-		mainlist = dao.MAINSELECT(vo);
+		RecruitVO voo = new RecruitVO();
+		mainlist = dao.MAINSELECT(voo);
 		request.setAttribute("mainlists" , mainlist);
 		
 		return "/test2.jsp";
