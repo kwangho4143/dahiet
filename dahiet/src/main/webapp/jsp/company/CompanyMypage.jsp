@@ -46,7 +46,7 @@ th {
 			<br>
 			<form id="frmInf" name="frmInf"
 				action="${pageContext.request.contextPath}/UpdateComInf.do"
-				method="post">
+				method="post" enctype="multipart/form-data">
 				<table>
 					<tr>
 						<td rowspan="6" align="center" width="20%"><img alt="사진"

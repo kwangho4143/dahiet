@@ -22,7 +22,7 @@ public class UserDao extends DAO {
 	private final String USERINSERT = "INSERT INTO USERS(ID,PW,NAME,IMAG,BIRTH,TEL,EMAIL,ADDR,UNIV,MAJOR,SCORE) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 	private final String SELECTLOGIN = "SELECT * FROM USERS WHERE ID = ? ";
 	private final String USERUPDATE = 
-			"UPDATE USERS SET  PW = ?,EMAIL= ?, ADDR = ?, UNIV= ?, MAJOR=?, SCORE=? WHERE ID = ?";
+			"UPDATE USERS SET  PW = ?,EMAIL= ?, ADDR = ?, UNIV= ?, MAJOR=?, SCORE=?,IMAG=? WHERE ID = ?";
 	
 	public int UserUpdate(UserVO vo) {  //수정하기
 		int n = 0;
@@ -34,7 +34,8 @@ public class UserDao extends DAO {
 			psmt.setString(4, vo.getUniv());
 			psmt.setString(5, vo.getMajor());
 			psmt.setString(6, vo.getScore());
-			psmt.setString(7, vo.getId());
+			psmt.setString(7, vo.getImage());
+			psmt.setString(8, vo.getId());
 			
 			n = psmt.executeUpdate();
 			
