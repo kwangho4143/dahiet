@@ -7,17 +7,18 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	<main id="main">
-		<section id="breadcrumbs" class="breadcrumbs">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center">
-					<h2>등록한 공고 목록</h2>
-					<button type="button"
+<body>	
+<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>등록한 공고 목록</h2>
+			<button style="margin-right: 109px;" type="button"
 						onclick="location.href='${pageContext.request.contextPath}/recruitCheck.do';"
 						class="get-started-btn ml-auto">공고 등록</button>
 				</div>
-				<hr />
+				<hr>
+	<main style="    padding-right: 100px; padding-left: 125px;" id="main">
+			<div class="container">
+				<div class="d-flex justify-content-between align-items-center">
+				</div>
 				<div align="center">
 					<table style="width: 100%;">
 						<tr align="center">
@@ -38,14 +39,13 @@
 								<td>${rlist.emp_type }</td>
 								<td>${rlist.qualify }</td>
 								<td>
-								<button id = "inf" name = "inf" onclick = "location.href='${pageContext.request.contextPath}/usersApply.do?recruit_seq=${rlist.recruit_seq}'">지원자 확인</button>
+								<button style="    padding: 7px 7px 7px 7px;" class="get-started-btn ml-auto" id = "inf" name = "inf" onclick = "location.href='${pageContext.request.contextPath}/usersApply.do?recruit_seq=${rlist.recruit_seq}'">지원자 확인</button>
 								</td>
 							</tr>
 						</c:forEach>
 					</table>
 				</div>
 			</div>
-		</section>
 	</main>
 			<c:if test="${n==1}">
 			<script type="text/javascript">
