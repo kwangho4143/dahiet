@@ -24,7 +24,7 @@ public class UserIdCheck implements Action {
 		String ms="아이디가 중복됩니다.";
 
 		vo = dao.selectLogIn(vo);
-		System.out.println(vo.getId());
+	
 		if(vo.getName()==null) {
 			ms="사용가능합니다.";
 		}
