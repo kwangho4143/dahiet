@@ -105,10 +105,7 @@ padding-left: 3cm;
 
 				<ul style="width: 700px">
 
-					<li><a
-						href="${pageContext.request.contextPath}/SearchAction.do">채용정보</a>
-					<li><a href="#">기업정보</a></li>
-
+					<li><a href="${pageContext.request.contextPath}/SearchAction.do">채용정보</a>
 					<c:if test="${sessionScope.major ne null}">
 						<li><a
 							href="${pageContext.request.contextPath}/ResumeList.do">이력서
