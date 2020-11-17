@@ -41,9 +41,11 @@ th {
 </head>
 <body>
 	<div align="center">
+	<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>기업정보수정</h2>
+				</div>
+				<hr>
 		<div id="tab1">
-			<h1>기업정보수정</h1>
-			<br>
 			<form id="frmInf" name="frmInf"
 				action="${pageContext.request.contextPath}/UpdateComInf.do"
 				method="post" enctype="multipart/form-data">
@@ -105,11 +107,13 @@ th {
 						<td colspan="3"><input type="text" value="${vo.item}"
 							id="item" name="item" style="width: 100%"></td>
 					</tr>
+					<tr>
+					<td align="right" colspan="4"> 
+					<input class="btn btn-xs btn-danger" type="submit" value="회원정보수정" onclick="return Display()"> 
+					<input class="btn btn-xs btn-danger" type="reset" value="취 소">
+					</td>
+					</tr>
 				</table>
-				<div align="center">
-					<input type="submit" value="회원정보수정" onclick="return Display()"> <input type="reset"
-						value="취 소">
-				</div>
 			</form>
 		</div>
 
