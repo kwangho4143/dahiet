@@ -68,9 +68,8 @@
 }
 
 .columnright {
-	position: fixed;
+	position: relative;
 	padding-top: 16px;
-	padding-left: 1160px;
 }
 
 .column {
