@@ -51,7 +51,7 @@ th {
 				method="post" enctype="multipart/form-data">
 				<table>
 					<tr>
-						<td rowspan="6" align="center" width="20%"><img alt="사진"
+						<td rowspan="6" align="center" width="20%"><img style="width: 100%" alt="사진"
 							src="${pageContext.request.contextPath}/images/${vo.img}"
 							width="120" height="150" align="middle">
 							<input class="signin" type="file" id="img" name="img_file" value="${vo.img}">

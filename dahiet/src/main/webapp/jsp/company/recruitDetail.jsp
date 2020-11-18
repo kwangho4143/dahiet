@@ -87,7 +87,7 @@ select.selectpicker {
 			<div style="margin: 20%, 10%, 20%, 10%" align="center">
 				<table border="1" style="text-align: center;">
 					<tr>
-						<td colspan="2" rowspan="7"><img style="margin: 0px;"
+						<td style="    max-width: 184px;" colspan="2" rowspan="7"><img style="margin: 0px; width: 100%"
 							alt="회사로고"
 							src="${pageContext.request.contextPath}/images/${vo.img}"></td>
 						<th width="800px" colspan="6" rowspan="2" style="font-size: 35px">${vo.title}</th>
