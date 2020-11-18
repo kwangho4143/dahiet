@@ -32,8 +32,11 @@ public class UpdateUserInf implements Action {
 		vo.setUniv(request.getParameter("univ"));
 		vo.setMajor(request.getParameter("major"));
 		vo.setScore(request.getParameter("score"));
+		vo.setImage(request.getParameter("imag"));
 		
-		System.out.println(request.getParameter("major"));
+
+		System.out.println(request.getParameter("imag"));
+		//System.out.println(request.getParameter("major"));
 		
 		String appPath = request.getServletContext().getRealPath("/images");
 		System.out.println(appPath);

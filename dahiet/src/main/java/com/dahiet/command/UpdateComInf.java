@@ -33,7 +33,7 @@ public class UpdateComInf implements Action {
 		vo.setEmps(request.getParameter("emps"));
 		vo.setProfit(request.getParameter("profit"));
 		vo.setItem(request.getParameter("item"));
-		//vo.setImg(request.getParameter("img"));
+		vo.setImg(request.getParameter("img"));
 		
 		String appPath = request.getServletContext().getRealPath("/images");
 		System.out.println(appPath);

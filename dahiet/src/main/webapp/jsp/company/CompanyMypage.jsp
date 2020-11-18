@@ -54,7 +54,7 @@ th {
 						<td rowspan="6" align="center" width="20%"><img alt="사진"
 							src="${pageContext.request.contextPath}/images/${vo.img}"
 							width="120" height="150" align="middle">
-							<input class="signin" type="file" id="img" name="img_file" >
+							<input class="signin" type="file" id="img" name="img_file" value="${vo.img}">
 							<input type="hidden" value="${vo.img }" id="img" name="img"></td>
 						<td colspan="3" align="center">기업정보</td>
 					</tr>
@@ -89,7 +89,7 @@ th {
 					<tr>
 						<td>&nbsp;&nbsp;기업형태</td>
 						<td colspan="3"><input type="text" value="${vo.type}"
-							id="type" name="type" style="width: 100%"></td>
+							id="type" name="" style="width: 100%"></td>
 					</tr>
 
 					<tr>
