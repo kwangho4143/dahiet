@@ -45,11 +45,11 @@
 				<tr>
 					<th width="80">근무형태</th>
 					<!--  ${vo.emp_type} -->
-					<td colspan="7"><label><input type="radio" name="emp_type" value="a1"> 정규직</label> 
-						<label><input type="radio" name="emp_type" value="a2"> 계약직</label> 
-						<label><input type="radio" name="emp_type" value="a3"> 아르바이트</label>
-						<label><input type="radio" name="emp_type" value="a4"> 인턴직</label> 
-						<label><input type="radio" name="emp_type" value="a5"> 파견직</label>
+					<td colspan="7"><label><input type="radio" name="emp_type" value="a1" <c:if test="${itemcode.emp_type eq 'a1'}">checked</c:if>> 정규직</label> 
+						<label><input type="radio" name="emp_type" value="a2" <c:if test="${vo.emp_type eq 'a2'}">checked</c:if>> 계약직</label> 
+						<label><input type="radio" name="emp_type" value="a3" <c:if test="${vo.emp_type eq 'a3'}">checked</c:if>> 아르바이트</label>
+						<label><input type="radio" name="emp_type" value="a4" <c:if test="${vo.emp_type eq 'a4'}">checked</c:if>> 인턴직</label> 
+						<label><input type="radio" name="emp_type" value="a5" <c:if test="${vo.emp_type eq 'a5'}">checked</c:if>> 파견직</label>
 				</tr>
 				<tr>
 					<th width="50">지역 선택</th>
@@ -66,12 +66,10 @@
 				<tr>
 					<th width="50">담당 업무</th>
 					<td colspan="7"><c:forEach var="itemcode" items="${itemcodes}">
-							<label> <c:if test="${itemcode.itemid eq vo.work}">
-									<input type="radio" name="work" value="${itemcode.itemid}"
-										checked>${itemcode.itemname}
-								</c:if> <c:if test="${itemcode.itemid ne vo.work}">
-									<input type="radio" name="work" value="${itemcode.itemid}">${itemcode.itemname}
-								</c:if>
+							<label> 
+									<input type="radio" name="work" value="${itemcode.itemid}" 
+									<c:if test="${itemcode.itemid eq vo.work}">checked</c:if>>${itemcode.itemname}
+								
 							</label>
 						</c:forEach></td>
 				</tr>

@@ -34,8 +34,8 @@ public class RecruitUpdate implements Action {
 		ItemCodeDao idao = new ItemCodeDao();
 		List<ItemCodeVO> ilist = new ArrayList<ItemCodeVO>();
 		ItemCodeVO ivo = new ItemCodeVO();
-		ivo.setGroupid("1");
-		ilist = idao.ITEMCODESELECT(ivo);
+		ivo.setGroupid("3");
+		ilist = idao.WITEMCODESELECT(ivo);
 		request.setAttribute("itemcodes", ilist);
 		
 

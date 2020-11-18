@@ -169,6 +169,7 @@ public class RecruitDao extends DAO {
 				vo.setQualify(rs.getString("qualify"));
 				vo.setSalary(rs.getString("salary"));
 				vo.setNewbi(rs.getString("newbi"));
+				vo.setItem(rs.getString("item"));
 			}
 			
 		} catch (SQLException e) {

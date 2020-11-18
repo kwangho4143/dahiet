@@ -30,10 +30,10 @@ th {
 <script>
 	function Display() {
 		var d = document.tap1;
-		if(d.pw.value == ""){
+		if (d.pw.value == "") {
 			alert("password를 입력하세요.");
-		d.pw.focus();
-		return false;
+			d.pw.focus();
+			return false;
 
 		}
 	};
@@ -41,21 +41,25 @@ th {
 </head>
 <body>
 	<div align="center">
-	<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+		<div
+			style="padding-left: 130px; background-color: #f8f9fa; height: 70px"
+			class="d-flex justify-content-between align-items-center">
 			<h2>기업정보수정</h2>
-				</div>
-				<hr>
+		</div>
+		<hr>
 		<div id="tab1">
 			<form id="frmInf" name="frmInf"
 				action="${pageContext.request.contextPath}/UpdateComInf.do"
 				method="post" enctype="multipart/form-data">
 				<table>
 					<tr>
-						<td rowspan="6" align="center" width="20%"><img style="width: 100%" alt="사진"
+						<td rowspan="6" align="center" width="20%"><img
+							style="width: 100%" alt="사진"
 							src="${pageContext.request.contextPath}/images/${vo.img}"
-							width="120" height="150" align="middle">
-							<input class="signin" type="file" id="img" name="img_file" value="${vo.img}">
-							<input type="hidden" value="${vo.img }" id="img" name="img"></td>
+							width="120" height="150" align="middle"> <input
+							class="signin" type="file" id="img" name="img_file"
+							value="${vo.img}"> <input type="hidden"
+							value="${vo.img }" id="img" name="img"></td>
 						<td colspan="3" align="center">기업정보</td>
 					</tr>
 					<tr>
@@ -87,9 +91,22 @@ th {
 							id="link" name="link" style="width: 100%"></td>
 					</tr>
 					<tr>
+
+
 						<td>&nbsp;&nbsp;기업형태</td>
-						<td colspan="3"><input type="text" value="${vo.type}"
-							id="type" name="" style="width: 100%"></td>
+						<td colspan="3"><label><input type="radio"
+								name="type" value="c1"
+								<c:if test="${vo.type eq 'c1'}">checked</c:if>> 대기업</label> <label><input
+								type="radio" name="type" value="c2"
+								<c:if test="${vo.type eq 'c2'}">checked</c:if>> 중견기업</label> <label><input
+								type="radio" name="type" value="c3"
+								<c:if test="${vo.type eq 'c3'}">checked</c:if>> 중소기업</label> <label><input
+								type="radio" name="type" value="c4"
+								<c:if test="${vo.type eq 'c4'}">checked</c:if>> 외국계</label> <label><input
+								type="radio" name="type" value="c5"
+								<c:if test="${vo.type eq 'c5'}">checked</c:if>> 강소기업</label> <label><input
+								type="radio" name="type" value="c6"
+								<c:if test="${vo.type eq 'c6'}">checked</c:if>> 공기업</label></td>
 					</tr>
 
 					<tr>
@@ -104,14 +121,19 @@ th {
 					</tr>
 					<tr>
 						<td>&nbsp;&nbsp;업종</td>
-						<td colspan="3"><input type="text" value="${vo.item}"
-							id="item" name="item" style="width: 100%"></td>
+
+						<td colspan="3"><c:forEach var="itemcode"
+								items="${itemcodes}">
+								<label><input type="radio" name="item"
+									value="${itemcode.itemid }" <c:if test="${itemcode.itemid eq vo.item}">checked</c:if>>${itemcode.itemname}</label>
+
+							</c:forEach></td>
 					</tr>
 					<tr>
-					<td align="right" colspan="4"> 
-					<input class="btn btn-xs btn-danger" type="submit" value="회원정보수정" onclick="return Display()"> 
-					<input class="btn btn-xs btn-danger" type="reset" value="취 소">
-					</td>
+						<td align="right" colspan="4"><input
+							class="btn btn-xs btn-danger" type="submit" value="회원정보수정"
+							onclick="return Display()"> <input
+							class="btn btn-xs btn-danger" type="reset" value="취 소"></td>
 					</tr>
 				</table>
 			</form>
@@ -119,7 +141,7 @@ th {
 
 		<c:if test="${n==1}">
 			<script type="text/javascript">
-			   alert("수정을 완료 하였습니다.");
+				alert("수정을 완료 하였습니다.");
 			</script>
 		</c:if>
 

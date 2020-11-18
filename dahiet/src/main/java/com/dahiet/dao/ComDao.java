@@ -18,6 +18,8 @@ public class ComDao extends DAO {
 	private final String COMPANYINSERT = "INSERT INTO COMPANIES(ID,PW,NO,TEL,NAME,ADDR,ITEM,IMG,EMPS,LINK,PROFIT,TYPE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 	private final String COMSELECTLOGIN = "SELECT ID, PW, NO, NAME, TEL, ADDR, IMG,"
 			+ "LINK, FINDCODENAME(TYPE) TYPE, EMPS, PROFIT, FINDCODENAME(ITEM) ITEM FROM COMPANIES WHERE ID = ? ";
+	private final String COMSELECTLOGIN1 = "SELECT ID, PW, NO, NAME, TEL, ADDR, IMG,"
+			+ "LINK, TYPE, EMPS, PROFIT, ITEM FROM COMPANIES WHERE ID = ? ";
 	private final String COMUPDATE = 
 			"UPDATE COMPANIES SET  PW=?, TEL=?, ADDR=?, LINK=?, TYPE=?, EMPS=?, PROFIT=?, ITEM=?, IMG=? WHERE ID = ?";
 	
@@ -125,7 +127,34 @@ public class ComDao extends DAO {
 		}
 		return vo;
 	}
-	
+	public ComVO selectLogIn1(ComVO vo) {  //한행을 검색할때
+		try {
+			psmt = conn.prepareStatement(COMSELECTLOGIN1);
+			psmt.setString(1, vo.getId());
+
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				vo.setId(rs.getString("id"));
+				vo.setPw(rs.getString("pw"));
+				vo.setNo(rs.getString("no"));
+				vo.setName(rs.getString("name"));
+				vo.setTel(rs.getString("tel"));
+				vo.setAddr(rs.getString("addr"));
+				vo.setImg(rs.getString("img"));
+				vo.setLink(rs.getString("link"));
+				vo.setType(rs.getString("type"));
+				vo.setEmps(rs.getString("emps"));
+				vo.setProfit(rs.getString("profit"));
+				vo.setItem(rs.getString("item"));		
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return vo;
+	}
 
 	
 	
