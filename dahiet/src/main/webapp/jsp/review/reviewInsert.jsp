@@ -11,10 +11,13 @@ HttpSession session = request.getSession();
 String id = session.getAttribute("id");
 </script>
 <body>
+	<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>취업 토크 등록 페이지</h2>
+				</div>
+				<hr>
 	<form id="reviewFrm" name="reviewFrm"
 		action="${pageContext.request.contextPath}/ReviewInsert.do"
 		method="post" enctype="multipart/form-data">
-		<h1 align="center">취업 토크 등록 페이지</h1>
 		<div style="margin: 20%, 10%, 20%, 10%" align="center">
 			<table border="1" style="align-items: center">
 				<tr align="center">

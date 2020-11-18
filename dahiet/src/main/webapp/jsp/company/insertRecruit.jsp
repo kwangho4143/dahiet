@@ -9,16 +9,16 @@
 <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-
+	<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>공고 등록</h2>
+				</div>
+				<hr>
 	<div align="center">
-		<div>
-			<h1>공 고 등 록</h1>
-		</div>
 
 		<form id="frm1" name="frm1"
 			action="${pageContext.request.contextPath}/insertRecruit.do"
 			method="post">
-			<table border="1">
+			<table border="1" style="margin-left: 106px;">
 				<tr>
 					<th width="80">공고 제목</th>
 					<td colspan="2" width="250"><input style="width: 100%" type="text" id="title" name="title"></td>
@@ -63,8 +63,8 @@
 							rows="20" style="width: 100%;" placeholder="내용을 입력하세요"></textarea></td>
 				</tr>
 				<tr>
-					<td colspan="8" align="center"><input type="submit"
-						value="공고등록"> &nbsp;&nbsp; <input type="reset" value="취 소"></td>
+					<td colspan="8" align="right"><input class="btn btn-sm btn-danger" type="submit"
+						value="공고등록"> &nbsp;&nbsp; <input class="btn btn-sm btn-danger" type="reset" value="취 소"></td>
 				</tr>
 			</table>
 		</form>

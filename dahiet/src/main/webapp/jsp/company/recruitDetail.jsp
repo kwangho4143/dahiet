@@ -45,18 +45,16 @@ select.selectpicker {
 </style>
 </head>
 <body>
-	<div class="container">
-		<div class="d-flex justify-content-between align-items-center">
+	<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
 			<h2>채용 공고 상세 페이지</h2>
-			<p>
-				<c:if test="${sessionScope.id ne null}">
+						
+							<c:if test="${sessionScope.id ne null}">
 					<form style="width: 500px"
 						action="${pageContext.request.contextPath}/resumeApply.do">
-						<button type="button"
-							onclick="location.href ='${pageContext.request.contextPath}/SearchAction.do'"
-							class="btn btn-sm btn-danger">공고목록</button>
+						<div align="right" style="padding-right: 110px;">
+						
 						<input name="recruit_seq" type="hidden" value="${param.no}">
-						<select class="selectpicker" name="resume_seq" id="resume">
+						<select style="width: 200px" class="selectpicker" name="resume_seq" id="resume">
 							<c:forEach var="reseq" items="${rrlists}">
 								<option value="${reseq.resume_seq}">${reseq.resume_name}
 							</c:forEach>
@@ -74,13 +72,17 @@ select.selectpicker {
 							</script>
 						</c:if>
 						<button class="btn btn-sm btn-danger">지원하기</button>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="button"
+							onclick="location.href ='${pageContext.request.contextPath}/SearchAction.do'"
+							class="btn btn-sm btn-danger">공고목록</button>
+						</div>
 					</form>
 				</c:if>
-		</div>
-
-
-
-		<hr />
+			
+				</div>
+				<hr>
+	<div class="container">
 		<main id="main">
 			<div style="margin: 20%, 10%, 20%, 10%" align="center">
 				<table border="1" style="text-align: center;">

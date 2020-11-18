@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dahiet.command.CheckApply;
+import com.dahiet.command.ComIdCheck;
 import com.dahiet.command.CompanyMypageAction;
 import com.dahiet.command.EventAction;
 import com.dahiet.command.InsertPreResume;
@@ -124,7 +125,7 @@ public class FrontController extends HttpServlet {
 //    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
 //    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
-//    map.put("/loginForm.do",new LoginForm()); //로그인 폼 호출
+      map.put("/ajax/comIdCheck.do",new ComIdCheck()); //로그인 폼 호출
 
    }
    //doget,dopost를 사용해도 되지만 간단히 하기 위해서

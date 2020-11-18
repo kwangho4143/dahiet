@@ -57,8 +57,12 @@ public class comInsert implements Action {
 		}
 
 		int n = dao.insert(vo);
-		vo.setNo(request.getParameter("no"));
-		vo = dao.selectLogIn(vo);
+		vo.setId(request.getParameter("id"));
+		
+		ComDao dao1 = new ComDao();
+		ComVO vo1 = new ComVO();
+		
+		vo1 = dao1.selectLogIn(vo);
 		String page;
 
 		if (n != 0) {
@@ -66,7 +70,7 @@ public class comInsert implements Action {
 		} else {
 			page = "jsp/company/insertCompanyFail.jsp";
 		}
-		request.setAttribute("vo", vo);
+		request.setAttribute("Vo", vo1);
 		return page;
 	}
 

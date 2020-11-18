@@ -1,0 +1,142 @@
+
+SET SERVEROUTPUT ON;
+-- 2
+DECLARE
+  p_id employees.employee_id%type := &id;
+  v_fname1 employees.department_id%type;
+  v_fname2 employees.job_id%type;
+  v_fname3 employees.salary%type;
+BEGIN
+  SELECT department_id,
+    job_id,
+    salary
+  INTO v_fname1,
+    v_fname2,
+    v_fname3
+  FROM employees
+  WHERE employee_id =p_id;
+  dbms_output.put_line('부서이름 = '|| v_fname1|| '   job_id '||v_fname2|| '   급여 '||v_fname3 ||' 연간 총수입  ' || v_fname3*12);
+END;
+/
+-- 3
+DECLARE
+  v_date employees.hire_date%TYPE;
+  v_message VARCHAR2(40);
+BEGIN
+  SELECT hire_date INTO v_date FROM employees WHERE employee_id = &id;
+  IF TO_CHAR(v_date, 'YYYY') >= 2005 THEN
+    v_message                := 'New employee';
+  ELSE
+    v_message := 'Career employee';
+  END IF;
+  DBMS_OUTPUT.PUT_LINE(v_message);
+END;
+/
+------------------------------4.
+DECLARE
+BEGIN
+  FOR i IN 2..9
+  LOOP
+    IF mod(i,2) = 1 THEN
+      DBMS_OUTPUT.PUT_LINE(i||'단 시작');
+      FOR j IN 2..9
+      LOOP
+        DBMS_OUTPUT.PUT_LINE(i||'*'||j|| '=' || i*j);
+      END LOOP;
+    END IF;
+  END LOOP;
+END;
+/
+--5. ???
+DECLARE
+  p_id employees.department_id%type := &DEPTID;
+  v_fname1 employees.employee_id%type;
+  v_fname2 employees.last_name%type;
+  v_fname3 employees.salary%type;
+BEGIN
+  SELECT employee_id,
+    last_name,
+    salary
+  INTO v_fname1,
+    v_fname2,
+    v_fname3
+  FROM employees
+  WHERE department_id =p_id;
+  dbms_output.put_line('사번 = '|| v_fname1 || '   이름 '||v_fname2|| '   급여 '||v_fname3);
+END;
+/
+SELECT * FROM employees;
+--6
+DECLARE
+  p_id employees.employee_id%type := &ID;
+  p_salary employees.salary%type  := &PCT;
+  e_invalid_department EXCEPTION;
+BEGIN
+  UPDATE employees SET salary = salary + p_salary WHERE employee_id = p_id;
+  IF sql%notfound THEN
+    raise e_invalid_department;
+  END IF;
+  COMMIT;
+EXCEPTION
+WHEN e_invalid_department THEN
+  dbms_output.put_line('no search employee!');
+END;
+/
+--7
+CREATE OR REPLACE PROCEDURE yedam_ju(
+    v_number IN VARCHAR2)
+IS
+  v_1 VARCHAR2(20);
+  v_2 VARCHAR2(20);
+BEGIN
+  v_1:=SUBSTR(v_number,1,6);
+  v_2:=SUBSTR(v_number,7,1);
+  dbms_output.put_line(v_1 || '-' || v_2 || '******' );
+  IF (v_2 = 1) THEN
+    dbms_output.put_line('man' );
+  ELSE
+    dbms_output.put_line('woman' );
+  END IF;
+END;
+/
+show errors;
+EXECUTE yedam_ju(&v_number);
+-- 8
+DECLARE
+  p_id employees.employee_id%type := &ID;
+  p_yeer employees.hire_date%type;
+BEGIN
+  SELECT hire_date INTO p_yeer FROM employees WHERE employee_id =p_id;
+  dbms_output.put_line(2020-TO_CHAR(p_yeer,'YYYY'));
+END;
+/
+-- 9
+CREATE OR REPLACE FUNCTION mana(
+    d_name departments.department_name%type)
+  RETURN NUMBER
+IS
+  d_managername departments.manager_id%type:=0;
+BEGIN
+  SELECT manager_id
+  INTO d_managername
+  FROM departments
+  WHERE department_name = d_name;
+  RETURN d_managername;
+END mana;
+/
+-- 10
+SELECT * FROM PROCEDURE;
+--11
+DECLARE
+  v_num NUMBER := 1;
+BEGIN
+  LOOP
+    dbms_output.put_line(rpad(lpad('-',10-v_num,'-'),10,'☆'));
+    v_num := v_num                       +1;
+    EXIT
+  WHEN v_num >10;
+  END LOOP;
+END;
+/
+-	염평강 발신
+

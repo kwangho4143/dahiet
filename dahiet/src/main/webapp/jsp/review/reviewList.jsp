@@ -9,15 +9,17 @@
 </head>
 <body>
 	<main id="main">
-		<section style="padding-top: 0px; background: #edf4fc;" >
-			<div class="container">
-				<div style="padding-left: 100px;" class="d-flex justify-content-between align-items-center">
-					<h2>취업 토크</h2>
-					<button type="button"
+		<section style="padding-top: 0px;" >
+				<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>취업 토크</h2>
+			<button type="button" style="margin-right: 75px"
 						onclick="location.href='${pageContext.request.contextPath}/ReviewCheck.do';"
 						class="get-started-btn ml-auto">토크 등록</button>
 				</div>
-				<hr />
+				<hr>
+			<div class="container">
+				<div style="padding-left: 100px;" class="d-flex justify-content-between align-items-center">
+				</div>
 				<div style="padding-left: 80px;" align="center">
 					<table style="width: 80%;">
 						<tr align="center">

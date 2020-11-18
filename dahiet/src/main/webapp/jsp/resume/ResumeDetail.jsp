@@ -47,7 +47,7 @@
 								<td colspan="4">${vo.resume_name}</td>
 							</tr>
 							<tr height="50">
-								<td rowspan="3"><img alt="사진" src="${pageContext.request.contextPath}/images/${vo.imag}"></td>
+								<td rowspan="3"><img alt="사진" src="${pageContext.request.contextPath}/images/${vo.imag}" width="120" height="150" align="middle"></td>
 								<th width="120">이 름</th>
 								<td>${vo.name}</td>
 								<th width="120">생년월일</th>

@@ -19,16 +19,15 @@ public class UserIdCheck implements Action {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		List<UserVO> list = new ArrayList<>();
 		UserDao dao = new UserDao();
-		list=dao.check();
-		String ms="사용가능합니다.";
-		
-		for(int i=0;i<list.size();i++) {
-			if(request.getParameter("id").equals(list.get(i).getId())) {
-				ms="아이디를 다른 것으로 설정해주세요.";
-				break;
-			}		
+		UserVO vo = new UserVO();
+		vo.setId(request.getParameter("id"));
+		String ms="아이디가 중복됩니다.";
+
+		vo = dao.selectLogIn(vo);
+	
+		if(vo.getName()==null) {
+			ms="사용가능합니다.";
 		}
-		
 		
 		try {
 			response.getWriter().print(ms);

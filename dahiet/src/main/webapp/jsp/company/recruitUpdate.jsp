@@ -11,15 +11,17 @@
 <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
-		<div class="d-flex justify-content-between align-items-center">
+	<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
 			<h2>채용 공고 수정 페이지</h2>
-		</div>
-		<hr />
+				</div>
+				<hr>
+	<div class="container">
 		<form id="frm1" name="frm1"
 			action="${pageContext.request.contextPath}/RecruitUp.do"
 			method="post">
-			<table border="1">
+			<table style="
+    margin-left: 117px;
+			" border="1">
 				<tr style="display: none">
 					<th width="150">시퀀스</th>
 					<td width="500"><input type="text" id="recruit_seq"
@@ -79,11 +81,11 @@
 							rows="20" style="width: 100%;">${vo.qualify}</textarea></td>
 				</tr>
 				<tr>
-					<td colspan="8" align="center"><input type="submit"
+					<td colspan="8" align="right"><input class="btn btn-xs btn-danger" type="submit"
 						value="공고수정"> 
-						<button type="button"
+						<button class="btn btn-xs btn-danger" type="button"
 							onclick="location.href='${pageContext.request.contextPath}/RecruitDelete.do?recruit_seq=${vo.recruit_seq}'">삭제</button>
-						<input type="reset" value="취 소"></td>
+						<input class="btn btn-xs btn-danger" type="reset" value="취 소"></td>
 				</tr>
 			</table>
 		</form>
