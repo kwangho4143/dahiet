@@ -8,12 +8,12 @@
 <title>회원가입성공</title>
 </head>
 <body>
-
-	<hr>
-	<div align="center">
-		<div>
-			<h1>${param.id}님가입을 축하드립니다</h1>
-		</div>
+<div align="center">
+	<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>유저 회원 가입</h2>
+			<h4>${param.id}님가입을 축하드립니다</h4>
+				</div>
+				<hr>
 		<div>
 			<table border="1">
 				<tr>
