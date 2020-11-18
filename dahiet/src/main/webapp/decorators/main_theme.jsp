@@ -68,8 +68,6 @@
 
 .columnright {
 	float: right;
-	width: 100px;
-	padding-top: 30px;
 	position: relative; 
 	
 }
@@ -154,10 +152,13 @@ padding-left: 3cm;
 		</div>
 
 		<div class="columnright">
-
-			<a href="${pageContext.request.contextPath}/Event.do"><img style="position: fixed; padding-right: 30px" src="${pageContext.request.contextPath}/images/QNA.jpg">
-			</a>
+			<a href="${pageContext.request.contextPath}/Event.do"><img style="position: fixed; padding-right: 30px; padding-top: 30px;" src="${pageContext.request.contextPath}/images/QNA.jpg" width="195px"></a>
 		</div>
+		
+		<div class="columnright">
+			<a href="https://www.moel.go.kr/miniWageMain.do"><img style="position: fixed; padding-right: 30px; padding-top: 280px;" src="${pageContext.request.contextPath}/images/최저시급.JPG" width="195px"></a>
+		</div>
+		
 	</div>
 			</section>
 				</main>
