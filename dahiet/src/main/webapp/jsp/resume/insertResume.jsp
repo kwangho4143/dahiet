@@ -274,10 +274,10 @@ $(document).ready(function() {
 <body>
 
 	<div align="center">
-	
-		<div>
-			<h1>이 력 서 작 성</h1>
-		</div> <br />
+		<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>이력서 작성</h2>
+				</div>
+				<hr>
 		<div>
 			<div id="resumeTbl">
 				<form id="resumeFrm" name="resumeFrm" action="${pageContext.request.contextPath}/resumeDetail.do" method="post" enctype="multipart/form-data">

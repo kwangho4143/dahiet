@@ -63,6 +63,11 @@ public class userInsert implements Action {
 		//
 		
 		int n = dao.insert(vo);
+		vo.setId(request.getParameter("id"));
+		UserDao dao1 = new UserDao();
+		UserVO vo1 = new UserVO();
+		
+		vo1 = dao1.selectLogIn(vo);
 		String page;
 
 		if (n != 0) {
@@ -70,7 +75,7 @@ public class userInsert implements Action {
 		} else {
 			page = "jsp/user/insertFail.jsp";
 		}
-
+		request.setAttribute("vo", vo1);
 		return page;
 	}
 

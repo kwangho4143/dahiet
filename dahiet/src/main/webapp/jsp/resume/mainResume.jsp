@@ -16,18 +16,10 @@ table {
 </head>
 <body>
 	<div align="center">
-
-<section id="breadcrumbs" class="breadcrumbs"
-			style="padding: 0%; margin-top: 0px;">
-					<nav class="nav-menu d-none d-lg-block">
-		<div style="padding-left: 130px;" ><ul>
-							<li><h1 align="left">내 이력서 현황</h1></li>
-							</ul>
-							
-</div>
-</nav>
-</section>
-
+<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>내 이력서 현황</h2>
+				</div>
+				<hr>
 		<div>
 			<form id="resumeFrm" name="resumeFrm" action="" method="post"
 				enctype="multipart/form-data">
@@ -56,8 +48,8 @@ table {
 								<td width="200">${vo.resume_seq}</td>
 								<th width="100">이력서 이름</th>
 								<td width="200">${vo.resume_name}</td>
-								<td>
-								<button type = "button" id = "bt2" name = "bt2" onclick = "location.href='${pageContext.request.contextPath}/ResumeResult.do?resumed_seq=${vo.resume_seq}'">이력서 상세보기</button>
+								<td style="padding-left: 93px;">
+								<button class="btn btn-danger" type = "button" id = "bt2" name = "bt2" onclick = "location.href='${pageContext.request.contextPath}/ResumeResult.do?resumed_seq=${vo.resume_seq}'">이력서 상세보기</button>
 								</td>
 							</tr>
 						</table>

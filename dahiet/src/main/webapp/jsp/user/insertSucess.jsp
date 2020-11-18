@@ -11,50 +11,51 @@
 <div align="center">
 	<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
 			<h2>유저 회원 가입</h2>
-			<h4>${param.id}님가입을 축하드립니다</h4>
+			<h4>${vo.name}님가입을 축하드립니다</h4>
 				</div>
 				<hr>
 		<div>
 			<table border="1">
 				<tr>
 					<th width="150">아이디</th>
-					<td width="500">${param.id}</td>
+					<td width="200">${vo.id}</td>
+					<td rowspan="6" style="max-height: 150px; max-width: 120px"><img
+						style="height: 150px; max-width: 120px;" alt="사진"
+						src="${pageContext.request.contextPath}/images/${vo.image}"></td>
 				</tr>
 				<tr>
 					<th width="150">이름</th>
-					<td>${param.name}</td>
+					<td>${vo.name}</td>
 				</tr>
 				<tr>
 					<th width="150">생일</th>
-					<td>${param.birth}</td>
+					<td>${vo.birth}</td>
 				</tr>
 				<tr>
 					<th width="150">전화번호</th>
-					<td>${param.tel}</td>
+					<td>${vo.tel}</td>
 				</tr>
 				<tr>
 					<th width="150">최종학력</th>
-					<td>${param.univ}</td>
-				</tr>
-				<tr>
-					<th width="150">주소</th>
-					<td>${param.addr}</td>
-				</tr>
-				<tr>
-					<th width="150">이메일</th>
-					<td>${param.email}</td>
+					<td>${vo.univ}</td>
 				</tr>
 				<tr>
 					<th width="150">전공</th>
-					<td>${param.major}</td>
+					<td>${vo.major}</td>
+				</tr>
+				<tr>
+					<th width="150">이메일</th>
+					<td colspan="2">${vo.email}</td>
+				</tr>
+				<tr>
+					<th width="150">주소</th>
+					<td colspan="2">${vo.addr}</td>
 				</tr>
 				<tr>
 					<th width="150">전화번호</th>
-					<td>${param.tel}</td>
+					<td colspan="2">${vo.tel}</td>
 				</tr>
 				<tr>
-					<th width="150">사진</th>
-					<td>${param.img}</td>
 				</tr>
 
 			</table>

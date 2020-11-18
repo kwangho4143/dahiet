@@ -8,59 +8,49 @@
 <head>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
-
-	$(function(){
+	$(function() {
 		userIdCheck();
 		comIdCheck();
 
 	});
 
+	function userIdCheck() {
+		$('#idcheck').on('click', function() {
 
-	function userIdCheck(){
-		$('#idcheck').on('click',function(){
-			
 			$.ajax({
-				url:'${pageContext.request.contextPath}/ajax/userIdCheck.do',
+				url : '${pageContext.request.contextPath}/ajax/userIdCheck.do',
 				data : $("#frm1").serialize(),
-				error:function(xhr,status,msg){
+				error : function(xhr, status, msg) {
 					//console.log("상태값 :" + status + " Http에러메시지 :"+msg);
 					console.log("아작스 에러");
-				},success:function(ms) {
+				},
+				success : function(ms) {
 					alert(ms);
-					
+
 				}
 			});
-		
-		});	
+
+		});
 	}
 
-	function comIdCheck(){
-		$('#idcheck2').on('click',function(){
-			
+	function comIdCheck() {
+		$('#idcheck2').on('click', function() {
+
 			$.ajax({
-				url:'${pageContext.request.contextPath}/ajax/comIdCheck.do',
+				url : '${pageContext.request.contextPath}/ajax/comIdCheck.do',
 				data : $("#frm2").serialize(),
-				error:function(xhr,status,msg){
+				error : function(xhr, status, msg) {
 					//console.log("상태값 :" + status + " Http에러메시지 :"+msg);
 					console.log("아작스 에러");
-				},success:function(ms) {
+				},
+				success : function(ms) {
 					alert(ms);
-					
+
 				}
 			});
-		
-		});	
+
+		});
 	}
-
-
-
-
-
-
-
-
-
-
 
 	function formCheck1() {
 		var f = document.frm1;
@@ -247,20 +237,19 @@ td {
 	height: 1cm;
 }
 
-th.signin{
-width: 90px;
-text-align: center;
-
+th.signin {
+	width: 90px;
+	text-align: center;
 }
 
 input.signin {
-width: 250px;
+	width: 250px;
 }
 </style>
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center">
+	<div style="    min-height: 500px;" align="center">
 		<table>
 			<tr>
 				<td>
@@ -309,16 +298,18 @@ width: 250px;
 
 							<form method="post" id="frm4" name="frm4"
 								action="${pageContext.request.contextPath}/companyLogin.do">
-
 								<div>
-									<div>
-										<label>아이디</label> <input type="text" id="id" name="id"
-											placeholder="ID">
-									</div>
-									<div>
-										<label>비밀번호</label> <input type="password" id="pw" name="pw"
-											placeholder="Password">
-									</div>
+									<table>
+										<tr>
+											<td>아이디</td>
+											<td><input type="text" id="id" name="id"
+												placeholder="ID"></td>
+										<tr>
+											<td><label>비밀번호</label></td>
+											<td><input type="password" id="pw" name="pw"
+												placeholder="Password"></td>
+										</tr>
+									</table>
 								</div>
 								<button type="submit" onclick="return formCheck4()">로그인</button>
 								<div>
@@ -331,7 +322,6 @@ width: 250px;
 									<span> <a href="#">아이디</a> / <a href="#">비밀번호 찾기</a>
 									</span>
 								</div>
-
 							</form>
 						</div>
 					</div>
@@ -355,40 +345,49 @@ width: 250px;
 									<table border="1">
 										<tr>
 											<th class="signin">아이디</th>
-											<td ><input class="signin" type="text" id="id" name="id">
-											<input type ="button" id="idcheck" name = "idcheck" value = "중복 확인">
-											</td>
+											<td><input class="signin" type="text" id="id" name="id">
+												<input type="button" id="idcheck" name="idcheck"
+												value="중복 확인"></td>
 											<th class="signin">패스워드</th>
-											<td><input class="signin" type="password" id="pw" name="pw"></td>
+											<td><input class="signin" type="password" id="pw"
+												name="pw"></td>
 										</tr>
 										<tr>
 											<th class="signin">이 름</th>
-											<td><input class="signin" type="text" id="name" name="name"></td>
+											<td><input class="signin" type="text" id="name"
+												name="name"></td>
 											<th class="signin">사 진</th>
-											<td ><input class="signin" type="file" id="image" name="image" style="width: 250px"></td>
+											<td><input class="signin" type="file" id="image"
+												name="image" style="width: 250px"></td>
 										</tr>
-										<tr>	
+										<tr>
 											<th class="signin">생 일</th>
-											<td><input class="signin" type="date" id="birth" name="birth"></td>
+											<td><input class="signin" type="date" id="birth"
+												name="birth"></td>
 											<th class="signin">이메일</th>
-											<td><input class="signin" type="text" id="email" name="email"></td>
+											<td><input class="signin" type="text" id="email"
+												name="email"></td>
 										</tr>
 										<tr>
 											<th class="signin">전화번호</th>
-											<td><input class="signin" type="text" id="tel" name="tel"></td>
+											<td><input class="signin" type="text" id="tel"
+												name="tel"></td>
 											<th class="signin">최종학력</th>
-											<td><input class="signin" type="text" id="univ" name="univ"></td>
+											<td><input class="signin" type="text" id="univ"
+												name="univ"></td>
 										</tr>
 										<tr>
 											<th class="signin">전 공</th>
-											<td><input class="signin" type="text" id="major" name="major"></td>
+											<td><input class="signin" type="text" id="major"
+												name="major"></td>
 											<th class="signin">학 점</th>
-											<td><input class="signin" type="text" id="score" name="score"></td>
+											<td><input class="signin" type="text" id="score"
+												name="score"></td>
 										</tr>
 										<tr>
 											<th class="signin">주 소</th>
-											<td colspan="3"><input style="width: 500px" type="text" id="addr" name="addr"
-												></td>
+											<td colspan="3"><input style="width: 500px" type="text"
+												id="addr" name="addr"></td>
 										</tr>
 										<tr>
 											<td colspan="4" align="center"><input type="submit"
@@ -407,65 +406,67 @@ width: 250px;
 									<tr>
 										<th class="signin">아이디</th>
 										<td><input class="signin" type="text" id="id" name="id">
-										<input type ="button" value = "중복체크" id = "idcheck2">
-										</td>
+											<input type="button" value="중복체크" id="idcheck2"></td>
 										<th class="signin">패스워드</th>
-										<td><input class="signin" type="password" id="pw" name="pw"></td>
+										<td><input class="signin" type="password" id="pw"
+											name="pw"></td>
 									</tr>
 									<tr>
 										<th class="signin">사업자 번호</th>
 										<td><input class="signin" type="text" id="no" name="no"></td>
 										<th class="signin">기업이름</th>
-										<td><input class="signin" type="text" id="name" name="name"></td>
+										<td><input class="signin" type="text" id="name"
+											name="name"></td>
 									</tr>
 									<tr>
 										<th class="signin">전화번호</th>
 										<td><input class="signin" type="text" id="tel" name="tel"></td>
 										<th class="signin">로 고</th>
-										<td><input class="signin" type="file" id="img" name="img" ></td>
+										<td><input class="signin" type="file" id="img" name="img"></td>
 									</tr>
 									<tr>
 										<th class="signin">주 소</th>
-										<td colspan="3"><input type="text" id="addr" name="addr" size="68"></td>
+										<td colspan="3"><input type="text" id="addr" name="addr"
+											size="68"></td>
 									</tr>
 									<tr>
 										<th class="signin">기업링크</th>
-										<td colspan="3"><input type="text" id="link" name="link" size="68"></td>
+										<td colspan="3"><input type="text" id="link" name="link"
+											size="68"></td>
 									</tr>
 									<tr>
 										<th class="signin">사원수</th>
-										<td><input class="signin" type="text" id="emps" name="emps"></td>
+										<td><input class="signin" type="text" id="emps"
+											name="emps"></td>
 										<th class="signin">매출액</th>
-										<td><input class="signin" type="text" id="profit" name="profit"
-											></td>
+										<td><input class="signin" type="text" id="profit"
+											name="profit"></td>
 									</tr>
 									<tr>
 										<th class="signin">기업형태</th>
 										<td colspan="3"><label><input type="radio"
-													name="type" value="c1"> 대기업</label> <label><input
-													type="radio" name="type" value="c2"> 중견기업</label> <label><input
-													type="radio" name="type" value="c3"> 중소기업</label> <label><input
-													type="radio" name="type" value="c4"> 외국계</label> <label><input
-													type="radio" name="type" value="c5"> 강소기업</label> <label><input
-													type="radio" name="type" value="c6"> 공기업</label>
+												name="type" value="c1"> 대기업</label> <label><input
+												type="radio" name="type" value="c2"> 중견기업</label> <label><input
+												type="radio" name="type" value="c3"> 중소기업</label> <label><input
+												type="radio" name="type" value="c4"> 외국계</label> <label><input
+												type="radio" name="type" value="c5"> 강소기업</label> <label><input
+												type="radio" name="type" value="c6"> 공기업</label>
 									</tr>
 									<tr>
 										<th class="signin">업종</th>
-										<td colspan="3"><label>
-										<input type="radio"	name="item" value="1"> 서비스업</label> <label><input
-													type="radio" name="item" value="2"> 제조·화학</label> <label><input
-													type="radio" name="item" value="3"> IT·웹·통신</label> <label><input
-													type="radio" name="item" value="4"> 은행·금융업</label> <label><input
-													type="radio" name="item" value="5"> 미디어·디자인</label> <br><label><input
-													type="radio" name="item" value="6"> 교육업</label>
-													<label><input
-													type="radio" name="item" value="7"> 의료·제약·복지</label>
-													<label><input
-													type="radio" name="item" value="8"> 판매·유통</label>
-													<label><input
-													type="radio" name="item" value="9"> 건설업</label>
-													<label><input
-													type="radio" name="item" value="10"> 기관·협회</label></td>
+										<td colspan="3"><label> <input type="radio"
+												name="item" value="1"> 서비스업
+										</label> <label><input type="radio" name="item" value="2">
+												제조·화학</label> <label><input type="radio" name="item"
+												value="3"> IT·웹·통신</label> <label><input
+												type="radio" name="item" value="4"> 은행·금융업</label> <label><input
+												type="radio" name="item" value="5"> 미디어·디자인</label> <br>
+											<label><input type="radio" name="item" value="6">
+												교육업</label> <label><input type="radio" name="item" value="7">
+												의료·제약·복지</label> <label><input type="radio" name="item"
+												value="8"> 판매·유통</label> <label><input type="radio"
+												name="item" value="9"> 건설업</label> <label><input
+												type="radio" name="item" value="10"> 기관·협회</label></td>
 									</tr>
 									<tr>
 										<td colspan="4" align="center"><input type="submit"

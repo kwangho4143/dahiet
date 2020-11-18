@@ -15,14 +15,12 @@ table {
 </head>
 <body>
 	<div align="center">
-
+<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>공고에 지원한 내역</h2>
+				</div>
+				<hr>
 		<div>
-			<h1>공고에 지원한 내역</h1>
-		</div>
-		<br />
-
-		<div>
-			<div>
+			<div style="    min-height: 500px;">
 				<table>
 					<tr height="50">
 						<th width="200">이력서 이름</th>

@@ -41,9 +41,12 @@ function Display() {
 </script>
 </head>
 <body>
+<div style="padding-left: 130px; background-color: #f8f9fa; height: 70px" class="d-flex justify-content-between align-items-center">
+			<h2>회원정보수정</h2>
+				</div>
+				<hr>
 	<div align="center">
 		<div id="tab1">
-			<h1>회원정보수정</h1>
 			<br>
 			<form id="frmInf" name="frmInf"
 				action="${pageContext.request.contextPath}/UpdateUserInf.do"
