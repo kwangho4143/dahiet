@@ -406,7 +406,7 @@ input.signin {
 									<tr>
 										<th class="signin">아이디</th>
 										<td><input class="signin" type="text" id="id" name="id">
-											<input type="button" value="중복체크" id="idcheck2"></td>
+											<input type="button" value="중복 확인" id="idcheck2"></td>
 										<th class="signin">패스워드</th>
 										<td><input class="signin" type="password" id="pw"
 											name="pw"></td>
